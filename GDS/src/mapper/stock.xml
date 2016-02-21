@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="Stock">
+  
+     <select id="inputStockCode" parameterType="String">
+         INSERT INTO stock (code) VALUES(#{code});
+     </select>
+     
+     <select id="getTotalCode" resultType="Stock">
+ 	     select * from stock;     
+     </select>
+     
+     <update id="inputTotalAmountOfMarketPrice" parameterType="Stock">
+ 	     update stock set totalAmountOfMarketPrice = #{totalAmountOfMarketPrice} where code = #{code};
+     </update>
+     
+     <select id="getUnder300" resultType="Stock">
+ 	     select * from stock where totalAmountOfMarketPrice <![CDATA[<]]> 300;
+     </select>
+     
+     <select id="getNetProfitPlusList" resultType="Stock">
+ 	     select * from stock where netProfit0 <![CDATA[>]]> 0 and netProfit1 <![CDATA[>]]> 0 and netProfit2 <![CDATA[>]]> 0;
+     </select>
+     
+     <select id="getStockOrderByTradingVolume" resultType="Stock">
+ 	     SELECT * FROM stock order by (tradingVolume0+tradingVolume1+tradingVolume2+tradingVolume3+tradingVolume4)/5 desc;
+     </select>
+     
+     <select id="getStockHyperTradingVolume" resultType="Stock">
+ 	     SELECT * FROM stock where (tradingVolume0+tradingVolume1+tradingVolume2+tradingVolume3+tradingVolume4)/(tradingVolume5+tradingVolume6+tradingVolume7+tradingVolume8+tradingVolume9) > 2 ;
+     </select>
+     
+     <update id="inputName" parameterType="Stock">
+ 	     update stock set stockName = #{stockName} where code = #{code};
+     </update>
+     
+     <update id="inputNetProfit" parameterType="Stock">
+ 	     update stock set netProfit0 = #{netProfit0}, netProfit1 = #{netProfit1}, netProfit2 = #{netProfit2} where code = #{code};
+     </update>
+     
+     <update id="inputTradingVolume" parameterType="Stock">
+ 	     update stock set tradingVolume0 = #{tradingVolume0}, tradingVolume1 = #{tradingVolume1}, tradingVolume2 = #{tradingVolume2}, tradingVolume3 = #{tradingVolume3}, tradingVolume4 = #{tradingVolume4}, tradingVolume5 = #{tradingVolume5}, tradingVolume6 = #{tradingVolume6}, tradingVolume7 = #{tradingVolume7}, tradingVolume8 = #{tradingVolume8}, tradingVolume9 = #{tradingVolume9} where code = #{code};
+     </update>
+     
+  </mapper>

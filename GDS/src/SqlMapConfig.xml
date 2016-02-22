@@ -6,15 +6,19 @@
  
  <configuration>
  
+ 	<!-- 
  	<typeAliases>
  		<typeAlias type="com.gosomon.vo.User" alias="User"/>
  		<typeAlias type="com.gosomon.vo.Stock" alias="Stock"/>
  	</typeAliases>
+ 	 -->
  	
+ 	<!-- 
  	<mappers>
  		<mapper resource="mapper/user.xml"/>
  		<mapper resource="mapper/stock.xml"/>
  	</mappers>
+ 	 -->
  	
  </configuration>
  

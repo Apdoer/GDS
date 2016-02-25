@@ -15,7 +15,7 @@
 
       <div class="blog-header">
         <h1 class="blog-title" style="font:bold; border-bottom:solid 1px gray;
-         padding-bottom: 10px; width: 45%;">소개 주제를 여기 작성하세요</h1>
+         padding-bottom: 10px; width: 100%;">센터장 인사말</h1>
          <!-- 
 	        <ol class="breadcrumb" style="width: 45%;">
 			  <li><a href="#">Home</a></li>
@@ -32,39 +32,24 @@
           <div class="blog-post">
           
           <div style="height: 240px;">
-			<img class="dummy" alt="" src="img/dummy.jpg">
+			<img class="img-rounded" alt="" src="img/dummy.jpg" style="width: 100%; height: 100%;">
 		  </div>
 		  
-            <h2 class="blog-post-title">Sample blog post</h2>
-            <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+            <h2 class="blog-post-title">인사말</h2>
+            <p class="blog-post-meta"> 2월, 2015 by <a href="#">김학기...</a></p>
 
-            <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+            <p>지디에스 분당중앙센터는 발달장애/학습장애로 어려움을 겪고 있는 “조금은 특별한” 우리 아이들을 위한 공간입니다. 
+  			뇌를 활성화 하는 적절한 훈련, 감각 해소, 그리고 통합의학적  (Bio-med) 접근을 통해 우리 아이들의 문제는 충분히 개선될 수 있습니다.  부모의 마음으로 우리 아이들이 밝고 행복한 미래를 맞이할 수 있도록 최선을 다하겠습니다.
+			</p>
+            <!-- Indicates a dangerous or potentially negative action -->
+			<button type="button" class="btn btn-danger"  onclick="location.href = 'http://www.naver.com'">솔루션을 링크 걸던가</button>
             <hr>
-            <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+            <p>내용을 적고</p>
             <blockquote>
-              <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p>인용 문들도 적고 <strong>강조도 하고</strong> 도와주고 싶다 GDS!!</p>
             </blockquote>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <h2>Heading</h2>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <h3>Sub-heading</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <pre><code>Example code block</code></pre>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-            <h3>Sub-heading</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <ul>
-              <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-              <li>Donec id elit non mi porta gravida at eget metus.</li>
-              <li>Nulla vitae elit libero, a pharetra augue.</li>
-            </ul>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-            <ol>
-              <li>Vestibulum id ligula porta felis euismod semper.</li>
-              <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-              <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-            </ol>
-            <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+            <button type="button" class="btn btn-danger" onclick="location.href = 'http://www.naver.com'" >게시판 링크 걸던가</button>
           </div><!-- /.blog-post -->
 
           <nav>
@@ -91,11 +76,19 @@
           </div>
           <div class="sidebar-module">
             <h4>검색</h4>
-            <form class="navbar-form navbar-center" style="width: 100%;" role="search">
+            <form class="navbar-form navbar-center" style="padding: 0 0 0 0px;" role="search">
             	<div class="form-group">
-            	<input type="text" class="form-control" placeholder="Search..." style="width: 100%;">
+            	<table>
+            		<tr>
+            			<td style="width: 85%;">
+			            	<input type="text" class="form-control" placeholder="Search..." style="width: 100%;">
+		            	</td>
+		            	<td style="width: 15%;">
+			            	<button type="submit" class="btn btn-default" >검색</button>
+		            	</td>
+	            	</tr>
+            	</table>
             	</div>
-            	<button type="submit" class="btn btn-default">Submit</button>
           	</form>
           </div>
           <div class="sidebar-module sidebar-module-inset">

@@ -35,8 +35,8 @@
 	</servlet-mapping>
 	
 	<welcome-file-list>
-		<welcome-file>board.jsp</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>board.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<!-- <filter>

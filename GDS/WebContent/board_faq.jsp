@@ -37,9 +37,9 @@ body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif
 			<div class="col-md-2 left-side-bar">
 			
 				<ul class="pull-right">
-					<li><a href="#" style="font-weight: bold;">공지사항</a></li>
+					<li><a href="#">공지사항</a></li>
 					<li><a href="#">이벤트</a></li>
-					<li><a href="#">FAQ</a></li>
+					<li><a href="#" style="font-weight: bold;">FAQ</a></li>
 					<li><a href="#">상담신청</a></li>
 				</ul>
 			
@@ -48,6 +48,19 @@ body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif
 			<!-- board content -->
 			<div class="col-md-9 right-article-list">
 			
+				<div class="categories">
+					
+					<div>
+						<span class="category">상담</span>
+						<span class="category">치료요법</span>
+						<span class="category">의약품 주문 관련</span>
+						<span class="category">자가진단 테스트</span>
+						<span class="category">1:1 문의</span>
+						<span class="category">결제</span>
+					</div>
+					
+				</div>
+				
 				<div class="articles">
 				
 					<table class="table">

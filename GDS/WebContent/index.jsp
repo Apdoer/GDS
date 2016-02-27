@@ -27,14 +27,14 @@
           <ul class="nav navbar-nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">GDS소개 <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
+              <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 <li><a href="#">인사말</a></li>
                 <li><a href="#">오시는길</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">증상소개 <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
+              <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 <li><a href="#">발달장애</a></li>
                 <li><a href="#">학습장애</a></li>
                 <li><a href="#">ADHD</a></li>
@@ -43,7 +43,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로그램소개 <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
+              <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 <li class="dropdown-header">개선솔루션</li>
                 <li><a href="#">고압산소치료</a></li>
                 <li><a href="#">대사검사</a></li>
@@ -54,16 +54,19 @@
                 <li><a href="#">보험문의</a></li>
               </ul>
             </li>
-            <li><a href="#about">소식지</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">커뮤니티 <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">소식지 <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                <li><a href="#">좋은정보</a></li>
                 <li><a href="#">공지사항</a></li>
                 <li><a href="#">QNA</a></li>
                 <li><a href="#">이벤트</a></li>
               </ul>
             </li>
-            <li><a href="#"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span><span class="phone"> 031-711-3546</span></a></li>
+            <li><a href="${pageContext.request.contextPath}/counsel.do">상담신청</a>
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span><span class="phone"> 031-711-3546</span></a>
+            </li>
             
           </ul>
         </div><!--/.nav-collapse -->

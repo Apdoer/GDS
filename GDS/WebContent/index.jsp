@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/bootstrap-theme.css">
 <link href="css/index.css" rel="stylesheet">
 <script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript" src="script/bootstrap.js"></script>
 
 </head>
 <body>

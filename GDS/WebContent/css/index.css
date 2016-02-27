@@ -14,7 +14,7 @@ body{
 }
 
 
-.jumbotron{
+#home .jumbotron{
 	background-image: url('../img/kids1.jpg');
 }
 
@@ -33,7 +33,18 @@ a img{
 	padding-top: 0;
 }
 
-body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif; color:#555; }
+@font-face{
+font-family:'NanumBarunGothic';
+font-style:normal;
+font-weight:400;
+src:url(//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot);
+src:url(//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix) format('embedded-opentype'),
+	url(//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff) format('woff'),
+	url(cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf) format('truetype');
+}
+
+body{font-family:NanumBarunGothic}
+}
 
 div.line-horizontal { border: 1px solid #eee; border-radius: 1px; margin: 16px 0px; }
 
@@ -48,16 +59,3 @@ div.line-horizontal { border: 1px solid #eee; border-radius: 1px; margin: 16px 0
 #board_counsel .right-article-list .intro p { margin-bottom: 3px; }
 #board_counsel .right-article-list .intro button { margin-top: 16px; }
 #board_counsel .right-article-list .counsel-phone { margin-top: 16px; }
-
-#board_notice img.dummy { margin-bottom: 16px; }
-
-#board_notice .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
-#board_notice .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#board_notice .left-side-bar ul li:last-child { border: 0px; }
-#board_notice .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
-
-#board_notice .right-article-list { border-left: 1px solid #eee; }
-#board_notice .right-article-list .categories { margin-bottom: 16px; }
-#board_notice .right-article-list .categories .category { display: inline-table; padding: 6px 12px; margin: 3px; border: 1px solid #eee; }
-#board_notice .right-article-list .categories .category:first-child { margin-left: 0px; }
-#board_notice .right-article-list .articles { font-size: 0.9em; }

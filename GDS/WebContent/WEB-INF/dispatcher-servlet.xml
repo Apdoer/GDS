@@ -15,6 +15,6 @@
 		
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
-	<context:component-scan base-package="com.gosomon.controller"/>
+	<context:component-scan base-package="com.gds.controller"/>
 	
 </beans>

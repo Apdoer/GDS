@@ -8,23 +8,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
-
-<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		p:driverClassName="oracle.jdbc.driver.OracleDriver"
-		p:url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-		p:username="test" p:password="test" /> -->
-
-		<!-- p:url="jdbc:oracle:thin:@14.52.4.160:1521:xe"
-		p:username="bluebull" p:password="bluebull" -->
 	
-		
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-			<property name="url" value="jdbc:mysql://127.0.0.1:3306/gosomon"/>
-			<property name="username" value="gosomon"/>
-			<property name="password" value="gosomon"/>
+			<property name="url" value="jdbc:mysql://apdoer.ciszfmxklhbp.ap-northeast-2.rds.amazonaws.com:3306/apdoer"/>
+			<property name="username" value="apdoer"/>
+			<property name="password" value="apdoer1234"/>
 	</bean>
-	
 	
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
@@ -41,5 +31,6 @@
 		c:sqlSessionFactory-ref="sqlSessionFactory"
 	/>
 	
-	<context:component-scan base-package="com.gosomon.controller"/>
+	<context:component-scan base-package="com.gds.controller"/>
+	
 </beans>

@@ -1,42 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GDS</title>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap-theme.css">
-<link rel="stylesheet" href="css/default.css">
-<script type="text/javascript" src="script/jquery.js"></script>
-<style type="text/css">
-body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif; color:#555; }
-
-div.line-horizontal { border: 1px solid #eee; border-radius: 1px; margin: 16px 0px; }
-
-#board_notice img.dummy { margin-bottom: 16px; }
-
-#board_notice .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
-#board_notice .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#board_notice .left-side-bar ul li:last-child { border: 0px; }
-#board_notice .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
-
-#board_notice .right-article-list .intro h3 { font-size: 1.5em; font-weight: bold; margin-bottom: 20px; }
-#board_notice .right-article-list .intro p { margin-bottom: 3px; }
-#board_notice .right-article-list .intro button { margin-top: 16px; }
-#board_notice .right-article-list .counsel-phone { margin-top: 16px; }
-
-/* 
-#board_notice .right-article-list { border-left: 1px solid #eee; }
-#board_notice .right-article-list .categories { margin-bottom: 16px; }
-#board_notice .right-article-list .categories .category { display: inline-table; padding: 6px 12px; margin: 3px; border: 1px solid #eee; }
-#board_notice .right-article-list .categories .category:first-child { margin-left: 0px; }
-#board_notice .right-article-list .articles { font-size: 0.9em; }
-*/
-</style>
-</head>
-<body>
- 
-	<div id="board_notice">
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	<div id="board_counsel">
 	
 		<img class="dummy" alt="" src="img/dummy.jpg" style="height: 200px;">
 		
@@ -148,6 +111,3 @@ div.line-horizontal { border: 1px solid #eee; border-radius: 1px; margin: 16px 0
 		</div>
 		
 	</div>
-
-</body>
-</html>

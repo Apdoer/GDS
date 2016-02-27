@@ -48,7 +48,7 @@
 		<jsp:include page="${requestScope.contentPage }" />
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="/introduce.jsp"/>		
+		<jsp:include page="/home.jsp"/>		
 	</c:otherwise>
 	</c:choose>
 

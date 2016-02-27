@@ -14,6 +14,7 @@
 #board_notice .right-article-list .articles table th,
 #board_notice .right-article-list .articles table td { padding: 12px 16px; cursor: pointer; }
 
+/* 공통 */
 .paginator { text-align: center; }
 .paginator ul.pagination li a,
 .paginator ul.pagination li span { border: 0px; color: #555; }

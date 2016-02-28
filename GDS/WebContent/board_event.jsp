@@ -11,23 +11,34 @@
 <style type="text/css">
 body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif; color:#555; }
 
-#board_notice img.dummy { margin-bottom: 16px; }
+#board_event img.dummy { margin-bottom: 16px; }
 
-#board_notice .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
-#board_notice .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#board_notice .left-side-bar ul li:last-child { border: 0px; }
-#board_notice .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
+#board_event .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
+#board_event .left-side-bar ul li { border-bottom: 1px solid #eee; }
+#board_event .left-side-bar ul li:last-child { border: 0px; }
+#board_event .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
-#board_notice .right-article-list { border-left: 1px solid #eee; }
-#board_notice .right-article-list .categories { margin-bottom: 16px; }
-#board_notice .right-article-list .categories .category { display: inline-table; padding: 6px 12px; margin: 3px; border: 1px solid #eee; }
-#board_notice .right-article-list .categories .category:first-child { margin-left: 0px; }
-#board_notice .right-article-list .articles { font-size: 0.9em; }
+#board_event .right-article-list { border-left: 1px solid #eee; }
+#board_event .right-article-list .categories { margin-bottom: 16px; }
+#board_event .right-article-list .categories .category { display: inline-table; padding: 6px 12px; margin: 3px; border: 1px solid #eee; }
+#board_event .right-article-list .categories .category:first-child { margin-left: 0px; }
+#board_event .right-article-list .articles { font-size: 0.9em; margin-bottom: 32px; }
+#board_event .right-article-list .articles table { margin-bottom: 0px; }
+#board_event .right-article-list .articles table th { text-align: center; }
+#board_event .right-article-list .articles table th,
+#board_event .right-article-list .articles table td { padding: 6px 16px; vertical-align: middle; cursor: pointer; }
+#board_event .right-article-list .articles table td span.event { display: inline-block; margin-left: 6px; padding: 3px 6px; border-radius: 12px; }
+#board_event .right-article-list .articles table td span.event.ongoing { background-color: blue; color: white; }
+
+/* 공통 */
+.paginator { text-align: center; }
+.paginator ul.pagination li a,
+.paginator ul.pagination li span { border: 0px; color: #555; }
 </style>
 </head>
 <body>
  
-	<div id="board_notice">
+	<div id="board_event">
 	
 		<img class="dummy" alt="" src="img/dummy.jpg" style="height: 200px;">
 		
@@ -52,85 +63,95 @@ body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif
 				
 					<table class="table">
 						<tr>
-							<th style="width: 8%;">글번호</th>
-							<th style="width: 16%;">카테고리</th>
 							<th>제목</th>
-							<th style="width: 16%;">작성일시</th>
+							<th style="width: 30%;">이벤트 기간</th>
 							<th style="width: 8%;">조회수</th>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">봄 맞이 특별 이벤트 할인 행사</td>
+							<td style="text-align: center;">
+								2016.03.24 - 2016.05.16
+							</td>
+							<td style="text-align: center;">27</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">[한정] 인지 발달 보조 신약 제공 이벤트 II</td>
+							<td style="text-align: center;">
+								2016.03.02 - 2016.03.26
+							</td>
+							<td style="text-align: center;">129</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">GDS 본사에서 수행하는 발달검사에 참여 할 수 있는 기회!</td>
+							<td style="text-align: center;">
+								2016.02.14 - 2016.03.14
+								<span class="event ongoing">진행중</span>
+							</td>
+							<td style="text-align: center;">128</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">[한정] 인지 발달 보조 신약 제공 이벤트 I</td>
+							<td style="text-align: center;">
+								2016.02.12 - 2016.03.01
+								<span class="event ongoing">진행중</span>
+							</td>
+							<td style="text-align: center;">277</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">이벤트 게시판 게시글 샘플인데, 마음에 드셨나요?</td>
+							<td style="text-align: center;">
+								2016.02.01 - 2016.02.01
+							</td>
+							<td style="text-align: center;">709</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">[선착순] 온라인 홈페이지 기념 도서 증정 이벤트</td>
+							<td style="text-align: center;">
+								2016.01.12 - 2016.01.26
+							</td>
+							<td style="text-align: center;">411</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">소중한 마음을 전달하세요.</td>
+							<td style="text-align: center;">
+								2016.01.09 - 2016.01.14
+							</td>
+							<td style="text-align: center;">182</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">프로그램 후기를 공유해주세요.</td>
+							<td style="text-align: center;">
+								2016.01.01 - 2016.01.31
+							</td>
+							<td style="text-align: center;">142</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">2015년을 마무리하며..</td>
+							<td style="text-align: center;">
+								2015.12.29 - 2015.12.31
+							</td>
+							<td style="text-align: center;">213</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
-							<td>테스트 카테고리</td>
-							<td>테스트 제목</td>
-							<td>2016년 2월 22일</td>
-							<td>17</td>
+							<td style="padding-left: 8px;">GDS 분당센터 오픈 기념 이벤트</td>
+							<td style="text-align: center;">
+								2015.10.01 - 2015.10.07
+							</td>
+							<td style="text-align: center;">598</td>
 						</tr>
 					</table>
 					
-					<!-- paginator -->
+					<div class="paginator">
+						<ul class="pagination">
+							<li><a href="#"><span aria-hidden="true">&laquo;</span></a></li>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>
+						</ul>
+					</div>
 				
 				</div>
 			

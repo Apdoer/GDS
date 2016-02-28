@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GDS</title>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap-theme.css">
-<link href="css/index.css" rel="stylesheet">
-<script type="text/javascript" src="script/jquery.js"></script>
-<script type="text/javascript" src="script/bootstrap.js"></script>
+<link rel="stylesheet" href="${cp}/css/bootstrap.css">
+<link rel="stylesheet" href="${cp}/css/bootstrap-theme.css">
+<link rel="stylesheet" href="${cp}/css/index.css">
+<script type="text/javascript" src="${cp}/script/jquery.js"></script>
+<script type="text/javascript" src="${cp}/script/bootstrap.js"></script>
 
 </head>
 <body>
@@ -20,7 +21,7 @@
         <div class="navbar-header">
           
           <a class="navbar-brand" href="#">
-          	<img alt="Brand" src="img/GDS_Logo.png">
+          	<img alt="Brand" src="${cp}/img/GDS_Logo.png">
           </a>
         </div>
         <div id="navbar" class="navbar-right collapse navbar-collapse">

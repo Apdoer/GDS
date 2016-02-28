@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,25 +13,30 @@
 <style type="text/css">
 body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif; color:#555; }
 
-#board_notice img.dummy { margin-bottom: 16px; }
+#board_faq img.dummy { margin-bottom: 16px; }
 
-#board_notice .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
-#board_notice .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#board_notice .left-side-bar ul li:last-child { border: 0px; }
-#board_notice .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
+#board_faq .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
+#board_faq .left-side-bar ul li { border-bottom: 1px solid #eee; }
+#board_faq .left-side-bar ul li:last-child { border: 0px; }
+#board_faq .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
-#board_notice .right-article-list { border-left: 1px solid #eee; }
-#board_notice .right-article-list .categories { margin-bottom: 16px; }
-#board_notice .right-article-list .categories .category { display: inline-table; padding: 6px 12px; margin: 3px; border: 1px solid #eee; }
-#board_notice .right-article-list .categories .category:first-child { margin-left: 0px; }
-#board_notice .right-article-list .articles { font-size: 0.9em; }
+#board_faq .right-article-list { border-left: 1px solid #eee; }
+#board_faq .right-article-list .categories { margin-bottom: 16px; }
+#board_faq .right-article-list .categories .category { display: inline-block; margin: 0px 3px 6px 0px; padding: 6px 12px; width: 15%; border: 1px solid #eee; text-align: center; cursor: pointer; }
+#board_faq .right-article-list .articles { font-size: 0.9em; margin-bottom: 32px; }
+#board_faq .right-article-list .articles table { margin-bottom: 0px; }
+
+/* 공통 */
+.paginator { text-align: center; }
+.paginator ul.pagination li a,
+.paginator ul.pagination li span { border: 0px; color: #555; }
 </style>
 </head>
 <body>
  
-	<div id="board_notice">
+	<div id="board_faq">
 	
-		<img class="dummy" alt="" src="img/dummy.jpg" style="height: 200px;">
+		<img class="dummy" alt="" src="img/dummy.jpg" style="width: 100%; height: 320px;">
 		
 		<div class="row">
 			
@@ -51,12 +58,14 @@ body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif
 				<div class="categories">
 					
 					<div>
-						<span class="category">상담</span>
-						<span class="category">치료요법</span>
-						<span class="category">의약품 주문 관련</span>
-						<span class="category">자가진단 테스트</span>
-						<span class="category">1:1 문의</span>
-						<span class="category">결제</span>
+						<div class="category">ALL</div>
+						<div class="category">상담</div>
+						<div class="category">치료요법</div>
+						<div class="category">의약품 주문 관련</div>
+						<div class="category">자가진단 테스트</div>
+						<div class="category">1:1 문의</div>
+						<div class="category">결제</div>
+						<div class="category">방문안내</div>
 					</div>
 					
 				</div>
@@ -65,77 +74,66 @@ body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif
 				
 					<table class="table">
 						<tr>
-							<th style="width: 8%;">글번호</th>
 							<th style="width: 16%;">카테고리</th>
 							<th>제목</th>
 							<th style="width: 16%;">작성일시</th>
 							<th style="width: 8%;">조회수</th>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
 							<td>17</td>
 						</tr>
 						<tr>
-							<td>no.1</td>
 							<td>테스트 카테고리</td>
 							<td>테스트 제목</td>
 							<td>2016년 2월 22일</td>
@@ -143,7 +141,17 @@ body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif
 						</tr>
 					</table>
 					
-					<!-- paginator -->
+					<div class="paginator">
+						<ul class="pagination">
+							<li><a href="#"><span aria-hidden="true">&laquo;</span></a></li>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>
+						</ul>
+					</div>
 				
 				</div>
 			

@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
 #board_notice img.dummy { margin-bottom: 16px; width: 100%; height: 320px; }
 
@@ -22,7 +24,7 @@
 
 <div id="board_notice">
 
-	<img class="dummy" alt="" src="img/dummy.jpg">
+	<img class="dummy" alt="" src="${cp}/img/dummy.jpg">
 	
 	<div class="row">
 		

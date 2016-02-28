@@ -1,7 +1,7 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 	<div id="board_counsel">
 	
-		<img class="dummy" alt="" src="img/dummy.jpg" style="height: 200px;">
+		<img class="dummy" alt="" src="img/dummy.jpg" style="width: 100%; height: 320px;">
 		
 		<div class="row">
 			
@@ -28,7 +28,7 @@
 					<button type="button" class="btn btn-info" style="">개인정보취급방침 보기</button>
 				</div>
 				
-				<div class="line-horizontal"></div>
+				<div class="line-horizontal" style="border: 1px solid #eee; border-radius: 1px; margin: 16px 0px;"></div>
 				
 				<div class="intro">
 					<p>미리 상담시간을 예약해주시면 좀 더 편안하게 상담 및 치료가 가능합니다.</p>
@@ -95,7 +95,7 @@
 					</div>
 					
 					<div class="col-sm-3">
-						<img class="dummy" alt="" src="img/dummy.jpg" style="height: 359px;">
+						<img class="dummy" alt="" src="img/dummy.jpg" style="width: 100%; height: 359px;">
 					</div>					
 					
 				</div>

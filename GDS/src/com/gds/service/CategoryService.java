@@ -14,13 +14,57 @@ public class CategoryService {
 	@Autowired
 	private CategoryDao categoryDao;
 	
-//	@Autowired
-//	public void setCategoryDao(CategoryDao categoryDao) {
-//		this.categoryDao = categoryDao;
-//	}
+	/**
+	 * Create category.
+	 * 
+	 * @param category
+	 * @return
+	 */
+	public boolean createCategory(Category category) {
+		int id = categoryDao.selectMaxId() + 1;
+		category.setId(id);
+		return categoryDao.insertCategory(category) == 1;		
+	}
 	
+	/**
+	 * Select all categories.
+	 * Categories will be ordered by gubun.
+	 * 
+	 * @param gubun
+	 * @return
+	 */
+	public List<Category> listCategory() {
+		return categoryDao.selectCategory();
+	}
+	
+	/**
+	 * Select categories with gubun(F|C).
+	 * 
+	 * @param gubun
+	 * @return
+	 */
 	public List<Category> listCategory(String gubun) {
 		return categoryDao.selectCategory(gubun);
+	}
+
+	/**
+	 * Update category with id.
+	 * 
+	 * @param category
+	 * @return
+	 */
+	public int modifyCategory(Category category) {
+		return categoryDao.updateCategory(category);
+	}
+
+	/**
+	 * Delete category with id.
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public int deleteCategory(int id) {
+		return categoryDao.deleteCategory(id);
 	}
 
 }

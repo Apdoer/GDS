@@ -9,6 +9,13 @@ public class Category {
 	private String categoryGubun;
 	private String categoryName;
 	
+	public Category() {}
+	
+	public Category(String categoryGubun, String categoryName) {
+		this.categoryGubun = categoryGubun;
+		this.categoryName = categoryName;
+	}
+	
 	public int getId() {
 		return id;
 	}

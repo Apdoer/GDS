@@ -6,10 +6,42 @@
 
 <mapper namespace="Category">
 
-	<select id="listCategory" parameterType="String" resultType="Category">
+	<select id="getMaxId" resultType="int">
+		SELECT MAX(id)
+		FROM category
+	</select>
+
+	<insert id="insert">
+		INSERT INTO category
+		VALUES (
+			#{id},
+			#{categoryGubun},
+			#{categoryName}
+		)
+	</insert>
+
+	<select id="select" resultType="Category">
+		SELECT *
+		FROM category
+		ORDER BY #{gubun}
+	</select>
+	
+	<select id="selectByGubun" parameterType="String" resultType="Category">
 		SELECT *
 		FROM category
 		WHERE category_gubun = #{gubun}
 	</select>
+	
+	<update id="update" parameterType="Category">
+		UPDATE category
+		SET category_name = #{categoryName}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE 
+		FROM category
+		WHERE id = #{id}
+	</delete>
 
 </mapper>

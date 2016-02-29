@@ -32,19 +32,19 @@ public class BoardController {
 //	}
 
 	@RequestMapping("/notice.do")
-	public String moveNotice(Model model){
+	public String moveNotice(Model model) {
 		model.addAttribute("contentPage", "/board_notice.jsp");
 		return "index";
 	}
 	
 	@RequestMapping("/event.do")
-	public String moveEvent(Model model){
+	public String moveEvent(Model model) {
 		model.addAttribute("contentPage", "/board_event.jsp");
 		return "index";
 	}
 	
 	@RequestMapping("/faq.do")
-	public String moveFaq(Model model){
+	public String moveFaq(Model model) {
 		List<Category> categoryList = categoryService.listCategory(Category.GUBUN_F);
 		System.out.println(categoryList);
 		

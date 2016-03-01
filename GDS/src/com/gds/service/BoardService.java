@@ -22,4 +22,8 @@ public class BoardService {
 		return null;
 	}
 	
+	public void insertBlog(String title, String content) {
+		boardDao.insertBlog(title, content);
+	}
+	
 }

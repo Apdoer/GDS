@@ -6,25 +6,60 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.gds.model.Category;
+import com.gds.service.BoardService;
+import com.gds.service.CategoryService;
 import com.gds.vo.PhotoVo;
 
 @Controller
 public class AdminController {
 	
+	@Autowired
+	CategoryService categoryService;
+	
+	@Autowired
+	BoardService boardService;
+	
+	
 	@RequestMapping ("/admin.do" )
-    public String admin(HttpServletRequest request ){
+    public String admin(HttpServletRequest request, Model model){
 
-		System .out .println ("단게땡기는뎅");
-         System .out .println (request .getParameter ("ir1" ));
+		 System .out .println (request .getParameter ("title" ));
+         System .out .println (request .getParameter ("contents" ));
+         System .out .println (request .getParameter ("category" ));
+         
+         List<Category> cateList;
+         cateList = categoryService.listCategory();
+         model.addAttribute("categoryList", cateList);
+         return "admin" ;
+    }
+	
+	@RequestMapping ("/insertBlog.do" )
+    public String insertBlog(HttpServletRequest request, Model model){
 
+		 System .out .println (request .getParameter ("title" ));
+         System .out .println (request .getParameter ("content" ));
+         System .out .println (request .getParameter ("category" ));
+         
+         String title = request .getParameter ("title" );
+         String contents = request .getParameter ("content" );
+         
+         boardService.insertBlog(title, contents);
+         
+         List<Category> cateList;
+         cateList = categoryService.listCategory();
+         model.addAttribute("categoryList", cateList);
          return "admin" ;
     }
 	
@@ -82,6 +117,7 @@ public class AdminController {
 	         String dftFilePath = request.getSession().getServletContext().getRealPath("/");
 	         //파일 기본경로 _ 상세경로
 	         //String filePath = dftFilePath + "resource" + File.separator + "photo_upload" + File.separator;
+	         //서버에 경로로 지정할 부분
 	         String filePath = "C:/Users/kinotion/git/GDS/GDS/WebContent/se2/img/";
 	         
 	         File file = new File(filePath);

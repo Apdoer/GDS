@@ -56,7 +56,7 @@ nhn.husky.SE2M_AttachQuickPhoto = jindo.$Class({
 	},
 	
 	/**
-	 * 팝업에서 호출되는 메세지.
+	 * 팝업에서 호출되는 메세지. 여기서 두번온다
 	 */
 	$ON_SET_PHOTO : function(aPhotoData){
 		var sContents, 
@@ -81,7 +81,6 @@ nhn.husky.SE2M_AttachQuickPhoto = jindo.$Class({
 				    sOriginalImageURL : htData.sFileURL,
 					bNewLine : htData.bNewLine || false 
 				};
-				alert(aPhotoData.length);
 				sContents += this._getPhotoTag(aPhotoInfo);
 			}
 

@@ -331,17 +331,18 @@
      * @return
      */
     function html5Upload() {	
-    	alert("멀티플로 들어온다");
     	var tempFile,
     		sUploadURL;
     	
-    	sUploadURL= 'multiplePhotoUpload.do'; 	//upload URL
+    //	sUploadURL= '${pageContext.request.contextPath}/multiplePhotoUpload.do'; 	//upload URL
+    	sUploadURL= 'http://localhost:8080/GDS/multiplePhotoUpload.do'; 	//upload URL
     	
     	//파일을 하나씩 보내고, 결과를 받음.
     	for(var j=0, k=0; j < nImageInfoCnt; j++) {
     		tempFile = htImageInfo['img'+j];
     		try{
 	    		if(!!tempFile){
+	    			alert("다음단계");
 	    			//Ajax통신하는 부분. 파일과 업로더할 url을 전달한다.
 	    			callAjaxForHTML5(tempFile,sUploadURL);
 	    			k += 1;
@@ -352,7 +353,7 @@
 	}
     
     function callAjaxForHTML5 (tempFile, sUploadURL){
-    	alert(tempFile);
+    	alert("업로드 유알엘"+sUploadURL);
     	var oAjax = jindo.$Ajax(sUploadURL, {
 			type: 'xhr',
 			method : "post",
@@ -364,7 +365,7 @@
 						alert("이미지 파일(jpg,gif,png,bmp)만 업로드 하실 수 있습니다. ("+sFileName+")");
 					}else{
 						//성공 시에  responseText를 가지고 array로 만드는 부분.
-						alert(res._response.responseText);
+						alert("아작스 성공"+res._response.responseText);
 						makeArrayFromString(res._response.responseText);
 					}
 				}
@@ -384,7 +385,7 @@
     		aSubTemp = [],
     		htTemp = {}
     		aResultleng = 0;
-    	
+    	alert("아작스 makeArrayFromString");
  		try{
  			if(!sResString || sResString.indexOf("sFileURL") < 0){
  	    		return ;
@@ -402,6 +403,7 @@
     	aResult[aResultleng] = htTemp;
     	
     	if(aResult.length == nImageFileCount){
+    		alert("셋포토 또 왜 안오");
     		setPhotoToEditor(aResult); 
     		aResult = null;
     		window.close();
@@ -579,7 +581,7 @@
 		}
 	 * ]
 	 */
- 	function setPhotoToEditor(oFileInfo){
+	function setPhotoToEditor(oFileInfo){
 		if (!!opener && !!opener.nhn && !!opener.nhn.husky && !!opener.nhn.husky.PopUpManager) {
 			//스마트 에디터 플러그인을 통해서 넣는 방법 (oFileInfo는 Array)
 			opener.nhn.husky.PopUpManager.setCallback(window, 'SET_PHOTO', [oFileInfo]);

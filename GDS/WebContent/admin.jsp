@@ -21,17 +21,14 @@ function submitContents(elClickedObj) {
 </script>
 </head>
 <body>
-<form action= "admin.do" >
-
-<textarea name= "ir1" id= "ir1" rows= "10" cols= "100" >변상육 짱짱맨</textarea>
+<textarea name= "ir1" id= "ir1" rows= "10" cols= "100" >변상육 슈퍼 짱짱맨 짱짱맨
+</textarea>
 <p>
      <input type= "button" onclick= "pasteHTML();" value="본문에 내용 넣기" />
      <input type= "button" onclick= "showHTML();" value="본문 내용 가져오기" />
      <input type= "button" onclick= "submitContents(this);" value="서버로 내용 전송" />
      <input type= "button" onclick= "setDefaultFont();" value="기본 폰트 지정하기 (궁서_24)" />
 </p>
-</form>
-<span style="color: rgb(0, 117, 200);">변상육 짱짱맨</span><span style="color: rgb(0, 117, 200);">?</span>
 </body>
 <script type= "text/javascript" >
 var oEditors = [];

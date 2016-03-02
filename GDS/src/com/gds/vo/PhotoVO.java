@@ -2,12 +2,12 @@ package com.gds.vo;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class PhotoVo {
-	//photo_uploader.htmlÆäÀÌÁöÀÇ formÅÂ±×³»¿¡ Á¸ÀçÇÏ´Â file ÅÂ±×ÀÇ name¸í°ú ÀÏÄ¡½ÃÄÑÁÜ
+public class PhotoVO {
+	//photo_uploader.htmlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ formï¿½Â±×³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ file ï¿½Â±ï¿½ï¿½ï¿½ nameï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private MultipartFile Filedata;
     //callback URL
     private String callback;
-    //Äİ¹éÇÔ¼ö??
+    //ï¿½İ¹ï¿½ï¿½Ô¼ï¿½??
     private String callback_func;
  
     public MultipartFile getFiledata() {

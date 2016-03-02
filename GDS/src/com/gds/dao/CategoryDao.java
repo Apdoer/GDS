@@ -6,7 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.gds.model.Category;
+import com.gds.vo.CategoryVO;
 
 @Repository
 public class CategoryDao {
@@ -29,7 +29,7 @@ public class CategoryDao {
 	 * @param category
 	 * @return
 	 */
-	public int insert(Category category) {
+	public int insert(CategoryVO category) {
 		return sqlSessionTemplate.insert("Category.insert", category);
 	}
 	
@@ -40,7 +40,7 @@ public class CategoryDao {
 	 * @param gubun
 	 * @return
 	 */
-	public List<Category> select() {
+	public List<CategoryVO> select() {
 		return sqlSessionTemplate.selectList("Category.select");
 	}
 	
@@ -50,7 +50,7 @@ public class CategoryDao {
 	 * @param category
 	 * @return
 	 */
-	public int update(Category category) {
+	public int update(CategoryVO category) {
 		return sqlSessionTemplate.update("Category.update", category);
 	}
 

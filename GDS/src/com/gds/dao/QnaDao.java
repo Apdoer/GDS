@@ -6,7 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.gds.model.Qna;
+import com.gds.vo.QnaVO;
 
 @Repository
 public class QnaDao {
@@ -29,7 +29,7 @@ public class QnaDao {
 	 * @param qna
 	 * @return
 	 */
-	public int insert(Qna qna) {
+	public int insert(QnaVO qna) {
 		return sqlSessionTemplate.insert("Qna.insert", qna);
 	}
 	
@@ -40,7 +40,7 @@ public class QnaDao {
 	 * @param gubun
 	 * @return
 	 */
-	public List<Qna> select() {
+	public List<QnaVO> select() {
 		return sqlSessionTemplate.selectList("Qna.select");
 	}
 	
@@ -50,7 +50,7 @@ public class QnaDao {
 	 * @param qna
 	 * @return
 	 */
-	public int updateAnswer(Qna qna) {
+	public int updateAnswer(QnaVO qna) {
 		return sqlSessionTemplate.update("Qna.updateAnswer", qna);
 	}
 

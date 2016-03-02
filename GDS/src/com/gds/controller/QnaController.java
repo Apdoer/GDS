@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gds.model.Qna;
 import com.gds.service.QnaService;
+import com.gds.vo.QnaVO;
 
 @Controller
 @RequestMapping("/qna")
@@ -28,13 +28,13 @@ public class QnaController {
 	}
 	
 	@RequestMapping("/write.do")
-	public String writeQna(Qna qna) {
+	public String writeQna(QnaVO qna) {
 		qnaService.writeQna(qna);
 		return "httpTest";
 	}
 	
 	@RequestMapping("/answer.do")
-	public String answerQna(Qna qna) {
+	public String answerQna(QnaVO qna) {
 		qnaService.answerQna(qna);
 		return "httpTest";
 	}

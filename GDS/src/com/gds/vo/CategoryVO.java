@@ -1,13 +1,13 @@
-package com.gds.model;
+package com.gds.vo;
 
-public class Category {
+public class CategoryVO {
 	
 	private int id;
 	private String name;
 	
-	public Category() {}
+	public CategoryVO() {}
 	
-	public Category(String name) {
+	public CategoryVO(String name) {
 		this.name = name;
 	}
 	

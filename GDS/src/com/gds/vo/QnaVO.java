@@ -1,8 +1,8 @@
-package com.gds.model;
+package com.gds.vo;
 
 import java.util.Date;
 
-public class Qna {
+public class QnaVO {
 
 	private int id;
 	private String delyn;
@@ -16,9 +16,9 @@ public class Qna {
 	private String answer;
 	private int cnt;
 	
-	public Qna() {}
+	public QnaVO() {}
 	
-	public Qna(int id, String delyn, String openyn, Date regdate, Date regdateAnswer, String name, String password,
+	public QnaVO(int id, String delyn, String openyn, Date regdate, Date regdateAnswer, String name, String password,
 			String title, String question, String answer, int cnt) {
 		this.id = id;
 		this.delyn = delyn;

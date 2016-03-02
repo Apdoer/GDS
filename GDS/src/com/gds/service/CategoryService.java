@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gds.dao.CategoryDao;
-import com.gds.model.Category;
+import com.gds.vo.CategoryVO;
 
 @Service
 public class CategoryService {
@@ -20,7 +20,7 @@ public class CategoryService {
 	 * @param category
 	 * @return
 	 */
-	public boolean createCategory(Category category) {
+	public boolean createCategory(CategoryVO category) {
 		int id = categoryDao.getMaxId() + 1;
 		category.setId(id);
 		return categoryDao.insert(category) == 1;		
@@ -32,7 +32,7 @@ public class CategoryService {
 	 * @param gubun
 	 * @return
 	 */
-	public List<Category> listCategory() {
+	public List<CategoryVO> listCategory() {
 		return categoryDao.select();
 	}
 	
@@ -42,7 +42,7 @@ public class CategoryService {
 	 * @param category
 	 * @return
 	 */
-	public int modifyCategory(Category category) {
+	public int modifyCategory(CategoryVO category) {
 		return categoryDao.update(category);
 	}
 

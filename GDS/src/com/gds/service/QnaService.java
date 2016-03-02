@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gds.dao.QnaDao;
-import com.gds.model.Qna;
+import com.gds.vo.QnaVO;
 
 @Service
 public class QnaService {
@@ -18,7 +18,7 @@ public class QnaService {
 	 * @param qna
 	 * @return
 	 */
-	public boolean writeQna(Qna qna) {
+	public boolean writeQna(QnaVO qna) {
 		int id = qnaDao.getMaxId() + 1;
 		qna.setId(id);
 		return qnaDao.insert(qna) == 1;
@@ -30,7 +30,7 @@ public class QnaService {
 	 * @param qna
 	 * @return
 	 */
-	public boolean answerQna(Qna qna) {
+	public boolean answerQna(QnaVO qna) {
 		return qnaDao.updateAnswer(qna) == 1;
 	}
 	

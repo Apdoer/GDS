@@ -31,17 +31,24 @@ function ajaxSelect() {
 <body>
 
 	<div>
-		<a href="${cp}/category/create.do?categoryGubun=F&categoryName=testCategory" style="font-size: 10em">create</a>
-		<a href="${cp}/category/modify.do?id=4&categoryName=changedCategory" style="font-size: 10em">update</a>
-		<a href="${cp}/category/delete.do?id=5" style="font-size: 10em">delete</a>
+		<a href="${cp}/category/create.do?categoryGubun=F&categoryName=testCategory" style="font-size: 5em">create</a>
+		<a href="${cp}/category/modify.do?id=4&categoryName=changedCategory" style="font-size: 5em">update</a>
+		<a href="${cp}/category/delete.do?id=5" style="font-size: 5em">delete</a>
 	</div>
 	
 	<div>
-		<a href="javascript: ajaxSelect();" style="font-size: 10em">ajaxSelect</a>
+		<a href="javascript: ajaxSelect();" style="font-size: 5em">ajaxSelect</a>
 	</div>
 	
-	<ul id="result">
+	<div>
+		<a href="${cp}/category/select.do" style="font-size: 5em">PagingCategory</a>
+	</div>
 	
+	<p>${categories.size()}</p>
+	<ul id="result">
+		<c:forEach items="${categories}" var="category">
+			<li>${category.id} : ${category.name}</li>
+		</c:forEach>
 	</ul>
 
 </body>

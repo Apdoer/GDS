@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gds.model.Counsel;
 import com.gds.service.CounselService;
+import com.gds.vo.CounselVO;
 
 @Controller
 public class CounselController {
@@ -26,7 +26,7 @@ public class CounselController {
 	}
 	
 	@RequestMapping("/createCounsel.do")
-	public String createCounsel(Counsel counsel, Model model){
+	public String createCounsel(CounselVO counsel, Model model){
 		//Counsel testC = new Counsel(2,"N","20160302",1,"test","01099990000","10","testtest","haha","N");
 		counselService.createCounsel(counsel);
 		model.addAttribute("contentPage", "/index.jsp");

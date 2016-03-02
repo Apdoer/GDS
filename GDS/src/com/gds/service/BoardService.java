@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gds.dao.BoardDao;
-import com.gds.model.Board;
+import com.gds.vo.BoardVO;
 
 @Service
 public class BoardService {
@@ -18,7 +18,7 @@ public class BoardService {
 		this.boardDao = boardDao;
 	}
 	
-	public List<Board> listBoard(String gubun) {
+	public List<BoardVO> listBoard(String gubun) {
 		return null;
 	}
 	

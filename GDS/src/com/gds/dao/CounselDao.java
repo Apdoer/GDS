@@ -4,7 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.gds.model.Counsel;
+import com.gds.vo.CounselVO;
 
 @Repository
 public class CounselDao {
@@ -16,7 +16,7 @@ public class CounselDao {
 		this.sqlSessionTemplate=sqlSessionTemplate;
 	}
 	
-	public void insertCounsel(Counsel counsel) {
+	public void insertCounsel(CounselVO counsel) {
 		sqlSessionTemplate.insert("Counsel.insertCounsel", counsel);	
 	}
 

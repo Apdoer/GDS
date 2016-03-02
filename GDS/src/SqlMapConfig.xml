@@ -12,14 +12,16 @@
 
 	<typeAliases>
 		<!-- <typeAlias type="com.gosomon.vo.User" alias="User"/> -->
-		<typeAlias type="com.gds.model.Category" alias="Category" />
-		<typeAlias type="com.gds.model.Counsel" alias="Counsel" />
+		<typeAlias type="com.gds.vo.CategoryVO" alias="Category" />
+		<typeAlias type="com.gds.vo.CounselVO" alias="Counsel" />
+		<typeAlias type="com.gds.vo.QnaVO" alias="Qna" />
 	</typeAliases>
 
 	<mappers>
 		<!-- <mapper resource="mapper/stock.xml"/> -->
 		<mapper resource="mapper/category.xml" />
 		<mapper resource="mapper/counsel.xml" />
+		<mapper resource="mapper/qna.xml" />
 	</mappers>
 
 </configuration>

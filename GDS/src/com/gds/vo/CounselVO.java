@@ -1,6 +1,6 @@
-package com.gds.model;
+package com.gds.vo;
 
-public class Counsel {
+public class CounselVO {
 	
 	private int id;
 	private String delyn;
@@ -13,11 +13,11 @@ public class Counsel {
 	private String memo;
 	private String doneyn;
 	
-	public Counsel() {
+	public CounselVO() {
 		super();
 	}
 
-	public Counsel(int id, String delyn, String regdate, int categoryId,
+	public CounselVO(int id, String delyn, String regdate, int categoryId,
 			String counseleeName, String counseleeTelno, String possibleTime,
 			String detail, String memo, String doneyn) {
 		super();

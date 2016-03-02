@@ -17,10 +17,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gds.model.Category;
 import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
-import com.gds.vo.PhotoVo;
+import com.gds.vo.CategoryVO;
+import com.gds.vo.PhotoVO;
 
 @Controller
 public class AdminController {
@@ -39,7 +39,7 @@ public class AdminController {
          System .out .println (request .getParameter ("contents" ));
          System .out .println (request .getParameter ("category" ));
          
-         List<Category> cateList;
+         List<CategoryVO> cateList;
          cateList = categoryService.listCategory();
          model.addAttribute("categoryList", cateList);
          return "admin" ;
@@ -55,37 +55,37 @@ public class AdminController {
          
          boardService.insertBlog(title, contents);
          
-         List<Category> cateList;
+         List<CategoryVO> cateList;
          cateList = categoryService.listCategory();
          model.addAttribute("categoryList", cateList);
          return "admin" ;
     }
 	
 	
-	//´ÜÀÏÆÄÀÏ¾÷·Îµå
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½Îµï¿½
 	@RequestMapping("/photoUpload.do")
-	public String photoUpload(HttpServletRequest request, PhotoVo vo){
+	public String photoUpload(HttpServletRequest request, PhotoVO vo){
 	    String callback = vo.getCallback();
 	    String callback_func = vo.getCallback_func();
 	    String file_result = "";
 	    try {
 	        if(vo.getFiledata() != null && vo.getFiledata().getOriginalFilename() != null && !vo.getFiledata().getOriginalFilename().equals("")){
-	            //ÆÄÀÏÀÌ Á¸ÀçÇÏ¸é
+	            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½
 	            String original_name = vo.getFiledata().getOriginalFilename();
 	            String ext = original_name.substring(original_name.lastIndexOf(".")+1);
-	            //ÆÄÀÏ ±âº»°æ·Î
+	            //ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½
 	            String defaultPath = request.getSession().getServletContext().getRealPath("/");
-	            //ÆÄÀÏ ±âº»°æ·Î _ »ó¼¼°æ·Î
+	            //ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½ _ ï¿½ó¼¼°ï¿½ï¿½
 	            String path = defaultPath + "resource" + File.separator + "photo_upload" + File.separator;              
 	            File file = new File(path);
 	            System.out.println("path:"+path);
-	            //µð·ºÅä¸® Á¸ÀçÇÏÁö ¾ÊÀ»°æ¿ì µð·ºÅä¸® »ý¼º
+	            //ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½
 	            if(!file.exists()) {
 	                file.mkdirs();
 	            }
-	            //¼­¹ö¿¡ ¾÷·Îµå ÇÒ ÆÄÀÏ¸í(ÇÑ±Û¹®Á¦·Î ÀÎÇØ ¿øº»ÆÄÀÏÀº ¿Ã¸®Áö ¾Ê´Â°ÍÀÌ ÁÁÀ½)
+	            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½(ï¿½Ñ±Û¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¸ï¿½ï¿½ï¿½ ï¿½Ê´Â°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	            String realname = UUID.randomUUID().toString() + "." + ext;
-	        ///////////////// ¼­¹ö¿¡ ÆÄÀÏ¾²±â ///////////////// 
+	        ///////////////// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½ï¿½ ///////////////// 
 	            vo.getFiledata().transferTo(new File(path+realname));
 	            file_result += "&bNewLine=true&sFileName="+original_name+"&sFileURL=/resource/photo_upload/"+realname;
 	        } else {
@@ -98,24 +98,24 @@ public class AdminController {
 	}
 	
 	
-	//´ÙÁßÆÄÀÏ¾÷·Îµå
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½Îµï¿½
 	@RequestMapping("/multiplePhotoUpload.do")
 	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response){
 	    try {
-	         //ÆÄÀÏÁ¤º¸
+	         //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	         String sFileInfo = "";
-	         //ÆÄÀÏ¸íÀ» ¹Þ´Â´Ù - ÀÏ¹Ý ¿øº»ÆÄÀÏ¸í
+	         //ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ ï¿½Þ´Â´ï¿½ - ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½
 	         String filename = request.getHeader("file-name");
-	         //ÆÄÀÏ È®ÀåÀÚ
+	         //ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½
 	         String filename_ext = filename.substring(filename.lastIndexOf(".")+1);
-	         //È®ÀåÀÚ¸¦¼Ò¹®ÀÚ·Î º¯°æ
+	         //È®ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½Ò¹ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	         filename_ext = filename_ext.toLowerCase();
-	         //ÆÄÀÏ ±âº»°æ·Î
+	         //ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½
 	         String dftFilePath = request.getSession().getServletContext().getRealPath("/");
-	         //ÆÄÀÏ ±âº»°æ·Î _ »ó¼¼°æ·Î
+	         //ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½ _ ï¿½ó¼¼°ï¿½ï¿½
 //	         String filePath = dftFilePath + "resource" + File.separator + "photo_upload" + File.separator;
 	         String filePath = dftFilePath + "upload" + File.separator;
-	         //¼­¹ö¿¡ °æ·Î·Î ÁöÁ¤ÇÒ ºÎºÐ
+	         //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
 	        // String filePath = "C:/Users/kinot_000/git/GDS/GDS/WebContent/se2/img/";
 	         
 	         File file = new File(filePath);
@@ -129,7 +129,7 @@ public class AdminController {
 	         String rlFileNm = filePath + realFileNm;
 	         
 	         System.out.println(rlFileNm);
-	         ///////////////// ¼­¹ö¿¡ ÆÄÀÏ¾²±â ///////////////// 
+	         ///////////////// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½ï¿½ ///////////////// 
 	         InputStream is = request.getInputStream();
 	         OutputStream os=new FileOutputStream(rlFileNm);
 	         int numRead;
@@ -142,10 +142,10 @@ public class AdminController {
 	         }
 	         os.flush();
 	         os.close();
-	         ///////////////// ¼­¹ö¿¡ ÆÄÀÏ¾²±â /////////////////
-	         // Á¤º¸ Ãâ·Â
+	         ///////////////// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½ï¿½ /////////////////
+	         // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	         sFileInfo += "&bNewLine=true";
-	         // img ÅÂ±×ÀÇ title ¼Ó¼ºÀ» ¿øº»ÆÄÀÏ¸íÀ¸·Î Àû¿ë½ÃÄÑÁÖ±â À§ÇÔ
+	         // img ï¿½Â±ï¿½ï¿½ï¿½ title ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½
 	         sFileInfo += "&sFileName="+ filename;;
 	         sFileInfo += "&sFileURL="+"/GDS/upload/"+realFileNm;
 //	         sFileInfo += "&sFileURL="+realFileNm;

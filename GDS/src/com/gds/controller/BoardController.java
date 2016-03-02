@@ -45,7 +45,7 @@ public class BoardController {
 	
 	@RequestMapping("/faq.do")
 	public String moveFaq(Model model) {
-		List<Category> categoryList = categoryService.listCategory(Category.GUBUN_F);
+		List<Category> categoryList = categoryService.listCategory();
 		System.out.println(categoryList);
 		
 		model.addAttribute("categoryList", categoryList);

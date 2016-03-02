@@ -38,16 +38,6 @@ public class CategoryService {
 	}
 	
 	/**
-	 * Select categories with gubun(F|C).
-	 * 
-	 * @param gubun
-	 * @return
-	 */
-	public List<Category> listCategory(String gubun) {
-		return categoryDao.selectCategory(gubun);
-	}
-
-	/**
 	 * Update category with id.
 	 * 
 	 * @param category

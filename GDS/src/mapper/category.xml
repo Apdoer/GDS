@@ -15,26 +15,18 @@
 		INSERT INTO category
 		VALUES (
 			#{id},
-			#{categoryGubun},
-			#{categoryName}
+			#{name}
 		)
 	</insert>
 
 	<select id="select" resultType="Category">
 		SELECT *
 		FROM category
-		ORDER BY #{gubun}
-	</select>
-	
-	<select id="selectByGubun" parameterType="String" resultType="Category">
-		SELECT *
-		FROM category
-		WHERE category_gubun = #{gubun}
 	</select>
 	
 	<update id="update" parameterType="Category">
 		UPDATE category
-		SET category_name = #{categoryName}
+		SET name = #{name}
 		WHERE id = #{id}
 	</update>
 	

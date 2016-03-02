@@ -45,16 +45,6 @@ public class CategoryDao {
 	}
 	
 	/**
-	 * Select categories with gubun(F|C).
-	 * 
-	 * @param gubun
-	 * @return
-	 */
-	public List<Category> selectCategory(String gubun) {
-		return sqlSessionTemplate.selectList("Category.selectByGubun", gubun);
-	}
-
-	/**
 	 * Update category with id.
 	 * 
 	 * @param category

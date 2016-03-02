@@ -5,18 +5,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gds.service.BoardService;
-import com.gds.service.CategoryService;
+import com.gds.model.Qna;
+import com.gds.service.QnaService;
 
 @Controller
 @RequestMapping("/qna")
 public class QnaController {
 	
 	@Autowired
-	private BoardService boardService;
-	
-	@Autowired
-	private CategoryService categoryService;
+	private QnaService qnaService;
 	
 	@RequestMapping("/enter.do")
 	public String moveBoard(Model model) {
@@ -28,6 +25,24 @@ public class QnaController {
 	public String moveForm(Model model) {
 		model.addAttribute("contentPage", "/qna_form.jsp");
 		return "index";
+	}
+	
+	@RequestMapping("/write.do")
+	public String writeQna(Qna qna) {
+		qnaService.writeQna(qna);
+		return "httpTest";
+	}
+	
+	@RequestMapping("/answer.do")
+	public String answerQna(Qna qna) {
+		qnaService.answerQna(qna);
+		return "httpTest";
+	}
+	
+	@RequestMapping("/delete.do")
+	public String deleteCategory(int id) {
+		qnaService.deleteQna(id);
+		return "httpTest";
 	}
 	
 }

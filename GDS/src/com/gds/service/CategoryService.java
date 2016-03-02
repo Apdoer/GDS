@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.gds.dao.CategoryDao;
 import com.gds.vo.CategoryVO;
+import com.gds.vo.SearchVO;
 
 @Service
 public class CategoryService {
@@ -34,6 +35,15 @@ public class CategoryService {
 	 */
 	public List<CategoryVO> listCategory() {
 		return categoryDao.select();
+	}
+	
+	public SearchVO pagingCategory(SearchVO searchVO) {
+		searchVO.setMaxPageSize(3);
+		searchVO.setMaxLinkCount(5);
+		
+		searchVO.initPagination(categoryDao.getTotalCount());
+		searchVO.setResult(categoryDao.paging(searchVO));
+		return searchVO;
 	}
 	
 	/**

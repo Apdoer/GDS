@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gds.vo.CategoryVO;
+import com.gds.vo.SearchVO;
 
 @Repository
 public class CategoryDao {
@@ -21,6 +22,15 @@ public class CategoryDao {
 	 */
 	public int getMaxId() {
 		return sqlSessionTemplate.selectOne("Category.getMaxId");
+	}
+	
+	/**
+	 * Get total row count.
+	 * 
+	 * @return
+	 */
+	public int getTotalCount() {
+		return sqlSessionTemplate.selectOne("Category.getTotalCount");
 	}
 	
 	/**
@@ -42,6 +52,16 @@ public class CategoryDao {
 	 */
 	public List<CategoryVO> select() {
 		return sqlSessionTemplate.selectList("Category.select");
+	}
+	
+	/**
+	 * Select paged categories.
+	 * 
+	 * @param searchVO
+	 * @return
+	 */
+	public List<?> paging(SearchVO searchVO) {
+		return sqlSessionTemplate.selectList("Category.paging", searchVO);
 	}
 	
 	/**

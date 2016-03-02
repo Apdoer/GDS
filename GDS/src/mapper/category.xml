@@ -10,6 +10,11 @@
 		SELECT IFNULL(MAX(id), 0)
 		FROM category
 	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*)
+		FROM category
+	</select>
 
 	<insert id="insert">
 		INSERT INTO category
@@ -22,6 +27,13 @@
 	<select id="select" resultType="Category">
 		SELECT *
 		FROM category
+	</select>
+	
+	<select id="paging" parameterType="SearchVO" resultType="Category">
+		SELECT *
+		FROM category
+		LIMIT #{maxPageSize}
+		OFFSET #{startRowIndex}
 	</select>
 	
 	<update id="update" parameterType="Category">

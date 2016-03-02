@@ -15,6 +15,7 @@
 		<typeAlias type="com.gds.vo.CategoryVO" alias="Category" />
 		<typeAlias type="com.gds.vo.CounselVO" alias="Counsel" />
 		<typeAlias type="com.gds.vo.QnaVO" alias="Qna" />
+		<typeAlias type="com.gds.vo.SearchVO" alias="SearchVO" />
 	</typeAliases>
 
 	<mappers>

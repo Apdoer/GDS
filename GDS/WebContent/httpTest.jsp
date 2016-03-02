@@ -41,15 +41,28 @@ function ajaxSelect() {
 	</div>
 	
 	<div>
-		<a href="${cp}/category/select.do" style="font-size: 5em">PagingCategory</a>
+		<a href="${cp}/category/select.do?currentPage=1" style="font-size: 5em">PagingCategory</a>
 	</div>
-	
-	<p>${categories.size()}</p>
-	<ul id="result">
-		<c:forEach items="${categories}" var="category">
-			<li>${category.id} : ${category.name}</li>
+
+	<c:if test="${searchVO.result == null || searchVO.result.size() == 0}">
+		<p>No result</p>
+	</c:if>
+	<c:if test="${searchVO.result != null}">
+		<p>${categories.size()}</p>
+		<ul id="result">
+			<c:forEach items="${searchVO.result}" var="category">
+				<li>${category.id} : ${category.name}</li>
+			</c:forEach>
+		</ul>
+		<c:forEach begin="${searchVO.startPageIndex}" end="${searchVO.endPageIndex}" var="idx">
+			<c:if test="${searchVO.currentPage == idx}">
+				<a style="font-style: bold; font-size: 2em" href="${cp}/category.select.do?currentPage=${idx}">${idx}</a>
+			</c:if>
+			<c:if test="${searchVO.currentPage != idx}">
+				<a href="${cp}/category/select.do?currentPage=${idx}">${idx}</a>
+			</c:if>
 		</c:forEach>
-	</ul>
+	</c:if>
 
 </body>
 </html>

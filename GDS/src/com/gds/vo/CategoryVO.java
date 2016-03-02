@@ -1,6 +1,6 @@
 package com.gds.vo;
 
-public class CategoryVO {
+public class CategoryVO extends SearchVO{
 	
 	private int id;
 	private String name;

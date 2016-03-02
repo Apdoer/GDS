@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.gds.service.CategoryService;
 import com.gds.vo.CategoryVO;
+import com.gds.vo.SearchVO;
 
 @Controller
 @RequestMapping("/category")
@@ -28,15 +29,14 @@ public class CategoryController {
 	}
 	
 	@RequestMapping("/select.do")
-	public ModelAndView selectCategory() {
-		List<CategoryVO> categoryList = categoryService.listCategory();
-		
-		LOGGER.info(categoryList.size());
-		LOGGER.info(categoryList);
+	public ModelAndView selectCategory(SearchVO searchVO) {
+		LOGGER.debug("incoming searchVO: " + searchVO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("categories", categoryList);
+		mav.addObject("searchVO", categoryService.pagingCategory(searchVO));
 		mav.setViewName("httpTest");
+		
+		LOGGER.debug("outgoing searchVO: " + searchVO);
 		return mav;
 	}
 	

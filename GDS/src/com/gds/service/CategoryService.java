@@ -21,20 +21,19 @@ public class CategoryService {
 	 * @return
 	 */
 	public boolean createCategory(Category category) {
-		int id = categoryDao.selectMaxId() + 1;
+		int id = categoryDao.getMaxId() + 1;
 		category.setId(id);
-		return categoryDao.insertCategory(category) == 1;		
+		return categoryDao.insert(category) == 1;		
 	}
 	
 	/**
 	 * Select all categories.
-	 * Categories will be ordered by gubun.
 	 * 
 	 * @param gubun
 	 * @return
 	 */
 	public List<Category> listCategory() {
-		return categoryDao.selectCategory();
+		return categoryDao.select();
 	}
 	
 	/**
@@ -44,7 +43,7 @@ public class CategoryService {
 	 * @return
 	 */
 	public int modifyCategory(Category category) {
-		return categoryDao.updateCategory(category);
+		return categoryDao.update(category);
 	}
 
 	/**
@@ -54,7 +53,7 @@ public class CategoryService {
 	 * @return
 	 */
 	public int deleteCategory(int id) {
-		return categoryDao.deleteCategory(id);
+		return categoryDao.delete(id);
 	}
 
 }

@@ -7,7 +7,7 @@
 <mapper namespace="Category">
 
 	<select id="getMaxId" resultType="int">
-		SELECT MAX(id)
+		SELECT IFNULL(MAX(id), 0)
 		FROM category
 	</select>
 

@@ -19,7 +19,7 @@ public class CategoryDao {
 	 * 
 	 * @return
 	 */
-	public int selectMaxId() {
+	public int getMaxId() {
 		return sqlSessionTemplate.selectOne("Category.getMaxId");
 	}
 	
@@ -29,7 +29,7 @@ public class CategoryDao {
 	 * @param category
 	 * @return
 	 */
-	public int insertCategory(Category category) {
+	public int insert(Category category) {
 		return sqlSessionTemplate.insert("Category.insert", category);
 	}
 	
@@ -40,7 +40,7 @@ public class CategoryDao {
 	 * @param gubun
 	 * @return
 	 */
-	public List<Category> selectCategory() {
+	public List<Category> select() {
 		return sqlSessionTemplate.selectList("Category.select");
 	}
 	
@@ -50,7 +50,7 @@ public class CategoryDao {
 	 * @param category
 	 * @return
 	 */
-	public int updateCategory(Category category) {
+	public int update(Category category) {
 		return sqlSessionTemplate.update("Category.update", category);
 	}
 
@@ -60,7 +60,7 @@ public class CategoryDao {
 	 * @param id
 	 * @return
 	 */
-	public int deleteCategory(int id) {
+	public int delete(int id) {
 		return sqlSessionTemplate.delete("Category.delete", id);
 	}
 

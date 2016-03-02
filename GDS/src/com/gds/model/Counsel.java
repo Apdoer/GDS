@@ -2,10 +2,10 @@ package com.gds.model;
 
 public class Counsel {
 	
-	private String id;
+	private int id;
 	private String delyn;
 	private String regdate;
-	private String categoryId;
+	private int categoryId;
 	private String counseleeName;
 	private String counseleeTelno;
 	private String possibleTime;
@@ -17,7 +17,7 @@ public class Counsel {
 		super();
 	}
 
-	public Counsel(String id, String delyn, String regdate, String categoryId,
+	public Counsel(int id, String delyn, String regdate, int categoryId,
 			String counseleeName, String counseleeTelno, String possibleTime,
 			String detail, String memo, String doneyn) {
 		super();
@@ -35,11 +35,11 @@ public class Counsel {
 
 
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -59,11 +59,11 @@ public class Counsel {
 		this.regdate = regdate;
 	}
 
-	public String getCategoryId() {
+	public int getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(String categoryId) {
+	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
 

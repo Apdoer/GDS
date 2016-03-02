@@ -14,6 +14,12 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+<style type="text/css">
+body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif; color:#555; }
+
+
+</style>
+
 <script type= "text/javascript" >
 function submitContents(elClickedObj) {
     // 에디터의 내용이 textarea에 적용된다.
@@ -32,40 +38,38 @@ function submitContents(elClickedObj) {
 </script>
 </head>
 <body>
-
-<form action="admin.do">
-
-<!--카테고리 시작 -->
-<div class="container" style="width: 150px; float:left; padding:0 10 0 0;">
-	<select id="category" class="form-control">
-		<option>카테고리</option>
-		<form:form name="form" commandName="Task"
-			action="/getCategoryTaskList">
-			<c:forEach items="${categoryList}" var="category">
-				<option>${category.categoryName}</option>
-			</c:forEach>
-		</form:form>
-	</select>
+<div id="admin">
+	<form action="admin.do">
+	<!--카테고리 시작 -->
+	<div class="container" style="width: 150px; float:left; padding:0 10 0 0;">
+		<select id="category" class="form-control">
+			<option>카테고리</option>
+			<form:form name="form" commandName="Task"
+				action="/getCategoryTaskList">
+				<c:forEach items="${categoryList}" var="category">
+					<option>${category.name}</option>
+				</c:forEach>
+			</form:form>
+		</select>
+	</div>
+	<!--카테고리 끝 -->
+	
+	<!--제목 시작 -->
+	<div class="input-group" style="float:left; width: 680px;">
+	  <span class="input-group-addon" id="basic-addon1">제목</span>
+	  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1">
+	</div>
+	<!--제목 끝-->
+	<br> </br>
+	<textarea name= "ir1" id= "ir1" rows= "20" cols= "115" >내용을 입력해 주세요
+	</textarea>
+	<br> </br>
+	<div class="btn-group" role="group" aria-label="..." >
+	  <button type="button" class="btn btn-default" onclick="submitContents(this)" style="text-align: center;">등록</button>
+	  <button type="button" class="btn btn-default" style="text-align: center;">취소</button>
+	</div>
+	</form>
 </div>
-<!--카테고리 끝 -->
-
-<!--제목 시작 -->
-<div class="input-group" style="float:left; width: 680px;">
-  <span class="input-group-addon" id="basic-addon1">제목</span>
-  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1">
-</div>
-<!--제목 끝-->
-<br/>
-
-
-<textarea name= "ir1" id= "ir1" rows= "20" cols= "115" >내용을 입력해 주세요
-</textarea>
-<br> </br>
-<div class="btn-group" role="group" aria-label="..." >
-  <button type="button" class="btn btn-default" onclick="submitContents(this)" style="text-align: center;">등록</button>
-  <button type="button" class="btn btn-default" style="text-align: center;">취소</button>
-</div>
-</form>
 <!-- <p>
      <input type= "button" onclick= "pasteHTML();" value="본문에 내용 넣기" />
      <input type= "button" onclick= "showHTML();" value="본문 내용 가져오기" />

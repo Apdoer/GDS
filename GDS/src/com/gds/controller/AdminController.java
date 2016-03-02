@@ -48,12 +48,10 @@ public class AdminController {
 	@RequestMapping ("/insertBlog.do" )
     public String insertBlog(HttpServletRequest request, Model model){
 
-		 System .out .println (request .getParameter ("title" ));
-         System .out .println (request .getParameter ("content" ));
-         System .out .println (request .getParameter ("category" ));
-         
          String title = request .getParameter ("title" );
          String contents = request .getParameter ("content" );
+         String category = request .getParameter ("category" );
+         
          
          boardService.insertBlog(title, contents);
          
@@ -104,7 +102,6 @@ public class AdminController {
 	@RequestMapping("/multiplePhotoUpload.do")
 	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response){
 	    try {
-	    	 System.out.println("여기는 들어오나");
 	         //파일정보
 	         String sFileInfo = "";
 	         //파일명을 받는다 - 일반 원본파일명
@@ -116,9 +113,10 @@ public class AdminController {
 	         //파일 기본경로
 	         String dftFilePath = request.getSession().getServletContext().getRealPath("/");
 	         //파일 기본경로 _ 상세경로
-	         //String filePath = dftFilePath + "resource" + File.separator + "photo_upload" + File.separator;
+//	         String filePath = dftFilePath + "resource" + File.separator + "photo_upload" + File.separator;
+	         String filePath = dftFilePath + "upload" + File.separator;
 	         //서버에 경로로 지정할 부분
-	         String filePath = "C:/Users/kinotion/git/GDS/GDS/WebContent/se2/img/";
+	        // String filePath = "C:/Users/kinot_000/git/GDS/GDS/WebContent/se2/img/";
 	         
 	         File file = new File(filePath);
 	         if(!file.exists()) {
@@ -149,7 +147,7 @@ public class AdminController {
 	         sFileInfo += "&bNewLine=true";
 	         // img 태그의 title 속성을 원본파일명으로 적용시켜주기 위함
 	         sFileInfo += "&sFileName="+ filename;;
-	         sFileInfo += "&sFileURL="+"img/"+realFileNm;
+	         sFileInfo += "&sFileURL="+"/GDS/upload/"+realFileNm;
 //	         sFileInfo += "&sFileURL="+realFileNm;
 	         PrintWriter print = response.getWriter();
 	         System.out.println(sFileInfo);

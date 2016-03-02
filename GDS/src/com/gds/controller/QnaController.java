@@ -9,8 +9,8 @@ import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
 
 @Controller
-@RequestMapping("/board")
-public class BoardController {
+@RequestMapping("/qna")
+public class QnaController {
 	
 	@Autowired
 	private BoardService boardService;
@@ -20,7 +20,13 @@ public class BoardController {
 	
 	@RequestMapping("/enter.do")
 	public String moveBoard(Model model) {
-		model.addAttribute("contentPage", "/board.jsp");
+		model.addAttribute("contentPage", "/qna.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/form.do")
+	public String moveForm(Model model) {
+		model.addAttribute("contentPage", "/qna_form.jsp");
 		return "index";
 	}
 	

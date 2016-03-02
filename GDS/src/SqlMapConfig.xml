@@ -12,6 +12,7 @@
 
 	<typeAliases>
 		<!-- <typeAlias type="com.gosomon.vo.User" alias="User"/> -->
+		<typeAlias type="com.gds.vo.BoardVO" alias="Board" />
 		<typeAlias type="com.gds.vo.CategoryVO" alias="Category" />
 		<typeAlias type="com.gds.vo.CounselVO" alias="Counsel" />
 		<typeAlias type="com.gds.vo.QnaVO" alias="Qna" />
@@ -20,6 +21,7 @@
 
 	<mappers>
 		<!-- <mapper resource="mapper/stock.xml"/> -->
+		<mapper resource="mapper/board.xml" />
 		<mapper resource="mapper/category.xml" />
 		<mapper resource="mapper/counsel.xml" />
 		<mapper resource="mapper/qna.xml" />

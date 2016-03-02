@@ -12,6 +12,9 @@ import com.gds.vo.SearchVO;
 @Service
 public class CategoryService {
 	
+	private static final int MAX_PAGE_SIZE = 3;
+	private static final int MAX_LINK_COUNT = 5;
+	
 	@Autowired
 	private CategoryDao categoryDao;
 	
@@ -37,9 +40,15 @@ public class CategoryService {
 		return categoryDao.select();
 	}
 	
+	/**
+	 * Select paged categories.
+	 * 
+	 * @param searchVO
+	 * @return
+	 */
 	public SearchVO pagingCategory(SearchVO searchVO) {
-		searchVO.setMaxPageSize(3);
-		searchVO.setMaxLinkCount(5);
+		searchVO.setMaxPageSize(MAX_PAGE_SIZE);
+		searchVO.setMaxLinkCount(MAX_LINK_COUNT);
 		
 		searchVO.initPagination(categoryDao.getTotalCount());
 		searchVO.setResult(categoryDao.paging(searchVO));

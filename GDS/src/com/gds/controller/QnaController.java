@@ -16,13 +16,13 @@ public class QnaController {
 	private QnaService qnaService;
 	
 	@RequestMapping("/enter.do")
-	public String moveBoard(Model model) {
+	public String moveQna(Model model) {
 		model.addAttribute("contentPage", "/qna.jsp");
 		return "index";
 	}
 	
 	@RequestMapping("/form.do")
-	public String moveForm(Model model) {
+	public String moveQnaForm(Model model) {
 		model.addAttribute("contentPage", "/qna_form.jsp");
 		return "index";
 	}
@@ -40,7 +40,7 @@ public class QnaController {
 	}
 	
 	@RequestMapping("/delete.do")
-	public String deleteCategory(int id) {
+	public String deleteQna(int id) {
 		qnaService.deleteQna(id);
 		return "httpTest";
 	}

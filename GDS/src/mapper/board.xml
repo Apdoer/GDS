@@ -6,16 +6,55 @@
 
 <mapper namespace="Board">
 
-	<insert id="insertBoard">
-	
-	</insert>
-	
-	<insert id="insertBlog" parameterType="hashMap">
-		INSERT INTO notice (title),(content) VALUES(#{title}, #{content});
-	</insert>
-
-	<select id="selectUserById" resultType="User" parameterType="String">
-		select * from user where id=#{id}
+	<select id="getMaxId" resultType="int">
+		SELECT IFNULL(MAX(id), 0)
+		FROM board
 	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		WHERE delyn = 'n'
+	</select>
+
+	<insert id="insert" parameterType="Board">
+		INSERT INTO board(
+			id,
+		    type,
+		    regdate,
+		    title,
+		    content
+		)
+		VALUES(
+			#{id},
+		    #{type},
+		    now(),
+		    #{title},
+		    #{content}
+		);
+	</insert>
+	
+	<select id="paging" parameterType="SearchVO" resultType="Board">
+		SELECT *
+		FROM board
+		WHERE delyn = 'n'
+		ORDER BY regdate DESC
+		LIMIT #{maxPageSize}
+		OFFSET #{startRowIndex}
+	</select>
+	
+	<update id="update" parameterType="Board">
+		UPDATE board
+		SET type = #{type},
+			title = #{title},
+			content = #{content}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete" parameterType="int">
+		UPDATE board
+		SET delyn = 'y'
+		WHERE id = #{id}
+	</update>
 
 </mapper>

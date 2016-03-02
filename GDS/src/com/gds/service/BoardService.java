@@ -1,29 +1,66 @@
 package com.gds.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gds.dao.BoardDao;
 import com.gds.vo.BoardVO;
+import com.gds.vo.SearchVO;
 
 @Service
 public class BoardService {
 
+	private static final int MAX_PAGE_SIZE = 3;
+	private static final int MAX_LINK_COUNT = 5;
+	
+	@Autowired
 	private BoardDao boardDao;
 
-	@Autowired
-	public void setBoardDao(BoardDao boardDao) {
-		this.boardDao = boardDao;
+	/**
+	 * Write board.
+	 * 
+	 * @param board
+	 * @return
+	 */
+	public boolean writeBoard(BoardVO board) {
+		int id = boardDao.getMaxId() + 1;
+		board.setId(id);
+		return boardDao.insert(board) == 1;
 	}
 	
-	public List<BoardVO> listBoard(String gubun) {
-		return null;
+	/**
+	 * Select paged boards.
+	 * 
+	 * @param searchVO
+	 * @return
+	 */
+	public SearchVO pagingBoard(SearchVO searchVO) {
+		searchVO.setMaxPageSize(MAX_PAGE_SIZE);
+		searchVO.setMaxLinkCount(MAX_LINK_COUNT);
+		
+		searchVO.initPagination(boardDao.getTotalCount());
+		searchVO.setResult(boardDao.paging(searchVO));
+		return searchVO;
 	}
-	
-	public void insertBlog(String title, String content) {
-		boardDao.insertBlog(title, content);
+
+	/**
+	 * Update board with id.
+	 * 
+	 * @param board
+	 * @return
+	 */
+	public boolean modifyBoard(BoardVO board) {
+		return boardDao.update(board) == 1;
 	}
-	
+
+	/**
+	 * Delete board with id.
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public boolean deleteBoard(int id) {
+		return boardDao.delete(id) == 1;
+	}
+
 }

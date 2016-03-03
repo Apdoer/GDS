@@ -28,8 +28,11 @@ public class SearchVO {
 		startRowIndex = (currentPage - 1) * maxPageSize;
 		endRowIndex = startRowIndex + maxPageSize;
 		
-		startPageIndex = Math.max(currentPage - maxLinkCount / 2, 1);
-		endPageIndex = Math.min(currentPage + maxLinkCount / 2, lastPageIndex);
+		startPageIndex = Math.max(((currentPage - 1) / maxLinkCount) * maxLinkCount + 1, 1);
+		endPageIndex = Math.min(startPageIndex + maxLinkCount - 1, lastPageIndex);
+		
+//		startPageIndex = Math.max(currentPage - maxLinkCount / 2, 1);
+//		endPageIndex = Math.min(currentPage + maxLinkCount / 2, lastPageIndex);
 	}
 	
 	public int getCurrentPage() {
@@ -46,6 +49,10 @@ public class SearchVO {
 
 	public void setResult(List<?> result) {
 		this.result = result;
+	}
+	
+	public int getLastPageIndex() {
+		return lastPageIndex;
 	}
 
 	public int getStartPageIndex() {

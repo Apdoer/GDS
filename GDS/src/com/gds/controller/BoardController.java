@@ -1,28 +1,59 @@
 package com.gds.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.gds.service.BoardService;
+import com.gds.vo.BoardVO;
+import com.gds.vo.SearchVO;
 
 @Controller
 @RequestMapping("/board")
 public class BoardController {
-
-	@RequestMapping("/notice.do")
-	public String moveNotice(Model model){
-		model.addAttribute("contentPage", "/board_notice.jsp");
+	
+	@Autowired
+	private BoardService boardService;
+	
+	@RequestMapping("/enter.do")
+	public String moveBoard(Model model) {
+		model.addAttribute("searchVO", boardService.pagingBoard(new SearchVO()));
+		model.addAttribute("contentPage", "/board.jsp");
 		return "index";
 	}
 	
-	@RequestMapping("/event.do")
-	public String moveEvent(Model model){
-		model.addAttribute("contentPage", "/board_event.jsp");
+	@RequestMapping("/form.do")
+	public String moveBoardForm(Model model) {
+		model.addAttribute("contentPage", "/board_form.jsp");
 		return "index";
 	}
 	
-	@RequestMapping("/faq.do")
-	public String moveFaq(Model model){
-		model.addAttribute("contentPage", "/board_faq.jsp");
+	@RequestMapping("/write.do")
+	public String writeBoard(BoardVO board) {
+		boardService.writeBoard(board);
+		return "index";
+	}
+	
+	@RequestMapping("/list.do")
+	public ModelAndView listBoard(SearchVO searchVO) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("searchVO", boardService.pagingBoard(searchVO));
+		mav.addObject("contentPage", "/board.jsp");
+		mav.setViewName("index");
+		return mav;
+	}
+	
+	@RequestMapping("/modify.do")
+	public String modifyBoard(BoardVO board) {
+		boardService.modifyBoard(board);
+		return "index";
+	}
+	
+	@RequestMapping("/delete.do")
+	public String deleteBoard(int id) {
+		boardService.deleteBoard(id);
 		return "index";
 	}
 	

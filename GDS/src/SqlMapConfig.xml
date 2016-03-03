@@ -3,24 +3,28 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
- 
- <configuration>
- 
- 	<!-- 
- 	<typeAliases>
- 		<typeAlias type="com.gosomon.vo.User" alias="User"/>
- 		<typeAlias type="com.gosomon.vo.Stock" alias="Stock"/>
- 	</typeAliases>
- 	 -->
- 	
- 	<!-- 
- 	<mappers>
- 		<mapper resource="mapper/user.xml"/>
- 		<mapper resource="mapper/stock.xml"/>
- 	</mappers>
- 	 -->
- 	
- </configuration>
- 
- 
- 
+
+<configuration>
+
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+
+	<typeAliases>
+		<!-- <typeAlias type="com.gosomon.vo.User" alias="User"/> -->
+		<typeAlias type="com.gds.vo.BoardVO" alias="Board" />
+		<typeAlias type="com.gds.vo.CategoryVO" alias="Category" />
+		<typeAlias type="com.gds.vo.CounselVO" alias="Counsel" />
+		<typeAlias type="com.gds.vo.QnaVO" alias="Qna" />
+		<typeAlias type="com.gds.vo.SearchVO" alias="SearchVO" />
+	</typeAliases>
+
+	<mappers>
+		<!-- <mapper resource="mapper/stock.xml"/> -->
+		<mapper resource="mapper/board.xml" />
+		<mapper resource="mapper/category.xml" />
+		<mapper resource="mapper/counsel.xml" />
+		<mapper resource="mapper/qna.xml" />
+	</mappers>
+
+</configuration>

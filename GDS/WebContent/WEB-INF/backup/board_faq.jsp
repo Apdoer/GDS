@@ -59,13 +59,9 @@ body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif
 					
 					<div>
 						<div class="category">ALL</div>
-						<div class="category">상담</div>
-						<div class="category">치료요법</div>
-						<div class="category">의약품 주문 관련</div>
-						<div class="category">자가진단 테스트</div>
-						<div class="category">1:1 문의</div>
-						<div class="category">결제</div>
-						<div class="category">방문안내</div>
+						<c:forEach var="category" items="${categoryList}">
+							<div class="category">${category.categoryName}</div>
+						</c:forEach>
 					</div>
 					
 				</div>

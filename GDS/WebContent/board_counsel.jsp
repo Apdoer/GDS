@@ -31,7 +31,7 @@
 				<div class="line-horizontal" style="border: 1px solid #eee; border-radius: 1px; margin: 16px 0px;"></div>
 				
 				<div class="intro">
-					<p>미리 상담시간을 예약해주시면 좀 더 편안하게 상담 및 치료가 가능합니다.</p>
+					<p>지금 바로 전화 상담 신청하세요. 상담 가능하신 시간에 맞춰 지디에스 분당중앙센터에서 전화 연락을 드립니다.</p>
 					<p>GDS의 모든 검사 및 상담기록은 <span style="color: red;">절대</span> 공개되거나 남지 않습니다.</p>
 				</div>
 				

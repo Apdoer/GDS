@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.gds.service.BlogService;
 import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
 import com.gds.vo.CategoryVO;
@@ -31,6 +32,8 @@ public class AdminController {
 	@Autowired
 	BoardService boardService;
 	
+	@Autowired
+	BlogService blogService;
 	
 	@RequestMapping ("/admin.do" )
     public String admin(HttpServletRequest request, Model model){
@@ -52,8 +55,7 @@ public class AdminController {
          String contents = request .getParameter ("content" );
          String category = request .getParameter ("category" );
          
-         
-         boardService.insertBlog(title, contents);
+         blogService.insertBlog(title, contents);
          
          List<CategoryVO> cateList;
          cateList = categoryService.listCategory();

@@ -5,10 +5,14 @@ import org.springframework.stereotype.Service;
 
 import com.gds.dao.QnaDao;
 import com.gds.vo.QnaVO;
+import com.gds.vo.SearchVO;
 
 @Service
 public class QnaService {
 
+	private static final int MAX_PAGE_SIZE = 3;
+	private static final int MAX_LINK_COUNT = 5;
+	
 	@Autowired
 	private QnaDao qnaDao;
 	
@@ -22,6 +26,21 @@ public class QnaService {
 		int id = qnaDao.getMaxId() + 1;
 		qna.setId(id);
 		return qnaDao.insert(qna) == 1;
+	}
+	
+	/**
+	 * Select paged qnas.
+	 * 
+	 * @param searchVO
+	 * @return
+	 */
+	public SearchVO pagingQna(SearchVO searchVO) {
+		searchVO.setMaxPageSize(MAX_PAGE_SIZE);
+		searchVO.setMaxLinkCount(MAX_LINK_COUNT);
+		
+		searchVO.initPagination(qnaDao.getTotalCount());
+		searchVO.setResult(qnaDao.paging(searchVO));
+		return searchVO;
 	}
 
 	/**

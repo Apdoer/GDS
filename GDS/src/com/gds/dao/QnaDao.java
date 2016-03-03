@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gds.vo.QnaVO;
+import com.gds.vo.SearchVO;
 
 @Repository
 public class QnaDao {
@@ -24,6 +25,15 @@ public class QnaDao {
 	}
 	
 	/**
+	 * Get total row count.
+	 * 
+	 * @return
+	 */
+	public int getTotalCount() {
+		return sqlSessionTemplate.selectOne("Qna.getTotalCount");
+	}
+
+	/**
 	 * Create qna.
 	 * 
 	 * @param qna
@@ -34,14 +44,23 @@ public class QnaDao {
 	}
 	
 	/**
-	 * Select all categories.
-	 * Categories will be ordered by gubun.
+	 * Select all qnas.
 	 * 
 	 * @param gubun
 	 * @return
 	 */
 	public List<QnaVO> select() {
 		return sqlSessionTemplate.selectList("Qna.select");
+	}
+	
+	/**
+	 * Select paged qnas.
+	 * 
+	 * @param searchVO
+	 * @return
+	 */
+	public List<QnaVO> paging(SearchVO searchVO) {
+		return sqlSessionTemplate.selectList("Qna.paging", searchVO);
 	}
 	
 	/**
@@ -63,5 +82,5 @@ public class QnaDao {
 	public int delete(int id) {
 		return sqlSessionTemplate.update("Qna.delete", id);
 	}
-	
+
 }

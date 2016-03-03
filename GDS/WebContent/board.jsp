@@ -36,7 +36,7 @@
 		
 			<ul class="pull-right">
 				<li><a href="${cp}/board/enter.do" style="font-weight: bold;">공지사항</a></li>
-				<li><a href="#">온라인 문의</a></li>
+				<li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
 				<li><a href="#">상담신청</a></li>
 			</ul>
 		
@@ -69,7 +69,7 @@
 						</c:when>
 						<c:otherwise>
 							<tr>
-								<td colspan="4" style="padding: 32px;">
+								<td colspan="5" style="padding: 32px;">
 									작성된 글이 없습니다.
 								</td>
 							</tr>

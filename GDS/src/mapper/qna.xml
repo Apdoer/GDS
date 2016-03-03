@@ -10,21 +10,31 @@
 		SELECT IFNULL(MAX(id), 0)
 		FROM qna
 	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*)
+		FROM qna
+		WHERE delyn = 'n'
+	</select>
 
 	<insert id="insert">
-		INSERT INTO qna
+		INSERT INTO qna (
+			id,
+			regdate,
+			name,
+			password,
+			title,
+			question,
+			openyn
+		)
 		VALUES (
 			#{id},
-			'n',
 			now(),
 			#{name},
 			#{password},
 			#{title},
 			#{question},
-			null,
-			null,
 			#{openyn},
-			0
 		)
 	</insert>
 
@@ -32,6 +42,15 @@
 		SELECT *
 		FROM qna
 		WHERE delyn = 'y'
+	</select>
+	
+	<select id="paging" parameterType="SearchVO" resultType="Qna">
+		SELECT *
+		FROM qna
+		WHERE delyn = 'n'
+		ORDER BY regdate DESC
+		LIMIT #{maxPageSize}
+		OFFSET #{startRowIndex}
 	</select>
 	
 	<update id="updateAnswer" parameterType="Qna">

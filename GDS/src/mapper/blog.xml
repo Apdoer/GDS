@@ -6,12 +6,30 @@
 
 <mapper namespace="Blog">
 
-	<insert id="insertBlog" parameterType="hashMap">
-		INSERT INTO notice (title),(content) VALUES(#{title}, #{content});
-	</insert>
+    <select id="getMaxId" resultType="int">
+		SELECT IFNULL(MAX(id), 0)
+		FROM blog
+	</select>
 
-	<select id="selectUserById" resultType="User" parameterType="String">
-		select * from user where id=#{id}
+	<insert id="insert" parameterType="hashMap">
+		INSERT INTO blog(
+			id,
+			type,
+		    regdate,
+		    title,
+		    content
+		)
+		VALUES(
+			#{id},
+			'',
+		    now(),
+		    #{title},
+		    #{content}
+		);
+	</insert>
+	
+	<select id="select" resultType="Blog">
+		SELECT * FROM blog WHERE TITLE = #{title}
 	</select>
 
 </mapper>

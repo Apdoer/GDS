@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.gds.service.BlogService;
 import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
+import com.gds.vo.BlogVO;
 import com.gds.vo.CategoryVO;
 import com.gds.vo.PhotoVO;
 
@@ -48,23 +49,8 @@ public class AdminController {
          return "admin" ;
     }
 	
-	@RequestMapping ("/insertBlog.do" )
-    public String insertBlog(HttpServletRequest request, Model model){
-
-         String title = request .getParameter ("title" );
-         String contents = request .getParameter ("content" );
-         String category = request .getParameter ("category" );
-         
-         blogService.insertBlog(title, contents);
-         
-         List<CategoryVO> cateList;
-         cateList = categoryService.listCategory();
-         model.addAttribute("categoryList", cateList);
-         return "admin" ;
-    }
 	
-	
-	//�������Ͼ��ε�
+	//�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�떦�뼲�삕�뜝�떥�벝�삕
 	@RequestMapping("/photoUpload.do")
 	public String photoUpload(HttpServletRequest request, PhotoVO vo){
 	    String callback = vo.getCallback();
@@ -72,22 +58,22 @@ public class AdminController {
 	    String file_result = "";
 	    try {
 	        if(vo.getFiledata() != null && vo.getFiledata().getOriginalFilename() != null && !vo.getFiledata().getOriginalFilename().equals("")){
-	            //������ �����ϸ�
+	            //�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�떦紐뚯삕
 	            String original_name = vo.getFiledata().getOriginalFilename();
 	            String ext = original_name.substring(original_name.lastIndexOf(".")+1);
-	            //���� �⺻���
+	            //�뜝�룞�삕�뜝�룞�삕 �뜝�뜦蹂멨뜝�룞�삕�뜝占�
 	            String defaultPath = request.getSession().getServletContext().getRealPath("/");
-	            //���� �⺻��� _ �󼼰��
+	            //�뜝�룞�삕�뜝�룞�삕 �뜝�뜦蹂멨뜝�룞�삕�뜝占� _ �뜝�룫�꽭怨ㅼ삕�뜝占�
 	            String path = defaultPath + "resource" + File.separator + "photo_upload" + File.separator;              
 	            File file = new File(path);
 	            System.out.println("path:"+path);
-	            //���丮 �������� ������� ���丮 ��
+	            //�뜝�룞�삕�뜝�뜲由� �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�뜲由� �뜝�룞�삕
 	            if(!file.exists()) {
 	                file.mkdirs();
 	            }
-	            //������ ���ε� �� ���ϸ�(�ѱ۹����� ���� �������� �ø��� �ʴ°��� ����)
+	            //�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�떥�벝�삕 �뜝�룞�삕 �뜝�룞�삕�뜝�떦紐뚯삕(�뜝�떬湲�諭꾩삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�떆紐뚯삕�뜝�룞�삕 �뜝�떗�뒗怨ㅼ삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕)
 	            String realname = UUID.randomUUID().toString() + "." + ext;
-	        ///////////////// ������ ���Ͼ��� ///////////////// 
+	        ///////////////// �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�떦�뼲�삕�뜝�룞�삕 ///////////////// 
 	            vo.getFiledata().transferTo(new File(path+realname));
 	            file_result += "&bNewLine=true&sFileName="+original_name+"&sFileURL=/resource/photo_upload/"+realname;
 	        } else {
@@ -97,68 +83,6 @@ public class AdminController {
 	        e.printStackTrace();
 	    }
 	    return "redirect:" + callback + "?callback_func="+callback_func+file_result;
-	}
-	
-	
-	//�������Ͼ��ε�
-	@RequestMapping("/multiplePhotoUpload.do")
-	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response){
-	    try {
-	         //��������
-	         String sFileInfo = "";
-	         //���ϸ��� �޴´� - �Ϲ� �����ϸ�
-	         String filename = request.getHeader("file-name");
-	         //���� Ȯ����
-	         String filename_ext = filename.substring(filename.lastIndexOf(".")+1);
-	         //Ȯ���ڸ��ҹ��ڷ� ����
-	         filename_ext = filename_ext.toLowerCase();
-	         //���� �⺻���
-	         String dftFilePath = request.getSession().getServletContext().getRealPath("/");
-	         //���� �⺻��� _ �󼼰��
-//	         String filePath = dftFilePath + "resource" + File.separator + "photo_upload" + File.separator;
-	         String filePath = dftFilePath + "upload" + File.separator;
-	         //������ ��η� ������ �κ�
-	        // String filePath = "C:/Users/kinot_000/git/GDS/GDS/WebContent/se2/img/";
-	         
-	         File file = new File(filePath);
-	         if(!file.exists()) {
-	            file.mkdirs();
-	         }
-	         String realFileNm = "";
-	         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
-	         String today= formatter.format(new java.util.Date());
-	         realFileNm = today+UUID.randomUUID().toString() + filename.substring(filename.lastIndexOf("."));
-	         String rlFileNm = filePath + realFileNm;
-	         
-	         System.out.println(rlFileNm);
-	         ///////////////// ������ ���Ͼ��� ///////////////// 
-	         InputStream is = request.getInputStream();
-	         OutputStream os=new FileOutputStream(rlFileNm);
-	         int numRead;
-	         byte b[] = new byte[Integer.parseInt(request.getHeader("file-size"))];
-	         while((numRead = is.read(b,0,b.length)) != -1){
-	            os.write(b,0,numRead);
-	         }
-	         if(is != null) {
-	            is.close();
-	         }
-	         os.flush();
-	         os.close();
-	         ///////////////// ������ ���Ͼ��� /////////////////
-	         // ���� ���
-	         sFileInfo += "&bNewLine=true";
-	         // img �±��� title �Ӽ��� �����ϸ����� �������ֱ� ����
-	         sFileInfo += "&sFileName="+ filename;;
-	         sFileInfo += "&sFileURL="+"/GDS/upload/"+realFileNm;
-//	         sFileInfo += "&sFileURL="+realFileNm;
-	         PrintWriter print = response.getWriter();
-	         System.out.println(sFileInfo);
-	         print.print(sFileInfo);
-	         print.flush();
-	         print.close();
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
 	}
 
 

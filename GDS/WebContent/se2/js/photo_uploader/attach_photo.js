@@ -342,7 +342,6 @@
     		tempFile = htImageInfo['img'+j];
     		try{
 	    		if(!!tempFile){
-	    			alert("다음단계");
 	    			//Ajax통신하는 부분. 파일과 업로더할 url을 전달한다.
 	    			callAjaxForHTML5(tempFile,sUploadURL);
 	    			k += 1;
@@ -353,7 +352,6 @@
 	}
     
     function callAjaxForHTML5 (tempFile, sUploadURL){
-    	alert("업로드 유알엘"+sUploadURL);
     	var oAjax = jindo.$Ajax(sUploadURL, {
 			type: 'xhr',
 			method : "post",
@@ -365,7 +363,6 @@
 						alert("이미지 파일(jpg,gif,png,bmp)만 업로드 하실 수 있습니다. ("+sFileName+")");
 					}else{
 						//성공 시에  responseText를 가지고 array로 만드는 부분.
-						alert("아작스 성공"+res._response.responseText);
 						makeArrayFromString(res._response.responseText);
 					}
 				}
@@ -385,7 +382,6 @@
     		aSubTemp = [],
     		htTemp = {}
     		aResultleng = 0;
-    	alert("아작스 makeArrayFromString");
  		try{
  			if(!sResString || sResString.indexOf("sFileURL") < 0){
  	    		return ;
@@ -403,7 +399,6 @@
     	aResult[aResultleng] = htTemp;
     	
     	if(aResult.length == nImageFileCount){
-    		alert("셋포토 또 왜 안오");
     		setPhotoToEditor(aResult); 
     		aResult = null;
     		window.close();

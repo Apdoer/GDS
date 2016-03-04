@@ -17,6 +17,7 @@
 		<typeAlias type="com.gds.vo.CounselVO" alias="Counsel" />
 		<typeAlias type="com.gds.vo.QnaVO" alias="Qna" />
 		<typeAlias type="com.gds.vo.SearchVO" alias="SearchVO" />
+		<typeAlias type="com.gds.vo.BlogVO" alias="Blog" />
 	</typeAliases>
 
 	<mappers>
@@ -25,6 +26,7 @@
 		<mapper resource="mapper/category.xml" />
 		<mapper resource="mapper/counsel.xml" />
 		<mapper resource="mapper/qna.xml" />
+		<mapper resource="mapper/blog.xml" />
 	</mappers>
 
 </configuration>

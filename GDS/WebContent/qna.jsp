@@ -37,7 +37,7 @@
 			<ul class="pull-right">
 				<li><a href="${cp}/board/enter.do">공지사항</a></li>
 				<li><a href="${cp}/qna/enter.do" style="font-weight: bold;">온라인 문의</a></li>
-				<li><a href="#">상담신청</a></li>
+				<%-- <li><a href="${cp}/counsel.do">상담신청</a></li> --%>
 			</ul>
 		
 		</div>

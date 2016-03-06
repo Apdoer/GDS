@@ -58,13 +58,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">소식지 <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                <li><a href="#">좋은정보</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">QNA</a></li>
-                <li><a href="#">이벤트</a></li>
+                <li><a href="${cp}/_/_.do">별 헤는 밤</a></li>
+                <li><a href="${cp}/board/enter.do">공지사항</a></li>
+                <li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
               </ul>
             </li>
-            <li><a href="${pageContext.request.contextPath}/counsel.do">상담신청</a>
+            <li><a href="${cp}/counsel.do">상담신청</a>
             </li>
             <li><a href="#"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span><span class="phone"> 031-711-3546</span></a>
             </li>

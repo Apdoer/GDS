@@ -4,14 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gds.dao.BoardDao;
+import com.gds.util.PagingConstants;
 import com.gds.vo.BoardVO;
 import com.gds.vo.SearchVO;
 
 @Service
 public class BoardService {
 
-	private static final int MAX_PAGE_SIZE = 3;
-	private static final int MAX_LINK_COUNT = 5;
+	private static final int MAX_PAGE_SIZE = PagingConstants.COMMON_MAX_PAGE_SIZE;
+	private static final int MAX_LINK_COUNT = PagingConstants.COMMON_MAX_LINK_COUNT;
 	
 	@Autowired
 	private BoardDao boardDao;

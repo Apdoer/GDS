@@ -4,14 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gds.dao.CounselDao;
+import com.gds.util.PagingConstants;
 import com.gds.vo.CounselVO;
 import com.gds.vo.SearchVO;
 
 @Service
 public class CounselService {
 	
-	private static final int MAX_PAGE_SIZE = 5;
-	private static final int MAX_LINK_COUNT = 5;
+	private static final int MAX_PAGE_SIZE = PagingConstants.COUNSEL_MAX_PAGE_SIZE;
+	private static final int MAX_LINK_COUNT = PagingConstants.COUNSEL_MAX_LINK_COUNT;
 	
 	@Autowired
 	private CounselDao counselDao;

@@ -43,5 +43,10 @@ public class BlogDao {
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectList("Blog.select", blogVO);
 	}
+
+	public List<BlogVO> selectBlogAll() {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectList("Blog.selectBlogAll");
+	}
 	
 }

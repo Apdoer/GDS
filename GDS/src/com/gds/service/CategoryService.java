@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gds.dao.CategoryDao;
-import com.gds.util.PagingConstants;
+import com.gds.util.PagingConstantUtil;
 import com.gds.vo.CategoryVO;
 import com.gds.vo.SearchVO;
 
 @Service
 public class CategoryService {
 	
-	private static final int MAX_PAGE_SIZE = PagingConstants.COMMON_MAX_PAGE_SIZE;
-	private static final int MAX_LINK_COUNT = PagingConstants.COMMON_MAX_LINK_COUNT;
+	private static final int MAX_PAGE_SIZE = PagingConstantUtil.COMMON_MAX_PAGE_SIZE;
+	private static final int MAX_LINK_COUNT = PagingConstantUtil.COMMON_MAX_LINK_COUNT;
 	
 	@Autowired
 	private CategoryDao categoryDao;

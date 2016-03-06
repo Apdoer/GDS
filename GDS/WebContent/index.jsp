@@ -40,10 +40,10 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로그램<span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 <!-- <li class="dropdown-header">개선솔루션</li> -->
-                <li><a href="#">대사검사</a></li>
-                <li><a href="#">고압산소치료</a></li>
-                <li><a href="#">청지각프로그램</a></li>
-                <li><a href="#">시지각프로그램</a></li>
+                <li><a href="${cp}/program_deasa.do">대사검사</a></li>
+                <li><a href="${cp}/program_goap.do">고압산소치료</a></li>
+                <li><a href="${cp}/program_chunggigac.do">청지각프로그램</a></li>
+                <li><a href="${cp}/program_sigigac.do">시지각프로그램</a></li>
               </ul>
             </li>
             <li class="dropdown">

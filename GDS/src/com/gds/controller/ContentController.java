@@ -14,8 +14,26 @@ public class ContentController {
 	}
 	
 	@RequestMapping("/program_deasa.do")
-	public String program(Model model){		
+	public String program_deasa(Model model){		
 		model.addAttribute("contentPage", "/program_deasa.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/program_goap.do")
+	public String program_goap(Model model){		
+		model.addAttribute("contentPage", "/program_goap.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/program_chunggigac.do")
+	public String program_chunggigac(Model model){		
+		model.addAttribute("contentPage", "/program_chunggigac.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/program_sigigac.do")
+	public String program_sigigac(Model model){		
+		model.addAttribute("contentPage", "/program_sigigac.jsp");
 		return "index";
 	}
 	

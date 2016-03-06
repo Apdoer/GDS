@@ -31,130 +31,41 @@
           <div class="blog-post">
 		  	<div id="1">
             <h2 class="blog-post-title">대사검사</h2>
-            
-
-            <blockquote><p>광범위한 정신적, 대사적 장애(자폐를 포함하여 인지발달장애, 다운증후군, ADHD, 우울증 등 정신질환 까지)를 갖고 있는 성인과		</p></blockquote>
-			<p>2016년 3월 14일 지디에스 분당중앙센터장 김학기</p>
+            <blockquote><p>미국 Great Plains Laboratory 연구소는 광범위한 정신적, 대사적 장애(자폐를 포함하여 인지발달장애, 다운증후군, ADHD, 우울증 등 정신질환 까지)를 갖고 있는 성인과
+            	아동을 돕기 위한 생화학 연구소입니다.	건강대사이상과 생의학연구 분야에서 상당한 권위를 가진 윌리엄 쇼 박사가 설립했고, 운영하고 있습니다. Great Plains Laboratory는 발달 장애와 관련된
+           	 질환들을 과학적으로 원인을 분석 대처하고, 테스트 할 수 있는 기반을 마련해 놓고 있습니다. 미국에서는 공식적으로 의사의 도움을 받아 테스트가 진행되고 있으며, 전 세계적으로 몇개의 지사가 있어 많은 국가의 사람들에게
+           	  도움을 주고 있습니다. 특히 유기산 검사는 타 연구소에서 따라올 수 없는 독보적 기술과 특허를 갖고 대사건강의 가장 정확한 지표를 제공합니다.	</p></blockquote>
 			<br>
-			<p class="blog-post-meta">김학기 센터장  약력</p>
-			<p> - 서강대 경제학과 졸업<br>
-				- 지디에스 분당중앙센터 센터장<br>
-    			- 시지각/청지각 전문가 (토마티스 전문 자격 취득, 셀필드 국내 최다 이수자 배출)<br>
-    			- 발달장애/학습장애 컨설턴트 
-			</p>
 			</div>
 			<div id="2">
             <hr>
-            <h2 class="blog-post-title">추천사</h2>
-            <blockquote><p>우리 아이들의 감각적 문제를 정확히 진단하고, 가장 효율적 치료법을 제시할 수 있는 국내 유일의 공간이라 생각합니다. 더욱이 분당중앙센터내에 우리세상발달학교, 우리세상특수대안학교 개교를 통해 감각 해소를 위한 국내 최대 규모의 감각 통합실과 대형 트렘폴린 장을 완비하였습니다. 같은 아픔을 겪는 부모들과 대화하는 곳인 만큼 조금도 망설이지 말고 문을 두드려 주세요. 발달장애/학습장애 아동을 위한 해답, 분명이 있습니다.  
+            <h2 class="blog-post-title">유기산 검사</h2>
+            <blockquote><p>유기산 테스트(Organic Acids Test)는 인체가 소변을 통해 모든대사활동 후 대사물질을 흘려 보내는 것을 토대로 신진대사와 관련된 간단하지만 소중한 정보를 제공합니다.
+            신진대사 후에 흘려진 유기산 성분들은 인체 내 세포의 활동에 대한 결과, 음식에 대한 소화결과 그리고 위장의 신진대사로 인한 부산물이라고 할 수 있습니다. 어느 부분에선, 소변에 있는 유기산 성분은 유독성과 같은
+            표시물의 암시를 나타내기도 하며, 효모균이나 위장의 박테리아 대사들의 수준까지 검사되며 평균 사람의 대사량과 비교될 수 있는데 이는 효모균이나 박테리아의 확동에 대한 전반적인 상황까지 체크하게 됩니다.
+            전체 76개의 유기산 분석함으로써 비타민과 호르몬의 신진대사, 에너지 레벨, 장벽의 보전성, 신경 전달 그리고 근육의 기능까지도 측정이 가능한 놀라운 검사입니다. 
             </p></blockquote>
-			<p>2016년 3월 14일 태균맘 황순재 대표</p>
-			<br>
-			<p class="blog-post-meta">태균맘 황순재 대표 약력</p>
-			<p> - 고려대 사회학과 졸업<br>
-				- 대구대 일반대학원 특수교육 석사<br>
-    			- 우리세상 발달학교 , 우리세상 특수 대안학교 설립자<br>
-    			- 다음까페 “행복한 자폐아” 운영자    			
-			</p>
+			<p>검사대상</p>
+			<p class="blog-post-meta">ADHD, 강박신경증, 행동장애, 만성피로, 섬유근육통, 자궁내막증, 급체, 에이즈, 대장염, 크론병, IBD, 선천성대사이상, 알츠하이머, 치매,
+			우울증, 다발성 경화증, 아스퍼거 증후군, 설사, 변비, 건선, 아토피 피부염, 뚜렛증후군, PANDAS, 다운증후군, 재발성 감염, 만성피로증후군, 각종 대사의심질병환자 등</p>
 			</div>
 			<div id="3">
 			<hr>
-            <h2 class="blog-post-title">파트너사</h2>
-			<div style="height: 240px;">
-			<img class="img-rounded" alt="" src="img/dummy.jpg" style="width: 100%; height: 100%;">
-		  	</div>
+            <h2 class="blog-post-title">중금속 검사</h2>
+            <blockquote><p>머리카락은 유독성 금속들인 납, 알루미늄, 슨은 등을 검출하는데 탁원한 샘플입니다. 납은 도로변의 흙에서 발견될 수도 있고 오래된 집들의 페인트에도 들어있으며 흙이나 페인트 조각들을 먹는
+            아이들은 납 수치가 독성까지 될 수 있습니다. 카드뮴은 배터리, 철 띠를 두른 타이어들 그리고 플라스틱에 사용됩니다. 음식을 덮는 플라스틱은 카드뮴 원천이 될 수 있고 담배연기에서도 발견됩니다. 수은은 배터리, 치과용 아말감,
+            청소기 펌프, 밸브, 봉인들에서 사용됩니다. 사용 후 버려지는 치과용 충전제로부터 나오는 높은 양의 수은은 우리 주변에서 흔히 볼 수 있는 유독성 금속입니다. 비소는 해산물에 많이 들어있으며, 또한 비소가 함유 된 음식을 먹인
+            동물들에서도 발견됩니다. 
+            </p></blockquote>
+            <p>검사대상</p>
+			<p class="blog-post-meta">ADHD, 자폐증, 치매, 만성피로증후군, 다운증후군, 복합경화증, 강박증, 정신분열증, 간질발작, 뚜렛증후군, 미토콘드리아 기능장애등</p>
 			</div>
 			<div id="4">
             <hr>
-            <h2 class="blog-post-title">운영방식 및 시간</h2>
-            <blockquote><p>본 센터는 예약제로 운영됨이 원칙이나, 언제든 개방되어 있습니다.<br>
-			      미리 전화로 시간을 예약해 주시면 좀 더 편안하게 상담 및 치료가 가능합니다.<br>
-			      센터장 및 태균맘 상담은 100% 무료 상담이니 부담 없이 연락바랍니다.<br>
-			      상담예약전화 031-711-3546 / 010-3247-3535
-            </p></blockquote>
-			<p>
-			<strong>운영시간</strong> 
-				<br>
-				월~금 : 오전 9시 ~ 오후 6시<br>
-				토 : 오전 10시 ~ 오후 3시<br>
-				<br>
-				사전에 예약된 경우는 야간이나 주말에도 센터 이용 및 상담 가능합니다.<br>
-				고압 산소 치료의 경우 365일 24시간 개방 체제로 언제든지 자유롭게 이용가능합니다.</p>
-			<br>
-			</div>
-			<div id="5">
-            <hr>
-            <h2 class="blog-post-title">오시는길</h2>
-            <blockquote><p>도로명주소 : 경기도 성남시 분당구 동막로 245번길 12 1층 지디에스 분당중앙센터<br>
-  			지번주소 : 경기도 성남시 분당구 동원동 186번지<br>
-			분당선 미금역 3분거리 (차량 이용시)<br>			
-            </p></blockquote>
-            
-            <div style="height: 240px;">
-			<img class="img-rounded" alt="" src="img/map.png" style="width: 100%; height: 100%;">
-		  	</div>
-		  	
-		  	</div>
-		  	
-			</div><!-- /.blog-post -->
-
-        </div><!-- /.blog-main -->
-
-<!--         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4 style="font:bold; border-bottom:solid 1px gray; padding-bottom: 10px;">밸런스브레인</h4>
-          </div>
-          <div class="sidebar-module">
-            <ol class="list-unstyled">
-              <li><a href="#">링크1</a></li>
-              <li><a href="#">링크2</a></li>
-              <li><a href="#">링크3</a></li>
-              <li><a href="#">링크4</a></li>
-              <li><a href="#">링크5</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>검색</h4>
-            <form class="navbar-form navbar-center" style="padding: 0 0 0 0px;" role="search">
-            	<div class="form-group">
-            	<table>
-            		<tr>
-            			<td style="width: 85%;">
-			            	<input type="text" class="form-control" placeholder="Search..." style="width: 100%;">
-		            	</td>
-		            	<td style="width: 15%;">
-			            	<button type="submit" class="btn btn-default" >검색</button>
-		            	</td>
-	            	</tr>
-            	</table>
-            	</div>
-          	</form>
-          </div>
-          <div class="sidebar-module sidebar-module-inset">
-            <h4 style="font:bold; border-bottom:solid 1px gray; padding-bottom: 10px;">이벤트</h4>
-          </div>
-          <div class="sidebar-module">
-            <ol class="list-unstyled">
-              <li><a href="#">링크1</a></li>
-              <li><a href="#">링크2</a></li>
-              <li><a href="#">링크3</a></li>
-              <li><a href="#">링크4</a></li>
-              <li><a href="#">링크5</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module sidebar-module-inset">
-            <h4 style="font:bold; border-bottom:solid 1px gray; padding-bottom: 10px;">공지사항</h4>
-          </div>
-          <div class="sidebar-module">
-            <ol class="list-unstyled">
-              <li><a href="#">링크1</a></li>
-              <li><a href="#">링크2</a></li>
-              <li><a href="#">링크3</a></li>
-              <li><a href="#">링크4</a></li>
-              <li><a href="#">링크5</a></li>
-            </ol>
-          </div>
-        </div>/.blog-sidebar -->
+            <p>이 외에도 음식 알러지검사, 글루텐/카제인 검사, 아미노산 검사 등도 진행 가능합니다.<br>
+			      New Beginnings사 등 발달장애 전문 영양보충제 회사와의 제휴를 통해 맞춤형 기능성 보충제 구매가 가능합니다.(전화문의:031-711-3546)<br>
+            </p>
+         
 
       </div><!-- /.row -->
 

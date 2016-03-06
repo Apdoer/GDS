@@ -3,9 +3,9 @@
 <div id="home">
     <div class="jumbotron">
       <div class="container">
-        <h1>Welcome!</h1>
-        <p>GDS 분당중앙센터는</p> <p>발달장애, 학습장애로 어려움을 겪고 있는 </p>
-        <p><strong>"조금은 특별한"</strong> 우리 아이들을 위한 공간입니다.</p>
+        <h1> </h1>
+        <p> </p> <p> </p>
+        <p><strong></strong> <br><br><br><br><br><br><br><br></p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">GDS 알아보기 &raquo;</a></p> -->
         <p>   </p>
       </div>

@@ -20,7 +20,7 @@
       <div class="container">
         <div class="navbar-header">
           
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="${cp }/index.jsp">
           	<img alt="Brand" src="${cp}/img/GDS_Logo.png">
           </a>
         </div>

@@ -7,7 +7,15 @@
 #admin_counsel { padding-left: p }
 #admin_counsel h1 { margin-top: 20px; }
 
+#admin_counsel .left-counsel-list table th { text-align: center; }
+#admin_counsel .left-counsel-list table td { vertical-align: middle; }
+#admin_counsel .left-counsel-list table td:nth-child(2) { padding: 0px 16px; width: 5%; } 
+#admin_counsel .left-counsel-list table td:nth-child(3) { width: 20%; }
+#admin_counsel .left-counsel-list table td p.category-name { font-weight: bold; }
+#admin_counsel .left-counsel-list table td p { margin-bottom: 0px; max-width: 50%; }
+
 #admin_counsel .right-counsel-content p.category-name { margin-bottom: 0px; }
+#admin_counsel .right-counsel-content div.panel-body.memo { border-top: 1px solid #ddd; }
 
 /* 공통 */
 .paginator { text-align: center; }
@@ -21,57 +29,59 @@
 	
 	<div class="row">
 	
-		<div class="col-md-6 left-counsel-list"> 
-		
-			<table class="table">
-				<tr>
-					<th style="text-align: center;">제목</th>
-					<th style="width: 20%;">작성일시</th>
-				</tr>
-				<c:choose>
-					<c:when test="${searchVO.result != null && searchVO.result.size() > 0}">
-						<c:forEach items="${searchVO.result}" var="counsel">
-							<tr style="cursor: pointer;"
-								onclick="javascript: getCounsel(${counsel.id});">
-								<td style="vertical-align: middle; padding-left: 16px;">
-									<p>${counsel.detail}</p>
-									<p>${counsel.categoryName}</p>
-								</td>
-								<td style="vertical-align: middle; text-align: center;">${counsel.regdate}</td>
-							</tr>
-						</c:forEach>
-					</c:when>
-					<c:otherwise>
-						<tr>
-							<td colspan="5" style="padding: 16px 0px; text-align: center;">
-								등록된 상담신청내역이 존재하지 않습니다.
-							</td>
-						</tr>
-					</c:otherwise>
-				</c:choose>
-			</table>
-		
+		<div class="col-md-6 left-counsel-list">
+			<!-- load counsel list by ajax -->
 		</div>
 
 		<div class="col-md-6 right-counsel-content">
-
+			<!-- load individual counsel content by ajax -->
 		</div>
 		
-		<script type="text/javascript">
-		function getCounsel(id) {
-			$.ajax({
-				url: '${cp}/admin/counsel/get.ajax',
-				data: { 'id': id }
-			}).done(function(data) {
-				$('div.right-counsel-content').html(data);
-			}).fail(function(error) {
-				console.log(error);
-			}).always(function() {
-				console.log('finally, done.');
-			});
-		}
-		</script>
-
 	</div>
+	
+<script type="text/javascript">
+function listCounsel(pageIdx) {
+	$.ajax({
+		url: '${cp}/admin/counsel/list.ajax',
+		data: { 'currentPage': pageIdx }
+	}).done(function(data) {
+		console.log('hayo!');
+		$('div.left-counsel-list').html(data);
+	}).fail(function(error) {
+		alert(error);
+	});
+}
+
+function getCounsel(id) {
+	$.ajax({
+		url: '${cp}/admin/counsel/get.ajax',
+		data: { 'id': id }
+	}).done(function(data) {
+		$('div.right-counsel-content').html(data);
+	}).fail(function(error) {
+		alert(error);
+	});
+}
+
+function updateCounsel(id) {
+	$.ajax({
+		url: '${cp}/admin/counsel/modify.ajax',
+		method: 'POST',
+		data: { 
+			'id': id,
+			'doneyn': $('input[id=doneyn]').is(':checked') ? 'y' : 'n',
+			'memo': $('textarea[id=memo]').val().replace('/\n/g', '<br>')
+		}
+	}).done(function(data) {
+		alert('저장되었습니다.');
+	}).fail(function(error) {
+		alert(error);
+	});
+}
+
+$(function() {
+	listCounsel(1);
+});
+</script>
 	
 </div>

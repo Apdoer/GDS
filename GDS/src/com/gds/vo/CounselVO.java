@@ -124,12 +124,10 @@ public class CounselVO {
 		this.doneyn = doneyn;
 	}
 
-
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Counsel [id=");
+		builder.append("CounselVO [id=");
 		builder.append(id);
 		builder.append(", delyn=");
 		builder.append(delyn);
@@ -137,6 +135,8 @@ public class CounselVO {
 		builder.append(regdate);
 		builder.append(", categoryId=");
 		builder.append(categoryId);
+		builder.append(", categoryName=");
+		builder.append(categoryName);
 		builder.append(", counseleeName=");
 		builder.append(counseleeName);
 		builder.append(", counseleeTelno=");
@@ -152,9 +152,5 @@ public class CounselVO {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-		
-	
 
 }

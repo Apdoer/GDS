@@ -10,7 +10,7 @@ import com.gds.vo.SearchVO;
 @Service
 public class CounselService {
 	
-	private static final int MAX_PAGE_SIZE = 10;
+	private static final int MAX_PAGE_SIZE = 5;
 	private static final int MAX_LINK_COUNT = 5;
 	
 	@Autowired
@@ -42,7 +42,19 @@ public class CounselService {
 	 * @return
 	 */
 	public CounselVO getCounsel(CounselVO counselVO) {
-		return counselDao.getCounsel(counselVO);
+		return counselDao.get(counselVO);
+	}
+
+	/**
+	 * Update counsel with id.
+	 * 
+	 * @param counselVO
+	 * @return
+	 */
+	public boolean modifyCounsel(CounselVO counselVO) {
+		int result = counselDao.update(counselVO);
+		System.out.println(counselDao.get(counselVO));
+		return result == 1;
 	}
 
 }

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gds.service.BlogService;
@@ -86,41 +87,30 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/counsel/enter.do")
-	public String enterCounsel(HttpServletRequest request, Model model) {
-		model.addAttribute("searchVO", counselService.pagingCounsel(new SearchVO()));
-		model.addAttribute("contentPage", "/admin_counsel.jsp");
+	public String enterCounsel() {
 		return "admin_index";
 	}
 
-	@RequestMapping("/counsel/list.do")
+	@RequestMapping("/counsel/list.ajax")
 	public ModelAndView listCounsel(SearchVO searchVO) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("searchVO", counselService.pagingCounsel(searchVO));
-		mav.addObject("contentPage", "/admin_counsel.jsp");
-		mav.setViewName("admin_index");
+		mav.setViewName("admin_counsel_list_ajax");
 		return mav;
 	}
 	
 	@RequestMapping("/counsel/get.ajax")
 	public ModelAndView getCounsel(CounselVO counselVO) {
-		System.out.println(counselVO);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("counsel", counselService.getCounsel(counselVO));
 		mav.setViewName("admin_counsel_content_ajax");
 		return mav;
 	}
 
-	@RequestMapping("/counsel/answer.do")
-	public String answerCounsel(HttpServletRequest request, Model model) {
-
-		System.out.println(request.getParameter("title"));
-		System.out.println(request.getParameter("contents"));
-		System.out.println(request.getParameter("category"));
-
-		List<CategoryVO> cateList;
-		cateList = categoryService.listCategory();
-		model.addAttribute("categoryList", cateList);
-		return "admin_index";
+	@RequestMapping("/counsel/modify.ajax")
+	@ResponseBody
+	public boolean modifyCounsel(CounselVO counselVO) {
+		return counselService.modifyCounsel(counselVO);
 	}
 
 }

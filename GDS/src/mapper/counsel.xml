@@ -24,10 +24,14 @@
 	</insert>
 	
 	<select id="paging" parameterType="SearchVO" resultType="Counsel">
-		SELECT *
-		FROM counsel
-		WHERE delyn = 'n'
-		ORDER BY regdate DESC
+		SELECT c.*, ct.name AS category_name
+		FROM counsel c
+			JOIN category ct
+			ON c.category_id = ct.id
+		WHERE c.delyn = 'n'
+		ORDER BY 
+			c.doneyn ASC,
+			c.regdate DESC
 		LIMIT #{maxPageSize}
 		OFFSET #{startRowIndex}
 	</select>
@@ -39,5 +43,12 @@
 			ON c.category_id = ct.id
 		WHERE c.id = #{id}
 	</select>
+	
+	<update id="update" parameterType="Counsel">
+		UPDATE counsel
+		SET doneyn = #{doneyn},
+			memo = #{memo}
+		WHERE id = #{id}
+	</update>
 	
 </mapper>

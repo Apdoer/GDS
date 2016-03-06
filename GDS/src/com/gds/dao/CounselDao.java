@@ -53,8 +53,18 @@ public class CounselDao {
 	 * @param counselVO
 	 * @return
 	 */
-	public CounselVO getCounsel(CounselVO counselVO) {
+	public CounselVO get(CounselVO counselVO) {
 		return sqlSessionTemplate.selectOne("Counsel.get", counselVO);
+	}
+
+	/**
+	 * Update counsel with id.
+	 * 
+	 * @param counselVO
+	 * @return
+	 */
+	public int update(CounselVO counselVO) {
+		return sqlSessionTemplate.update("Counsel.update", counselVO);
 	}
 
 }

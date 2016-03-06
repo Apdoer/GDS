@@ -14,7 +14,7 @@
 #admin_counsel .left-counsel-list table td p.category-name { font-weight: bold; }
 #admin_counsel .left-counsel-list table td p { margin-bottom: 0px; max-width: 50%; }
 
-#admin_counsel .right-counsel-content p.category-name { margin-bottom: 0px; }
+#admin_counsel .right-counsel-content p.category-name { margin-bottom: 0px; font-weight: bold; }
 #admin_counsel .right-counsel-content div.panel-body.memo { border-top: 1px solid #ddd; }
 
 /* 공통 */
@@ -74,6 +74,7 @@ function updateCounsel(id) {
 		}
 	}).done(function(data) {
 		alert('저장되었습니다.');
+		listCounsel($('input[name=currentPage]').val());
 	}).fail(function(error) {
 		alert(error);
 	});

@@ -13,41 +13,32 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <style type="text/css">
-body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif; color:#555; }
-
 
 </style>
 
 </head>
 <body>
-<div id="admin">
-	<form action="admin.do">
-	<!--카테고리 시작 -->
-	<div class="container" style="width: 150px; float:left; padding:0 10 0 0;">
-		<select id="category" class="form-control">
-			<option>카테고리</option>
-			<form:form name="form" commandName="Task"
-				action="/getCategoryTaskList">
-				<c:forEach items="${categoryList}" var="category">
-					<option>${category.name}</option>
-				</c:forEach>
-			</form:form>
-		</select>
-	</div>
-	<!--카테고리 끝 -->
-	
-	<!--제목 시작 -->
-	<div class="input-group" style="float:left; width: 680px;">
-	  <span class="input-group-addon" id="basic-addon1">제목</span>
-	  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1">
-	</div>
-	<!--제목 끝-->
-	<br> </br>
-	<p>내용 시작한다. ${blogList[0].content} </p>
-	<br> </br>
-	</form>
+<div class="container">
+    <div class="blog-header">
+      <h1 class="blog-title" style="font:bold; border-bottom:solid 1px gray;
+       padding-bottom: 10px; width: 100%;">별헤는 밤...</h1>
+       <p class="lead blog-description">아름다운 우리들의 동행에 참여하세요..</p>
+    	<div class="buttons center">
+			<a href="${cp}/blog/editBlog.do" class="btn btn-default">별 헤는 글쓰기</a>
+		</div>
+    </div>
+    <c:forEach items="${blogList}" var="blogList">
+	    <div class="col-sm-8 blog-main">
+	       <div class="blog-post">
+	         <h2 class="blog-post-title"><a href="${cp}/blog/selectBlog.do?id=${blogList.id}">${blogList.title}</a></h2>
+	         <p class="blog-post-meta">${blogList.regdate}&nbsp<a href="#">상육이</a></p>
+	         <p>${blogList.content}</p>
+		     <hr>
+	   		</div>
+	    </div>
+	</c:forEach>
 </div>
 </body>
 </html>

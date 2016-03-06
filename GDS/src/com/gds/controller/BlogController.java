@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.gds.service.BlogService;
 import com.gds.service.CategoryService;
@@ -23,6 +24,7 @@ import com.gds.vo.BlogVO;
 import com.gds.vo.CategoryVO;
 
 @Controller
+@RequestMapping("/blog")
 public class BlogController {
 
 	@Autowired
@@ -31,24 +33,24 @@ public class BlogController {
 	@Autowired
 	CategoryService categoryService;
 	
-    //사진 업로드 
+    //�궗吏� �뾽濡쒕뱶 
 	@RequestMapping("/multiplePhotoUpload.do")
 	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response){
 	    try {
-	         //�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕
+	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         String sFileInfo = "";
-	         //�뜝�룞�삕�뜝�떦紐뚯삕�뜝�룞�삕 �뜝�뙣�뒗�뙋�삕 - �뜝�떦諭꾩삕 �뜝�룞�삕�뜝�룞�삕�뜝�떦紐뚯삕
+	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣筌뤿슣�굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈솭占쎈뮉占쎈솇占쎌굲 - 占쎈쐻占쎈뼣獄�袁⑹굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣筌뤿슣�굲
 	         String filename = request.getHeader("file-name");
-	         //�뜝�룞�삕�뜝�룞�삕 �솗�뜝�룞�삕�뜝�룞�삕
+	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎌넇占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         String filename_ext = filename.substring(filename.lastIndexOf(".")+1);
-	         //�솗�뜝�룞�삕�뜝�뙓紐뚯삕�뜝��諭꾩삕�뜝�뙓琉꾩삕 �뜝�룞�삕�뜝�룞�삕
+	         //占쎌넇占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈솓筌뤿슣�굲占쎈쐻占쏙옙獄�袁⑹굲占쎈쐻占쎈솓筌뚭쑴�굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         filename_ext = filename_ext.toLowerCase();
-	         //�뜝�룞�삕�뜝�룞�삕 �뜝�뜦蹂멨뜝�룞�삕�뜝占�
+	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈쑆癰귣ŀ�쐻占쎈짗占쎌굲占쎈쐻�뜝占�
 	         String dftFilePath = request.getSession().getServletContext().getRealPath("/");
-	         //�뜝�룞�삕�뜝�룞�삕 �뜝�뜦蹂멨뜝�룞�삕�뜝占� _ �뜝�룫�꽭怨ㅼ삕�뜝占�
+	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈쑆癰귣ŀ�쐻占쎈짗占쎌굲占쎈쐻�뜝占� _ 占쎈쐻占쎈＋占쎄쉭�ⓦ끉�굲占쎈쐻�뜝占�
 //		         String filePath = dftFilePath + "resource" + File.separator + "photo_upload" + File.separator;
 	         String filePath = dftFilePath + "upload" + File.separator;
-	         //�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕嶸▼뜝占� �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�떥釉앹삕
+	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲蒻멤뼹�쐻�뜝占� 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼢�뇡�빘�굲
 	        // String filePath = "C:/Users/kinot_000/git/GDS/GDS/WebContent/se2/img/";
 	         
 	         File file = new File(filePath);
@@ -62,7 +64,7 @@ public class BlogController {
 	         String rlFileNm = filePath + realFileNm;
 	         
 	         System.out.println(rlFileNm);
-	         ///////////////// �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�떦�뼲�삕�뜝�룞�삕 ///////////////// 
+	         ///////////////// 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣占쎈섣占쎌굲占쎈쐻占쎈짗占쎌굲 ///////////////// 
 	         InputStream is = request.getInputStream();
 	         OutputStream os=new FileOutputStream(rlFileNm);
 	         int numRead;
@@ -75,10 +77,10 @@ public class BlogController {
 	         }
 	         os.flush();
 	         os.close();
-	         ///////////////// �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�떦�뼲�삕�뜝�룞�삕 /////////////////
-	         // �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝占�
+	         ///////////////// 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣占쎈섣占쎌굲占쎈쐻占쎈짗占쎌굲 /////////////////
+	         // 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占�
 	         sFileInfo += "&bNewLine=true";
-	         // img �뜝�듅源띿삕�뜝�룞�삕 title �뜝�뙂�눦�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�떦紐뚯삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�뙇源띿삕 �뜝�룞�삕�뜝�룞�삕
+	         // img 占쎈쐻占쎈뱟繹먮씮�굲占쎈쐻占쎈짗占쎌굲 title 占쎈쐻占쎈셽占쎈닰占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣筌뤿슣�굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈솂繹먮씮�굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         sFileInfo += "&sFileName="+ filename;;
 	         sFileInfo += "&sFileURL="+"/GDS/upload/"+realFileNm;
 //		         sFileInfo += "&sFileURL="+realFileNm;
@@ -109,19 +111,38 @@ public class BlogController {
          return "admin" ;
     }
 	
+	//블로그 글 작성 페이지 이동
+	@RequestMapping ("/editBlog.do" )
+	public String editBlog(HttpServletRequest request, Model model){
+		
+		model.addAttribute("contentPage", "/blog_write.jsp");
+        return "index" ;
+	}
+	
+	//하나의 블로그 게시물 선택
 	@RequestMapping ("/selectBlog.do" )
     public String selectBlog(HttpServletRequest request, Model model){
-
          //String title = request .getParameter ("title" );
-         String title = "상육이짱";
-         
+         int id = Integer.parseInt(request.getParameter("id"));
          BlogVO blogVO = new BlogVO();
-         blogVO.setTitle(title);
+         blogVO.setId(id);
          
          List<BlogVO> blogList;
          blogList = blogService.selectBlog(blogVO);
          System.out.println(blogList);
          model.addAttribute("blogList", blogList);
-         return "blog_view" ;
+         model.addAttribute("contentPage", "/blog_view.jsp");
+         return "index" ;
     }
+	
+	//블로그 화면에 불러오기 
+	@RequestMapping ("/selectBlogAll.do" )
+	public String selectBlogAll(HttpServletRequest request, Model model){
+		
+		List<BlogVO> blogList;
+		blogList = blogService.selectBlogAll();
+		model.addAttribute("blogList", blogList);
+		model.addAttribute("contentPage", "/blog_view.jsp");
+		return "index" ;
+	}
 }

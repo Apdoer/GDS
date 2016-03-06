@@ -2,24 +2,8 @@
     pageEncoding= "UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<! DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv= "Content-Type" content= "text/html; charset=UTF-8">
-<title>Insert title here</title>
-<script type= "text/javascript" src= "se2/js/HuskyEZCreator.js" charset= "utf-8"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-<style type="text/css">
-body, table, td, input, textarea { font:12px; font-family: 'Nanum Gothic', serif; color:#555; }
-
-
-</style>
-
+<c:set var="cp" value="${pageContext.request.contextPath}" />
+<script type= "text/javascript" src= "${cp}/se2/js/HuskyEZCreator.js" charset= "utf-8"></script>
 <script type= "text/javascript" >
 function submitContents(elClickedObj) {
     // 에디터의 내용이 textarea에 적용된다.
@@ -31,14 +15,10 @@ function submitContents(elClickedObj) {
     var content = document.getElementById( "ir1" ).value;
     var category = document.getElementById( "category" ).value;
     window.location.href="insertBlog.do?title="+title+"&content="+content+"&category="+category;
-  /*   try {
-        elClickedObj.form.submit();
-    } catch(e) {} */
 }
 </script>
-</head>
-<body>
-<div id="admin">
+
+<div id="admin" style="margin-top: 70px; ">
 	<form action="admin.do">
 	<!--카테고리 시작 -->
 	<div class="container" style="width: 150px; float:left; padding:0 10 0 0;">
@@ -61,7 +41,7 @@ function submitContents(elClickedObj) {
 	</div>
 	<!--제목 끝-->
 	<br> </br>
-	<textarea name= "ir1" id= "ir1" rows= "20" cols= "115" >내용을 입력해 주세요
+	<textarea name= "ir1" id="ir1" rows= "20" cols= "115" >내용을 입력해 주세요
 	</textarea>
 	<br> </br>
 	<div class="btn-group" role="group" aria-label="..." >
@@ -70,20 +50,12 @@ function submitContents(elClickedObj) {
 	</div>
 	</form>
 </div>
-<!-- <p>
-     <input type= "button" onclick= "pasteHTML();" value="본문에 내용 넣기" />
-     <input type= "button" onclick= "showHTML();" value="본문 내용 가져오기" />
-     <input type= "button" onclick= "submitContents(this);" value="서버로 내용 전송" />
-     <input type= "button" onclick= "setDefaultFont();" value="기본 폰트 지정하기 (궁서_24)" />
-</p> -->
-</body>
 <script type= "text/javascript" >
 var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({
     oAppRef: oEditors,
     elPlaceHolder: "ir1" ,
-    sSkinURI: "se2/SmartEditor2Skin.html" ,
+    sSkinURI: "${cp}/se2/SmartEditor2Skin.html" ,
     fCreator: "createSEditor2"
 });
 </script>
-</html>

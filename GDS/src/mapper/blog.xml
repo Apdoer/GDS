@@ -29,7 +29,12 @@
 	</insert>
 	
 	<select id="select" resultType="Blog">
-		SELECT * FROM blog WHERE TITLE = #{title}
+		SELECT * FROM blog WHERE id = #{id}
+	</select>
+	
+	
+	<select id="selectBlogAll" resultType="Blog">
+		SELECT * FROM blog
 	</select>
 
 </mapper>

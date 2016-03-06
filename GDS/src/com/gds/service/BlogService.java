@@ -25,5 +25,10 @@ public class BlogService {
 		// TODO Auto-generated method stub
 		return blogDao.select(blogVO);
 	}
+
+	public List<BlogVO> selectBlogAll() {
+		// TODO Auto-generated method stub
+		return blogDao.selectBlogAll();
+	}
 	
 }

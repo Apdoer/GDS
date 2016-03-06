@@ -68,83 +68,34 @@
 						</c:when>
 						<c:otherwise>
 							<tr>
-								<td colspan="4" style="padding: 32px;">
+								<td colspan="4" style="padding: 32px 0px; text-align: center;">
 									작성된 글이 없습니다.
 								</td>
 							</tr>
 						</c:otherwise>
 					</c:choose>
-					<!-- <tr>
-						<td style="text-align: center;">10</td>
-						<td style="padding-left: 8px;">게시글 샘플을 작성하는건 쉽지 않은 일입니다.</td>
-						<td style="text-align: center;">2016년 2월 14일</td>
-						<td style="text-align: center;">94</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">9</td>
-						<td style="padding-left: 8px;">홈페이지가 이렇게 번창했으면 좋겠네요.</td>
-						<td style="text-align: center;">2016년 1월 16일</td>
-						<td style="text-align: center;">128</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">8</td>
-						<td style="padding-left: 8px;">행복한 크리스마스 보내시기 바랍니다.</td>
-						<td style="text-align: center;">2015년 12월 23일</td>
-						<td style="text-align: center;">332</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">7</td>
-						<td style="padding-left: 8px;">추석 연휴 간 전화상담 휴무를 안내드립니다.</td>
-						<td style="text-align: center;">2015년 8월 30일</td>
-						<td style="text-align: center;">452</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">6</td>
-						<td style="padding-left: 8px;">GDS 분당센터에서 새롭게 제공하는 프로그램을 소개합니다.</td>
-						<td style="text-align: center;">2015년 7월 17일</td>
-						<td style="text-align: center;">709</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">5</td>
-						<td style="padding-left: 8px;">공지사항 출력 샘플은 잘 보셨나요?</td>
-						<td style="text-align: center;">2015년 6월 1일</td>
-						<td style="text-align: center;">142</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">4</td>
-						<td style="padding-left: 8px;">학부모 모임을 개최 소식을 공유드립니다.</td>
-						<td style="text-align: center;">2015년 5월 24일</td>
-						<td style="text-align: center;">411</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">3</td>
-						<td style="padding-left: 8px;">GDS 분당센터 온라인 홈페이지가 여러분을 찾아갑니다.</td>
-						<td style="text-align: center;">2015년 4월 11일</td>
-						<td style="text-align: center;">182</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">2</td>
-						<td style="padding-left: 8px;">센터 방문 경로에 대해 추가안내드립니다.</td>
-						<td style="text-align: center;">2014년 10월 29일</td>
-						<td style="text-align: center;">213</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;">1</td>
-						<td style="padding-left: 8px;">GDS 분당센터에 방문하신 것을 환영합니다.</td>
-						<td style="text-align: center;">2014년 10월 21일</td>
-						<td style="text-align: center;">328</td>
-					</tr> -->
 				</table>
 				
 				<div class="paginator">
 					<ul class="pagination">
-						<li><a href="#"><span aria-hidden="true">&laquo;</span></a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>
+						<c:if test="${searchVO.startPageIndex > 1}">
+							<li><a href="${cp}/qna/list.do?currentPage=${searchVO.startPageIndex - 1}">
+								<span aria-hidden="true">&laquo;</span>
+							</a></li>	
+						</c:if>
+						<c:forEach begin="${searchVO.startPageIndex}" end="${searchVO.endPageIndex}" var="idx">
+							<c:if test="${searchVO.currentPage == idx}">
+								<li><a style="font-style: bold; font-size: 2em" href="${cp}/qna/list.do?currentPage=${idx}">${idx}</a></li>
+							</c:if>
+							<c:if test="${searchVO.currentPage != idx}">
+								<li><a href="${cp}/qna/list.do?currentPage=${idx}">${idx}</a></li>
+							</c:if>
+						</c:forEach>
+						<c:if test="${searchVO.endPageIndex < searchVO.lastPageIndex}">
+							<li><a href="${cp}/qna/list.do?currentPage=${searchVO.endPageIndex + 1}">
+								<span aria-hidden="true">&raquo;</span>
+							</a></li>	
+						</c:if>
 					</ul>
 				</div>
 				

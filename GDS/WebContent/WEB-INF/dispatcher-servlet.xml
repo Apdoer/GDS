@@ -10,6 +10,14 @@
 
 	<mvc:annotation-driven/>
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/*"/>
+			<mvc:exclude-mapping path="/admin/login.do"/>
+			<bean class="com.gds.interceptor.AuthInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/" p:suffix=".jsp"/>
 		

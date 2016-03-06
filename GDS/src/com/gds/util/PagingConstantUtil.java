@@ -1,6 +1,6 @@
 package com.gds.util;
 
-public class PagingConstants {
+public class PagingConstantUtil {
 
 	public static final int COMMON_MAX_PAGE_SIZE = 10;
 	public static final int COMMON_MAX_LINK_COUNT = 5;

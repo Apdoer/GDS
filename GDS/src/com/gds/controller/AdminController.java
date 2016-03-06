@@ -1,15 +1,18 @@
 package com.gds.controller;
 
 import java.io.File;
-import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,7 +20,7 @@ import com.gds.service.BlogService;
 import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
 import com.gds.service.CounselService;
-import com.gds.vo.CategoryVO;
+import com.gds.util.AuthConstantUtil;
 import com.gds.vo.CounselVO;
 import com.gds.vo.PhotoVO;
 import com.gds.vo.SearchVO;
@@ -38,18 +41,50 @@ public class AdminController {
 	@Autowired
 	CounselService counselService;
 	
-	@RequestMapping ("/admin.do")
-    public String admin(HttpServletRequest request, Model model){
-
-		 System .out .println (request .getParameter ("title" ));
-         System .out .println (request .getParameter ("contents" ));
-         System .out .println (request .getParameter ("category" ));
-         
-         List<CategoryVO> cateList;
-         cateList = categoryService.listCategory();
-         model.addAttribute("categoryList", cateList);
-         return "admin" ;
+	@RequestMapping("/enter.do")
+    public String enter(HttpServletRequest request, Model model){
+         return "admin_index";
     }
+	
+	@RequestMapping(value="/login.do", method=RequestMethod.GET)
+	public String login() {
+		System.out.println("Welcome, stranger.");
+		return "admin_login";
+	}
+	
+	@RequestMapping(value="/login.do", method=RequestMethod.POST)
+	public String login(
+			HttpServletRequest request, 
+			HttpServletResponse response,
+			Model model,
+			@RequestParam("password") String password) {
+		
+		HttpSession session = request.getSession();
+		
+		// if session already has admin auth value, send it admin page.
+		Object authAttr = session.getAttribute("auth");
+		if (authAttr != null && AuthConstantUtil.AUTH_ADMIN_VALUE.equals((String) authAttr)) {
+			// System.out.println("Already authorized user.");
+			return "admin_index";
+		}
+		
+		System.out.println("Input password: " + password);
+		
+		// if it has password value matched with preassigned value,
+		// give admin auth value to session and send it admin page.
+		if (AuthConstantUtil.AUTH_ADMIN_PASSWORD.equals(password)) {
+			// System.out.println("Password matched. Have been authorized now.");
+			session.setAttribute("auth", AuthConstantUtil.AUTH_ADMIN_VALUE);
+			return "admin_index";
+		}
+		// else the password value doesn't match with preassigned value,
+		// send it login page with warning message.
+		else {
+			// System.out.println("Password not matched. Go for another shot.");
+			model.addAttribute("message", "Password did not match!");
+			return "admin_login";
+		}
+	}
 	
 	//�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�떦�뼲�삕�뜝�떥�벝�삕
 	@RequestMapping("/photoUpload.do")

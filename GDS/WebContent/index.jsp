@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GDS</title>
+<title>지디에스분당중앙센터</title>
 <link rel="stylesheet" href="${cp}/css/bootstrap.css">
 <link rel="stylesheet" href="${cp}/css/bootstrap-theme.css">
 <link rel="stylesheet" href="${cp}/css/index.css">
@@ -26,39 +26,30 @@
         </div>
         <div id="navbar" class="navbar-right collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            <li><a href="${cp}/introduce.do">센터소개</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">GDS소개 <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">뇌신경/감각 클리닉 <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                <li><a href="${cp}/introduce.do">인사말</a></li>
-                <li><a href="${cp}/introduce.do">오시는길</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">증상소개 <span class="caret"></span></a>
-              <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                <li><a href="#">발달장애</a></li>
+                <li><a href="#">자폐 스펙트럼 장애</a></li>
+                <li><a href="#">주의력 결핍/과잉행동장애</a></li>
                 <li><a href="#">학습장애</a></li>
-                <li><a href="#">ADHD</a></li>
-                <li><a href="#">자폐</a></li>
+                <li><a href="#">사회성 부족</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로그램소개 <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로그램<span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                <li class="dropdown-header">개선솔루션</li>
-                <li><a href="#">고압산소치료</a></li>
+                <!-- <li class="dropdown-header">개선솔루션</li> -->
                 <li><a href="#">대사검사</a></li>
+                <li><a href="#">고압산소치료</a></li>
                 <li><a href="#">청지각프로그램</a></li>
                 <li><a href="#">시지각프로그램</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">보험상담</li>
-                <li><a href="#">보험문의</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">소식지 <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                <li><a href="${cp}/_/_.do">별 헤는 밤</a></li>
+                <li><a href="${cp}/blog/selectBlogAll.do">별 헤는 밤</a></li>
                 <li><a href="${cp}/board/enter.do">공지사항</a></li>
                 <li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
               </ul>

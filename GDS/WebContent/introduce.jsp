@@ -73,6 +73,13 @@
 			</p>
 			</div>
 			<div id="3">
+			<hr>
+            <h2 class="blog-post-title">파트너사</h2>
+			<div style="height: 240px;">
+			<img class="img-rounded" alt="" src="img/dummy.jpg" style="width: 100%; height: 100%;">
+		  	</div>
+			</div>
+			<div id="4">
             <hr>
             <h2 class="blog-post-title">운영방식 및 시간</h2>
             <blockquote><p>본 센터는 예약제로 운영됨이 원칙이나, 언제든 개방되어 있습니다.<br>
@@ -90,7 +97,7 @@
 				고압 산소 치료의 경우 365일 24시간 개방 체제로 언제든지 자유롭게 이용가능합니다.</p>
 			<br>
 			</div>
-			<div id="4">
+			<div id="5">
             <hr>
             <h2 class="blog-post-title">오시는길</h2>
             <blockquote><p>도로명주소 : 경기도 성남시 분당구 동막로 245번길 12 1층 지디에스 분당중앙센터<br>

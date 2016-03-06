@@ -30,10 +30,10 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">뇌신경/감각 클리닉 <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                <li><a href="#">자폐 스펙트럼 장애</a></li>
-                <li><a href="#">주의력 결핍/과잉행동장애</a></li>
-                <li><a href="#">학습장애</a></li>
-                <li><a href="#">사회성 부족</a></li>
+                <li><a href="${cp}/clinic1.do">자폐 스펙트럼 장애</a></li>
+                <li><a href="${cp}/clinic2.do">주의력 결핍/과잉행동장애</a></li>
+                <li><a href="${cp}/clinic3.do">학습장애</a></li>
+                <li><a href="${cp}/clinic4.do">사회성 부족</a></li>
               </ul>
             </li>
             <li class="dropdown">

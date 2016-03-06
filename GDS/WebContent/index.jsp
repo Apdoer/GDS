@@ -29,8 +29,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">GDS소개 <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                <li><a href="#">인사말</a></li>
-                <li><a href="#">오시는길</a></li>
+                <li><a href="${cp}/introduce.do">인사말</a></li>
+                <li><a href="${cp}/introduce.do">오시는길</a></li>
               </ul>
             </li>
             <li class="dropdown">

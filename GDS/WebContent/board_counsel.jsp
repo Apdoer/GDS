@@ -1,4 +1,44 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ 
+ <script type="text/javascript">
+
+$(document).ready(function() {
+	$("#submitBtn").click(counselSubmit);
+
+function counselSubmit(){	
+	var categoryId=$("#counsel_category option:selected").val();
+	var counseleeName=$("#name").val();
+	var counseleeTelno=$("#phone").val();
+	var possibleTime=$("#p_time option:selected").val();
+	var detail=$("#detail").val();
+	//alert("categoryId:"+categoryId+", name:"+counseleeName+", time:"+possibleTime+", detail:"+detail+", phone:"+counseleeTelno);
+	
+	
+	$.getJSON("${pageContext.request.contextPath}/createCounsel.do",
+			{"categoryId" : $("#counsel_category option:selected").val(),
+			 "counseleeName" : $("#name").val(),
+			 "counseleeTelNo" : $("#phone").val(),
+			 "possibleTime" : $("#p_time option:selected").val(),
+			 "detail" : $("#detail").val()
+			},
+		function(jsonObj){
+				if(jsonObj.status){
+					alert(jsonObj.message);
+					$("name").val("");
+					$("phone").val("");
+					$("detail").val("");
+				}else{
+					alert(jsonObj.message);
+				};
+			});	
+	
+}
+	
+});
+
+</script>
+ 
+ 
 	<div id="board_counsel">
 	
 		<img class="dummy" alt="" src="img/dummy.jpg" style="width: 100%; height: 320px;">
@@ -9,10 +49,8 @@
 			<div class="col-md-2 left-side-bar">
 			
 				<ul class="pull-right">
-					<li><a href="#" style="font-weight: bold;">공지사항</a></li>
-					<li><a href="#">이벤트</a></li>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">상담신청</a></li>
+					
+					
 				</ul>
 			
 			</div>
@@ -38,14 +76,14 @@
 				<div class="counsel-phone row">
 					
 					<div class="col-sm-9">
-						<form class="form-horizontal">
+						<div class="form-horizontal">
 							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">
 									<span style="color: red; margin-right: 3px;">*</span>
 									이름
 								</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="name">
+									<input type="text" class="form-control" id="name" value="토마스">
 								</div>
 							</div>
 							<div class="form-group">
@@ -54,44 +92,45 @@
 									전화번호
 								</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="phone">
+									<input type="text" class="form-control" id="phone" value="01023450987">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="sort" class="col-sm-2 control-label">상담과목</label>
 								<div class="col-sm-10">
-									<select class="form-control" id="sort">
-										<option value="developmental-disability">발달장애</option>
-										<option value="learning-disorder">학습장애</option>
+									<select class="form-control" id="counsel_category">
+										<option value="1">자폐 스펙트럼 장애</option>
+										<option value="2">주의력 결핍/과잉행동장애(ADD,ADHD)</option>
+										<option value="3">학습 장애</option>
+										<option value="4">사회성 부족</option>
 									</select>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="time" class="col-sm-2 control-label">상담가능시간</label>
 								<div class="col-sm-10">
-									<select class="form-control" id="name">
-										<option value="10">오전 10시</option>
-										<option value="11">오전 11시</option>
-										<option value="12">오전 12시</option>
-										<option value="13">오후  1시</option>
-										<option value="14">오후  2시</option>
-										<option value="15">오후  3시</option>
-										<option value="16">오후  4시</option>
-										<option value="17">오후  5시</option>
-										<option value="18">오후  6시</option>
-										<option value="19">오후  7시</option>								
+									<select class="form-control" id="p_time">
+										<option value="10">오전 10시~11시</option>
+										<option value="11">오전 11시~12시</option>
+										<option value="12">오전 12시~13시</option>
+										<option value="13">오후  1시~2시</option>
+										<option value="14">오후  2시~3시</option>
+										<option value="15">오후  3시~4시</option>
+										<option value="16">오후  4시~5시</option>
+										<option value="17">오후  5시~6시</option>
+										<option value="18">오후  6시~7시</option>
+										<option value="19">오후  7시~8시</option>								
 									</select>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="detail" class="col-sm-2 control-label">세부문의내용</label>
 								<div class="col-sm-10">
-									<textarea id="detail" class="form-control" rows="5"></textarea>
+									<textarea id="detail" class="form-control" rows="5">상담신청합니다</textarea>
 								</div>
 							</div>
-							<button class="btn btn-info pull-right" type="submit" 
-								onclick="javascript: return false;">전화상담 예약하기</button>
-						</form>
+							<button id="submitBtn" class="btn btn-info pull-right" type="submit">전화상담 예약하기</button>
+						</div>
 					</div>
 					
 					<div class="col-sm-3">

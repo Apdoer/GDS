@@ -12,5 +12,11 @@ public class ContentController {
 		model.addAttribute("contentPage", "/introduce.jsp");
 		return "index";
 	}
+	
+	@RequestMapping("/program_deasa.do")
+	public String program(Model model){		
+		model.addAttribute("contentPage", "/program_deasa.jsp");
+		return "index";
+	}
 
 }

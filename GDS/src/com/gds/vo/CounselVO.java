@@ -6,6 +6,7 @@ public class CounselVO {
 	private String delyn;
 	private String regdate;
 	private int categoryId;
+	private String categoryName;
 	private String counseleeName;
 	private String counseleeTelno;
 	private String possibleTime;
@@ -65,6 +66,14 @@ public class CounselVO {
 
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 	public String getCounseleeName() {

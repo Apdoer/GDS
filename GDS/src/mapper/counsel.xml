@@ -3,9 +3,41 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  <mapper namespace="Counsel"> 
-    <insert id="insertCounsel" parameterType="Counsel">
-		INSERT INTO counsel VALUES(#{id}, #{delyn}, #{regdate}, #{categoryId}, #{counseleeName}, #{counseleeTelno}, #{possibleTime}, #{detail}, #{memo}, #{doneyn});
-	</insert>     
-  </mapper>
+
+<mapper namespace="Counsel">
+	
+	<select id="getMaxId" resultType="int">
+		SELECT IFNULL(MAX(id), 0)
+		FROM counsel
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*)
+		FROM counsel
+		WHERE delyn = 'n'
+	</select>
+	
+	<insert id="insertCounsel" parameterType="Counsel">
+		INSERT INTO counsel
+		VALUES(#{id}, #{delyn}, #{regdate}, #{categoryId}, #{counseleeName},
+		#{counseleeTelno}, #{possibleTime}, #{detail}, #{memo}, #{doneyn});
+	</insert>
+	
+	<select id="paging" parameterType="SearchVO" resultType="Counsel">
+		SELECT *
+		FROM counsel
+		WHERE delyn = 'n'
+		ORDER BY regdate DESC
+		LIMIT #{maxPageSize}
+		OFFSET #{startRowIndex}
+	</select>
+	
+	<select id="get" parameterType="Counsel" resultType="Counsel">
+		SELECT c.*, ct.name AS category_name
+		FROM counsel c
+			JOIN category ct
+			ON c.category_id = ct.id
+		WHERE c.id = #{id}
+	</select>
+	
+</mapper>

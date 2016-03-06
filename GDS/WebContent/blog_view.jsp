@@ -2,25 +2,20 @@
     pageEncoding= "UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<! DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv= "Content-Type" content= "text/html; charset=UTF-8">
-<title>Insert title here</title>
-<script type= "text/javascript" src= "se2/js/HuskyEZCreator.js" charset= "utf-8"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
+<script type= "text/javascript" src= "se2/js/HuskyEZCreator.js" charset= "utf-8"></script>
+<!-- Optional theme -->
 <style type="text/css">
+#blog_view {margin-top: 70px;}
+
+#blog_view .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
+#blog_view .left-side-bar ul li { border-bottom: 1px solid #eee; }
+#blog_view .left-side-bar ul li:last-child { border: 0px; }
+#blog_view .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
 </style>
 
-</head>
-<body>
-<div class="container">
+<div id="blog_view" class="container">
     <div class="blog-header">
       <h1 class="blog-title" style="font:bold; border-bottom:solid 1px gray;
        padding-bottom: 10px; width: 100%;">별헤는 밤...</h1>
@@ -40,5 +35,3 @@
 	    </div>
 	</c:forEach>
 </div>
-</body>
-</html>

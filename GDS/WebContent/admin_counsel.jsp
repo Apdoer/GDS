@@ -1,19 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
 #admin_counsel img.dummy { margin-bottom: 16px; width: 100%; height: 320px; }
 
 #admin_counsel { padding-left: p }
-#admin_counsel .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
-#admin_counsel .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#admin_counsel .left-side-bar ul li:last-child { border: 0px; }
-#admin_counsel .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
+#admin_counsel h1 { margin-top: 20px; }
 
-#admin_counsel .right-article-list { border-left: 1px solid #eee; }
-#admin_counsel .right-article-list .articles { font-size: 0.9em; margin-bottom: 32px; }
-#admin_counsel .right-article-list .articles table { margin-bottom: 0px; }
-#admin_counsel .right-article-list .articles table th { text-align: center; }
-#admin_counsel .right-article-list .articles table th,
-#admin_counsel .right-article-list .articles table td { padding: 12px 16px; cursor: pointer; }
+#admin_counsel .right-counsel-content p.category-name { margin-bottom: 0px; }
 
 /* 공통 */
 .paginator { text-align: center; }
@@ -27,105 +21,57 @@
 	
 	<div class="row">
 	
-		<div class="col-md-6 left-counsel-list">
-		
-			
-		
-		</div>
-		
-		<div class="col-md-6 right-counsel-content">
-		
-		</div>
-	
-	</div>
-	
-	<div class="col-md-9 right-article-list">
-	
-		<div class="articles">
+		<div class="col-md-6 left-counsel-list"> 
 		
 			<table class="table">
 				<tr>
-					<th style="width: 8%;">글번호</th>
-					<th>제목</th>
-					<th style="width: 16%;">작성일시</th>
-					<th style="width: 8%;">조회수</th>
+					<th style="text-align: center;">제목</th>
+					<th style="width: 20%;">작성일시</th>
 				</tr>
-				<tr>
-					<td style="text-align: center;">10</td>
-					<td style="padding-left: 8px;">게시글 샘플을 작성하는건 쉽지 않은 일입니다.</td>
-					<td style="text-align: center;">2016년 2월 14일</td>
-					<td style="text-align: center;">94</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">9</td>
-					<td style="padding-left: 8px;">홈페이지가 이렇게 번창했으면 좋겠네요.</td>
-					<td style="text-align: center;">2016년 1월 16일</td>
-					<td style="text-align: center;">128</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">8</td>
-					<td style="padding-left: 8px;">행복한 크리스마스 보내시기 바랍니다.</td>
-					<td style="text-align: center;">2015년 12월 23일</td>
-					<td style="text-align: center;">332</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">7</td>
-					<td style="padding-left: 8px;">추석 연휴 간 전화상담 휴무를 안내드립니다.</td>
-					<td style="text-align: center;">2015년 8월 30일</td>
-					<td style="text-align: center;">452</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">6</td>
-					<td style="padding-left: 8px;">GDS 분당센터에서 새롭게 제공하는 프로그램을 소개합니다.</td>
-					<td style="text-align: center;">2015년 7월 17일</td>
-					<td style="text-align: center;">709</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">5</td>
-					<td style="padding-left: 8px;">공지사항 출력 샘플은 잘 보셨나요?</td>
-					<td style="text-align: center;">2015년 6월 1일</td>
-					<td style="text-align: center;">142</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">4</td>
-					<td style="padding-left: 8px;">학부모 모임을 개최 소식을 공유드립니다.</td>
-					<td style="text-align: center;">2015년 5월 24일</td>
-					<td style="text-align: center;">411</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">3</td>
-					<td style="padding-left: 8px;">GDS 분당센터 온라인 홈페이지가 여러분을 찾아갑니다.</td>
-					<td style="text-align: center;">2015년 4월 11일</td>
-					<td style="text-align: center;">182</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">2</td>
-					<td style="padding-left: 8px;">센터 방문 경로에 대해 추가안내드립니다.</td>
-					<td style="text-align: center;">2014년 10월 29일</td>
-					<td style="text-align: center;">213</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">1</td>
-					<td style="padding-left: 8px;">GDS 분당센터에 방문하신 것을 환영합니다.</td>
-					<td style="text-align: center;">2014년 10월 21일</td>
-					<td style="text-align: center;">328</td>
-				</tr>
+				<c:choose>
+					<c:when test="${searchVO.result != null && searchVO.result.size() > 0}">
+						<c:forEach items="${searchVO.result}" var="counsel">
+							<tr style="cursor: pointer;"
+								onclick="javascript: getCounsel(${counsel.id});">
+								<td style="vertical-align: middle; padding-left: 16px;">
+									<p>${counsel.detail}</p>
+									<p>${counsel.categoryName}</p>
+								</td>
+								<td style="vertical-align: middle; text-align: center;">${counsel.regdate}</td>
+							</tr>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<tr>
+							<td colspan="5" style="padding: 16px 0px; text-align: center;">
+								등록된 상담신청내역이 존재하지 않습니다.
+							</td>
+						</tr>
+					</c:otherwise>
+				</c:choose>
 			</table>
-			
-			<div class="paginator">
-				<ul class="pagination">
-					<li><a href="#"><span aria-hidden="true">&laquo;</span></a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#"><span aria-hidden="true">&raquo;</span></a></li>
-				</ul>
-			</div>
-			
+		
 		</div>
-	
+
+		<div class="col-md-6 right-counsel-content">
+
+		</div>
+		
+		<script type="text/javascript">
+		function getCounsel(id) {
+			$.ajax({
+				url: '${cp}/admin/counsel/get.ajax',
+				data: { 'id': id }
+			}).done(function(data) {
+				$('div.right-counsel-content').html(data);
+			}).fail(function(error) {
+				console.log(error);
+			}).always(function() {
+				console.log('finally, done.');
+			});
+		}
+		</script>
+
 	</div>
 	
 </div>

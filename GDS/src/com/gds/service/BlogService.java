@@ -30,5 +30,10 @@ public class BlogService {
 		// TODO Auto-generated method stub
 		return blogDao.selectBlogAll();
 	}
+
+	public int deleteBlog(BlogVO blogVO) {
+		// TODO Auto-generated method stub
+		return blogDao.deleteBlog(blogVO);
+	}
 	
 }

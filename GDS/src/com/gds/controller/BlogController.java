@@ -102,7 +102,7 @@ public class BlogController {
          String contents = request .getParameter ("content" );
          
          BlogVO blogVO = new BlogVO(title, contents);
-         
+         System.out.println(blogVO);
          blogService.insertBlog(blogVO);
          List<BlogVO> blogList;
  		 blogList = blogService.selectBlogAll();
@@ -135,6 +135,17 @@ public class BlogController {
          model.addAttribute("contentPage", "/blog_view.jsp");
          return "index" ;
     }
+	
+	//하나의 블로그 게시물 삭제
+	@RequestMapping ("/deleteBlog.do" )
+	public void deleteBlog(HttpServletRequest request, Model model){
+		int id = Integer.parseInt(request.getParameter("id"));
+		BlogVO blogVO = new BlogVO();
+		blogVO.setId(id);
+		
+		blogService.deleteBlog(blogVO);
+		selectBlogAll(request, model);
+	}
 	
 	//블로그 화면에 불러오기 
 	@RequestMapping ("/selectBlogAll.do" )

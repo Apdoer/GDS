@@ -13,8 +13,8 @@ function submitContents(elClickedObj) {
     /* alert(document.getElementById( "ir1" ).value); */
     var title = document.getElementById( "title" ).value;
     var content = document.getElementById( "ir1" ).value;
-    var category = document.getElementById( "category" ).value;
-    window.location.href="insertBlog.do?title="+title+"&content="+content+"&category="+category;
+    alert(content);
+    window.location.href="insertBlog.do?title="+title+"&content="+content;
 }
 </script>
 
@@ -49,7 +49,7 @@ function submitContents(elClickedObj) {
 	</div>
 	<!--제목 끝-->
 	<br> </br>
-	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90%" >내용을 입력해 주세요 
+	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90" >내용을 입력해 주세요 
 	<!-- <textarea name= "ir1" id="ir1" style="width:20%;" >내용을 입력해 주세요 -->
 	</textarea>
 	<br> </br>

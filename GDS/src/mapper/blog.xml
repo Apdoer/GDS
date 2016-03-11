@@ -32,6 +32,10 @@
 		SELECT * FROM blog WHERE id = #{id}
 	</select>
 	
+	<select id="delete" resultType="Blog">
+		delete FROM blog WHERE id = #{id}
+	</select>
+	
 	
 	<select id="selectBlogAll" resultType="Blog">
 		SELECT * FROM blog order by regdate desc

@@ -99,16 +99,16 @@ public class BlogController {
 
          String title = request .getParameter ("title" );
          String contents = request .getParameter ("content" );
-         String category = request .getParameter ("category" );
          
          BlogVO blogVO = new BlogVO(title, contents);
          
          blogService.insertBlog(blogVO);
+         List<BlogVO> blogList;
+ 		 blogList = blogService.selectBlogAll();
+ 		 model.addAttribute("blogList", blogList);
+ 	 	 model.addAttribute("contentPage", "/blog_view.jsp");
          
-         List<CategoryVO> cateList;
-         cateList = categoryService.listCategory();
-         model.addAttribute("categoryList", cateList);
-         return "admin" ;
+         return "index" ;
     }
 	
 	//블로그 글 작성 페이지 이동

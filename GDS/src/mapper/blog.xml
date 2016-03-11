@@ -34,7 +34,7 @@
 	
 	
 	<select id="selectBlogAll" resultType="Blog">
-		SELECT * FROM blog
+		SELECT * FROM blog order by regdate desc
 	</select>
 
 </mapper>

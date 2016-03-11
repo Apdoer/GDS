@@ -13,6 +13,9 @@
 #blog_view .left-side-bar ul li:last-child { border: 0px; }
 #blog_view .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
+#blog_view .col-sm-8.blog-main{text-align:center; border: solid 3px gray; margin-bottom: 50px; border-radius:7px 10px 7px 10px;}
+#blog_view .blog-post {margin:0 auto;}
+#blog_view .blog-post-title {border-bottom: dotted 2px blue}
 </style>
 
 <div id="blog_view" class="container">
@@ -25,7 +28,7 @@
 		</div>
     </div>
     <c:forEach items="${blogList}" var="blogList">
-	    <div class="col-sm-8 blog-main">
+	    <div class="col-sm-8 blog-main" >
 	       <div class="blog-post">
 	         <h2 class="blog-post-title"><a href="${cp}/blog/selectBlog.do?id=${blogList.id}">${blogList.title}</a></h2>
 	         <p class="blog-post-meta">${blogList.regdate}&nbsp<a href="#">상육이</a></p>

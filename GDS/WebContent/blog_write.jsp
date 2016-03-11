@@ -18,9 +18,17 @@ function submitContents(elClickedObj) {
 }
 </script>
 
-<div id="admin" style="margin-top: 70px; ">
+<style type="text/css">
+#blog_view {margin-top: 170px;}
+
+#blog_view .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
+#blog_view .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
+
+</style>
+
+<div id="#blog_view" style="margin-top: 70px; ">
 	<form action="admin.do">
-	<!--카테고리 시작 -->
+	<!--카테고리 시작
 	<div class="container" style="width: 150px; float:left; padding:0 10 0 0;">
 		<select id="category" class="form-control">
 			<option>카테고리</option>
@@ -32,7 +40,7 @@ function submitContents(elClickedObj) {
 			</form:form>
 		</select>
 	</div>
-	<!--카테고리 끝 -->
+	카테고리 끝 -->
 	
 	<!--제목 시작 -->
 	<div class="input-group" style="float:left; width: 680px;">
@@ -41,7 +49,8 @@ function submitContents(elClickedObj) {
 	</div>
 	<!--제목 끝-->
 	<br> </br>
-	<textarea name= "ir1" id="ir1" rows= "20" cols= "115" >내용을 입력해 주세요
+	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90%" >내용을 입력해 주세요 
+	<!-- <textarea name= "ir1" id="ir1" style="width:20%;" >내용을 입력해 주세요 -->
 	</textarea>
 	<br> </br>
 	<div class="btn-group" role="group" aria-label="..." >

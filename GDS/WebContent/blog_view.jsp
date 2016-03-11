@@ -9,31 +9,30 @@
 #blog_view {margin-top: 70px;}
 
 #blog_view .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
-#blog_view .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#blog_view .left-side-bar ul li:last-child { border: 0px; }
 #blog_view .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
-#blog_view .col-sm-8.blog-main{text-align:center; border: solid 3px gray; margin-bottom: 50px; border-radius:7px 10px 7px 10px;}
+#blog_view .blog-title{font:bold; border-bottom:solid 1px #D5D5D5; padding-bottom: 10px; width: 100%;}
+#blog_view .col-sm-8.blog-main{text-align:center; border-bottom: solid 3px #D5D5D5; margin-bottom: 50px; width: 70%;}
 #blog_view .blog-post {margin:0 auto;}
-#blog_view .blog-post-title {border-bottom: dotted 2px blue}
+#blog_view .blog-post-title {text-align:left; color: #000000; text-decoration: none;}
+#blog_view .blog-post-meta {text-align:left;}
+#blog_view .blog-post-content {text-align:left;}
 </style>
 
 <div id="blog_view" class="container">
     <div class="blog-header">
-      <h1 class="blog-title" style="font:bold; border-bottom:solid 1px gray;
-       padding-bottom: 10px; width: 100%;">별헤는 밤...</h1>
-       <p class="lead blog-description">아름다운 우리들의 동행에 참여하세요..</p>
-    	<div class="buttons center">
-			<a href="${cp}/blog/editBlog.do" class="btn btn-default">별 헤는 글쓰기</a>
-		</div>
+      <h1 class="blog-title">별헤는 밤</h1>
+      <!--  <p class="lead blog-description">아름다운 우리들의 동행에 참여하세요..</p> -->
     </div>
+    <div class="buttons center">
+		<a href="${cp}/blog/editBlog.do" class="btn btn-danger">글쓰기</a>
+	</div>
     <c:forEach items="${blogList}" var="blogList">
-	    <div class="col-sm-8 blog-main" >
+	    <div class="col-sm-10 blog-main" >
 	       <div class="blog-post">
-	         <h2 class="blog-post-title"><a href="${cp}/blog/selectBlog.do?id=${blogList.id}">${blogList.title}</a></h2>
-	         <p class="blog-post-meta">${blogList.regdate}&nbsp<a href="#">상육이</a></p>
-	         <p>${blogList.content}</p>
-		     <hr>
+	         <h2 class="blog-post-title"><a href="${cp}/blog/selectBlog.do?id=${blogList.id}" style="color:black; text-decoration: none;">${blogList.title}</a></h2>
+	         <p class="blog-post-meta">${blogList.regdate}</p>
+	         <p class="blog-post-content">${blogList.content}</p>
 	   		</div>
 	    </div>
 	</c:forEach>

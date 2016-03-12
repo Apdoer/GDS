@@ -21,7 +21,8 @@
         <div class="navbar-header">
           
           <a class="navbar-brand" href="${cp }/index.jsp">
-          	<img alt="Brand" src="${cp}/image/logo_c.png">
+          	<span><img alt="Brand" src="${cp}/image/logo_c.png">
+          	<img src="${cp}/image/tomatis.png"></span>
           </a>
         </div>
         <div id="navbar" class="navbar-right collapse navbar-collapse">
@@ -56,7 +57,7 @@
             </li>
             <li><a href="${cp}/counsel.do">상담신청</a>
             </li>
-            <li><a href="#"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><span class="phone"> 031-711-3546 / 010-3247-3535</span></a>
+            <li class="tel_no_top"><a href="#"><span class="phone"><img src="${cp }/image/icon_1.png"> <img src="${cp }/image/tel_no.png"></span></a>
             </li>
             
           </ul>

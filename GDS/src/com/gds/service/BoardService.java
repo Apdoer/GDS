@@ -30,6 +30,16 @@ public class BoardService {
 	}
 	
 	/**
+	 * Select board with id.
+	 * 
+	 * @param board
+	 * @return
+	 */
+	public BoardVO getBoard(BoardVO boardVO) {
+		return boardDao.get(boardVO);
+	}
+	
+	/**
 	 * Select paged boards.
 	 * 
 	 * @param searchVO

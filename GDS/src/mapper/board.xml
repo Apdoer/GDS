@@ -34,6 +34,13 @@
 		);
 	</insert>
 	
+	<select id="get" parameterType="Board" resultType="Board">
+		SELECT *
+		FROM board
+		WHERE delyn = 'n'
+		  AND id = #{id}
+	</select>
+	
 	<select id="paging" parameterType="SearchVO" resultType="Board">
 		SELECT *
 		FROM board

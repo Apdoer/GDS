@@ -24,7 +24,7 @@ public class CounselController {
 
 	@RequestMapping("/counsel.do")
 	public String monveCounsel(Model model){		
-		model.addAttribute("contentPage", "/board_counsel.jsp");
+		model.addAttribute("contentPage", "/counsel.jsp");
 		return "index";
 	}
 	

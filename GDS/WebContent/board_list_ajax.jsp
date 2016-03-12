@@ -13,7 +13,7 @@
 	<c:choose>
 		<c:when test="${searchVO.result != null && searchVO.result.size() > 0}">
 			<c:forEach items="${searchVO.result}" var="board">
-				<tr>
+				<tr onclick="javascript: getBoard(${board.id})">
 					<td>${board.id + 1}</td>
 					<td>${board.type}</td>
 					<td>${board.title}</td>
@@ -49,7 +49,7 @@
 			</c:if>
 		</c:forEach>
 		<c:if test="${searchVO.endPageIndex < searchVO.lastPageIndex}">
-			<li><a href="javascript: listBoard(${searchVO.startPageIndex + 1});">
+			<li><a href="javascript: listBoard(${searchVO.endPageIndex + 1});">
 				<span aria-hidden="true">&raquo;</span>
 			</a></li>	
 		</c:if>

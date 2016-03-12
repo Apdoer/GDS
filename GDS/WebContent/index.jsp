@@ -21,7 +21,7 @@
         <div class="navbar-header">
           
           <a class="navbar-brand" href="${cp }/index.jsp">
-          	<img alt="Brand" src="${cp}/img/GDS_Logo.png">
+          	<img alt="Brand" src="${cp}/image/logo_c.png">
           </a>
         </div>
         <div id="navbar" class="navbar-right collapse navbar-collapse">
@@ -64,6 +64,7 @@
       </div>
     </nav>
     
+    <div style="min-height:700px;">
     <c:choose>
 	<c:when test="${not empty contentPage}">
 		<jsp:include page="${requestScope.contentPage }" />
@@ -72,12 +73,12 @@
 		<jsp:include page="/home.jsp"/>		
 	</c:otherwise>
 	</c:choose>
-
+	</div>
     
     
     <footer class="footer">
     	<div class="container">
-    		<p>&copy; GDS 분당중앙센터</p>
+    		<p>&copy; 지디에스 분당중앙센터</p>
     		<p></p>
     	</div>        
     </footer>

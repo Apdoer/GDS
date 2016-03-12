@@ -57,12 +57,15 @@
 	</div>
 	
 <script type="text/javascript">
+function getBoard(id) {
+	location.href = "${cp}/board/get.do?id=" + id; 	
+}
+
 function listBoard(pageIdx) {
 	$.ajax({
 		url: '${cp}/board/list.ajax',
 		data: { 'currentPage': pageIdx }
 	}).done(function(data) {
-		console.log('hayo!');
 		$('div.articles').html(data);
 	}).fail(function(error) {
 		alert(error);

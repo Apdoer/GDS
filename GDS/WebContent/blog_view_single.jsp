@@ -20,23 +20,30 @@
 </style>
 
 <div id="blog_view" class="container">
-	<div class="content">
-	</div>
-<script type="text/javascript">
-function listBoard(pageIdx) {
-	$.ajax({
-		url: '${cp}/blog/list.ajax',
-		data: { 'currentPage': pageIdx }
-	}).done(function(data) {
-		console.log('hayo!');
-		$('div.content').html(data);
-	}).fail(function(error) {
-		alert(error);
-	});
-}
+	<div class="blog-header">
+     <h1 class="blog-title">별헤는 밤</h1>
+     <!--  <p class="lead blog-description">아름다운 우리들의 동행에 참여하세요..</p> -->
+   </div>
+   <div class="buttons center">
+	<a href="${cp}/blog/editBlog.do" class="btn btn-info">글 쓰기</a>
+	
+	<c:choose>
+	<c:when test="${not empty blogList[1]}">
+	</c:when>
+	<c:otherwise>
+		<a href="${cp}/blog/deleteBlog.do?id=${blogList[0].id}" class="btn btn-info">글 삭제</a>
+		<a href="${cp}/blog/updateViewBlog.do?id=${blogList[0].id}" class="btn btn-info">글 수정</a>
+	</c:otherwise>
+	</c:choose>
 
-$(function() {
-	listBoard(1);
-});
-</script>	
+</div>
+   <c:forEach items="${blogList}" var="blogList">
+    <div class="col-md-9 blog-main">
+       <div class="blog-post">
+         <h2 class="blog-post-title"><a href="${cp}/blog/selectBlog.do?id=${blogList.id}" style="color:black; text-decoration: none;">${blogList.title}</a></h2>
+         <p class="blog-post-meta">${blogList.regdate}</p>
+         <p class="blog-post-content">${blogList.content}</p>
+   		</div>
+    </div>
+</c:forEach>
 </div>

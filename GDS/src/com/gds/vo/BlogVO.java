@@ -88,6 +88,12 @@ public class BlogVO {
 		this.title = title;
 		this.content = content;
 	}
+	
+	public BlogVO(int id, String title, String content) {
+		this.id = id;
+		this.title = title;
+		this.content = content;
+	}
 
 	@Override
 	public String toString() {

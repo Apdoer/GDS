@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gds.vo.BlogVO;
+import com.gds.vo.SearchVO;
 
 @Repository
 public class BlogDao {
@@ -51,7 +52,27 @@ public class BlogDao {
 
 	public int deleteBlog(BlogVO blogVO) {
 		// TODO Auto-generated method stub
-		return sqlSessionTemplate.insert("Blog.delete", blogVO);
+		return sqlSessionTemplate.update("Blog.delete", blogVO);
+	}
+
+	public int updateBlog(BlogVO blogVO) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.update("Blog.update", blogVO);
+	}
+	
+	public int plusConut(BlogVO blogVO) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.update("Blog.plusConut", blogVO);
+	}
+
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectOne("Blog.getTotalCount");
+	}
+
+	public List<?> paging(SearchVO searchVO) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectList("Blog.paging", searchVO);
 	}
 	
 }

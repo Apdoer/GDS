@@ -32,13 +32,35 @@
 		SELECT * FROM blog WHERE id = #{id}
 	</select>
 	
-	<select id="delete" resultType="Blog">
-		delete FROM blog WHERE id = #{id}
+	<select id="selectBlogAll" resultType="Blog">
+		SELECT * FROM blog where delyn = 'n' order by id desc 
 	</select>
 	
+	<update id="delete" parameterType="Blog">
+		update blog set delyn = 'y' WHERE id = #{id}
+	</update>
 	
-	<select id="selectBlogAll" resultType="Blog">
-		SELECT * FROM blog order by regdate desc
+	<update id="update" parameterType="Blog">
+		update blog set title = #{title}, content = #{content} where id = #{id}
+	</update>
+	
+	<update id="plusConut" parameterType="Blog">
+		update blog set cnt = cnt+1 where id = #{id}
+	</update>
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*)
+		FROM blog
+		WHERE delyn = 'n'
+	</select>
+	
+	<select id="paging" parameterType="SearchVO" resultType="Blog">
+		SELECT *
+		FROM blog
+		WHERE delyn = 'n'
+		ORDER BY regdate DESC
+		LIMIT #{maxPageSize}
+		OFFSET #{startRowIndex}
 	</select>
 
 </mapper>

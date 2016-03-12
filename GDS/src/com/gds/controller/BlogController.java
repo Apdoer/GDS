@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.lang.ProcessBuilder.Redirect;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.UUID;
@@ -20,9 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gds.service.BlogService;
+import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
 import com.gds.vo.BlogVO;
 import com.gds.vo.CategoryVO;
+import com.gds.vo.SearchVO;
 
 @Controller
 @RequestMapping("/blog")
@@ -30,6 +33,9 @@ public class BlogController {
 
 	@Autowired
 	BlogService blogService;
+	
+	@Autowired
+	BoardService boardService;
 	
 	@Autowired
 	CategoryService categoryService;
@@ -99,10 +105,9 @@ public class BlogController {
     public String insertBlog(HttpServletRequest request, Model model){
 
          String title = request .getParameter ("title" );
-         String contents = request .getParameter ("content" );
+         String content = request .getParameter ("content" );
          
-         BlogVO blogVO = new BlogVO(title, contents);
-         System.out.println(blogVO);
+         BlogVO blogVO = new BlogVO(title, content);
          blogService.insertBlog(blogVO);
          List<BlogVO> blogList;
  		 blogList = blogService.selectBlogAll();
@@ -123,28 +128,58 @@ public class BlogController {
 	//하나의 블로그 게시물 선택
 	@RequestMapping ("/selectBlog.do" )
     public String selectBlog(HttpServletRequest request, Model model){
-         //String title = request .getParameter ("title" );
          int id = Integer.parseInt(request.getParameter("id"));
          BlogVO blogVO = new BlogVO();
          blogVO.setId(id);
          
          List<BlogVO> blogList;
          blogList = blogService.selectBlog(blogVO);
-         System.out.println(blogList);
          model.addAttribute("blogList", blogList);
-         model.addAttribute("contentPage", "/blog_view.jsp");
+         model.addAttribute("contentPage", "/blog_view_single.jsp");
          return "index" ;
     }
 	
+	//블로그 업데이트 화면 이동
+	@RequestMapping ("/updateViewBlog.do" )
+	public String updateViewBlog(HttpServletRequest request, Model model){
+		int id = Integer.parseInt(request.getParameter("id"));
+		BlogVO blogVO = new BlogVO();
+		blogVO.setId(id);
+		
+		List<BlogVO> blogList;
+		blogList = blogService.selectBlog(blogVO);
+		model.addAttribute("blogList", blogList);
+		model.addAttribute("contentPage", "/blog_write_update.jsp");
+		return "index" ;
+	}
+	
 	//하나의 블로그 게시물 삭제
 	@RequestMapping ("/deleteBlog.do" )
-	public void deleteBlog(HttpServletRequest request, Model model){
+	public String deleteBlog(HttpServletRequest request, Model model){
 		int id = Integer.parseInt(request.getParameter("id"));
 		BlogVO blogVO = new BlogVO();
 		blogVO.setId(id);
 		
 		blogService.deleteBlog(blogVO);
-		selectBlogAll(request, model);
+		return "redirect:/blog/selectBlogAll.do";
+	}
+	
+	//블로그 업데이트 버튼
+	@RequestMapping ("/updateBlog.do" )
+	public String updateBlog(HttpServletRequest request, Model model){
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		String title = request .getParameter ("title" );
+		String content = request .getParameter ("content" );
+		
+		System.out.println(id);
+		BlogVO blogVO = new BlogVO(id, title, content);
+		
+		System.out.println(blogVO);
+		blogService.updateBlog(blogVO);
+		
+		
+		return "redirect:/blog/selectBlogAll.do";
 	}
 	
 	//블로그 화면에 불러오기 
@@ -156,5 +191,15 @@ public class BlogController {
 		model.addAttribute("blogList", blogList);
 		model.addAttribute("contentPage", "/blog_view.jsp");
 		return "index" ;
+	}
+	
+	//페이징 ajax
+	@RequestMapping("/list.ajax")
+	public ModelAndView listBoard(SearchVO searchVO) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("searchVO", blogService.pagingBlog(searchVO));
+		mav.setViewName("blog_list_ajax_page");
+		return mav;
 	}
 }

@@ -13,13 +13,12 @@ function submitContents(elClickedObj) {
     /* alert(document.getElementById( "ir1" ).value); */
     var title = document.getElementById( "title" ).value;
     var content = document.getElementById( "ir1" ).value;
-    alert(content);
-    window.location.href="insertBlog.do?title="+title+"&content="+content;
+    window.location.href="updateBlog.do?id="+${blogList[0].id}+"&title="+title+"&content="+content;
 }
 </script>
 
 <style type="text/css">
-#blog_view {margin-top: 70px;}
+#blog_view {margin-top: 170px;}
 
 #blog_view .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 #blog_view .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
@@ -45,11 +44,11 @@ function submitContents(elClickedObj) {
 	<!--제목 시작 -->
 	<div class="input-group" style="float:left; width: 680px;">
 	  <span class="input-group-addon" id="basic-addon1">제목</span>
-	  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1">
+	  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1" value="${blogList[0].title}">
 	</div>
 	<!--제목 끝-->
 	<br> </br>
-	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90" >
+	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90" >${blogList[0].content} 
 	</textarea>
 	<br> </br>
 	<div class="btn-group" role="group" aria-label="..." >

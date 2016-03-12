@@ -67,9 +67,8 @@
 </style>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div id="home">
-    
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="home"> 
+   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -121,7 +120,7 @@
 </div>
     
     
-    <div class="bar_container">
+    <div class="bar_container container">
     	<div>
 	    	<div class="symtom_container">
 	    		<div class="symtom symtom1"></div>
@@ -132,7 +131,7 @@
     	</div>
     </div>
 
-    <div class="info_container">
+    <div class="info_container container">
       <!-- Example row of columns -->
       <div class="row">
       

@@ -8,22 +8,20 @@
 		<th>글번호</th>
 		<th>제목</th>
 		<th>작성일시</th>
-		<th>조회수</th>
 	</tr>
 	<c:choose>
 		<c:when test="${searchVO.result != null && searchVO.result.size() > 0}">
 			<c:forEach items="${searchVO.result}" var="qna">
-				<tr>
+				<tr onclick="javascript: getQna(${qna.id})">
 					<td>${qna.id + 1}</td>
 					<td>${qna.title}</td>
 					<td><fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일"/></td>
-					<td>${qna.cnt}</td>
 				</tr>
 			</c:forEach>
 		</c:when>
 		<c:otherwise>
 			<tr>
-				<td colspan="4" style="padding: 32px;">
+				<td colspan="3" style="padding: 32px;">
 					작성된 글이 없습니다.
 				</td>
 			</tr>

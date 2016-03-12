@@ -38,10 +38,11 @@
 		)
 	</insert>
 
-	<select id="select" resultType="Qna">
+	<select id="get" parameterType="Qna" resultType="Qna">
 		SELECT *
 		FROM qna
-		WHERE delyn = 'y'
+		WHERE delyn = 'n'
+		  AND id = #{id}
 	</select>
 	
 	<select id="paging" parameterType="SearchVO" resultType="Qna">

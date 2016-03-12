@@ -30,7 +30,7 @@ public class BoardService {
 	}
 	
 	/**
-	 * Select board with id.
+	 * Get board with id.
 	 * 
 	 * @param board
 	 * @return

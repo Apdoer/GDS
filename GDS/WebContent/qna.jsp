@@ -16,7 +16,6 @@
 #qna .right-article-list .articles table td { padding: 12px 16px; cursor: pointer; }
 #qna .right-article-list .articles table th:nth-child(1) { width: 10%; }
 #qna .right-article-list .articles table th:nth-child(3) { width: 20%; }
-#qna .right-article-list .articles table th:nth-child(4) { width: 10%; }
 #qna .right-article-list .articles table tr > td { vertical-align: middle; text-align: center; }
 #qna .right-article-list .articles table tr > td:nth-child(2) { padding-left: 32px; text-align: left; }
 
@@ -56,6 +55,10 @@
 	</div>
 	
 <script type="text/javascript">
+function getQna(id) {
+	location.href = "${cp}/qna/get.do?id=" + id; 	
+}
+
 function listQna(pageIdx) {
 	$.ajax({
 		url: '${cp}/qna/list.ajax',

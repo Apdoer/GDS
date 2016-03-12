@@ -44,13 +44,13 @@ public class QnaDao {
 	}
 	
 	/**
-	 * Select all qnas.
+	 * Get qna with id.
 	 * 
-	 * @param gubun
+	 * @param qnaVO
 	 * @return
 	 */
-	public List<QnaVO> select() {
-		return sqlSessionTemplate.selectList("Qna.select");
+	public QnaVO get(QnaVO qnaVO) {
+		return sqlSessionTemplate.selectOne("Qna.get", qnaVO);
 	}
 	
 	/**

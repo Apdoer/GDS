@@ -1,12 +1,10 @@
 package com.gds.controller;
 
-import java.util.Map;
-
-import org.codehaus.jackson.map.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,6 +36,42 @@ public class QnaController {
 	@ResponseBody
 	public boolean writeQna(QnaVO qna) {
 		return qnaService.writeQna(qna);
+	}
+	
+	@RequestMapping(value="/get.do", method=RequestMethod.GET)
+	public ModelAndView getQnaGet(QnaVO qnaVO) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("index");
+		
+		qnaVO = qnaService.getQna(qnaVO);
+		if ("n".equals(qnaVO.getOpenyn())) {
+			mav.addObject("id", qnaVO.getId());
+			mav.addObject("contentPage", "/qna_check.jsp");
+			return mav;
+		}
+		
+		mav.addObject("qna", qnaVO);
+		mav.addObject("contentPage", "/qna_content.jsp");
+		return mav;
+	}
+	
+	@RequestMapping(value="/get.do", method=RequestMethod.POST)
+	public ModelAndView getQnaPost(QnaVO qnaVO) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("index");
+		
+		String inputPassword = qnaVO.getPassword();
+		
+		qnaVO = qnaService.getQna(qnaVO);
+		if (inputPassword.equals(qnaVO.getPassword())) {
+			mav.addObject("qna", qnaVO);
+			mav.addObject("contentPage", "/qna_content.jsp");
+			return mav;
+		} else {
+			mav.addObject("message", "비밀번호가 일치하지 않습니다.");
+			mav.addObject("contentPage", "/qna_content.jsp");
+			return mav;
+		}
 	}
 	
 	@RequestMapping("/list.ajax")

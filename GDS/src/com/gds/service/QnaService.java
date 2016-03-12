@@ -30,6 +30,16 @@ public class QnaService {
 	}
 	
 	/**
+	 * Get qna with id.
+	 * 
+	 * @param qnaVO
+	 * @return
+	 */
+	public QnaVO getQna(QnaVO qnaVO) {
+		return qnaDao.get(qnaVO);
+	}
+	
+	/**
 	 * Select paged qnas.
 	 * 
 	 * @param searchVO

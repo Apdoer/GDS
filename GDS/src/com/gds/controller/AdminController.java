@@ -234,5 +234,13 @@ public class AdminController {
 		boardService.deleteBoard(id);
 		return "redirect:/admin/board/enter.do";
 	}
+	
+	// 여기서부터 온라인 문의 관련 관리자 메서드 ('/qna'로 시작해줄 것!)
+	
+	@RequestMapping("/qna/enter.do")
+	public String enterQna(Model model) {
+		model.addAttribute("contentPage", "/qna.jsp");
+		return "admin_index";
+	}
 
 }

@@ -7,6 +7,7 @@
 	<tr>
 		<th>글번호</th>
 		<th>제목</th>
+		<th>작성자</th>
 		<th>작성일시</th>
 	</tr>
 	<c:choose>
@@ -19,13 +20,14 @@
 						<c:if test="${qna.answer != null}"><span class="badge is-answered">답변됨</span></c:if>
 						${qna.title}
 					</td>
+					<td>${qna.name}</td>
 					<td><fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일"/></td>
 				</tr>
 			</c:forEach>
 		</c:when>
 		<c:otherwise>
 			<tr>
-				<td colspan="3" style="padding: 32px;">
+				<td colspan="4" style="padding: 32px;">
 					작성된 글이 없습니다.
 				</td>
 			</tr>
@@ -54,8 +56,4 @@
 			</a></li>	
 		</c:if>
 	</ul>
-</div>
-
-<div class="buttons">
-	<a href="${cp}/qna/form.do" class="btn btn-default">글쓰기</a>
 </div>

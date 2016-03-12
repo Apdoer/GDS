@@ -2,8 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
-#qna_form img.dummy { margin-bottom: 16px; width: 100%; height: 320px; }
-
+#qna_form { padding-top: 60px; }
 #qna_form .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 #qna_form .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #qna_form .left-side-bar ul li:last-child { border: 0px; }
@@ -17,10 +16,8 @@
 .paginator ul.pagination li span { border: 0px; color: #555; }
 </style>
 
-<div id="qna_form">
+<div id="qna_form" class="container">
 
-	<img class="dummy" alt="" src="${cp}/img/dummy.jpg">
-	
 	<div class="row">
 		
 		<!-- board left-side-bar -->

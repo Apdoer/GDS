@@ -25,7 +25,7 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<div id="board">
+<div id="board" class="container">
 
 	<div class="row">
 		

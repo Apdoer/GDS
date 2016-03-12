@@ -8,7 +8,7 @@
 #qna form label span { color: #888; font-weight: normal; }
 </style>
 
-<div id="qna">
+<div id="qna" class="container">
 
 	<!-- qna password check form -->
 	<div class="row">

@@ -20,7 +20,7 @@
 .line-horizontal { border: 1px solid #222; border-radius: 1px; }
 </style>
 
-<div id="qna">
+<div id="qna" class="container">
 
 	<div class="row">
 		

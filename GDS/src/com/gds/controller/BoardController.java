@@ -19,7 +19,6 @@ public class BoardController {
 	
 	@RequestMapping("/enter.do")
 	public String moveBoard(Model model) {
-		model.addAttribute("searchVO", boardService.pagingBoard(new SearchVO()));
 		model.addAttribute("contentPage", "/board.jsp");
 		return "index";
 	}

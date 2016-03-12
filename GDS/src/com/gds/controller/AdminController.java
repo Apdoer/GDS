@@ -1,9 +1,7 @@
 package com.gds.controller;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +22,6 @@ import com.gds.service.CategoryService;
 import com.gds.service.CounselService;
 import com.gds.util.AuthConstantUtil;
 import com.gds.vo.CounselVO;
-import com.gds.vo.PhotoVO;
 import com.gds.vo.SearchVO;
 
 @Controller
@@ -42,6 +40,13 @@ public class AdminController {
 	@Autowired
 	CounselService counselService;
 	
+	/**
+	 * Admin entrance.
+	 * Shows counsel management page first.
+	 * 
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/enter.do")
 	public ModelAndView enter(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
@@ -50,12 +55,28 @@ public class AdminController {
 		return mav;
 	}
 	
+	/**
+	 * Send user to admin login form page.
+	 * 
+	 * @return
+	 */
 	@RequestMapping(value="/login.do", method=RequestMethod.GET)
 	public String login() {
-		System.out.println("Welcome, stranger.");
+		// System.out.println("Welcome, stranger.");
 		return "admin_login";
 	}
 	
+	/**
+	 * Process admin login.
+	 * If success, send user to admin page.
+	 * Else fail, send user back to admin login form.
+	 * 
+	 * @param request
+	 * @param response
+	 * @param mav
+	 * @param password
+	 * @return
+	 */
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
 	public ModelAndView login(
 			HttpServletRequest request, 
@@ -94,41 +115,13 @@ public class AdminController {
 		}
 	}
 	
-	//�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�떦�뼲�삕�뜝�떥�벝�삕
-	@RequestMapping("/photoUpload.do")
-	public String photoUpload(HttpServletRequest request, PhotoVO vo){
-	    String callback = vo.getCallback();
-	    String callback_func = vo.getCallback_func();
-	    String file_result = "";
-	    try {
-	        if(vo.getFiledata() != null && vo.getFiledata().getOriginalFilename() != null && !vo.getFiledata().getOriginalFilename().equals("")){
-	            //�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�떦紐뚯삕
-	            String original_name = vo.getFiledata().getOriginalFilename();
-	            String ext = original_name.substring(original_name.lastIndexOf(".")+1);
-	            //�뜝�룞�삕�뜝�룞�삕 �뜝�뜦蹂멨뜝�룞�삕�뜝占�
-	            String defaultPath = request.getSession().getServletContext().getRealPath("/");
-	            //�뜝�룞�삕�뜝�룞�삕 �뜝�뜦蹂멨뜝�룞�삕�뜝占� _ �뜝�룫�꽭怨ㅼ삕�뜝占�
-	            String path = defaultPath + "resource" + File.separator + "photo_upload" + File.separator;              
-	            File file = new File(path);
-	            System.out.println("path:"+path);
-	            //�뜝�룞�삕�뜝�뜲由� �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�뜲由� �뜝�룞�삕
-	            if(!file.exists()) {
-	                file.mkdirs();
-	            }
-	            //�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�떥�벝�삕 �뜝�룞�삕 �뜝�룞�삕�뜝�떦紐뚯삕(�뜝�떬湲�諭꾩삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�떆紐뚯삕�뜝�룞�삕 �뜝�떗�뒗怨ㅼ삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕)
-	            String realname = UUID.randomUUID().toString() + "." + ext;
-	        ///////////////// �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�떦�뼲�삕�뜝�룞�삕 ///////////////// 
-	            vo.getFiledata().transferTo(new File(path+realname));
-	            file_result += "&bNewLine=true&sFileName="+original_name+"&sFileURL=/resource/photo_upload/"+realname;
-	        } else {
-	            file_result += "&errstr=error";
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	    return "redirect:" + callback + "?callback_func="+callback_func+file_result;
-	}
+	// 여기서부터 상담신청 관련 관리자 메서드 ('/counsel'로 시작해줄 것!)
 	
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/counsel/enter.do")
 	public String enterCounsel() {
 		ModelAndView mav = new ModelAndView();
@@ -138,6 +131,12 @@ public class AdminController {
 		return "admin_index";
 	}
 
+	/**
+	 * 
+	 * 
+	 * @param searchVO
+	 * @return
+	 */
 	@RequestMapping("/counsel/list.ajax")
 	public ModelAndView listCounsel(SearchVO searchVO) {
 		ModelAndView mav = new ModelAndView();
@@ -147,6 +146,12 @@ public class AdminController {
 		return mav;
 	}
 	
+	/**
+	 * 
+	 * 
+	 * @param counselVO
+	 * @return
+	 */
 	@RequestMapping("/counsel/get.ajax")
 	public ModelAndView getCounsel(CounselVO counselVO) {
 		ModelAndView mav = new ModelAndView();
@@ -155,6 +160,12 @@ public class AdminController {
 		return mav;
 	}
 
+	/**
+	 * 
+	 * 
+	 * @param counselVO
+	 * @return
+	 */
 	@RequestMapping("/counsel/modify.ajax")
 	@ResponseBody
 	public Map<String, Object> modifyCounsel(CounselVO counselVO) {
@@ -162,6 +173,20 @@ public class AdminController {
 		result.put("status", counselService.modifyCounsel(counselVO));
 		result.put("undoneCounselCnt", counselService.getUndoneCounselCount());
 		return result;
+	}
+	
+	// 여기서부터 공지 / 이벤트 관련 관리자 메서드 ('/board'로 시작해줄 것!)
+	
+	@RequestMapping("/board/enter.do")
+	public String enterBoard(Model model) {
+		model.addAttribute("contentPage", "/board.jsp");
+		return "admin_index";
+	}
+	
+	@RequestMapping("/board/form.do")
+	public String formBoard(Model model) {
+		model.addAttribute("contentPage", "/board_form.jsp");
+		return "admin_index";
 	}
 
 }

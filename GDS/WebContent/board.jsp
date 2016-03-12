@@ -8,8 +8,8 @@
 #board .left-side-bar ul li:last-child { border: 0px; }
 #board .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
-#board .right-article-list { border-left: 1px solid #eee; }
-#board .right-article-list .articles { font-size: 0.9em; margin-bottom: 32px; }
+#board .right-article-list { border-left: 1px solid #eee; padding-bottom: 16px; }
+#board .right-article-list .articles { font-size: 0.9em; }
 #board .right-article-list .articles table { margin-bottom: 0px; }
 #board .right-article-list .articles table th { text-align: center; }
 #board .right-article-list .articles table th,
@@ -51,6 +51,10 @@
 			<div class="articles">
 				<!-- load board list by ajax -->
 			</div>
+			
+			<c:if test="${sessionScope.auth != null}">
+				<a class="btn btn-default pull-right" href="${cp}/admin/board/form.do">글쓰기</a>
+			</c:if>
 		
 		</div>
 		

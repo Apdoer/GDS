@@ -15,14 +15,9 @@
 #qna .right-article-content .content { padding: 16px 8px; }
 #qna .right-article-content .content .header { color: #777; margin-bottom: 8px; }
 #qna .right-article-content .content .header span:first-child { margin-right: 8px; }
+#qna .right-article-content .content .body { padding-bottom: 16px; font-size: 1.2em; }
 
-/* 공통 */
-.paginator { text-align: center; }
-.paginator ul.pagination { margin: 0px; }
-.paginator ul.pagination li a,
-.paginator ul.pagination li span { border: 0px; color: #555; }
-
-.buttons { margin-bottom: 32px; text-align: right; }
+.line-horizontal { border: 1px solid #222; border-radius: 1px; }
 </style>
 
 <div id="qna">
@@ -46,19 +41,41 @@
 				<h1>${qna.title}</h1>
 			</div>
 			
-			<div class="line-horizontal" style="border: 1px solid #222; border-radius: 1px;"></div>
+			<div class="line-horizontal"></div>
 			
-			<div class="content">
+			<div class="content question">
+			
 				<div class="header">
 					<span>
 						<span class="glyphicon glyphicon-calendar"></span>
-						<fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일"/> &nbsp;
+						<fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
 					</span>
 				</div>
+				
 				<div class="body">
 					${qna.question}
 				</div>
+				
 			</div>
+			
+			<c:if test="${qna.answer != null}">
+				<div class="line-horizontal"></div>
+				
+				<div class="content answer">
+				
+					<div class="header">
+						<span>
+							<span class="glyphicon glyphicon-calendar"></span>
+							<fmt:formatDate value="${qna.regdateAnswer}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
+						</span>
+					</div>
+					
+					<div class="body">
+						${qna.answer}
+					</div>
+				
+				</div>
+			</c:if>
 			
 		</div>
 		

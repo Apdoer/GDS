@@ -18,6 +18,8 @@
 #qna .right-article-list .articles table th:nth-child(3) { width: 20%; }
 #qna .right-article-list .articles table tr > td { vertical-align: middle; text-align: center; }
 #qna .right-article-list .articles table tr > td:nth-child(2) { padding-left: 32px; text-align: left; }
+#qna .right-article-list .articles table tr > td span.badge { margin-right: 4px; font-weight: normal; }
+#qna .right-article-list .articles table tr > td span.badge.is-answered { background-color: green; }
 
 /* 공통 */
 .paginator { text-align: center; }

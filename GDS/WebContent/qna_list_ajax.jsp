@@ -14,7 +14,11 @@
 			<c:forEach items="${searchVO.result}" var="qna">
 				<tr onclick="javascript: getQna(${qna.id})">
 					<td>${qna.id + 1}</td>
-					<td>${qna.title}</td>
+					<td>
+						<c:if test="${qna.openyn == 'n'}"><span class="badge is-opened">비밀글</span></c:if>
+						<c:if test="${qna.answer != null}"><span class="badge is-answered">답변됨</span></c:if>
+						${qna.title}
+					</td>
 					<td><fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일"/></td>
 				</tr>
 			</c:forEach>

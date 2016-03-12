@@ -59,17 +59,18 @@ public class QnaController {
 	public ModelAndView getQnaPost(QnaVO qnaVO) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
-		
+		System.out.println(qnaVO);
 		String inputPassword = qnaVO.getPassword();
 		
 		qnaVO = qnaService.getQna(qnaVO);
+		System.out.println(qnaVO);
 		if (inputPassword.equals(qnaVO.getPassword())) {
 			mav.addObject("qna", qnaVO);
 			mav.addObject("contentPage", "/qna_content.jsp");
 			return mav;
 		} else {
 			mav.addObject("message", "비밀번호가 일치하지 않습니다.");
-			mav.addObject("contentPage", "/qna_content.jsp");
+			mav.addObject("contentPage", "/qna_check.jsp");
 			return mav;
 		}
 	}

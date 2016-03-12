@@ -1,4 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <c:set var="cp" value="${pageContext.request.contextPath}" />
  
  <script type="text/javascript">
 
@@ -52,11 +54,17 @@ function counselSubmit(){
 });
 
 </script>
+
+<style type="text/css">
+#board_counsel{
+	margin-top:30px;
+}
+</style>
  
  
 	<div id="board_counsel">
 	
-		<img class="dummy" alt="" src="img/dummy.jpg" style="width: 100%; height: 320px;">
+		<img class="dummy" alt="" src="${cp}/image/ba_0.png" style="width:100%">
 		
 		<div class="row">
 			

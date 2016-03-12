@@ -28,7 +28,7 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<div id="qna">
+<div id="qna" class="container">
 
 	<div class="row">
 		

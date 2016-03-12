@@ -47,7 +47,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">소식지 <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">커뮤니티 <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 <li><a href="${cp}/blog/selectBlogAll.do">별 헤는 밤</a></li>
                 <li><a href="${cp}/board/enter.do">공지사항</a></li>
@@ -56,7 +56,7 @@
             </li>
             <li><a href="${cp}/counsel.do">상담신청</a>
             </li>
-            <li><a href="#"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span><span class="phone"> 031-711-3546</span></a>
+            <li><a href="#"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><span class="phone"> 031-711-3546 / 010-3247-3535</span></a>
             </li>
             
           </ul>

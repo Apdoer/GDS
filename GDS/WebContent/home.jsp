@@ -57,6 +57,10 @@
 #home .symtom4{
 	background:URL('${cp}/image/m_b4.png');
 }
+
+#home .info_container{
+	width:80%; margin:0 auto;
+}
 </style>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -125,7 +129,7 @@
     	</div>
     </div>
 
-    <div class="container">
+    <div class="info_container">
       <!-- Example row of columns -->
       <div class="row">
       
@@ -141,9 +145,8 @@
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
-          <h2>예시레이아웃</h2>
-          <p>예시 글입니다...</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h2><img src="${cp}/image/icon_2.png">&nbsp;찾아오시는 길</h2>
+          <div><img src="${cp }/image/map_1.png"></div>
         </div>
         
       </div>

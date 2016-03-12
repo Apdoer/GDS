@@ -18,6 +18,10 @@ body{
 	background-image: url('../img/kids1.jpg');
 }
 
+.glyphicon-earphone{
+	color:#2cabea;
+}
+
 .footer{
 	bottom:0;
 	height: 90px;

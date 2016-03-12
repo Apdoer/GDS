@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <style type="text/css">
 #introduce {margin-top: 70px;}
 
@@ -30,7 +32,7 @@
 		<div class="col-md-3 left-side-bar">
 		
 			<ul class="pull-right">
-				<li><a href="#1" style="font-weight: bold;">인사말</a></li>
+				<li><a href="#1" style="font-weight: bold;color:#2cabea;">인사말</a></li>
 				<li><a href="#1">추천사</a></li>
 				<li><a href="#2">운영방식 및 시간</a></li>
 				<li><a href="#3">오시는길</a></li>
@@ -49,7 +51,7 @@
             <blockquote><p>지디에스 분당중앙센터는 발달장애/학습장애로 어려움을 겪고 있는 “조금은 특별한” 우리 아이들을 위한 공간입니다. 
   			뇌를 활성화 하는 적절한 훈련, 감각 해소, 그리고 통합의학적  (Bio-med) 접근을 통해 우리 아이들의 문제는 충분히 개선될 수 있습니다.  부모의 마음으로 우리 아이들이 밝고 행복한 미래를 맞이할 수 있도록 최선을 다하겠습니다.
 			</p></blockquote>
-			<p>2016년 3월 14일 지디에스 분당중앙센터장 김학기</p>
+			<p align="right">지디에스 분당중앙센터장 <strong>김학기</strong></p>
 			<br>
 			<p class="blog-post-meta">김학기 센터장  약력</p>
 			<p> - 서강대 경제학과 졸업<br>
@@ -63,7 +65,7 @@
             <h2 class="blog-post-title">추천사</h2>
             <blockquote><p>우리 아이들의 감각적 문제를 정확히 진단하고, 가장 효율적 치료법을 제시할 수 있는 국내 유일의 공간이라 생각합니다. 더욱이 분당중앙센터내에 우리세상발달학교, 우리세상특수대안학교 개교를 통해 감각 해소를 위한 국내 최대 규모의 감각 통합실과 대형 트렘폴린 장을 완비하였습니다. 같은 아픔을 겪는 부모들과 대화하는 곳인 만큼 조금도 망설이지 말고 문을 두드려 주세요. 발달장애/학습장애 아동을 위한 해답, 분명이 있습니다.  
             </p></blockquote>
-			<p>2016년 3월 14일 태균맘 황순재 대표</p>
+			<p align="right">태균맘 <strong>황순재 대표</strong></p>
 			<br>
 			<p class="blog-post-meta">태균맘 황순재 대표 약력</p>
 			<p> - 고려대 사회학과 졸업<br>
@@ -74,9 +76,9 @@
 			</div>
 			<div id="3">
 			<hr>
-            <h2 class="blog-post-title">파트너사</h2>
-			<div style="height: 240px;">
-			<img class="img-rounded" alt="" src="img/dummy.jpg" style="width: 100%; height: 100%;">
+            <h2 class="blog-post-title">협력기관</h2>
+			<div style="">
+			<img class="img-rounded" alt="" src="${cp }/image/pa_i.png" style="width: 100%; height: 100%;">
 		  	</div>
 			</div>
 			<div id="4">
@@ -84,9 +86,12 @@
             <h2 class="blog-post-title">운영방식 및 시간</h2>
             <blockquote><p>본 센터는 예약제로 운영됨이 원칙이나, 언제든 개방되어 있습니다.<br>
 			      미리 전화로 시간을 예약해 주시면 좀 더 편안하게 상담 및 치료가 가능합니다.<br>
-			      센터장 및 태균맘 상담은 100% 무료 상담이니 부담 없이 연락바랍니다.<br>
-			      상담예약전화 031-711-3546 / 010-3247-3535
+			      센터장 및 태균맘 상담은 100% 무료 상담이니 부담 없이 연락바랍니다.
             </p></blockquote>
+            <h3>상담예약전화</h3>
+            <p>            	
+            	<span>031-711-3546 / 010-3247-3535</span>
+            </p>
 			<p>
 			<strong>운영시간</strong> 
 				<br>
@@ -100,13 +105,15 @@
 			<div id="5">
             <hr>
             <h2 class="blog-post-title">오시는길</h2>
-            <blockquote><p>도로명주소 : 경기도 성남시 분당구 동막로 245번길 12 1층 지디에스 분당중앙센터<br>
+            
+            
+            <div>
+			<img class="img-rounded" alt="" src="${cp}/image/map_2.png" style="width: 100%; height: 100%;">
+			<blockquote><p>도로명주소 : 경기도 성남시 분당구 동막로 245번길 12 1층 지디에스 분당중앙센터<br>
   			지번주소 : 경기도 성남시 분당구 동원동 186번지<br>
 			분당선 미금역 3분거리 (차량 이용시)<br>			
             </p></blockquote>
-            
-            <div style="height: 240px;">
-			<img class="img-rounded" alt="" src="img/map.png" style="width: 100%; height: 100%;">
+			<img class="img-rounded" alt="" src="${cp}/image/map_3.png" style="width: 100%; height: 100%;">
 		  	</div>
 		  	
 		  	</div>

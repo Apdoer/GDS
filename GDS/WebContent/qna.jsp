@@ -28,7 +28,7 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<div id="qna" class="container">
+<div id="qna" <c:if test="${sessionScope.auth == null}">class="container"</c:if>>
 
 	<div class="row">
 		

@@ -30,7 +30,7 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<div id="board" class="container">
+<div id="board" <c:if test="${sessionScope.auth == null}">class="container"</c:if>>
 
 	<div class="row">
 		

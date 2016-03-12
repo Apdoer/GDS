@@ -45,6 +45,15 @@ public class CounselService {
 	public CounselVO getCounsel(CounselVO counselVO) {
 		return counselDao.get(counselVO);
 	}
+	
+	/**
+	 * Select undone counsel count
+	 * 
+	 * @return
+	 */
+	public int getUndoneCounselCount() {
+		return counselDao.getUndoneCounselCount();
+	}
 
 	/**
 	 * Update counsel with id.

@@ -73,8 +73,9 @@ function updateCounsel(id) {
 			'memo': $('textarea[id=memo]').val().replace('/\n/g', '<br>')
 		}
 	}).done(function(data) {
-		alert('저장되었습니다.');
+		alert(data.status);
 		listCounsel($('input[name=currentPage]').val());
+		$('#undoneCounselCnt').html(data.undoneCounselCnt);
 	}).fail(function(error) {
 		alert(error);
 	});

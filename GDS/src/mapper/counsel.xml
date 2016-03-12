@@ -36,6 +36,13 @@
 		OFFSET #{startRowIndex}
 	</select>
 	
+	<select id="getUndoneCounselCount" resultType="int">
+		SELECT COUNT(*)
+		FROM counsel
+		WHERE doneyn = 'n'
+			AND delyn = 'n'
+	</select>
+	
 	<select id="get" parameterType="Counsel" resultType="Counsel">
 		SELECT c.*, ct.name AS category_name
 		FROM counsel c

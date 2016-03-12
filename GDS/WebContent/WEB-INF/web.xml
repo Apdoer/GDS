@@ -56,8 +56,9 @@
 	</listener>
 	
 	<welcome-file-list>
-		<!-- <welcome-file>httpTest.jsp</welcome-file> -->
 		<welcome-file>index.jsp</welcome-file>
+		<!-- <welcome-file>admin_index.jsp</welcome-file> -->
+		<!-- <welcome-file>httpTest.jsp</welcome-file> -->
 	</welcome-file-list>
 	
 	<!-- <filter>

@@ -2,9 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
-#board img.dummy { margin-bottom: 16px; width: 100%; height: 320px; }
-
-#board .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
+#board { padding-top: 60px; }
+#board .left-side-bar ul { list-style: none; margin: 0px; padding: 0px; width: 75%; }
 #board .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #board .left-side-bar ul li:last-child { border: 0px; }
 #board .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
@@ -15,6 +14,12 @@
 #board .right-article-list .articles table th { text-align: center; }
 #board .right-article-list .articles table th,
 #board .right-article-list .articles table td { padding: 12px 16px; cursor: pointer; }
+#board .right-article-list .articles table th:nth-child(1) { width: 10%; }
+#board .right-article-list .articles table th:nth-child(2) { width: 10%; }
+#board .right-article-list .articles table th:nth-child(4) { width: 20%; }
+#board .right-article-list .articles table th:nth-child(5) { width: 10%; }
+#board .right-article-list .articles table tr > td { vertical-align: middle; text-align: center; }
+#board .right-article-list .articles table tr > td:nth-child(3) { padding-left: 32px; text-align: left; }
 
 /* 공통 */
 .paginator { text-align: center; }
@@ -27,8 +32,6 @@
 
 <div id="board">
 
-	<img class="dummy" alt="" src="${cp}/img/dummy.jpg">
-	
 	<div class="row">
 		
 		<!-- board left-side-bar -->
@@ -46,64 +49,29 @@
 		<div class="col-md-9 right-article-list">
 		
 			<div class="articles">
-			
-				<table class="table">
-					<tr>
-						<th style="width: 10%;">글번호</th>
-						<th style="width: 10%;">카테고리</th>
-						<th>제목</th>
-						<th style="width: 20%;">작성일시</th>
-						<th style="width: 10%;">조회수</th>
-					</tr>
-					<c:choose>
-						<c:when test="${searchVO.result != null && searchVO.result.size() > 0}">
-							<c:forEach items="${searchVO.result}" var="board">
-								<tr>
-									<td style="vertical-align: middle; text-align: center; ">${board.id}</td>
-									<td style="vertical-align: middle; text-align: center;">${board.type}</td>
-									<td style="vertical-align: middle; padding-left: 8px;">${board.title}</td>
-									<td style="vertical-align: middle; text-align: center;">${board.regdate}</td>
-									<td style="vertical-align: middle; text-align: center;">${board.cnt}</td>
-								</tr>
-							</c:forEach>
-						</c:when>
-						<c:otherwise>
-							<tr>
-								<td colspan="5" style="padding: 32px;">
-									작성된 글이 없습니다.
-								</td>
-							</tr>
-						</c:otherwise>
-					</c:choose>
-				</table>
-				
-				<div class="paginator">
-					<ul class="pagination">
-						<c:if test="${searchVO.startPageIndex > 1}">
-							<li><a href="${cp}/board/list.do?currentPage=${searchVO.startPageIndex - 1}">
-								<span aria-hidden="true">&laquo;</span>
-							</a></li>	
-						</c:if>
-						<c:forEach begin="${searchVO.startPageIndex}" end="${searchVO.endPageIndex}" var="idx">
-							<c:if test="${searchVO.currentPage == idx}">
-								<li><a style="font-style: bold; font-size: 2em" href="${cp}/board/list.do?currentPage=${idx}">${idx}</a></li>
-							</c:if>
-							<c:if test="${searchVO.currentPage != idx}">
-								<li><a href="${cp}/board/list.do?currentPage=${idx}">${idx}</a></li>
-							</c:if>
-						</c:forEach>
-						<c:if test="${searchVO.endPageIndex < searchVO.lastPageIndex}">
-							<li><a href="${cp}/board/list.do?currentPage=${searchVO.endPageIndex + 1}">
-								<span aria-hidden="true">&raquo;</span>
-							</a></li>	
-						</c:if>
-					</ul>
-				</div>
-				
+				<!-- load board list by ajax -->
 			</div>
 		
 		</div>
 		
 	</div>
+	
+<script type="text/javascript">
+function listBoard(pageIdx) {
+	$.ajax({
+		url: '${cp}/board/list.ajax',
+		data: { 'currentPage': pageIdx }
+	}).done(function(data) {
+		console.log('hayo!');
+		$('div.articles').html(data);
+	}).fail(function(error) {
+		alert(error);
+	});
+}
+
+$(function() {
+	listBoard(1);
+});
+</script>	
 	
 </div>

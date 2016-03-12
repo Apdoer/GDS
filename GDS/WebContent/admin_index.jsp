@@ -34,7 +34,10 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li class="active"><a href="#">상담신청현황 <span class="sr-only">(current)</span></a></li>
+					<li class="active"><a href="#">
+						상담신청현황 &nbsp; 
+						<span id="undoneCounselCnt" class="badge pull-right">${undoneCounselCnt}</span>
+					</a></li>
 					<li><a href="#">카테고리관리</a></li>
 				</ul>
 				<ul class="nav nav-sidebar">

@@ -1,6 +1,8 @@
 package com.gds.controller;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,9 +43,12 @@ public class AdminController {
 	CounselService counselService;
 	
 	@RequestMapping("/enter.do")
-    public String enter(HttpServletRequest request, Model model){
-         return "admin_index";
-    }
+	public ModelAndView enter(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("undoneCounselCnt", counselService.getUndoneCounselCount());
+		mav.setViewName("admin_index");
+		return mav;
+	}
 	
 	@RequestMapping(value="/login.do", method=RequestMethod.GET)
 	public String login() {
@@ -53,19 +57,22 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
-	public String login(
+	public ModelAndView login(
 			HttpServletRequest request, 
 			HttpServletResponse response,
-			Model model,
+			ModelAndView mav,
 			@RequestParam("password") String password) {
 		
 		HttpSession session = request.getSession();
+		
+		mav.addObject("undoneCounselCnt", counselService.getUndoneCounselCount());
+		mav.setViewName("admin_index");
 		
 		// if session already has admin auth value, send it admin page.
 		Object authAttr = session.getAttribute("auth");
 		if (authAttr != null && AuthConstantUtil.AUTH_ADMIN_VALUE.equals((String) authAttr)) {
 			// System.out.println("Already authorized user.");
-			return "admin_index";
+			return mav;
 		}
 		
 		System.out.println("Input password: " + password);
@@ -75,14 +82,15 @@ public class AdminController {
 		if (AuthConstantUtil.AUTH_ADMIN_PASSWORD.equals(password)) {
 			// System.out.println("Password matched. Have been authorized now.");
 			session.setAttribute("auth", AuthConstantUtil.AUTH_ADMIN_VALUE);
-			return "admin_index";
+			return mav;
 		}
 		// else the password value doesn't match with preassigned value,
 		// send it login page with warning message.
 		else {
 			// System.out.println("Password not matched. Go for another shot.");
-			model.addAttribute("message", "Password did not match!");
-			return "admin_login";
+			mav.addObject("message", "Password did not match!");
+			mav.setViewName("admin_login");
+			return mav;
 		}
 	}
 	
@@ -123,12 +131,17 @@ public class AdminController {
 	
 	@RequestMapping("/counsel/enter.do")
 	public String enterCounsel() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("undoneCounselCnt", counselService.getUndoneCounselCount());
+		mav.addObject("searchVO", counselService.pagingCounsel(new SearchVO()));
+		mav.setViewName("admin_counsel_list_ajax");
 		return "admin_index";
 	}
 
 	@RequestMapping("/counsel/list.ajax")
 	public ModelAndView listCounsel(SearchVO searchVO) {
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("undoneCounselCnt", counselService.getUndoneCounselCount());
 		mav.addObject("searchVO", counselService.pagingCounsel(searchVO));
 		mav.setViewName("admin_counsel_list_ajax");
 		return mav;
@@ -144,8 +157,11 @@ public class AdminController {
 
 	@RequestMapping("/counsel/modify.ajax")
 	@ResponseBody
-	public boolean modifyCounsel(CounselVO counselVO) {
-		return counselService.modifyCounsel(counselVO);
+	public Map<String, Object> modifyCounsel(CounselVO counselVO) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", counselService.modifyCounsel(counselVO));
+		result.put("undoneCounselCnt", counselService.getUndoneCounselCount());
+		return result;
 	}
 
 }

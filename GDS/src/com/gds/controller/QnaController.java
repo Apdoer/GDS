@@ -1,9 +1,13 @@
 package com.gds.controller;
 
+import java.util.Map;
+
+import org.codehaus.jackson.map.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gds.service.QnaService;
@@ -31,17 +35,16 @@ public class QnaController {
 	}
 	
 	@RequestMapping("/write.do")
-	public String writeQna(QnaVO qna) {
-		qnaService.writeQna(qna);
-		return "httpTest";
+	@ResponseBody
+	public boolean writeQna(QnaVO qna) {
+		return qnaService.writeQna(qna);
 	}
 	
-	@RequestMapping("/list.do")
+	@RequestMapping("/list.ajax")
 	public ModelAndView listBoard(SearchVO searchVO) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("searchVO", qnaService.pagingQna(searchVO));
-		mav.addObject("contentPage", "/qna.jsp");
-		mav.setViewName("index");
+		mav.setViewName("qna_list_ajax");
 		return mav;
 	}
 	

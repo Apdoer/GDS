@@ -48,6 +48,15 @@ public class CounselDao {
 	}
 
 	/**
+	 * Select undone counsel count
+	 * 
+	 * @return
+	 */
+	public int getUndoneCounselCount() {
+		return sqlSessionTemplate.selectOne("Counsel.getUndoneCounselCount");
+	}
+	
+	/**
 	 * Select counsel with id.
 	 * 
 	 * @param counselVO
@@ -56,7 +65,7 @@ public class CounselDao {
 	public CounselVO get(CounselVO counselVO) {
 		return sqlSessionTemplate.selectOne("Counsel.get", counselVO);
 	}
-
+	
 	/**
 	 * Update counsel with id.
 	 * 

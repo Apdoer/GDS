@@ -56,7 +56,7 @@ function ajaxSelect() {
 		</ul>
 		<c:forEach begin="${searchVO.startPageIndex}" end="${searchVO.endPageIndex}" var="idx">
 			<c:if test="${searchVO.currentPage == idx}">
-				<a style="font-style: bold; font-size: 2em" href="${cp}/category.select.do?currentPage=${idx}">${idx}</a>
+				<a style="font-style: bold; font-size: 2em" href="${cp}/category/select.do?currentPage=${idx}">${idx}</a>
 			</c:if>
 			<c:if test="${searchVO.currentPage != idx}">
 				<a href="${cp}/category/select.do?currentPage=${idx}">${idx}</a>

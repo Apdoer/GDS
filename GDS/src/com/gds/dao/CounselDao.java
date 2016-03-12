@@ -33,8 +33,8 @@ public class CounselDao {
 		return sqlSessionTemplate.selectOne("Counsel.getTotalCount");
 	}
 	
-	public void insertCounsel(CounselVO counsel) {
-		sqlSessionTemplate.insert("Counsel.insertCounsel", counsel);	
+	public boolean insertCounsel(CounselVO counsel) {
+		return sqlSessionTemplate.insert("Counsel.insertCounsel", counsel)>0;	
 	}
 
 	/**
@@ -47,6 +47,15 @@ public class CounselDao {
 		return sqlSessionTemplate.selectList("Counsel.paging", searchVO);
 	}
 
+	/**
+	 * Select undone counsel count
+	 * 
+	 * @return
+	 */
+	public int getUndoneCounselCount() {
+		return sqlSessionTemplate.selectOne("Counsel.getUndoneCounselCount");
+	}
+	
 	/**
 	 * Select counsel with id.
 	 * 

@@ -18,9 +18,19 @@
 	</select>
 	
 	<insert id="insertCounsel" parameterType="Counsel">
-		INSERT INTO counsel
-		VALUES(#{id}, #{delyn}, #{regdate}, #{categoryId}, #{counseleeName},
-		#{counseleeTelno}, #{possibleTime}, #{detail}, #{memo}, #{doneyn});
+		INSERT INTO counsel (
+			id,
+		    delyn,
+		    regdate,
+		    category_id,
+		    counselee_name,
+		    counselee_telno,
+		    possible_time,
+		    detail,
+		    doneyn
+		)
+		VALUES(#{id}, 'n', now(), #{categoryId}, #{counseleeName},
+		#{counseleeTelno}, #{possibleTime}, #{detail}, 'n');
 	</insert>
 	
 	<select id="paging" parameterType="SearchVO" resultType="Counsel">
@@ -34,6 +44,13 @@
 			c.regdate DESC
 		LIMIT #{maxPageSize}
 		OFFSET #{startRowIndex}
+	</select>
+	
+	<select id="getUndoneCounselCount" resultType="int">
+		SELECT COUNT(*)
+		FROM counsel
+		WHERE doneyn = 'n'
+			AND delyn = 'n'
 	</select>
 	
 	<select id="get" parameterType="Counsel" resultType="Counsel">

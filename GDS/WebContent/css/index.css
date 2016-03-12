@@ -19,11 +19,16 @@ body{
 }
 
 .footer{
+	bottom:0;
 	height: 90px;
+	width:100%;
 	background-color: rgba(85, 85, 85, 1);
 	color: #D8D9DC;
 	padding:15px;
+	
+	
 }
+
 .phone{
 	font-weight: bold;
 }

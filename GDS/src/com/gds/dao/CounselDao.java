@@ -33,8 +33,8 @@ public class CounselDao {
 		return sqlSessionTemplate.selectOne("Counsel.getTotalCount");
 	}
 	
-	public void insertCounsel(CounselVO counsel) {
-		sqlSessionTemplate.insert("Counsel.insertCounsel", counsel);	
+	public boolean insertCounsel(CounselVO counsel) {
+		return sqlSessionTemplate.insert("Counsel.insertCounsel", counsel)>0;	
 	}
 
 	/**

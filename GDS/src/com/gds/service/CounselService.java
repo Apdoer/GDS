@@ -17,8 +17,10 @@ public class CounselService {
 	@Autowired
 	private CounselDao counselDao;
 	
-	public void createCounsel(CounselVO counsel) {
-		counselDao.insertCounsel(counsel);
+	public boolean createCounsel(CounselVO counsel) {
+		int max = counselDao.getMaxId();
+		counsel.setId(++max);
+		return counselDao.insertCounsel(counsel);
 	}
 
 	/**
@@ -63,7 +65,6 @@ public class CounselService {
 	 */
 	public boolean modifyCounsel(CounselVO counselVO) {
 		int result = counselDao.update(counselVO);
-		System.out.println(counselDao.get(counselVO));
 		return result == 1;
 	}
 

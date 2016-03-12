@@ -24,19 +24,24 @@ public class CounselController {
 
 	@RequestMapping("/counsel.do")
 	public String monveCounsel(Model model){		
-		model.addAttribute("contentPage", "/board_counsel.jsp");
+		model.addAttribute("contentPage", "/counsel.jsp");
 		return "index";
 	}
 	
 	@RequestMapping("/createCounsel.do")
 	@ResponseBody
-	public HashMap<String, Object> createCounsel(String categoryId, String counsleeName, String counsellTelNo, String possibleTime, String detail){
+	public HashMap<String, Object> createCounsel(int categoryId, String counseleeName, String counseleeTelno, String possibleTime, String detail){
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		CounselVO counsel = new CounselVO();
+		counsel.setCategoryId(categoryId);
+		counsel.setCounseleeName(counseleeName);
+		counsel.setCounseleeTelno(counseleeTelno);
+		counsel.setPossibleTime(possibleTime);
+		counsel.setDetail(detail);
 		//Counsel testC = new Counsel(2,"N","20160302",1,"test","01099990000","10","testtest","haha","N");
-		counselService.createCounsel(counsel);
+		boolean flag=counselService.createCounsel(counsel);
 		
-		if(true){
+		if(flag){
 			map.put("status", true);
 			map.put("message", "신청 완료되었습니다.");
 		}else{

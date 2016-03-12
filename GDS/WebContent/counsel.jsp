@@ -1,47 +1,70 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <c:set var="cp" value="${pageContext.request.contextPath}" />
  
  <script type="text/javascript">
 
 $(document).ready(function() {
-	$("#submitBtn").click(counselSubmit);
+	$("#submitBtn").click(formCheck);
+
+function formCheck(){
+	if ($("#name").val()==null || $("#name").val()==""){
+		$("#name").focus();
+		alert("이름을 입력해주세요")
+		return;
+	}
+	if ($("#phone").val()==null || $("#phone").val()==""){
+		$("#phone").focus();
+		alert("전화번호를 입력해주세요");
+		return;
+	}
+	
+	counselSubmit();
+}
 
 function counselSubmit(){	
+	/* 디버깅용 코드
 	var categoryId=$("#counsel_category option:selected").val();
 	var counseleeName=$("#name").val();
 	var counseleeTelno=$("#phone").val();
 	var possibleTime=$("#p_time option:selected").val();
 	var detail=$("#detail").val();
-	//alert("categoryId:"+categoryId+", name:"+counseleeName+", time:"+possibleTime+", detail:"+detail+", phone:"+counseleeTelno);
+	alert("categoryId:"+categoryId+", name:"+counseleeName+", time:"+possibleTime+", detail:"+detail+", phone:"+counseleeTelno);
 	
-	
-	$.getJSON("${pageContext.request.contextPath}/createCounsel.do",
+	 */
+	$.post("${pageContext.request.contextPath}/createCounsel.do",
 			{"categoryId" : $("#counsel_category option:selected").val(),
 			 "counseleeName" : $("#name").val(),
-			 "counseleeTelNo" : $("#phone").val(),
+			 "counseleeTelno" : $("#phone").val(),
 			 "possibleTime" : $("#p_time option:selected").val(),
 			 "detail" : $("#detail").val()
 			},
 		function(jsonObj){
 				if(jsonObj.status){
 					alert(jsonObj.message);
-					$("name").val("");
+					/* $("name").val("");
 					$("phone").val("");
-					$("detail").val("");
+					$("detail").val(""); */
 				}else{
 					alert(jsonObj.message);
 				};
-			});	
-	
+			});		
 }
 	
 });
 
 </script>
+
+<style type="text/css">
+#board_counsel{
+	margin-top:30px;
+}
+</style>
  
  
 	<div id="board_counsel">
 	
-		<img class="dummy" alt="" src="img/dummy.jpg" style="width: 100%; height: 320px;">
+		<img class="dummy" alt="" src="${cp}/image/ba_0.png" style="width:100%">
 		
 		<div class="row">
 			
@@ -83,7 +106,7 @@ function counselSubmit(){
 									이름
 								</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="name" value="토마스">
+									<input type="text" class="form-control" id="name" required>
 								</div>
 							</div>
 							<div class="form-group">
@@ -92,7 +115,7 @@ function counselSubmit(){
 									전화번호
 								</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="phone" value="01023450987">
+									<input type="number" class="form-control" id="phone" required>
 								</div>
 							</div>
 							<div class="form-group">
@@ -126,7 +149,7 @@ function counselSubmit(){
 							<div class="form-group">
 								<label for="detail" class="col-sm-2 control-label">세부문의내용</label>
 								<div class="col-sm-10">
-									<textarea id="detail" class="form-control" rows="5">상담신청합니다</textarea>
+									<textarea id="detail" class="form-control" rows="5"></textarea>
 								</div>
 							</div>
 							<button id="submitBtn" class="btn btn-info pull-right" type="submit">전화상담 예약하기</button>

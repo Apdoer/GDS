@@ -36,6 +36,7 @@ public class BoardService {
 	 * @return
 	 */
 	public BoardVO getBoard(BoardVO boardVO) {
+		boardDao.plusConut(boardVO);
 		return boardDao.get(boardVO);
 	}
 	

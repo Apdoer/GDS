@@ -17,17 +17,15 @@ function submitContents(elClickedObj) {
     window.location.href="insertBlog.do?title="+title+"&content="+content;
 }
 </script>
-
 <style type="text/css">
-#blog_view {margin-top: 70px;}
-
-#blog_view .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
-#blog_view .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
+#blog_view {margin-top: 120px;}
 
 </style>
 
-<div id="#blog_view" style="margin-top: 70px; ">
-	<form action="admin.do">
+
+<div id="#blog_view" class="container">
+	<div class="content">
+	
 	<!--카테고리 시작
 	<div class="container" style="width: 150px; float:left; padding:0 10 0 0;">
 		<select id="category" class="form-control">
@@ -56,8 +54,11 @@ function submitContents(elClickedObj) {
 	  <button type="button" class="btn btn-default" onclick="submitContents(this)" style="text-align: center;">등록</button>
 	  <button type="button" class="btn btn-default" style="text-align: center;">취소</button>
 	</div>
-	</form>
+	
+	</div>
+	
 </div>
+
 <script type= "text/javascript" >
 var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({

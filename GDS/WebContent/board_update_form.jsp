@@ -13,7 +13,7 @@ function submitContents(elClickedObj) {
     var title = document.getElementById( "title" ).value;
     var content = document.getElementById( "ir1" ).value;
     var category = document.getElementById( "category" ).value;
-    window.location.href="/GDS/admin/board/write.do?title="+title+"&content="+content+"&category="+category;
+    window.location.href="/GDS/admin/board/update.do?title="+title+"&content="+content+"&category="+category+"&id="+${board.id};
 }
 </script>
 
@@ -33,23 +33,30 @@ function submitContents(elClickedObj) {
 	<form>
 	<div class="option" style="width: 150px; float:left;">
 		<select id="category" class="form-control">
+		<c:if test="${board.type eq '공지사항'}">
 			<option>공지사항</option>
 			<option>이벤트</option>
+		</c:if>
+		<c:if test="${board.type eq '이벤트'}">
+			<option>이벤트</option>
+			<option>공지사항</option>
+		</c:if>
 		</select>
 	</div>
 	
 	<!--제목 시작 -->
 	<div class="input-group" style="float:left; width: 680px;">
 	  <span class="input-group-addon" id="basic-addon1">제목</span>
-	  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1">
+	  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1" value="${board.title}">
 	</div>
 	<!--제목 끝-->
 	<br> </br>
-	 <textarea name= "ir1" id="ir1" rows= "20" cols= "115" >
+	 <textarea name= "ir1" id="ir1" rows= "20" cols= "115">
+	 ${board.content}
 	</textarea>
 	<br> </br>
 	<div class="btn-group" role="group" aria-label="..." >
-	  <button type="button" class="btn btn-info" onclick="submitContents(this)" style="padding-left: 10px;">등록</button>
+	  <button type="button" class="btn btn-info" onclick="submitContents(this)" style="padding-left: 10px;">수정</button>
 	  <button type="button" class="btn btn-info" style="margin: 0 auto;">취소</button>
 	</div>
 	</form>

@@ -23,6 +23,19 @@ public class BoardVO {
 		this.content = content;
 		this.cnt = cnt;
 	}
+	
+	public BoardVO(String type, String title, String content) {
+		this.type = type;
+		this.title = title;
+		this.content = content;
+	}
+	
+	public BoardVO(int id, String type, String title, String content) {
+		this.id = id;
+		this.type = type;
+		this.title = title;
+		this.content = content;
+	}
 
 	public int getId() {
 		return id;

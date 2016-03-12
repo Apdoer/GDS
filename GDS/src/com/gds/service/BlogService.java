@@ -53,7 +53,10 @@ public class BlogService {
 	}
 
 	public Object pagingBlog(SearchVO searchVO) {
-		searchVO.setMaxPageSize(MAX_PAGE_SIZE);
+		//블로그 페이지에 표현되는 게시글의 숫자
+		searchVO.setMaxPageSize(5);
+		
+		//화면 아래에 표현되는 페이징 숫자
 		searchVO.setMaxLinkCount(MAX_LINK_COUNT);
 		
 		searchVO.initPagination(blogDao.getTotalCount());

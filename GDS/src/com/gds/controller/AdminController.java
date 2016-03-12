@@ -21,6 +21,7 @@ import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
 import com.gds.service.CounselService;
 import com.gds.util.AuthConstantUtil;
+import com.gds.vo.BoardVO;
 import com.gds.vo.CounselVO;
 import com.gds.vo.SearchVO;
 
@@ -187,6 +188,51 @@ public class AdminController {
 	public String formBoard(Model model) {
 		model.addAttribute("contentPage", "/board_form.jsp");
 		return "admin_index";
+	}
+	
+	@RequestMapping("/board/write.do")
+	public String write(HttpServletRequest request, Model model) {
+		String title = request .getParameter ("title" );
+		String category = request .getParameter ("category" );
+		String content = request .getParameter ("content" );
+		
+		BoardVO boardVO = new BoardVO(category, title, content);
+		boardService.writeBoard(boardVO);
+		return "redirect:/admin/board/enter.do";
+	}
+	
+	@RequestMapping("/board/update.do")
+	public String update(HttpServletRequest request, Model model) {
+		
+		int id = Integer.parseInt(request .getParameter ("id" ));
+		String title = request .getParameter ("title" );
+		String category = request .getParameter ("category" );
+		String content = request .getParameter ("content" );
+		
+		BoardVO boardVO = new BoardVO(id, category, title, content);
+		boardService.modifyBoard(boardVO);
+		return "redirect:/admin/board/enter.do";
+	}
+	
+	@RequestMapping("/board/updateViewBoard.do")
+	public String updateViewBoard(HttpServletRequest request, Model model) {
+		int id = Integer.parseInt(request .getParameter ("id" ));
+		
+		model.addAttribute("contentPage", "/board_form.jsp");
+		BoardVO boardVO = new BoardVO();
+		BoardVO rtnBoardVO = new BoardVO();
+		boardVO.setId(id);
+		rtnBoardVO = boardService.getBoard(boardVO);
+		model.addAttribute("board", rtnBoardVO);
+		model.addAttribute("contentPage", "/board_update_form.jsp");
+		return "admin_index";
+	}
+	
+	@RequestMapping("/board/delete.do")
+	public String deleteBoard(HttpServletRequest request, Model model) {
+		int id = Integer.parseInt(request .getParameter ("id" ));
+		boardService.deleteBoard(id);
+		return "redirect:/admin/board/enter.do";
 	}
 
 }

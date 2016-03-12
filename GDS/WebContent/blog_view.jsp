@@ -17,6 +17,12 @@
 #blog_view .blog-post-title {text-align:left; color: #000000; text-decoration: none;}
 #blog_view .blog-post-meta {text-align:left;}
 #blog_view .blog-post-content {text-align:left;}
+
+/* 공통 */
+.paginator { text-align: center; }
+.paginator ul.pagination { margin: 0px; }
+.paginator ul.pagination li a,
+.paginator ul.pagination li span { border: 0px; color: #555; }
 </style>
 
 <div id="blog_view" class="container">

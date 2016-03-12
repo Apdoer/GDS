@@ -63,5 +63,9 @@
 		SET delyn = 'y'
 		WHERE id = #{id}
 	</update>
+	
+	<update id="plusConut" parameterType="Board">
+		update board set cnt = cnt+1 where id = #{id}
+	</update>
 
 </mapper>

@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.lang.ProcessBuilder.Redirect;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.UUID;
@@ -24,7 +23,6 @@ import com.gds.service.BlogService;
 import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
 import com.gds.vo.BlogVO;
-import com.gds.vo.CategoryVO;
 import com.gds.vo.SearchVO;
 
 @Controller

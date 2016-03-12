@@ -42,7 +42,8 @@
 		
 		<!-- board content -->
 		<div class="col-md-9 right-article-content">
-		
+		<a href="${cp}/admin/board/updateViewBoard.do?id=${board.id}" class="btn btn-info">글 수정</a>
+		<a href="${cp}/admin/board/delete.do?id=${board.id}" class="btn btn-danger">글 삭제</a>
 			<div class="title">
 				<h1>${board.title}<small>${board.type}</small></h1>
 			</div>

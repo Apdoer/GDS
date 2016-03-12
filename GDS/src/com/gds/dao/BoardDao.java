@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.gds.vo.BlogVO;
 import com.gds.vo.BoardVO;
 import com.gds.vo.SearchVO;
 
@@ -81,6 +82,10 @@ public class BoardDao {
 	 */
 	public int delete(int id) {
 		return sqlSessionTemplate.update("Board.delete", id);
+	}
+
+	public void plusConut(BoardVO boardVO) {
+		sqlSessionTemplate.update("Board.plusConut", boardVO);
 	}
 
 }

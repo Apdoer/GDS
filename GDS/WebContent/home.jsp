@@ -3,9 +3,6 @@
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 
 <style type="text/css">
-#home{
-	margin-top:30px;
-}
 
 #home .carousel-control.left {
 	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0,
@@ -57,7 +54,9 @@
 #home .symtom4{
 	background:URL('${cp}/image/m_b4.png');
 }
-
+#home .carousel-inner img{
+	width:100%;
+}
 #home .info_container{
 	width:80%; margin:0 auto;
 }

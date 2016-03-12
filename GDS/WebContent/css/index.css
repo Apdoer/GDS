@@ -1,6 +1,7 @@
-body{
-	padding-top: 60px;
-}
+html,body{height:100%}
+body{margin:0;}
+.contentPage {min-height:100%; margin-top:90px;}
+
 
 .navbar{
 	border-top: 8px solid #2cabea;
@@ -24,13 +25,12 @@ body{
 
 .footer{
 	bottom:0;
-	height: 90px;
 	width:100%;
 	background-color: rgba(85, 85, 85, 1);
 	color: #D8D9DC;
 	padding:15px;
-	
-	
+	/* margin-top:-8em; */
+	height:8em	
 }
 
 .phone{

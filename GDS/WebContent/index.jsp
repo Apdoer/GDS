@@ -64,7 +64,7 @@
       </div>
     </nav>
     
-    <div style="min-height:700px;">
+    <div class="contentPage">
     <c:choose>
 	<c:when test="${not empty contentPage}">
 		<jsp:include page="${requestScope.contentPage }" />

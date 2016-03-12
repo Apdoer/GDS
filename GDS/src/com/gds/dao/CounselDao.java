@@ -65,7 +65,7 @@ public class CounselDao {
 	public CounselVO get(CounselVO counselVO) {
 		return sqlSessionTemplate.selectOne("Counsel.get", counselVO);
 	}
-
+	
 	/**
 	 * Update counsel with id.
 	 * 

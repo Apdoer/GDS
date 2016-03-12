@@ -4,7 +4,7 @@
 <style>
 #qna_form img.dummy { margin-bottom: 16px; width: 100%; height: 320px; }
 
-#qna_form .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
+#qna_form .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 #qna_form .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #qna_form .left-side-bar ul li:last-child { border: 0px; }
 #qna_form .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
@@ -29,7 +29,7 @@
 			<ul class="pull-right">
 				<li><a href="#">공지사항</a></li>
 				<li><a href="#" style="font-weight: bold;">온라인 문의</a></li>
-				<li><a href="#">상담신청</a></li>
+				<!-- <li><a href="#">상담신청</a></li> -->
 			</ul>
 		
 		</div>
@@ -64,14 +64,14 @@
 				<div class="form-group">
 					<label for="question" class="col-sm-2 control-label">세부문의내용</label>
 					<div class="col-sm-10">
-						<textarea id="question" class="form-control" rows="5"></textarea>
+						<textarea class="form-control" id="question" rows="5"></textarea>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-10 col-sm-offset-2">
 						<a href="${cp}/qna/enter.do" class="btn btn-default">목록</a>
-						<button class="btn btn-default pull-right" type="submit" 
-							onclick="javascript: return false;">글쓰기</button>	
+						<a href="javascript: submitQna();" class="btn btn-default pull-right">글쓰기</a>
+						<!-- <button class="btn btn-default pull-right" type="submit">글쓰기</button> -->
 					</div>
 				</div>
 			</form>
@@ -79,5 +79,27 @@
 		</div>
 		
 	</div>
+	
+<script type="text/javascript">
+function submitQna() {
+	console.log('submit!');
+	console.log($('form').serialize());
+	$.ajax({
+		url: '${cp}/qna/write.do',
+		method: 'POST',
+		data: {
+			'title': $('input[id=title]').val(),
+			'openyn': $('input[id=openyn]').is(':checked') ? 'y' : 'n',
+			'name': $('input[id=name]').val(),
+			'password': $('input[id=password]').val(),
+			'question': $('textarea[id=question]').val().replace('/\n/g', '<br>')
+		}
+	}).done(function(data) {
+		alert(data);
+	}).fail(function(error) {
+		alert(error);
+	});
+};
+</script>
 	
 </div>

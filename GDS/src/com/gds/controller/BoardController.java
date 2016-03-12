@@ -36,6 +36,15 @@ public class BoardController {
 		return "index";
 	}
 	
+	@RequestMapping("/get.do")
+	public ModelAndView getBoard(BoardVO boardVO) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("board", boardService.getBoard(boardVO));
+		mav.addObject("contentPage", "/board_content.jsp");
+		mav.setViewName("index");
+		return mav;
+	}
+	
 	@RequestMapping("/list.ajax")
 	public ModelAndView listBoard(SearchVO searchVO) {
 		ModelAndView mav = new ModelAndView();

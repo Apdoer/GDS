@@ -44,6 +44,16 @@ public class BoardDao {
 	}
 	
 	/**
+	 * Select board with id.
+	 * 
+	 * @param board
+	 * @return
+	 */
+	public BoardVO get(BoardVO boardVO) {
+		return sqlSessionTemplate.selectOne("Board.get", boardVO);
+	}
+	
+	/**
 	 * Select paged boards.
 	 * 
 	 * @param searchVO
@@ -72,20 +82,5 @@ public class BoardDao {
 	public int delete(int id) {
 		return sqlSessionTemplate.update("Board.delete", id);
 	}
-	
-//	public void insertBlog(String title, String content) {
-//		
-//		HashMap<String, String> map = new HashMap<>();
-//		map.put("title",title);
-//		map.put("content", content);
-//		
-//		sqlSessionTemplate.insert("Board.insertBlog", map);
-//		
-//	}
-//	
-//	public void inputStockCode(String code) {
-//
-//		sqlSessionTemplate.insert("Stock.inputStockCode", code);
-//	}
 
 }

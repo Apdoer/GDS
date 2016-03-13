@@ -33,21 +33,10 @@
 
 <div id="qna" <c:if test="${sessionScope.auth == null}">class="container"</c:if>>
 
-	<div class="row">
-		
-		<!-- board left-side-bar -->
-		<div class="col-md-2 left-side-bar">
-		
-			<ul class="pull-right">
-				<li><a href="${cp}/board/enter.do">공지사항</a></li>
-				<li><a href="${cp}/qna/enter.do" style="font-weight: bold;">온라인 문의</a></li>
-				<%-- <li><a href="${cp}/counsel.do">상담신청</a></li> --%>
-			</ul>
-		
-		</div>
-		
+<c:choose>
+	<c:when test="${fromAdmin}">
 		<!-- board content -->
-		<div class="col-md-9 right-article-list">
+		<div class="right-article-list">
 		
 			<div class="articles">
 				<!-- load qna list by ajax -->
@@ -60,9 +49,41 @@
 			</c:if>
 		
 		</div>
-		
-	</div>
+	</c:when>
+	<c:otherwise>
 	
+		<div class="row">
+	
+			<!-- board left-side-bar -->
+			<div class="col-md-2 left-side-bar">
+			
+				<ul class="pull-right">
+					<li><a href="${cp}/board/enter.do">공지사항</a></li>
+					<li><a href="${cp}/qna/enter.do" style="font-weight: bold;">온라인 문의</a></li>
+				</ul>
+			
+			</div>
+			
+			<!-- board content -->
+			<div class="col-md-9 right-article-list">
+			
+				<div class="articles">
+					<!-- load qna list by ajax -->
+				</div>
+				
+				<c:if test="${sessionScope.auth == null}">
+					<div class="buttons">
+						<a href="${cp}/qna/form.do" class="btn btn-default">글쓰기</a>
+					</div>
+				</c:if>
+			
+			</div>
+			
+		</div>
+	
+	</c:otherwise>
+</c:choose>
+
 <script type="text/javascript">
 function getQna(id) {
 	location.href = "${cp}/qna/get.do?id=" + id; 	

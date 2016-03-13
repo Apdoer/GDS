@@ -56,13 +56,13 @@ function counselSubmit(){
 </script>
 
 <style type="text/css">
-#board_counsel{
+#counsel{
 	margin-top:30px;
 }
 </style>
  
  
-	<div id="board_counsel">
+	<div id="counsel">
 	
 		<img class="dummy" alt="" src="${cp}/image/ba_0.png" style="width:100%">
 		

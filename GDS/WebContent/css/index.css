@@ -1,5 +1,5 @@
 html,body{height:100%}
-body{margin:0;}
+body{margin:0;font-family:NanumBarunGothic;}
 .contentPage {min-height:100%; margin-top:90px;}
 
 
@@ -16,15 +16,6 @@ body{margin:0;}
 
 .tel_no_top{
 	margin-top: -1.0em;
-}
-
-
-#home .jumbotron{
-	background-image: url('../img/kids1.jpg');
-}
-
-.glyphicon-earphone{
-	color:#2cabea;
 }
 
 .footer{
@@ -45,10 +36,6 @@ body{margin:0;}
 	margin-right: 80px;;
 }
 
-.phone{
-	font-weight: bold;
-}
-
 .navbar-brand img{
 	height:60px;
 	padding-top: 0;
@@ -64,19 +51,16 @@ src:url(//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix) f
 	url(cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf) format('truetype');
 }
 
-body{font-family:NanumBarunGothic}
-}
-
 div.line-horizontal { border: 1px solid #eee; border-radius: 1px; margin: 16px 0px; }
 
-#board_counsel img.dummy { margin-bottom: 16px; }
+#counsel img.dummy { margin-bottom: 16px; }
 
-#board_counsel .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
-#board_counsel .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#board_counsel .left-side-bar ul li:last-child { border: 0px; }
-#board_counsel .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
+#counsel .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 60%; }
+#counsel .left-side-bar ul li { border-bottom: 1px solid #eee; }
+#counsel .left-side-bar ul li:last-child { border: 0px; }
+#counsel .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
-#board_counsel .right-article-list .intro h3 { font-size: 1.5em; font-weight: bold; margin-bottom: 20px; }
-#board_counsel .right-article-list .intro p { margin-bottom: 3px; }
-#board_counsel .right-article-list .intro button { margin-top: 16px; }
-#board_counsel .right-article-list .counsel-phone { margin-top: 16px; }
+#counsel .right-article-list .intro h3 { font-size: 1.5em; font-weight: bold; margin-bottom: 20px; }
+#counsel .right-article-list .intro p { margin-bottom: 3px; }
+#counsel .right-article-list .intro button { margin-top: 16px; }
+#counsel .right-article-list .counsel-phone { margin-top: 16px; }

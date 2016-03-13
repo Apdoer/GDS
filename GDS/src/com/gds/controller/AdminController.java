@@ -287,13 +287,4 @@ public class AdminController {
 		return "admin_index";
 	}
 	
-	/*
-	 * 
-	 */
-	@RequestMapping("/blog/edit.do")
-	public String editBlog(Model model) {
-		model.addAttribute("contentPage", "/blog_write.jsp");
-		return "admin_index";
-	}
-	
 }

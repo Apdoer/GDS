@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
-#board { padding-top: 60px; }
+#board { padding-top: 20px; }
 #board .left-side-bar ul { list-style: none; margin: 0px; padding: 0px; width: 75%; }
 #board .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #board .left-side-bar ul li:last-child { border: 0px; }
@@ -28,7 +28,7 @@
 <c:choose>
 	<c:when test="${fromAdmin}">
 	
-		<div id="board" style="padding-top: 20px;">
+		<div id="board">
 	
 			<!-- board content -->
 			<div class="right-article-content">

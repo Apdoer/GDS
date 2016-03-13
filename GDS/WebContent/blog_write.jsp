@@ -14,7 +14,7 @@ function submitContents(elClickedObj) {
     var title = document.getElementById( "title" ).value;
     var content = document.getElementById( "ir1" ).value;
     alert(content);
-    window.location.href="insertBlog.do?title="+title+"&content="+content;
+    window.location.href="${cp}/blog/insertBlog.do?title="+title+"&content="+content;
 }
 function goBack() {
     window.location.href="${cp}/admin/blog/enter.do";

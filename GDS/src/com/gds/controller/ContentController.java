@@ -81,7 +81,7 @@ public class ContentController {
 	public String home(HttpServletRequest request, Model model){
 		
 		List<BlogVO> blogList;
-		blogList = blogService.selectBlogAll();
+		blogList = blogService.selectMain();
 		model.addAttribute("blogList", blogList);
 		
 		List<BoardVO> boardList;

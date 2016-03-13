@@ -36,6 +36,10 @@
 		SELECT * FROM blog where delyn = 'n' order by id desc 
 	</select>
 	
+	<select id="selectMain" resultType="Blog">
+		SELECT * FROM blog where delyn = 'n' order by id desc  limit 1 
+	</select>
+	
 	<update id="delete" parameterType="Blog">
 		update blog set delyn = 'y' WHERE id = #{id}
 	</update>

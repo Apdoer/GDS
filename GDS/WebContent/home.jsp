@@ -66,10 +66,6 @@
 	margin-top: 0;
 }
 
-#home .table{
-	border:solid 0px;
-}
-
 </style>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -144,7 +140,7 @@
           <table class="table">
 	          <c:forEach items="${boardList}" var="board">
 		          <tr>
-			          <td><h4><a href="${cp}/board/get.do?id=${board.id}">${board.title}</h4></td>
+			          <td><h4><a href="${cp}/board/get.do?id=${board.id}" style="color:black; text-decoration: none;">${board.title}</h4></td>
 			          <td><h5> <fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/></h5></td>
 		          </tr>
 			  </c:forEach>
@@ -154,7 +150,19 @@
         <div class="col-md-4">
           <h2>별헤는밤</h2>
           <hr class="hr_margin_top_0">
-          <p>&nbsp;&nbsp;고압 산소 치료는 선택이 아닌 필수입니다. 우리가 바깥 세상의 정보를 받아들이는 감각을 담당하고 정보처리를 하는 뇌 부위는 각기 다르며, 이를 연결하는 것은 뇌 속에 얽혀 있는 신경세포들입니다. 그렇다 보니 뇌손상 때문에 특정 감각기관을 담당하는 부위 혹은 그 부위를 연결하는 신경에 손상을 갖고 있는 발달장애의 경우 특정 감각이 둔하거나 예민해지는 문제를 동반... 
+          <table>
+	          <tr>
+		          <td style="text-align: center">
+		         	 ${blogList[0].content}
+		          </td>
+	          </tr>
+	          <tr>
+		          <td style="text-align: center">
+		         	 <h4>${blogList[0].title}</h4>
+		          </td>
+	          </tr>
+          </table>
+          <p> 
           </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
@@ -173,6 +181,7 @@
 
 
 $(document).ready(function() {
+	
 	$(".symtom1").click(function() {
 		location.href="${cp}/clinic1.do";
 	});

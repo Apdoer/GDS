@@ -33,18 +33,9 @@
 	<div class="row">
 		
 		<!-- board left-side-bar -->
-		<div class="col-md-3 left-side-bar">
 		
-			<ul class="pull-right">
-				<li><a href="${cp}/clinic1.do" style="font-weight: bold;color:#2cabea;">자폐 스펙트럼 장애</a></li>
-				<li><a href="${cp}/clinic2.do">주의력 결핍/<br>과잉 행동 장애</a></li>
-				<li><a href="${cp}/clinic3.do">학습장애</a></li>
-				<li><a href="${cp}/clinic4.do">사회성 부족</a></li>
-			</ul>
 		
-		</div>
-		
-		<div class="col-md-8 blog-main">
+		<div class="col-md-8 col-md-offset-2 blog-main">
 			<div>
 				<br><br>
 				<div class="title"><h1>자폐스펙트럼장애</h1></div>
@@ -79,7 +70,7 @@
 				</p>
 				
 				<br>
-				<img src="${cp }/image/clinic_1_kang.png">
+				<img src="${cp }/image/clinic_1_kang_2.png">
 				<br><br><br><br>
 			</div>
 		</div>

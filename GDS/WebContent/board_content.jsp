@@ -55,8 +55,8 @@
 					</div>
 				</div>
 				
-				<a class="btn btn-default pull-left" href="${cp}/admin/board/enter.do">목록으로</a>
-				<a class="btn btn-default pull-right" href="${cp}/admin/board/delete.do?id=${board.id}">글 삭제</a>
+				<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록으로</a>
+				<a class="btn btn-default pull-right" href="javascript: deleteBoard(${board.id});">글 삭제</a>
 				<a class="btn btn-default pull-right" href="${cp}/admin/board/updateViewBoard.do?id=${board.id}">글 수정</a>
 				
 			</div>
@@ -118,3 +118,23 @@
 	
 	</c:otherwise>
 </c:choose>
+
+<script type="text/javascript">
+function deleteBoard(id) {
+	console.log(id);
+	if (!confirm('이 게시글을 삭제하시겠습니까?')) {
+		return;
+	}
+	
+	$.ajax({
+		url: 'delete.ajax',
+		method: 'POST',
+		data: { 'id': id }
+	}).done(function(data) {
+		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');
+		location.href = 'enter.do';
+	}).fail(function(error) {
+		alert(error);
+	});
+}
+</script>

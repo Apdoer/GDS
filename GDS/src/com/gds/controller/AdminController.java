@@ -204,7 +204,7 @@ public class AdminController {
 		return mav;
 	}
 	
-	@RequestMapping("/board/write.do")
+	@RequestMapping("/board/write.ajax")
 	@ResponseBody
 	public Map<String, Object> writeBoard(BoardVO boardVO) {
 		Map<String, Object> result = new HashMap<String, Object>();
@@ -212,17 +212,12 @@ public class AdminController {
 		return result;
 	}
 	
-	@RequestMapping("/board/update.do")
-	public String updateBoard(HttpServletRequest request, Model model) {
-		
-		int id = Integer.parseInt(request .getParameter ("id" ));
-		String title = request .getParameter ("title" );
-		String category = request .getParameter ("category" );
-		String content = request .getParameter ("content" );
-		
-		BoardVO boardVO = new BoardVO(id, category, title, content);
-		boardService.modifyBoard(boardVO);
-		return "redirect:/admin/board/enter.do";
+	@RequestMapping("/board/update.ajax")
+	@ResponseBody
+	public Map<String, Object> updateBoard(BoardVO boardVO) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", boardService.modifyBoard(boardVO));
+		return result;
 	}
 	
 	@RequestMapping("/board/updateViewBoard.do")
@@ -239,11 +234,12 @@ public class AdminController {
 		return "admin_index";
 	}
 	
-	@RequestMapping("/board/delete.do")
-	public String deleteBoard(HttpServletRequest request, Model model) {
-		int id = Integer.parseInt(request .getParameter ("id" ));
-		boardService.deleteBoard(id);
-		return "redirect:/admin/board/enter.do";
+	@RequestMapping("/board/delete.ajax")
+	@ResponseBody
+	public Map<String, Object> deleteBoard(BoardVO boardVO) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", boardService.deleteBoard(boardVO.getId()));
+		return result;
 	}
 	
 	// 여기서부터 온라인 문의 관련 관리자 메서드 ('/qna'로 시작해줄 것!)

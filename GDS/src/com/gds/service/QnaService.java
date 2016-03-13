@@ -24,8 +24,7 @@ public class QnaService {
 	 * @return
 	 */
 	public boolean writeQna(QnaVO qna) {
-		int id = qnaDao.getMaxId() + 1;
-		qna.setId(id);
+		qna.setId(qnaDao.getMaxId() + 1);
 		return qnaDao.insert(qna) == 1;
 	}
 	

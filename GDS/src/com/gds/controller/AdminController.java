@@ -269,8 +269,17 @@ public class AdminController {
 	@RequestMapping("/qna/answer.ajax")
 	@ResponseBody
 	public Map<String, Object> answerQna(QnaVO qnaVO) {
+		System.out.println(qnaVO);
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("status", qnaService.answerQna(qnaVO));
+		return result;
+	}
+	
+	@RequestMapping("/qna/delete.ajax")
+	@ResponseBody
+	public Map<String, Object> deleteQna(QnaVO qnaVO) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", qnaService.deleteQna(qnaVO.getId()));
 		return result;
 	}
 

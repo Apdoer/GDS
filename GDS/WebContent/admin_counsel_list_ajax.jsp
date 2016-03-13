@@ -46,7 +46,7 @@
 			</c:if>
 		</c:forEach>
 		<c:if test="${searchVO.endPageIndex < searchVO.lastPageIndex}">
-			<li><a href="javascript: listCounsel(${searchVO.startPageIndex + 1});">
+			<li><a href="javascript: listCounsel(${searchVO.endPageIndex + 1});">
 				<span aria-hidden="true">&raquo;</span>
 			</a></li>	
 		</c:if>

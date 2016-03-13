@@ -49,8 +49,8 @@
 				<br><br>
 				<div class="title"><h1>자폐스펙트럼장애</h1></div>
 				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
-				<br><br><br><br>
-				<hr><br><br><br>
+				<br><br>
+				<hr><br>
 				
 				<h4><img src="${cp }/image/icon4.png"> 자폐스펙트럼장애란?</h4><br>
 				<p class="content_detail">자폐스펙트럼장애는 행동조절능력,  학습, 사회적 상호작용, 의사소통을 담당하는 뇌의 중요 기능의 발달에 영향을 주는 뇌신경 발달 장애입니다.<br><br></p>

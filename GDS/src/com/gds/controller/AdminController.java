@@ -195,6 +195,15 @@ public class AdminController {
 		return "admin_index";
 	}
 	
+	@RequestMapping("/board/get.do")
+	public ModelAndView write(BoardVO boardVO) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("board", boardService.getBoard(boardVO));
+		mav.addObject("contentPage", "/board_content.jsp");
+		mav.setViewName("admin_index");
+		return mav;
+	}
+	
 	@RequestMapping("/board/write.do")
 	public String write(HttpServletRequest request, Model model) {
 		String title = request .getParameter ("title" );

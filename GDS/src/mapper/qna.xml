@@ -54,10 +54,10 @@
 		OFFSET #{startRowIndex}
 	</select>
 	
-	<update id="updateAnswer" parameterType="Qna">
+	<update id="update" parameterType="Qna">
 		UPDATE qna
-		SET answer = #{answer}
-			regdate_answer = now()
+		SET regdate_answer = now(),
+			answer = #{answer}
 		WHERE id = #{id}
 	</update>
 	

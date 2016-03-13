@@ -47,10 +47,10 @@ function submitContents(elClickedObj) {
 	  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1" value="${blogList[0].title}">
 	</div>
 	<!--제목 끝-->
-	<br> </br>
+	<br> <br>
 	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90" >${blogList[0].content} 
 	</textarea>
-	<br> </br>
+	<br> <br>
 	<div class="btn-group" role="group" aria-label="..." >
 	  <button type="button" class="btn btn-default" onclick="submitContents(this)" style="text-align: center;">등록</button>
 	  <button type="button" class="btn btn-default" style="text-align: center;">취소</button>

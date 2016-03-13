@@ -20,65 +20,152 @@
 .line-horizontal { border: 1px solid #222; border-radius: 1px; }
 </style>
 
-<div id="qna" class="container">
-
-	<div class="row">
-		
-		<!-- qna left-side-bar -->
-		<div class="col-md-2 left-side-bar">
-		
-			<ul class="pull-right">
-				<li><a href="${cp}/board/enter.do">공지사항</a></li>
-				<li><a href="${cp}/qna/enter.do" style="font-weight: bold;">온라인 문의</a></li>
-			</ul>
-		
-		</div>
-		
-		<!-- qna content -->
-		<div class="col-md-9 right-article-content">
-		
-			<div class="title">
-				<h1>${qna.title}</h1>
-			</div>
+<c:choose>
+	<c:when test="${fromAdmin}">
+	
+		<div id="qna">
+	
+			<!-- qna content -->
+			<div class="right-article-content">
 			
-			<div class="line-horizontal"></div>
-			
-			<div class="content question">
-			
-				<div class="header">
-					<span>
-						<span class="glyphicon glyphicon-calendar"></span>
-						<fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
-					</span>
+				<div class="title">
+					<h1>${qna.title}</h1>
 				</div>
 				
-				<div class="body">
-					${qna.question}
+				<div class="line-horizontal"></div>
+				
+				<div class="content question">
+				
+					<div class="header">
+						<span>
+							<span class="glyphicon glyphicon-calendar"></span>
+							<fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
+						</span>
+					</div>
+					
+					<div class="body">
+						${qna.question}
+					</div>
+					
 				</div>
 				
-			</div>
-			
-			<c:if test="${qna.answer != null}">
 				<div class="line-horizontal"></div>
 				
 				<div class="content answer">
 				
 					<div class="header">
-						<span>
-							<span class="glyphicon glyphicon-calendar"></span>
-							<fmt:formatDate value="${qna.regdateAnswer}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
-						</span>
+						<c:choose>
+							<c:when test="${qna.answer != null}">
+							
+								<span>
+									<span class="glyphicon glyphicon-calendar"></span>
+									<fmt:formatDate value="${qna.regdateAnswer}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
+								</span>
+							
+							</c:when>
+							<c:otherwise>
+							
+								<span>아직 답변이 등록되지 않았습니다.</span>
+							
+							</c:otherwise>
+						</c:choose>
 					</div>
 					
 					<div class="body">
-						${qna.answer}
+						<input type="hidden" name="id" value="${qna.id}">
+						<textarea class="form-control" rows="5"name="answer">${qna.answer.replaceAll("<br>", "\\r\\n")}</textarea>
 					</div>
-				
+					
+					<a class="btn btn-default pull-right" href="javascript: answerQna();">저장하기</a> 
+					
 				</div>
-			</c:if>
+				
+			</div>
 			
 		</div>
-		
-	</div>
 	
-</div>
+	</c:when>
+	<c:otherwise>
+	
+		<div id="qna" class="container">
+
+			<div class="row">
+				
+				<!-- qna left-side-bar -->
+				<div class="col-md-2 left-side-bar">
+				
+					<ul class="pull-right">
+						<li><a href="${cp}/board/enter.do">공지사항</a></li>
+						<li><a href="${cp}/qna/enter.do" style="font-weight: bold;">온라인 문의</a></li>
+					</ul>
+				
+				</div>
+				
+				<!-- qna content -->
+				<div class="col-md-9 right-article-content">
+				
+					<div class="title">
+						<h1>${qna.title}</h1>
+					</div>
+					
+					<div class="line-horizontal"></div>
+					
+					<div class="content question">
+					
+						<div class="header">
+							<span>
+								<span class="glyphicon glyphicon-calendar"></span>
+								<fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
+							</span>
+						</div>
+						
+						<div class="body">
+							${qna.question}
+						</div>
+						
+					</div>
+					
+					<c:if test="${qna.answer != null}">
+						<div class="line-horizontal"></div>
+						
+						<div class="content answer">
+						
+							<div class="header">
+								<span>
+									<span class="glyphicon glyphicon-calendar"></span>
+									<fmt:formatDate value="${qna.regdateAnswer}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
+								</span>
+							</div>
+							
+							<div class="body">
+								${qna.answer}
+							</div>
+						
+						</div>
+					</c:if>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	
+	</c:otherwise>	
+</c:choose>
+
+<script type="text/javascript">
+function answerQna() {
+	$.ajax({
+		url: 'answer.ajax',
+		method: 'POST',
+		data: { 
+			'id': $('input[name=id]').val(),
+			'answer': $('textarea[name=answer]').val().replace('/\n/g', '<br>')
+		}
+	}).done(function(data) {
+		alert(data.status ? '성공적으로 저장되었습니다.' : '처리 중 오류가 발생했습니다.');
+	}).fail(function(error) {
+		alert(error);
+	});
+}
+</script>

@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">관리자페이지</a>
+				<a class="navbar-brand" href="${cp}/admin/enter.do">관리자페이지</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse"></div>
 		</div>
@@ -34,11 +34,12 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li class="active"><a href="#">
+					<li class="active"><a href="${cp}/admin/counsel/enter.do">
 						상담신청현황 &nbsp; 
 						<span id="undoneCounselCnt" class="badge pull-right">${undoneCounselCnt}</span>
 					</a></li>
-					<li><a href="#">카테고리관리</a></li>
+					<li><a href="javascript: alert('작업중입니다.');">카테고리관리</a></li>
+					<%-- <li><a href="${cp}/admin/category/enter.do">카테고리관리</a></li> --%>
 				</ul>
 				<ul class="nav nav-sidebar">
 					<li><a href="${cp}/admin/blog/enter.do">별 헤는 밤</a></li>

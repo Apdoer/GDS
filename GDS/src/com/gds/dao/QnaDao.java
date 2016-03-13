@@ -70,7 +70,7 @@ public class QnaDao {
 	 * @return
 	 */
 	public int updateAnswer(QnaVO qna) {
-		return sqlSessionTemplate.update("Qna.updateAnswer", qna);
+		return sqlSessionTemplate.update("Qna.update", qna);
 	}
 
 	/**

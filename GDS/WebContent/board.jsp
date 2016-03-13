@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
-#board { padding-top: 60px; }
 #board .left-side-bar ul { list-style: none; margin: 0px; padding: 0px; width: 75%; }
 #board .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #board .left-side-bar ul li:last-child { border: 0px; }
@@ -30,12 +29,10 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<div id="board" <c:if test="${not fromAdmin}">class="container"</c:if>>
-
 <c:choose>
 	<c:when test="${fromAdmin}">
 	
-		<div id="board" class="container">
+		<div id="board" style="padding-top: 20px;">
 	
 			<!-- board content -->
 			<div class="right-article-list">
@@ -53,7 +50,7 @@
 	</c:when>
 	<c:otherwise>
 	
-		<div id="board" class="container">
+		<div id="board" class="container" style="padding-top: 6opx;">
 	
 			<div class="row">
 			

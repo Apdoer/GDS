@@ -7,14 +7,20 @@
 #program_deasa .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 #program_deasa .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #program_deasa .left-side-bar ul li:last-child { border: 0px; }
-#program_deasa .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
+#program_deasa .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
 
 #program_deasa p { line-height: 150%; color: #A6A6A6;}
 #program_deasa hr { border: 3px solid #847373;}
 #program_deasa .blog-header { height: 150px;}
 #program_deasa .blog-header div { float: left;}
 #program_deasa .sagin { width: 98%; margin-top:30px}
-
+#program_deasa .a_link_clicked{
+	font-weight: bold;
+	color:#2cabea;
+}
+#program_deasa .a_link_unClicked{
+	color: #aaa;
+}
 </style>
 
 
@@ -22,10 +28,10 @@
 
       <div class="col-md-3 col-lg-2 left-side-bar affix">
 			<ul class="pull-left">
-				<li><a href="${cp}/program_deasa.do" style="font-weight: bold;">대사검사</a></li>
-				<li><a href="${cp}/program_goap.do">고압산소치료</a></li>
-				<li><a href="${cp}/program_chunggigac.do">청지각프로그램</a></li>
-				<li><a href="${cp}/program_sigigac.do">시지각프로그램</a></li>
+				<li><a class="a_link_unClicked" href="${cp}/program_deasa.do">대사검사</a></li>
+				<li><a class="a_link_unClicked" href="${cp}/program_goap.do">고압산소치료</a></li>
+				<li><a class="a_link_unClicked" href="${cp}/program_chunggigac.do">청지각프로그램</a></li>
+				<li><a class="a_link_clicked" href="${cp}/program_sigigac.do">시지각프로그램</a></li>
 			</ul>
 		
 		</div>

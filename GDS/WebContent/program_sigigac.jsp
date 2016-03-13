@@ -8,9 +8,19 @@
 #program_deasa .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #program_deasa .left-side-bar ul li:last-child { border: 0px; }
 #program_deasa .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
-
-#program_deasa p { line-height: 150%; color: #A6A6A6;}
-#program_deasa hr { border: 3px solid #847373;}
+#program_deasa .title h1{
+	font-weight: 600;
+}
+#program_deasa .title{
+	display: inline-block;
+}
+#program_deasa .title_detail{
+	display: inline-block;
+	color: #ABA7A7;
+	margin-left: 5px;
+}
+#program_deasa p { line-height: 150%; color: #808080;}
+#program_deasa hr { border: 2px solid #847373;}
 #program_deasa .blog-header { height: 150px;}
 #program_deasa .blog-header div { float: left;}
 #program_deasa .sagin { width: 98%; margin-top:30px}
@@ -36,29 +46,18 @@
 		
 		</div>
 
-      <div class="row">
-      	<div class="col-sm-4 col-md-3">
-        </div>
-
-         
-        <div class=" col-md-8 blog-main">
-	         <div class="blog-header">
-		         <div style=" width: 40%;">
-			      	  <h1 class="blog-title" style="font:bold; padding-bottom: 10px; margin-top: 40px;">시지각 프로그램</h1>
-			     </div>
-		         <div style="width: 60%; height: 120px;">
-			          <br>
-				      <p style="font:bold; font-size: 10px; margin-top: 30px; line-height: 20%; color:gray;">발달 장애와 관련된 질환들을</p>
-				      <p style="font:bold; font-size: 10px; color:gray;">과학적으로 원인을 분석 대처할 수 있습니다.</p>
-			     </div>
-		     </div>
+      <div class="row">         
+        <div class=" col-md-8 col-md-offset-3 blog-main">
+	         <div>
+	         	<br><br>
+				<div class="title"><h1>시지각 프로그램</h1></div>
+				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
+				<br><br><br>
+		     
 		     <p style="line-height: 200%;">
 			         시지각 오류는 눈을 통해 들어온 세상의 정보를 뇌가 받아들이고 해석함에 있어 정보전달을 해주는 뇌신경의 오류로 인해 발생하게 됩니다.
-				<br><br>
 				 눈 구조에 문제가 전혀 없는데도 불구하고 다양하게 나타나는 시지각적 문제는 바로 뇌신경의 ‘네트워크 형성’의 실패에서비롯되게 되는 것입니다.
-				<br><br>
 				 시지각적 문제로 인해, 시각적 집중력이 매우 짧고, 동작추적이 잘 되지 않거나 시각적 기억이 되지 않아 인지발달 장애를 가져오고, 그로 인해 언어발달 장애는 물론 학습장애를 이어지게 됩니다.
-				<br><br>
 				 전반적인 발달장애가 없더라도 시지각문제로 인해 학습장애 고통을 겪는 아동들은 너무 많이 있습니다.
 		     </p>
 		     <hr>
@@ -113,8 +112,9 @@
             <img class="sagin" src="image/im_9.png">
             <img class="sagin" src="image/daesang_03.png">
             <img class="sagin" src="image/effect_03.png">
+            <br><br>
 			</div> 
-
+		</div>
     </div><!-- /.container -->
 </div>
 </div>

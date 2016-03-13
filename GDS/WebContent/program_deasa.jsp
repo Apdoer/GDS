@@ -8,9 +8,19 @@
 #program_deasa .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #program_deasa .left-side-bar ul li:last-child { border: 0px; }
 #program_deasa .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
-
-#program_deasa hr {border: 3px solid #847373;}
-#program_deasa p {line-height: 200%; color: #A6A6A6;}
+#program_deasa .title h1{
+	font-weight: 600;
+}
+#program_deasa .title{
+	display: inline-block;
+}
+#program_deasa .title_detail{
+	display: inline-block;
+	color: #ABA7A7;
+	margin-left: 5px;
+}
+#program_deasa hr {border: 2px solid #847373;}
+#program_deasa p {line-height: 200%; color: #808080;}
 #program_deasa .a_link_clicked{
 	font-weight: bold;
 	color:#2cabea;
@@ -34,16 +44,13 @@
 
       <div class="row">         
         <div class=" col-md-8 col-md-offset-3 blog-main">
-         <div class="blog-header">
-	         <div style="float: left; width: 25%;">
-		      	  <h1 class="blog-title" style="font:bold; padding-bottom: 10px; margin-top: 40px;">대사 검사</h1>
-		     </div>
-	         <div style="float: left; width: 75%; height: 120px;">
-		          <br>
-			      <p style="font:bold; font-size: 10px; margin-top: 30px; line-height: 20%; color:gray;">발달 장애와 관련된 질환들을</p>
-			      <p style="font:bold; font-size: 10px; color:gray;">과학적으로 원인을 분석 대처할 수 있습니다.</p>
-		     </div>
-	     </div>
+         <div>
+	         <br><br>
+				<div class="title"><h1>대사검사</h1></div>
+				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
+				<br><br><br>
+				
+	     
 	     
 	     
           <div class="blog-post">
@@ -65,7 +72,7 @@
 				<img src="image/im_1.png" style="margin-top: -100px; margin-left:-70px;">
 			</div>
             <hr>
-			<div id="2">
+			
             <h2 class="blog-post-title" style="height: 70px;">유기산 검사</h2>
             <p>유기산 테스트(Organic Acids Test)는 인체가 소변을 통해 모든대사활동 후 대사물질을 흘려 보내는 것을 토대로 신진대사와 관련된 간단하지만 소중한 정보를 제공합니다.
                             신진대사 후에 흘려진 유기산 성분들은 인체 내 세포의 활동에 대한 결과, 음식에 대한 소화결과 그리고 위장의 신진대사로 인한 부산물이라고 할 수 있습니다.<br>
@@ -76,9 +83,9 @@
 				<img src="image/im_5.png" style="margin-left: 0px; margin-top: 20px;">
 				<img src="image/daesang_01.png" style="margin-top: 50px; padding-bottom: 50px; width: 98%;">
             
-			</div>
-			<div id="3">
-            <hr>
+			
+			
+            <hr style="border: 1px solid #ccc;">
             <h2 class="blog-post-title" style="height: 70px;">중금속 검사</h2>
             <p>머리카락은 유독성 금속들인 납, 알루미늄, 슨은 등을 검출하는데 탁원한 샘플입니다. 납은 도로변의 흙에서 발견될 수도 있고 오래된 집들의 페인트에도 들어있으며 흙이나 페인트 조각들을 먹는
             아이들은 납 수치가 독성까지 될 수 있습니다. 카드뮴은 배터리, 철 띠를 두른 타이어들 그리고 플라스틱에 사용됩니다. 음식을 덮는 플라스틱은 카드뮴 원천이 될 수 있고 담배연기에서도 발견됩니다. 수은은 배터리, 치과용 아말감,
@@ -87,15 +94,15 @@
             </p>
 				<img src="image/im_6.png" style="margin-left:100px; margin-top: 30px;">
 				<img src="image/daesang_02.png" style="margin-top: 50px; padding-bottom: 50px; width: 98%;">
-			</div>
-			<div id="4">
-            <hr>
+			
+			
+            <hr style="border: 1px solid #ccc;">
             <p style="margin-top: 50px;">이 외에도 음식 알러지검사, 글루텐/카제인 검사, 아미노산 검사 등도 진행 가능합니다.<br>
 			      New Beginnings사 등 발달장애 전문 영양보충제 회사와의 제휴를 통해 맞춤형 기능성 보충제 구매가 가능합니다.<br>
 			      (전화문의:031-711-3546)<br>
             </p>
          
-
+		
       </div><!-- /.row -->
 
     </div><!-- /.container -->

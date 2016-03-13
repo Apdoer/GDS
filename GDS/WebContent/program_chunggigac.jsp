@@ -8,9 +8,19 @@
 #program_deasa .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #program_deasa .left-side-bar ul li:last-child { border: 0px; }
 #program_deasa .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
-
-#program_deasa hr {border: 3px solid #847373;}
-#program_deasa p {line-height: 200%; color: #A6A6A6; margin-top:30px;}
+#program_deasa .title h1{
+	font-weight: 600;
+}
+#program_deasa .title{
+	display: inline-block;
+}
+#program_deasa .title_detail{
+	display: inline-block;
+	color: #ABA7A7;
+	margin-left: 5px;
+}
+#program_deasa hr {border: 2px solid #847373;}
+#program_deasa p {line-height: 200%;  color: #808080; margin-top:30px;}
 #program_deasa .a_link_clicked{
 	font-weight: bold;
 	color:#2cabea;
@@ -35,16 +45,13 @@
 
       <div class="row">         
         <div class=" col-md-8 col-md-offset-3 blog-main">
-         <div class="blog-header" style="height: 130px;">
-	         <div style="float: left; width: 40%;">
-		      	  <h1 class="blog-title" style="font:bold; padding-bottom: 10px; margin-top: 40px;">청지각 프로그램</h1>
-		     </div>
-	         <div style="float: left; width: 60%; height: 120px;">
-		          <br>
-			      <p style="font:bold; font-size: 10px; margin-top: 30px; line-height: 20%; color:gray;">발달 장애와 관련된 질환들을</p>
-			      <p style="font:bold; font-size: 10px; margin-top: 1px; color:gray;">과학적으로 원인을 분석 대처할 수 있습니다.</p>
-		     </div>
-	     </div>
+         <div>
+         	 <br><br>
+				<div class="title"><h1>청지각 프로그램</h1></div>
+				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
+				<br><br><br>
+	        
+	    
 	        <hr>
 	        <div class="blog-post">
 		  	<div id="1">
@@ -90,7 +97,7 @@
 			<img src="image/p_03.png" style="margin-top:30px; margin-bottom:50px; width: 32%;">
 
     </div><!-- /.container -->
-    
+     </div>
     </div>
     </div>
     </div>

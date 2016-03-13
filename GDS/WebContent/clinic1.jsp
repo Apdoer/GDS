@@ -25,6 +25,7 @@
 
 #clinic .content_detail{
 	margin-left: 25px;
+	color: #808080;
 }
 
 #clinic .a_link_clicked{
@@ -48,8 +49,7 @@
 			</ul>			
 	</div>
 	
-	<div class="row">		
-		<!-- board left-side-bar -->
+	<div class="row">
 		<div class="col-md-8 col-md-offset-3 blog-main">
 			<div>
 				<br><br>

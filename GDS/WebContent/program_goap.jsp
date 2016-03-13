@@ -8,9 +8,19 @@
 #program_deasa .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #program_deasa .left-side-bar ul li:last-child { border: 0px; }
 #program_deasa .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
-
-#program_deasa p { line-height: 200%; color: #A6A6A6;}
-#program_deasa hr { border: 3px solid #847373;}
+#program_deasa .title h1{
+	font-weight: 600;
+}
+#program_deasa .title{
+	display: inline-block;
+}
+#program_deasa .title_detail{
+	display: inline-block;
+	color: #ABA7A7;
+	margin-left: 5px;
+}
+#program_deasa p { line-height: 200%; color: #808080;}
+#program_deasa hr { border: 2px solid #847373;}
 #program_deasa .a_link_clicked{
 	font-weight: bold;
 	color:#2cabea;
@@ -35,16 +45,11 @@
 
       <div class="row">         
         <div class=" col-md-8 col-md-offset-3 blog-main">
-	         <div class="blog-header" style="height: 150px;">
-		         <div style="float: left; width: 40%;">
-			      	  <h1 class="blog-title" style="font:bold; padding-bottom: 10px; margin-top: 40px;">고압 산소 치료</h1>
-			     </div>
-		         <div style="float: left; width: 60%; height: 120px;">
-			          <br>
-				      <p style="font:bold; font-size: 10px; margin-top: 30px; line-height: 20%; color:gray;">사람에게 꼭 필요한 산소로</p>
-				      <p style="font:bold; font-size: 10px; color:gray;">여러질환을 개선 할 수 있습니다.</p>
-			     </div>
-		     </div>
+	         <div>
+	         	<br><br>
+				<div class="title"><h1>고압 산소 치료</h1></div>
+				<div class="title_detail"><span>사람에게 꼭 필요한 산소로<br>여러질환을 개선 할 수 있습니다.</span>	</div>
+				<br><br><br>		     
           
 	          <div class="blog-post">
 			  	<div style="float: left; width: 52%; ">
@@ -86,6 +91,8 @@
 	            </p>
 	            </div>
 				</div> 
+				
+				</div>
 	
 	    	</div><!-- /.container -->
 		</div>

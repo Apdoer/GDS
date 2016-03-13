@@ -45,6 +45,10 @@
 
 #clinic .content_detail{
 	margin-left: 25px;
+	color: #808080;
+}
+#clinic h5{
+	color: #808080;
 }
 #clinic .a_link_clicked{
 	font-weight: bold;

@@ -7,7 +7,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -100,15 +102,13 @@ public class BlogController {
 	}
 	
 	@RequestMapping ("/insertBlog.ajax" )
-    public String insertBlog(BlogVO blogVO, Model model){
+	@ResponseBody
+    public Map<String, Object> insertBlog(BlogVO blogVO, Model model){
 
          blogService.insertBlog(blogVO);
-         List<BlogVO> blogList;
- 		 blogList = blogService.selectBlogAll();
- 		 model.addAttribute("blogList", blogList);
- 	 	 model.addAttribute("contentPage", "/blog_view.jsp");
-         
-         return "index" ;
+         Map<String, Object> result = new HashMap<String, Object>();
+         result.put("status", "true");
+ 	 	return result ;
     }
 	
 	//블로그 글 작성 페이지 이동

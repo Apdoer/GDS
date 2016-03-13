@@ -22,6 +22,10 @@ function submitContents(elClickedObj) {
 			title: title,
 			content: content
 		}
+	}).done(function(data) {
+		location.href = '${cp}/admin/blog/enter.do';
+	}).fail(function(error) {
+		alert(error);
 	});
 }
 function goBack() {

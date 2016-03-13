@@ -1,5 +1,7 @@
 package com.gds.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -73,6 +75,11 @@ public class BoardService {
 	 */
 	public boolean deleteBoard(int id) {
 		return boardDao.delete(id) == 1;
+	}
+
+	public List<BoardVO> selectBoard5() {
+		// TODO Auto-generated method stub
+		return boardDao.selectBoard5();
 	}
 
 }

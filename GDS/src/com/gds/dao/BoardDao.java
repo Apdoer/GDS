@@ -87,4 +87,9 @@ public class BoardDao {
 		sqlSessionTemplate.update("Board.plusConut", boardVO);
 	}
 
+	public List<BoardVO> selectBoard5() {
+		// TODO Auto-generated method stub
+	    return sqlSessionTemplate.selectList("Board.selectBoard5");
+	}
+
 }

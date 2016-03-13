@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 
 <style type="text/css">
@@ -65,11 +64,6 @@
 #home .hr_margin_top_0{
 	margin-top: 0;
 }
-
-#home .table{
-	border:solid 0px;
-}
-
 </style>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -141,14 +135,7 @@
       	<div class="col-md-4">
           <h2>공지사항</h2>
           <hr class="hr_margin_top_0">
-          <table class="table">
-	          <c:forEach items="${boardList}" var="board">
-		          <tr>
-			          <td><h4><a href="${cp}/board/get.do?id=${board.id}">${board.title}</h4></td>
-			          <td><h5> <fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/></h5></td>
-		          </tr>
-			  </c:forEach>
-          </table>
+          <p>&nbsp;&nbsp;대사검사 무료 시행 이벤트를 진행합니다. 선착순 5명까지 신청 받습니다. 대사검사는...</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
@@ -168,9 +155,11 @@
     </div>
 </div>
 
-
 <script type="text/javascript">
 
+$(function() {
+	window.location.href="${cp}/mainContent.do";
+});
 
 $(document).ready(function() {
 	$(".symtom1").click(function() {

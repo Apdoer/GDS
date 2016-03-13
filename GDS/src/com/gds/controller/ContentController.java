@@ -1,11 +1,27 @@
 package com.gds.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.gds.service.BlogService;
+import com.gds.service.BoardService;
+import com.gds.vo.BlogVO;
+import com.gds.vo.BoardVO;
+
 @Controller
 public class ContentController {
+	
+	@Autowired
+	BlogService blogService;
+	
+	@Autowired
+	BoardService boardService;
 	
 	@RequestMapping("/introduce.do")
 	public String monveCounsel(Model model){		
@@ -58,6 +74,21 @@ public class ContentController {
 	@RequestMapping("/clinic4.do")
 	public String clinic4(Model model){
 		model.addAttribute("contentPage","/clinic4.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/home.do")
+	public String home(HttpServletRequest request, Model model){
+		
+		List<BlogVO> blogList;
+		blogList = blogService.selectBlogAll();
+		model.addAttribute("blogList", blogList);
+		
+		List<BoardVO> boardList;
+		boardList = boardService.selectBoard5();
+		model.addAttribute("boardList", boardList);
+		
+		model.addAttribute("contentPage","/home.jsp");
 		return "index";
 	}
 

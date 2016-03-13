@@ -69,4 +69,11 @@
 		update board set cnt = cnt+1 where id = #{id}
 	</update>
 
+	<select id="selectBoard5" resultType="Board">
+		SELECT *
+		FROM board
+		WHERE delyn = 'n'
+		ORDER BY regdate DESC
+		LIMIT 5
+	</select>
 </mapper>

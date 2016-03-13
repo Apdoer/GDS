@@ -1,22 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <input type="text" name="currentPage" value="${searchVO.currentPage}" hidden="true">
 <table class="table">
-	<tr>
-		<th colspan="3">상담신청 현황</th>
-	</tr>
 	<c:choose>
 		<c:when test="${searchVO.result != null && searchVO.result.size() > 0}">
 			<c:forEach items="${searchVO.result}" var="counsel">
 				<tr style="cursor: pointer;" onclick="javascript: getCounsel(${counsel.id});">
 					<td style=" padding-left: 16px;">
-						<p class="category-name">${counsel.categoryName}</p>
+						<p class="category-name">${counsel.categoryName}</p>	
 						<p class="detail">${counsel.detail}</p>
 					</td>
 					<td><c:if test="${counsel.doneyn == 'y'}">
 						<span class="badge doneyn">Done</span>
 					</c:if></td>
-					<td>${counsel.regdate}</td>
+					<td><strong>${counsel.counseleeName}</strong> 님</td>
+					<td>
+						<fmt:parseDate var="parsedDate" value="${counsel.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
+						<fmt:formatDate value="${parsedDate}" pattern="yyyy.MM.dd"/> <br>
+						<fmt:formatDate value="${parsedDate}" pattern="HH:mm"/>
+					</td>
 				</tr>
 			</c:forEach>
 		</c:when>

@@ -25,49 +25,92 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<div id="board" class="container">
-
-	<div class="row">
-		
-		<!-- board left-side-bar -->
-		<div class="col-md-2 left-side-bar">
-		
-			<ul class="pull-right">
-				<li><a href="${cp}/board/enter.do" style="font-weight: bold;">공지사항</a></li>
-				<li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
-				<%-- <li><a href="${cp}/counsel.do">상담신청</a></li> --%>
-			</ul>
-		
-		</div>
-		
-		<!-- board content -->
-		<div class="col-md-9 right-article-content">
-		<a href="${cp}/admin/board/updateViewBoard.do?id=${board.id}" class="btn btn-info">글 수정</a>
-		<a href="${cp}/admin/board/delete.do?id=${board.id}" class="btn btn-danger">글 삭제</a>
-			<div class="title">
-				<h1>${board.title}<small>${board.type}</small></h1>
-			</div>
-			
-			<div class="line-horizontal" style="border: 1px solid #222; border-radius: 1px;"></div>
-			
-			<div class="content">
-				<div class="header">
-					<span>
-						<span class="glyphicon glyphicon-calendar"></span>
-						<fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/> &nbsp;
-					</span>
-					<span>
-						<span class="glyphicon glyphicon-eye-open"></span>
-						${board.cnt} &nbsp;
-					</span>
-				</div>
-				<div class="body">
-					${board.content}
-				</div>
-			</div>
-			
-		</div>
-		
-	</div>
+<c:choose>
+	<c:when test="${fromAdmin}">
 	
-</div>
+		<div id="board" style="padding-top: 20px;">
+	
+			<!-- board content -->
+			<div class="right-article-content">
+			
+				<div class="title">
+					<h1>${board.title}<small>${board.type}</small></h1>
+				</div>
+				
+				<div class="line-horizontal" style="border: 1px solid #222; border-radius: 1px;"></div>
+				
+				<div class="content">
+					<div class="header">
+						<span>
+							<span class="glyphicon glyphicon-calendar"></span>
+							<fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/> &nbsp;
+						</span>
+						<span>
+							<span class="glyphicon glyphicon-eye-open"></span>
+							${board.cnt} &nbsp;
+						</span>
+					</div>
+					<div class="body">
+						${board.content}
+					</div>
+				</div>
+				
+				<a href="${cp}/admin/board/updateViewBoard.do?id=${board.id}" class="btn btn-info">글 수정</a>
+				<a href="${cp}/admin/board/delete.do?id=${board.id}" class="btn btn-danger">글 삭제</a>
+				
+			</div>
+			
+		</div>
+	
+	</c:when>
+	<c:otherwise>
+	
+		<div id="board" class="container">
+		
+			<div class="row">
+				
+				<!-- board left-side-bar -->
+				<div class="col-md-2 left-side-bar">
+				
+					<ul class="pull-right">
+						<li><a href="${cp}/board/enter.do" style="font-weight: bold;">공지사항</a></li>
+						<li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
+						<%-- <li><a href="${cp}/counsel.do">상담신청</a></li> --%>
+					</ul>
+				
+				</div>
+				
+				<!-- board content -->
+				<div class="col-md-9 right-article-content">
+				<a href="${cp}/admin/board/updateViewBoard.do?id=${board.id}" class="btn btn-info">글 수정</a>
+				<a href="${cp}/admin/board/delete.do?id=${board.id}" class="btn btn-danger">글 삭제</a>
+					<div class="title">
+						<h1>${board.title}<small>${board.type}</small></h1>
+					</div>
+					
+					<div class="line-horizontal" style="border: 1px solid #222; border-radius: 1px;"></div>
+					
+					<div class="content">
+						<div class="header">
+							<span>
+								<span class="glyphicon glyphicon-calendar"></span>
+								<fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/> &nbsp;
+							</span>
+							<span>
+								<span class="glyphicon glyphicon-eye-open"></span>
+								${board.cnt} &nbsp;
+							</span>
+						</div>
+						<div class="body">
+							${board.content}
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	
+	</c:otherwise>
+</c:choose>

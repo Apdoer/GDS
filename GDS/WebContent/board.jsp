@@ -82,7 +82,7 @@
 
 <script type="text/javascript">
 function getBoard(id) {
-	location.href = "${cp}/board/get.do?id=" + id; 	
+	location.href = "get.do?id=" + id; 	
 }
 
 function listBoard(pageIdx) {
@@ -100,5 +100,3 @@ $(function() {
 	listBoard(1);
 });
 </script>	
-	
-</div>

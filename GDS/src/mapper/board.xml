@@ -61,7 +61,8 @@
 	<update id="delete" parameterType="int">
 		UPDATE board
 		SET delyn = 'y'
-		WHERE id = #{id}
+		WHERE delyn = 'n'
+		  AND id = #{id}
 	</update>
 	
 	<update id="plusConut" parameterType="Board">

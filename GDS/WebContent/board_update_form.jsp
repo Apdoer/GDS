@@ -10,10 +10,26 @@ function submitContents(elClickedObj) {
 
     // 에디터의 내용에 대한 값 검증은 이곳에서
     /* alert(document.getElementById( "ir1" ).value); */
-    var title = document.getElementById( "title" ).value;
-    var content = document.getElementById( "ir1" ).value;
-    var category = document.getElementById( "category" ).value;
-    window.location.href="/GDS/admin/board/update.do?title="+title+"&content="+content+"&category="+category+"&id="+${board.id};
+    var id = document.getElementById("id").value;
+    var type = document.getElementById("type").value;
+	var title = document.getElementById("title").value;
+	var content = document.getElementById("ir1").value;
+	
+	$.ajax({
+		url: '${cp}/admin/board/update.ajax',
+		method: 'POST',
+		data: {
+			id: id,
+			type: type,
+			title: title,
+			content: content
+		}
+	}).done(function(data) {
+		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');
+		location.href = '${cp}/admin/board/enter.do';
+	}).fail(function(error) {
+		alert(error);
+	});
 }
 </script>
 
@@ -29,10 +45,13 @@ function submitContents(elClickedObj) {
 <!-- 넣어주면 된디! -->
 <!-- 넣어주겠딩  -->
 
-<div id="#board_form" class="container" style="margin-top: 30px;">
+<div id="#board_form" style="padding-top: 20px; padding-right: 8px; max-width: 800px;">
 	<form>
+	
+		<input type="hidden" id="id" value="${board.id}">
+	
 		<div class="option" style="width: 150px; float: left;">
-			<select id="category" class="form-control">
+			<select id="type" class="form-control">
 				<c:if test="${board.type eq '공지사항'}">
 					<option>공지사항</option>
 					<option>이벤트</option>
@@ -45,7 +64,7 @@ function submitContents(elClickedObj) {
 		</div>
 
 		<!--제목 시작 -->
-		<div class="input-group" style="float: left; width: 680px;">
+		<div class="input-group" style="float: left; width: 640px;">
 			<span class="input-group-addon" id="basic-addon1">제목</span>
 			<input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요"
 				aria-describedby="basic-addon1" value="${board.title}">
@@ -55,15 +74,14 @@ function submitContents(elClickedObj) {
 		<br>
 		<br>
 		
-		<textarea name="ir1" id="ir1" rows="20" cols="115">
-	 ${board.content}
-	</textarea>
-		<br> <br>
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-info"
-				onclick="submitContents(this)" style="padding-left: 10px;">수정</button>
-			<button type="button" class="btn btn-info" style="margin: 0 auto;">취소</button>
-		</div>
+		<textarea style="width: 100%;" name="ir1" id="ir1" rows="20" cols="115">${board.content}</textarea>
+		
+		<br>
+		<br>
+		
+		<a class="btn btn-default pull-left" href="${cp}/admin/board/enter.do">목록으로</a>
+		<a class="btn btn-default pull-right" href="javascript: submitContents(this);">글 수정</a>
+		
 	</form>
 </div>
 <script type="text/javascript">

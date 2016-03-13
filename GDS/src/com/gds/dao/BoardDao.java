@@ -6,7 +6,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.gds.vo.BlogVO;
 import com.gds.vo.BoardVO;
 import com.gds.vo.SearchVO;
 

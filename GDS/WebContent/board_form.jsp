@@ -15,7 +15,7 @@ function submitContents(elClickedObj) {
 	var content = document.getElementById("ir1").value;
 	
 	$.ajax({
-		url: '${cp}/admin/board/write.do',
+		url: '${cp}/admin/board/write.ajax',
 		method: 'POST',
 		data: {
 			type: type,

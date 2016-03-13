@@ -88,7 +88,7 @@
 
 <script type="text/javascript">
 function getQna(id) {
-	location.href = "${cp}/qna/get.do?id=" + id; 	
+	location.href = "get.do?id=" + id; 	
 }
 
 function listQna(pageIdx) {

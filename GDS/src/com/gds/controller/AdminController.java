@@ -20,7 +20,7 @@ import com.gds.service.BlogService;
 import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
 import com.gds.service.CounselService;
-import com.gds.util.AuthConstantUtil;
+import com.gds.util.AuthUtil;
 import com.gds.vo.BoardVO;
 import com.gds.vo.CounselVO;
 import com.gds.vo.SearchVO;
@@ -92,7 +92,7 @@ public class AdminController {
 		
 		// if session already has admin auth value, send it admin page.
 		Object authAttr = session.getAttribute("auth");
-		if (authAttr != null && AuthConstantUtil.AUTH_ADMIN_VALUE.equals((String) authAttr)) {
+		if (authAttr != null && AuthUtil.AUTH_ADMIN_VALUE.equals((String) authAttr)) {
 			// System.out.println("Already authorized user.");
 			return mav;
 		}
@@ -101,9 +101,9 @@ public class AdminController {
 		
 		// if it has password value matched with preassigned value,
 		// give admin auth value to session and send it admin page.
-		if (AuthConstantUtil.AUTH_ADMIN_PASSWORD.equals(password)) {
+		if (AuthUtil.AUTH_ADMIN_PASSWORD.equals(password)) {
 			// System.out.println("Password matched. Have been authorized now.");
-			session.setAttribute("auth", AuthConstantUtil.AUTH_ADMIN_VALUE);
+			session.setAttribute("auth", AuthUtil.AUTH_ADMIN_VALUE);
 			return mav;
 		}
 		// else the password value doesn't match with preassigned value,
@@ -243,4 +243,11 @@ public class AdminController {
 		return "admin_index";
 	}
 
+	// 여기서부터 관리자 별헤는밤 매서드
+	@RequestMapping("/blog/enter.do")
+	public String enterBlog(Model model) {
+		model.addAttribute("contentPage", "/blog_view.jsp");
+		return "admin_index";
+	}
+	
 }

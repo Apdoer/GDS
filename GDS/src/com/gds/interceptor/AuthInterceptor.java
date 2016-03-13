@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.gds.util.AuthConstantUtil;
+import com.gds.util.AuthUtil;
 
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 	
@@ -18,8 +18,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 				Object handler) throws Exception {
 		
 		HttpSession session = request.getSession();
-		Object authAttr = session.getAttribute("auth");
-		if (authAttr == null || !AuthConstantUtil.AUTH_ADMIN_VALUE.equals((String) authAttr)) {
+		if (AuthUtil.isAuthorized(session)) {
 			// System.out.println("You cannot pass through without auth value!");
 			response.sendRedirect("/GDS/admin/login.do");
 			return false;

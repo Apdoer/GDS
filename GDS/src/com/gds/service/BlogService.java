@@ -75,11 +75,14 @@ public class BlogService {
 		int a;
 		int b;
 		
-		a = content.indexOf("<img");
-		
-		b = content.indexOf("title=");
-		content = content.substring(a, b-1);
-		content = content + " style='width: 60%'>";
+		if (content.indexOf("<img") != -1) {
+			
+			a = content.indexOf("<img");
+			
+			b = content.indexOf("title=");
+			content = content.substring(a, b-1);
+			content = content + " style='width: 60%'>";
+		}
 		blogList.get(0).setContent(content);
 		
 		return blogList;

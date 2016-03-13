@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gds.service.BlogService;
@@ -98,13 +99,9 @@ public class BlogController {
 	    }
 	}
 	
-	@RequestMapping ("/insertBlog.do" )
-    public String insertBlog(HttpServletRequest request, Model model){
+	@RequestMapping ("/insertBlog.ajax" )
+    public String insertBlog(BlogVO blogVO, Model model){
 
-         String title = request .getParameter ("title" );
-         String content = request .getParameter ("content" );
-         
-         BlogVO blogVO = new BlogVO(title, content);
          blogService.insertBlog(blogVO);
          List<BlogVO> blogList;
  		 blogList = blogService.selectBlogAll();

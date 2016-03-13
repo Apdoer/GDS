@@ -11,10 +11,18 @@ function submitContents(elClickedObj) {
 
     // 에디터의 내용에 대한 값 검증은 이곳에서
     /* alert(document.getElementById( "ir1" ).value); */
-    var title = document.getElementById( "title" ).value;
-    var content = document.getElementById( "ir1" ).value;
-    alert(content);
-    window.location.href="${cp}/blog/insertBlog.do?title="+title+"&content="+content;
+    
+	var title = document.getElementById("title").value;
+	var content = document.getElementById("ir1").value;
+	
+	$.ajax({
+		url: '${cp}/blog/insertBlog.ajax',
+		method: 'POST',
+		data: {
+			title: title,
+			content: content
+		}
+	});
 }
 function goBack() {
     window.location.href="${cp}/admin/blog/enter.do";

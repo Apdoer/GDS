@@ -9,7 +9,7 @@
    </div>
    <div class="buttons center">
    <c:if test="${sessionScope.auth != null}">
-	<a href="${cp}/blog/editBlog.do" class="btn btn-info">글 쓰기</a>
+	<a href="${cp}/admin/blog/edit.do" class="btn btn-info">글 쓰기</a>
 	
 	<c:choose>
 	<c:when test="${not empty searchVO.result[1]}">

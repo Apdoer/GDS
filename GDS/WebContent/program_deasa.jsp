@@ -66,11 +66,8 @@
 		            전체 76개의 유기산 분석함으로써 비타민과 호르몬의 신진대사, 에너지 레벨, 장벽의 보전성, 신경 전달 그리고 근육의 기능까지도 측정이 가능한 놀라운 검사입니다. 
             </p>
 				<img src="image/im_5.png" style="margin-left: 70px; margin-top: 20px;">
-				<img src="image/pi_1.png" style="margin-top: 50px;">
+				<img src="image/daesang_01.png" style="margin-top: 50px; padding-bottom: 50px;">
             
-			<p>검사대상</p>
-			<p class="blog-post-meta">ADHD, 강박신경증, 행동장애, 만성피로, 섬유근육통, 자궁내막증, 급체, 에이즈, 대장염, 크론병, IBD, 선천성대사이상, 알츠하이머, 치매,
-			우울증, 다발성 경화증, 아스퍼거 증후군, 설사, 변비, 건선, 아토피 피부염, 뚜렛증후군, PANDAS, 다운증후군, 재발성 감염, 만성피로증후군, 각종 대사의심질병환자 등</p>
 			</div>
 			<div id="3">
             <hr style="border: solid 1.5px #D5D5D5;">
@@ -81,9 +78,7 @@
             동물들에서도 발견됩니다. 
             </p>
 				<img src="image/im_6.png" style="margin-left:200px; margin-top: 30px;">
-				<img src="image/pi_1.png" style="margin-top: 50px;">
-            <p>검사대상</p>
-			<p class="blog-post-meta">ADHD, 자폐증, 치매, 만성피로증후군, 다운증후군, 복합경화증, 강박증, 정신분열증, 간질발작, 뚜렛증후군, 미토콘드리아 기능장애등</p>
+				<img src="image/daesang_02.png" style="margin-top: 50px; padding-bottom: 50px;">
 			</div>
 			<div id="4">
             <hr style="border: solid 1.5px #D5D5D5;">

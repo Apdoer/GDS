@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <style type="text/css">
 #program_deasa {margin-top: 70px;}
 
@@ -14,19 +16,20 @@
 
 <div id="program_deasa" class="container">
 
-      <div class="row">
-      	
-      	<!-- board left-side-bar -->
-		<div class="col-md-3 left-side-bar">
-		
-			<ul class="pull-right">
-				<li><a href="#1" style="font-weight: bold;">대사검사</a></li>
-				<li><a href="#1">고압산소치료</a></li>
-				<li><a href="#2">청지각프로그램</a></li>
-				<li><a href="#3">시지각프로그램</a></li>
+      <div class="col-md-3 col-lg-2 left-side-bar affix">
+			<ul class="pull-left">
+				<li><a href="${cp}/program_deasa.do" style="font-weight: bold;">대사검사</a></li>
+				<li><a href="${cp}/program_goap.do">고압산소치료</a></li>
+				<li><a href="${cp}/program_chunggigac.do">청지각프로그램</a></li>
+				<li><a href="${cp}/program_sigigac.do">시지각프로그램</a></li>
 			</ul>
 		
 		</div>
+
+      <div class="row">
+      	<div class="col-sm-4 col-md-3">
+        </div>
+
          
         <div class=" col-md-8 blog-main">
 	         <div class="blog-header" style="height: 150px;">

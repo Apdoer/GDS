@@ -55,8 +55,9 @@
 					</div>
 				</div>
 				
-				<a href="${cp}/admin/board/updateViewBoard.do?id=${board.id}" class="btn btn-info">글 수정</a>
-				<a href="${cp}/admin/board/delete.do?id=${board.id}" class="btn btn-danger">글 삭제</a>
+				<a class="btn btn-default pull-left" href="${cp}/admin/board/enter.do">목록으로</a>
+				<a class="btn btn-default pull-right" href="${cp}/admin/board/delete.do?id=${board.id}">글 삭제</a>
+				<a class="btn btn-default pull-right" href="${cp}/admin/board/updateViewBoard.do?id=${board.id}">글 수정</a>
 				
 			</div>
 			
@@ -82,8 +83,7 @@
 				
 				<!-- board content -->
 				<div class="col-md-9 right-article-content">
-				<a href="${cp}/admin/board/updateViewBoard.do?id=${board.id}" class="btn btn-info">글 수정</a>
-				<a href="${cp}/admin/board/delete.do?id=${board.id}" class="btn btn-danger">글 삭제</a>
+				
 					<div class="title">
 						<h1>${board.title}<small>${board.type}</small></h1>
 					</div>
@@ -91,6 +91,7 @@
 					<div class="line-horizontal" style="border: 1px solid #222; border-radius: 1px;"></div>
 					
 					<div class="content">
+					
 						<div class="header">
 							<span>
 								<span class="glyphicon glyphicon-calendar"></span>
@@ -104,6 +105,9 @@
 						<div class="body">
 							${board.content}
 						</div>
+						
+						<a class="btn btn-default pull-left" href="${cp}/board/enter.do">목록으로</a>
+					
 					</div>
 					
 				</div>

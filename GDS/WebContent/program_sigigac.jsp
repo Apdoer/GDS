@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <style type="text/css">
 #program_deasa {margin-top: 70px;}
 
@@ -18,19 +20,20 @@
 
 <div id="program_deasa" class="container">
 
-      <div class="row">
-      	
-      	<!-- board left-side-bar -->
-		<div class="col-md-3 left-side-bar">
-		
-			<ul class="pull-right">
-				<li><a href="#1" style="font-weight: bold;">대사검사</a></li>
-				<li><a href="#1">고압산소치료</a></li>
-				<li><a href="#2">청지각프로그램</a></li>
-				<li><a href="#3">시지각프로그램</a></li>
+      <div class="col-md-3 col-lg-2 left-side-bar affix">
+			<ul class="pull-left">
+				<li><a href="${cp}/program_deasa.do" style="font-weight: bold;">대사검사</a></li>
+				<li><a href="${cp}/program_goap.do">고압산소치료</a></li>
+				<li><a href="${cp}/program_chunggigac.do">청지각프로그램</a></li>
+				<li><a href="${cp}/program_sigigac.do">시지각프로그램</a></li>
 			</ul>
 		
 		</div>
+
+      <div class="row">
+      	<div class="col-sm-4 col-md-3">
+        </div>
+
          
         <div class=" col-md-8 blog-main">
 	         <div class="blog-header">
@@ -56,10 +59,7 @@
           	 <div class="blog-post">
 			  	<div id="1">
 		            <h2 class="blog-post-title" style="margin-top: 30px;">Vision Training (HTS/PTS2/PVT)</h2>
-		            <p style="line-height: 200%;">
-		                        지디에스 분당중앙센터는 세계적으로 검증된 Vision Training Software 를 홈 프로그램으로 진행합니다.
-					훈련 센터를 방문해 고비용을 지불하고 훈련을 받는 것이 시간/금전적으로 부담이 되는 분들에게 도움이 될 수 있습니다. 
-					</p>
+		            <img class="sagin" src="image/impact_1.png">
 					<br>
 				</div>
 				<div id="2">

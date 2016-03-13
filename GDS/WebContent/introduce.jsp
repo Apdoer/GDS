@@ -46,10 +46,8 @@ $(document).ready(function () {
 		</div>
 	
       <div class="row">
-        <div class="col-sm-4 col-md-3">
-        </div>
       
-        <div class=" col-md-8 blog-main">
+        <div class=" col-md-8 col-md-offset-3 blog-main">
           
           <div class="blog-post">
 			

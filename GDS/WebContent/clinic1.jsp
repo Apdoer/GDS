@@ -7,7 +7,7 @@
 #clinic .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 #clinic .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #clinic .left-side-bar ul li:last-child { border: 0px; }
-#clinic .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
+#clinic .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
 #clinic .title h1{
 	font-weight: 600;
 }
@@ -26,13 +26,31 @@
 #clinic .content_detail{
 	margin-left: 25px;
 }
+
+#clinic .a_link_clicked{
+	font-weight: bold;
+	color:#2cabea;
+}
+#clinic .a_link_unClicked{
+	color: #aaa;
+}
 </style>
 
 <div id="clinic" class="container">
 
+	<!-- board left-side-bar -->
+		<div class="col-md-3 col-lg-2 left-side-bar affix">
+			<ul class="pull-left">
+				<li><a class="a_link_clicked" href="${cp }/clinic1.do">자폐스펙트럼장애</a></li>
+				<li><a class="a_link_unClicked" href="${cp }/clinic2.do">주의력 결핍/<br>과잉행동 장애</a></li>
+				<li><a class="a_link_unClicked" href="${cp }/clinic3.do">학습장애</a></li>
+				<li><a class="a_link_unClicked" href="${cp }/clinic4.do">사회성부족</a></li>
+			</ul>			
+	</div>
+	
 	<div class="row">		
 		<!-- board left-side-bar -->
-		<div class="col-md-8 col-md-offset-2 blog-main">
+		<div class="col-md-8 col-md-offset-3 blog-main">
 			<div>
 				<br><br>
 				<div class="title"><h1>자폐스펙트럼장애</h1></div>

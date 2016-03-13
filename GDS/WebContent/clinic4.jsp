@@ -25,7 +25,6 @@
 #clinic .left-side-bar ul li a {
 	display: inline-block;
 	padding: 8px 16px;
-	color: #aaa;
 	font-size: 1.2em;
 	text-decoration: none;
 }
@@ -47,13 +46,28 @@
 #clinic .content_detail{
 	margin-left: 25px;
 }
+#clinic .a_link_clicked{
+	font-weight: bold;
+	color:#2cabea;
+}
+#clinic .a_link_unClicked{
+	color: #aaa;
+}
 </style>
 
 <div id="clinic" class="container">
-
+	<!-- board left-side-bar -->
+		<div class="col-md-3 col-lg-2 left-side-bar affix">
+			<ul class="pull-left">
+				<li><a class="a_link_unClicked" href="${cp }/clinic1.do">자폐스펙트럼장애</a></li>
+				<li><a class="a_link_unClicked" href="${cp }/clinic2.do">주의력 결핍/<br>과잉행동 장애</a></li>
+				<li><a class="a_link_unClicked" href="${cp }/clinic3.do">학습장애</a></li>
+				<li><a class="a_link_clicked" href="${cp }/clinic4.do">사회성부족</a></li>
+			</ul>			
+	</div>
 	<div class="row">
 
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-8 col-md-offset-3">
 			<div>
 				<br><br>
 				<div class="title"><h1>사회성부족</h1></div>

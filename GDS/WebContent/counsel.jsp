@@ -10,11 +10,16 @@ $(document).ready(function() {
 function formCheck(){
 	if ($("#name").val()==null || $("#name").val()==""){
 		$("#name").focus();
-		alert("이름을 입력해주세요")
+		alert("이름을 입력해주세요");
 		return;
 	}
-	if ($("#phone").val()==null || $("#phone").val()==""){
-		$("#phone").focus();
+	if ($("#phone2").val()==null || $("#phone2").val()==""){
+		$("#phone2").focus();
+		alert("전화번호를 입력해주세요");
+		return;
+	}
+	if ($("#phone3").val()==null || $("#phone3").val()==""){
+		$("#phone3").focus();
 		alert("전화번호를 입력해주세요");
 		return;
 	}
@@ -32,19 +37,23 @@ function counselSubmit(){
 	alert("categoryId:"+categoryId+", name:"+counseleeName+", time:"+possibleTime+", detail:"+detail+", phone:"+counseleeTelno);
 	
 	 */
+	 
+	 alert($("#phone1").val()+$("#phone2").val()+$("#phone3").val());
+	 
 	$.post("${pageContext.request.contextPath}/createCounsel.do",
 			{"categoryId" : $("#counsel_category option:selected").val(),
 			 "counseleeName" : $("#name").val(),
-			 "counseleeTelno" : $("#phone").val(),
+			 "counseleeTelno" : $("#phone1 option:selected").val()+$("#phone2").val()+$("#phone3").val(),
 			 "possibleTime" : $("#p_time option:selected").val(),
 			 "detail" : $("#detail").val()
 			},
 		function(jsonObj){
 				if(jsonObj.status){
 					alert(jsonObj.message);
-					/* $("name").val("");
-					$("phone").val("");
-					$("detail").val(""); */
+					$("#name").val('');
+					$("#phone2").val('');
+					$("#phone3").val('');
+					$("#detail").val('');
 				}else{
 					alert(jsonObj.message);
 				};
@@ -106,12 +115,34 @@ function counselSubmit(){
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="phone" class="col-sm-2 control-label">
+								<label for="phone" class="col-sm-2 control-label " >
 									<span style="color: red; margin-right: 3px;">*</span>
 									전화번호
 								</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="phone" required>
+									<select class="form-control" style="width:20%;display:inline-block;" id="phone1">
+										<option value="010">010</option>
+										<option value="02">02</option>
+										<option value="031">031</option>
+										<option value="032">032</option>
+										<option value="033">033</option>
+										<option value="041">041</option>
+										<option value="042">042</option>
+										<option value="043">043</option>
+										<option value="044">044</option>
+										<option value="051">051</option>
+										<option value="052">052</option>
+										<option value="053">053</option>
+										<option value="054">054</option>
+										<option value="055">055</option>
+										<option value="061">061</option>
+										<option value="062">062</option>
+										<option value="063">063</option>
+										<option value="064">064</option>								
+									</select>
+									<!-- <input type="number" class="form-control" id="phone1" style="width:20%;display:inline-block;" required >  -->
+									- <input type="number" class="form-control" id="phone2" style="width:20%;display:inline-block;" size="4" required > 
+									- <input type="number" class="form-control" id="phone3" style="width:20%;display:inline-block;" size="4" required >
 								</div>
 							</div>
 							<div class="form-group">
@@ -146,7 +177,7 @@ function counselSubmit(){
 							<div class="form-group">
 								<label for="detail" class="col-sm-2 control-label">세부문의내용</label>
 								<div class="col-sm-10">
-									<textarea id="detail" class="form-control" rows="5"></textarea>
+									<textarea id="detail"  maxlength="3200" class="form-control" rows="5"></textarea>
 								</div>
 							</div>
 							<button id="submitBtn" class="btn btn-info pull-right" type="submit">전화상담 예약하기</button>

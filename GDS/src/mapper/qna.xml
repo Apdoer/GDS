@@ -17,7 +17,7 @@
 		WHERE delyn = 'n'
 	</select>
 
-	<insert id="insert">
+	<insert id="insert" parameterType="Qna">
 		INSERT INTO qna (
 			id,
 			regdate,
@@ -34,7 +34,7 @@
 			#{password},
 			#{title},
 			#{question},
-			#{openyn},
+			#{openyn}
 		)
 	</insert>
 
@@ -64,7 +64,8 @@
 	<update id="delete" parameterType="int">
 		UPDATE qna
 		SET delyn = 'y'
-		WHERE id = #{id}
+		WHERE delyn = 'n'
+		  AND id = #{id}
 	</update>
 
 </mapper>

@@ -19,7 +19,7 @@
 					<span>비밀번호를 입력해주세요.</span>
 				</label>
 				<input type="hidden" id="id" name="id" value="${id}">
-				<input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+				<input type="password" id="password" name="password" class="form-control" placeholder="Password" autofocus required>
 				<button class="btn btn-primary btn-block" type="submit">확인</button>
 				<c:if test="${message != null}">
 					<div class="alert alert-danger" role="alert">${message}</div>

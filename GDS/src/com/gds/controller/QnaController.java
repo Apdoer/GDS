@@ -1,5 +1,8 @@
 package com.gds.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,8 +37,10 @@ public class QnaController {
 	
 	@RequestMapping("/write.do")
 	@ResponseBody
-	public boolean writeQna(QnaVO qna) {
-		return qnaService.writeQna(qna);
+	public Map<String, Object> writeQna(QnaVO qna) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", qnaService.writeQna(qna));
+		return result;
 	}
 	
 	@RequestMapping(value="/get.do", method=RequestMethod.GET)
@@ -68,6 +73,7 @@ public class QnaController {
 			mav.addObject("contentPage", "/qna_content.jsp");
 			return mav;
 		} else {
+			mav.addObject("id", qnaVO.getId());
 			mav.addObject("message", "비밀번호가 일치하지 않습니다.");
 			mav.addObject("contentPage", "/qna_check.jsp");
 			return mav;
@@ -80,6 +86,14 @@ public class QnaController {
 		mav.addObject("searchVO", qnaService.pagingQna(searchVO));
 		mav.setViewName("qna_list_ajax");
 		return mav;
+	}
+	
+	@RequestMapping("/delete.ajax")
+	@ResponseBody
+	public Map<String, Object> deleteQna(QnaVO qnaVO) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", qnaService.deleteQna(qnaVO.getId()));
+		return result;
 	}
 	
 }

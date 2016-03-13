@@ -69,7 +69,7 @@ function updateCounsel(id) {
 		data: { 
 			'id': id,
 			'doneyn': $('input[id=doneyn]').is(':checked') ? 'y' : 'n',
-			'memo': $('textarea[id=memo]').val().replace('/\n/g', '<br>')
+			'memo': $('textarea[id=memo]').val().replace(/\n/g, '<br>')
 		}
 	}).done(function(data) {
 		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');

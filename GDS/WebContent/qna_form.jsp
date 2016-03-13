@@ -24,9 +24,8 @@
 		<div class="col-md-2 left-side-bar">
 		
 			<ul class="pull-right">
-				<li><a href="#">공지사항</a></li>
-				<li><a href="#" style="font-weight: bold;">온라인 문의</a></li>
-				<!-- <li><a href="#">상담신청</a></li> -->
+				<li><a href="${cp}/board/enter.do">공지사항</a></li>
+				<li><a href="${cp}/qna/enter.do" style="font-weight: bold;">온라인 문의</a></li>
 			</ul>
 		
 		</div>
@@ -79,20 +78,19 @@
 	
 <script type="text/javascript">
 function submitQna() {
-	console.log('submit!');
-	console.log($('form').serialize());
 	$.ajax({
 		url: '${cp}/qna/write.do',
 		method: 'POST',
 		data: {
 			'title': $('input[id=title]').val(),
-			'openyn': $('input[id=openyn]').is(':checked') ? 'y' : 'n',
+			'openyn': $('input[id=openyn]').is(':checked') ? 'n' : 'y',
 			'name': $('input[id=name]').val(),
 			'password': $('input[id=password]').val(),
-			'question': $('textarea[id=question]').val().replace('/\n/g', '<br>')
+			'question': $('textarea[id=question]').val().replace(/\n/g, '<br>')
 		}
 	}).done(function(data) {
-		alert(data);
+		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');
+		location.href = 'enter.do';
 	}).fail(function(error) {
 		alert(error);
 	});

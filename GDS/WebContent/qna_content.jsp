@@ -72,17 +72,14 @@
 					</div>
 					
 					<div class="body">
-						<input type="hidden" name="id" value="${qna.id}">
-						<textarea class="form-control" rows="5"name="answer">${qna.answer.replaceAll("<br>", "\\r\\n")}</textarea>
+						<textarea class="form-control" rows="5"name="answer">${qna.answer.replaceAll("<br>", "&#13;&#10;")}</textarea>
 					</div>
 					
 				</div>
 				
-				<div class="line-horizontal"></div>
-				
-				<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록</a>
-				<a class="btn btn-default pull-right" href="javascript: answerQna();">저장</a>
-				<a class="btn btn-default pull-right" href="javascript: deleteQna();">삭제</a>
+				<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록으로</a>
+				<a class="btn btn-default pull-right" href="javascript: answerQna(${qna.id});">답변 저장</a>
+				<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">글 삭제</a>
 			
 			</div>
 			
@@ -148,10 +145,8 @@
 						</div>
 					</c:if>
 					
-					<div class="line-horizontal"></div>
-					
-					<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록</a>
-					<a class="btn btn-default pull-right" href="javascript: deleteQna();">삭제</a>
+					<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록으로</a>
+					<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">글 삭제</a>
 					
 				</div>
 				
@@ -163,7 +158,7 @@
 </c:choose>
 
 <script type="text/javascript">
-function deleteQna() {
+function deleteQna(id) {
 	if (!confirm('이 게시글을 삭제하시겠습니까?')) {
 		return;
 	}
@@ -171,7 +166,7 @@ function deleteQna() {
 	$.ajax({
 		url: 'delete.ajax',
 		method: 'POST',
-		data: { 'id': $('input[name=id]').val() }
+		data: { 'id': id }
 	}).done(function(data) {
 		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');
 		location.href = 'enter.do';
@@ -180,13 +175,13 @@ function deleteQna() {
 	});
 }
 
-function answerQna() {
+function answerQna(id) {
 	$.ajax({
 		url: 'answer.ajax',
 		method: 'POST',
 		data: { 
-			'id': $('input[name=id]').val(),
-			'answer': $('textarea[name=answer]').val().replace('/\n/g', '<br>')
+			'id': id,
+			'answer': $('textarea[name=answer]').val().replace(/\n/g, '<br>')
 		}
 	}).done(function(data) {
 		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');

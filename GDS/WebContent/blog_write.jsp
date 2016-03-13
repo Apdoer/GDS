@@ -25,21 +25,6 @@ function submitContents(elClickedObj) {
 
 <div id="#blog_view" class="container">
 	<div class="content">
-	
-	<!--카테고리 시작
-	<div class="container" style="width: 150px; float:left; padding:0 10 0 0;">
-		<select id="category" class="form-control">
-			<option>카테고리</option>
-			<form:form name="form" commandName="Task"
-				action="/getCategoryTaskList">
-				<c:forEach items="${categoryList}" var="category">
-					<option>${category.name}</option>
-				</c:forEach>
-			</form:form>
-		</select>
-	</div>
-	카테고리 끝 -->
-	
 	<!--제목 시작 -->
 	<div class="input-group" style="float:left; width: 680px;">
 	  <span class="input-group-addon" id="basic-addon1">제목</span>
@@ -47,13 +32,15 @@ function submitContents(elClickedObj) {
 	</div>
 	<!--제목 끝-->
 	<br> </br>
+	
+	<!--내용 시작 -->
 	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90" >
 	</textarea>
+	<!--내용 끝-->
+	
 	<br> </br>
-	<div class="btn-group" role="group" aria-label="..." >
-	  <button type="button" class="btn btn-default" onclick="submitContents(this)" style="text-align: center;">등록</button>
-	  <button type="button" class="btn btn-default" style="text-align: center;">취소</button>
-	</div>
+	  <button type="button" class="btn btn-info pull-right" onclick="submitContents(this)" style="text-align: center;">등록</button>
+	  <button type="button" class="btn btn-info pull-right" style="text-align: center;">취소</button>
 	
 	</div>
 	

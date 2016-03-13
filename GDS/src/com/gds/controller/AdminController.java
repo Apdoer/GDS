@@ -243,4 +243,11 @@ public class AdminController {
 		return "admin_index";
 	}
 
+	// 여기서부터 관리자 별헤는밤 매서드
+	@RequestMapping("/blog/enter.do")
+	public String enterBlog(Model model) {
+		model.addAttribute("contentPage", "/blog_view.jsp");
+		return "admin_index";
+	}
+	
 }

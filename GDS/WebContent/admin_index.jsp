@@ -41,7 +41,7 @@
 					<li><a href="#">카테고리관리</a></li>
 				</ul>
 				<ul class="nav nav-sidebar">
-					<li><a href="">별 헤는 밤</a></li>
+					<li><a href="${cp}/admin/blog/enter.do">별 헤는 밤</a></li>
 					<li><a href="${cp}/admin/board/enter.do">공지사항</a></li>
 					<li><a href="${cp}/admin/qna/enter.do">온라인 문의</a></li>
 				</ul>

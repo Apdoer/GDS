@@ -38,14 +38,14 @@ function counselSubmit(){
 	
 	 */
 	 
-	 alert($("#phone1").val()+$("#phone2").val()+$("#phone3").val());
+	 //alert($("#phone1").val()+$("#phone2").val()+$("#phone3").val());
 	 
 	$.post("${pageContext.request.contextPath}/createCounsel.do",
 			{"categoryId" : $("#counsel_category option:selected").val(),
 			 "counseleeName" : $("#name").val(),
 			 "counseleeTelno" : $("#phone1 option:selected").val()+$("#phone2").val()+$("#phone3").val(),
 			 "possibleTime" : $("#p_time option:selected").val(),
-			 "detail" : $("#detail").val()
+			 "detail" : $("#detail").val().replace(/\n/g, '<br>')
 			},
 		function(jsonObj){
 				if(jsonObj.status){

@@ -1,5 +1,8 @@
 package com.gds.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,12 +32,23 @@ public class CounselService {
 	 * @param searchVO
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public SearchVO pagingCounsel(SearchVO searchVO) {
 		searchVO.setMaxPageSize(MAX_PAGE_SIZE);
 		searchVO.setMaxLinkCount(MAX_LINK_COUNT);
 		
 		searchVO.initPagination(counselDao.getTotalCount());
-		searchVO.setResult(counselDao.paging(searchVO));
+		
+		// mutate content in counsel to display handsomely
+		List<CounselVO> result = (ArrayList<CounselVO>) counselDao.paging(searchVO);
+		for (CounselVO counsel : result) {
+			String detail = counsel.getDetail();
+			if (detail != null && detail.length() > 64) {
+				counsel.setDetail(detail.substring(0, 64) + "..");
+			}
+		}
+				
+		searchVO.setResult(result);
 		return searchVO;
 	}
 

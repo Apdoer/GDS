@@ -30,36 +30,59 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<div id="board" <c:if test="${sessionScope.auth == null}">class="container"</c:if>>
+<div id="board" <c:if test="${not fromAdmin}">class="container"</c:if>>
 
-	<div class="row">
-		
-		<!-- board left-side-bar -->
-		<div class="col-md-2 left-side-bar">
-		
-			<ul class="pull-right">
-				<li><a href="${cp}/board/enter.do" style="font-weight: bold;">공지사항</a></li>
-				<li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
-				<%-- <li><a href="${cp}/counsel.do">상담신청</a></li> --%>
-			</ul>
+<c:choose>
+	<c:when test="${fromAdmin}">
+	
+		<div id="board" class="container">
+	
+			<!-- board content -->
+			<div class="right-article-list">
+			
+				<div class="articles">
+					<!-- load board list by ajax -->
+				</div>
+				
+				<a class="btn btn-default pull-right" href="${cp}/admin/board/form.do">글쓰기</a>
+			
+			</div>
 		
 		</div>
-		
-		<!-- board content -->
-		<div class="col-md-9 right-article-list">
-		
-			<div class="articles">
-				<!-- load board list by ajax -->
+	
+	</c:when>
+	<c:otherwise>
+	
+		<div id="board" class="container">
+	
+			<div class="row">
+			
+				<!-- board left-side-bar -->
+				<div class="col-md-2 left-side-bar">
+				
+					<ul class="pull-right">
+						<li><a href="${cp}/board/enter.do" style="font-weight: bold;">공지사항</a></li>
+						<li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
+					</ul>
+				
+				</div>
+				
+				<!-- board content -->
+				<div class="col-md-9 right-article-list">
+				
+					<div class="articles">
+						<!-- load board list by ajax -->
+					</div>
+					
+				</div>
+				
 			</div>
 			
-			<c:if test="${sessionScope.auth != null}">
-				<a class="btn btn-default pull-right" href="${cp}/admin/board/form.do">글쓰기</a>
-			</c:if>
-		
 		</div>
-		
-	</div>
 	
+	</c:otherwise>
+</c:choose>
+
 <script type="text/javascript">
 function getBoard(id) {
 	location.href = "${cp}/board/get.do?id=" + id; 	

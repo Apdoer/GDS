@@ -36,7 +36,7 @@ $(document).ready(function () {
 		
 		<!-- board left-side-bar -->
 		<div class="col-md-3 col-lg-2 left-side-bar affix">
-			<ul class="pull-right">
+			<ul class="pull-left">
 				<li><a class="a_link a_link_clicked" href="#">인사말</a></li>
 				<li><a class="a_link a_link_unClicked" href="#2">추천사</a></li>
 				<li><a class="a_link a_link_unClicked" href="#3">협력기관</a></li>
@@ -46,7 +46,7 @@ $(document).ready(function () {
 		</div>
 	
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-sm-4 col-md-3">
         </div>
       
         <div class=" col-md-8 blog-main">

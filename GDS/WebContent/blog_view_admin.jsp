@@ -31,7 +31,7 @@
 <script type="text/javascript">
 function listBoard(pageIdx) {
 	$.ajax({
-		url: '${cp}/blog/list.ajax',
+		url: '${cp}/admin/blog/list.ajax',
 		data: { 'currentPage': pageIdx }
 	}).done(function(data) {
 		console.log('hayo!');
@@ -42,7 +42,6 @@ function listBoard(pageIdx) {
 }
 
 $(function() {
-	
 	listBoard(1);
 });
 </script>	

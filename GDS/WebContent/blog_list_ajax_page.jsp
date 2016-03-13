@@ -8,6 +8,7 @@
      <!--  <p class="lead blog-description">아름다운 우리들의 동행에 참여하세요..</p> -->
    </div>
    <div class="buttons center">
+   <c:if test="${sessionScope.auth != null}">
 	<a href="${cp}/blog/editBlog.do" class="btn btn-info">글 쓰기</a>
 	
 	<c:choose>
@@ -18,7 +19,7 @@
 		<a href="${cp}/blog/updateViewBlog.do?id=${blogList[0].id}" class="btn btn-info">글 수정</a>
 	</c:otherwise>
 	</c:choose>
-
+  </c:if>
 </div>
    <c:forEach items="${searchVO.result}" var="blogList">
     <div class="col-md-9 blog-main">

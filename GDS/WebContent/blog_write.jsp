@@ -16,6 +16,9 @@ function submitContents(elClickedObj) {
     alert(content);
     window.location.href="insertBlog.do?title="+title+"&content="+content;
 }
+function goBack() {
+    window.location.href="${cp}/admin/blog/enter.do";
+}
 </script>
 <style type="text/css">
 #blog_view {margin-top: 120px;}
@@ -24,23 +27,24 @@ function submitContents(elClickedObj) {
 
 
 <div id="#blog_view" class="container">
-	<div class="content">
+	<div class="content" style="margin-top: 30px;">
 	<!--제목 시작 -->
 	<div class="input-group" style="float:left; width: 680px;">
 	  <span class="input-group-addon" id="basic-addon1">제목</span>
 	  <input type="text" id="title" class="form-control" placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1">
 	</div>
 	<!--제목 끝-->
-	<br> <br>
+	<br><br>
 	
 	<!--내용 시작 -->
 	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90" >
 	</textarea>
 	<!--내용 끝-->
 	
-	<br> <br>
+	<br><br>
+	
 	  <button type="button" class="btn btn-info pull-right" onclick="submitContents(this)" style="text-align: center;">등록</button>
-	  <button type="button" class="btn btn-info pull-right" style="text-align: center;">취소</button>
+	  <button type="button" class="btn btn-info pull-right" onclick="goBack()" style="text-align: center;">취소</button>
 	
 	</div>
 	

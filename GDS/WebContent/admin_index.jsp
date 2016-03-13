@@ -11,6 +11,17 @@
 <link rel="stylesheet" href="${cp}/css/admin_index.css">
 <script type="text/javascript" src="${cp}/script/jquery.js"></script>
 <script type="text/javascript" src="${cp}/script/bootstrap.js"></script>
+
+<script type="text/javascript">
+	
+$(document).ready(function () { 
+	$(".menu_list").click(function(){
+		$(".menu_list").removeClass('active');
+		$(this).addClass('active');
+	});
+});
+</script>
+
 </head>
 <body>
 
@@ -34,17 +45,16 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li class="active"><a href="${cp}/admin/counsel/enter.do">
+					<li class="menu_list"><a href="${cp}/admin/counsel/enter.do">
 						상담신청현황 &nbsp; 
 						<span id="undoneCounselCnt" class="badge pull-right">${undoneCounselCnt}</span>
 					</a></li>
-					<li><a href="javascript: alert('작업중입니다.');">카테고리관리</a></li>
+					<!-- <li><a href="javascript: alert('작업중입니다.');">카테고리관리</a></li> -->
 					<%-- <li><a href="${cp}/admin/category/enter.do">카테고리관리</a></li> --%>
-				</ul>
-				<ul class="nav nav-sidebar">
-					<li><a href="${cp}/admin/blog/enter.do">별 헤는 밤</a></li>
-					<li><a href="${cp}/admin/board/enter.do">공지사항</a></li>
-					<li><a href="${cp}/admin/qna/enter.do">온라인 문의</a></li>
+				
+					<li class="menu_list"><a href="${cp}/admin/blog/enter.do">별 헤는 밤</a></li>
+					<li class="menu_list"><a href="${cp}/admin/board/enter.do">공지사항</a></li>
+					<li class="menu_list"><a href="${cp}/admin/qna/enter.do">온라인 문의</a></li>
 				</ul>
 			</div>
 

@@ -44,7 +44,7 @@
 					</div>
 					
 					<div class="body">
-						${qna.answer}
+						${qna.question}
 					</div>
 					
 				</div>
@@ -77,9 +77,9 @@
 					
 				</div>
 				
-				<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록</a>
-				<a class="btn btn-default pull-right" href="javascript: answerQna(${qna.id});">저장</a>
-				<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">삭제</a>
+				<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록으로</a>
+				<a class="btn btn-default pull-right" href="javascript: answerQna(${qna.id});">답변 저장</a>
+				<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">글 삭제</a>
 			
 			</div>
 			
@@ -145,8 +145,8 @@
 						</div>
 					</c:if>
 					
-					<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록</a>
-					<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">삭제</a>
+					<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록으로</a>
+					<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">글 삭제</a>
 					
 				</div>
 				

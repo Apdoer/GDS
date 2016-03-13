@@ -56,10 +56,7 @@
           	 <div class="blog-post">
 			  	<div id="1">
 		            <h2 class="blog-post-title" style="margin-top: 30px;">Vision Training (HTS/PTS2/PVT)</h2>
-		            <p style="line-height: 200%;">
-		                        지디에스 분당중앙센터는 세계적으로 검증된 Vision Training Software 를 홈 프로그램으로 진행합니다.
-					훈련 센터를 방문해 고비용을 지불하고 훈련을 받는 것이 시간/금전적으로 부담이 되는 분들에게 도움이 될 수 있습니다. 
-					</p>
+		            <img class="sagin" src="image/impact_1.png">
 					<br>
 				</div>
 				<div id="2">

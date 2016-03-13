@@ -58,6 +58,11 @@ function counselSubmit(){
 <style type="text/css">
 #counsel{
 	margin-top:30px;
+	margin-bottom:30px;
+}
+#counsel .intro{
+	font-size: medium;
+	fon
 }
 </style>
  
@@ -67,21 +72,11 @@ function counselSubmit(){
 		<img class="dummy" alt="" src="${cp}/image/ba_0.png" style="width:100%">
 		
 		<div class="row">
-			
-			<!-- board left-side-bar -->
-			<div class="col-md-2 left-side-bar">
-			
-				<ul class="pull-right">
 					
-					
-				</ul>
-			
-			</div>
-			
 			<!-- board content -->
-			<div class="col-md-9 right-article-list">
+			<div class="col-md-6 col-md-offset-3">
 			
-				<div class="intro">
+				<!-- <div class="intro">
 					<h2>지금 상담 신청하세요!</h2>
 					<h3><span style="color: #3498DB;">GDS</span>는 항상 기다리고 있습니다.</h3>
 					<p>본 센터는 예약제로 운영됨이 원칙이나, 언제든 개방되어 있습니다.</p>
@@ -90,15 +85,16 @@ function counselSubmit(){
 				</div>
 				
 				<div class="line-horizontal" style="border: 1px solid #eee; border-radius: 1px; margin: 16px 0px;"></div>
-				
+				 -->
 				<div class="intro">
-					<p>지금 바로 전화 상담 신청하세요. 상담 가능하신 시간에 맞춰 지디에스 분당중앙센터에서 전화 연락을 드립니다.</p>
-					<p>GDS의 모든 검사 및 상담기록은 <span style="color: red;">절대</span> 공개되거나 남지 않습니다.</p>
+					<p align="center">별도로 상담을 예약 하시면  상담 가능하신 시간에 맞춰 지디에스 분당중앙센터에서 전화 연락을 드립니다.</p>
+					<p align="center">지디에스 분당중앙센터의 모든 검사 및 상담기록은 <span style="color: red;">절대</span> 공개되거나 남지 않습니다.</p>
+					<br>
 				</div>
 				
-				<div class="counsel-phone row">
+				<div class="counsel-phone">
 					
-					<div class="col-sm-9">
+					<div class="">
 						<div class="form-horizontal">
 							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">
@@ -115,7 +111,7 @@ function counselSubmit(){
 									전화번호
 								</label>
 								<div class="col-sm-10">
-									<input type="number" class="form-control" id="phone" required>
+									<input type="text" class="form-control" id="phone" required>
 								</div>
 							</div>
 							<div class="form-group">
@@ -126,6 +122,7 @@ function counselSubmit(){
 										<option value="2">주의력 결핍/과잉행동장애(ADD,ADHD)</option>
 										<option value="3">학습 장애</option>
 										<option value="4">사회성 부족</option>
+										<option value="5">기타</option>
 									</select>
 								</div>
 							</div>
@@ -156,17 +153,9 @@ function counselSubmit(){
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
-						<img class="dummy" alt="" src="img/dummy.jpg" style="width: 100%; height: 359px;">
-					</div>					
 					
 				</div>
-					
-				<div class="line-horizontal"></div>
 				
-				<div class="counsel-kakao">
-				
-				</div>
 			
 			</div>
 			

@@ -33,23 +33,19 @@ $(document).ready(function () {
 </script>
 
 <div id="introduce" class="container">
+		
+		<!-- board left-side-bar -->
+		<div class="col-md-3 col-lg-2 left-side-bar affix">
+			<ul class="pull-right">
+				<li><a class="a_link a_link_clicked" href="#">인사말</a></li>
+				<li><a class="a_link a_link_unClicked" href="#2">추천사</a></li>
+				<li><a class="a_link a_link_unClicked" href="#3">협력기관</a></li>
+				<li><a class="a_link a_link_unClicked" href="#4">운영방식 및 시간</a></li>
+				<li><a class="a_link a_link_unClicked" href="#5">오시는길</a></li>
+			</ul>			
+		</div>
+	
       <div class="row">
-      
-      	<div class="side_wrapper">
-	      	<!-- board left-side-bar -->
-			<div class="col-md-2 left-side-bar affix">
-			
-				<ul class="pull-right">
-					<li><a class="a_link a_link_clicked" href="#">인사말</a></li>
-					<li><a class="a_link a_link_unClicked" href="#2">추천사</a></li>
-					<li><a class="a_link a_link_unClicked" href="#3">협력기관</a></li>
-					<li><a class="a_link a_link_unClicked" href="#4">운영방식 및 시간</a></li>
-					<li><a class="a_link a_link_unClicked" href="#5">오시는길</a></li>
-				</ul>
-			
-			</div>
-        </div>
-        
         <div class="col-md-4">
         </div>
       

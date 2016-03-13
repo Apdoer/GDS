@@ -3,7 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
-#qna { padding-top: 60px; }
 #qna .left-side-bar ul { list-style: none; margin: 0px; padding: 0px; width: 75%; }
 #qna .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #qna .left-side-bar ul li:last-child { border: 0px; }
@@ -23,7 +22,7 @@
 <c:choose>
 	<c:when test="${fromAdmin}">
 	
-		<div id="qna">
+		<div id="qna" style="padding-top: 20px;">
 	
 			<!-- qna content -->
 			<div class="right-article-content">
@@ -87,7 +86,7 @@
 	</c:when>
 	<c:otherwise>
 	
-		<div id="qna" class="container">
+		<div id="qna" class="container" style="padding-top: 60px;">
 
 			<div class="row">
 				

@@ -45,7 +45,6 @@ function listCounsel(pageIdx) {
 		url: '${cp}/admin/counsel/list.ajax',
 		data: { 'currentPage': pageIdx }
 	}).done(function(data) {
-		console.log('hayo!');
 		$('div.left-counsel-list').html(data);
 	}).fail(function(error) {
 		alert(error);
@@ -73,7 +72,7 @@ function updateCounsel(id) {
 			'memo': $('textarea[id=memo]').val().replace('/\n/g', '<br>')
 		}
 	}).done(function(data) {
-		alert(data.status);
+		alert(data.status ? '성공적으로 저장되었습니다.' : '처리 중 오류가 발생했습니다.');
 		listCounsel($('input[name=currentPage]').val());
 		$('#undoneCounselCnt').html(data.undoneCounselCnt);
 	}).fail(function(error) {

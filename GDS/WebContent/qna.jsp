@@ -36,7 +36,7 @@
 <c:choose>
 	<c:when test="${fromAdmin}">
 	
-		<div id="qna">
+		<div id="qna" style="padding-top: 20px;">
 	
 			<!-- board content -->
 			<div class="right-article-list">
@@ -52,7 +52,7 @@
 	</c:when>
 	<c:otherwise>
 	
-		<div id="qna" class="container">
+		<div id="qna" class="container" style="padding-top: 6opx;">
 	
 			<div class="row">
 		
@@ -107,5 +107,3 @@ $(function() {
 	listQna(1);
 });
 </script>
-	
-</div>

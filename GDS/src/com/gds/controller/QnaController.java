@@ -82,16 +82,4 @@ public class QnaController {
 		return mav;
 	}
 	
-	@RequestMapping("/answer.do")
-	public String answerQna(QnaVO qna) {
-		qnaService.answerQna(qna);
-		return "httpTest";
-	}
-	
-	@RequestMapping("/delete.do")
-	public String deleteQna(int id) {
-		qnaService.deleteQna(id);
-		return "httpTest";
-	}
-	
 }

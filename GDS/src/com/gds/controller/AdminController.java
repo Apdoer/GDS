@@ -20,9 +20,11 @@ import com.gds.service.BlogService;
 import com.gds.service.BoardService;
 import com.gds.service.CategoryService;
 import com.gds.service.CounselService;
+import com.gds.service.QnaService;
 import com.gds.util.AuthUtil;
 import com.gds.vo.BoardVO;
 import com.gds.vo.CounselVO;
+import com.gds.vo.QnaVO;
 import com.gds.vo.SearchVO;
 
 @Controller
@@ -40,6 +42,9 @@ public class AdminController {
 	
 	@Autowired
 	CounselService counselService;
+	
+	@Autowired
+	QnaService qnaService;
 	
 	/**
 	 * Admin entrance.
@@ -241,6 +246,23 @@ public class AdminController {
 	public String enterQna(Model model) {
 		model.addAttribute("contentPage", "/qna.jsp");
 		return "admin_index";
+	}
+	
+	@RequestMapping("/qna/get.do")
+	public ModelAndView getQna(QnaVO qnaVO) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("qna", qnaService.getQna(qnaVO));
+		mav.addObject("contentPage", "/qna_content.jsp");
+		mav.setViewName("admin_index");
+		return mav;
+	}
+	
+	@RequestMapping("/qna/answer.ajax")
+	@ResponseBody
+	public Map<String, Object> answerQna(QnaVO qnaVO) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", qnaService.answerQna(qnaVO));
+		return result;
 	}
 
 	// 여기서부터 관리자 별헤는밤 매서드

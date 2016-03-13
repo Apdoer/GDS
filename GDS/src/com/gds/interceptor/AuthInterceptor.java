@@ -34,7 +34,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 				Object handler,
 				ModelAndView mav) throws Exception {
 		
-		mav.addObject("fromAdmin", true);
+		if (mav != null) {
+			mav.addObject("fromAdmin", true);
+		}
 		
 		super.postHandle(request, response, handler, mav);
 	}

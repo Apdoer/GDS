@@ -68,7 +68,6 @@ public class BlogController {
 	         realFileNm = today+UUID.randomUUID().toString() + filename.substring(filename.lastIndexOf("."));
 	         String rlFileNm = filePath + realFileNm;
 	         
-	         System.out.println(rlFileNm);
 	         ///////////////// 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣占쎈섣占쎌굲占쎈쐻占쎈짗占쎌굲 ///////////////// 
 	         InputStream is = request.getInputStream();
 	         OutputStream os=new FileOutputStream(rlFileNm);

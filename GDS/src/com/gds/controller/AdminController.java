@@ -196,7 +196,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/board/get.do")
-	public ModelAndView write(BoardVO boardVO) {
+	public ModelAndView getBoard(BoardVO boardVO) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("board", boardService.getBoard(boardVO));
 		mav.addObject("contentPage", "/board_content.jsp");
@@ -205,18 +205,15 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/board/write.do")
-	public String write(HttpServletRequest request, Model model) {
-		String title = request .getParameter ("title" );
-		String category = request .getParameter ("category" );
-		String content = request .getParameter ("content" );
-		
-		BoardVO boardVO = new BoardVO(category, title, content);
-		boardService.writeBoard(boardVO);
-		return "redirect:/admin/board/enter.do";
+	@ResponseBody
+	public Map<String, Object> writeBoard(BoardVO boardVO) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", boardService.writeBoard(boardVO));
+		return result;
 	}
 	
 	@RequestMapping("/board/update.do")
-	public String update(HttpServletRequest request, Model model) {
+	public String updateBoard(HttpServletRequest request, Model model) {
 		
 		int id = Integer.parseInt(request .getParameter ("id" ));
 		String title = request .getParameter ("title" );

@@ -2,21 +2,33 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
-<script type="text/javascript" src="${cp}/se2/js/HuskyEZCreator.js"
-	charset="utf-8"></script>
+<script type="text/javascript" src="${cp}/se2/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript">
-	function submitContents(elClickedObj) {
-		// 에디터의 내용이 textarea에 적용된다.
-		oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
+function submitContents(elClickedObj) {
+	// 에디터의 내용이 textarea에 적용된다.
+	oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
 
-		// 에디터의 내용에 대한 값 검증은 이곳에서
-		/* alert(document.getElementById( "ir1" ).value); */
-		var title = document.getElementById("title").value;
-		var content = document.getElementById("ir1").value;
-		var category = document.getElementById("category").value;
-		window.location.href = "/GDS/admin/board/write.do?title=" + title
-				+ "&content=" + content + "&category=" + category;
-	}
+	// 에디터의 내용에 대한 값 검증은 이곳에서
+	/* alert(document.getElementById( "ir1" ).value); */
+	var type = document.getElementById("type").value;
+	var title = document.getElementById("title").value;
+	var content = document.getElementById("ir1").value;
+	
+	$.ajax({
+		url: '${cp}/admin/board/write.do',
+		method: 'POST',
+		data: {
+			type: type,
+			title: title,
+			content: content
+		}
+	}).done(function(data) {
+		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');
+		location.href = '${cp}/admin/board/enter.do';
+	}).fail(function(error) {
+		alert(error);
+	});
+}
 </script>
 
 <style type="text/css">
@@ -48,20 +60,21 @@
 <!-- 넣어주면 된디! -->
 <!-- 넣어주겠딩  -->
 
-<div id="#board_form" style="padding-top: 20px; padding-right: 8px;">
+<div id="#board_form" style="padding-top: 20px; padding-right: 8px; max-width: 800px;">
+
 	<form>
 	
 		<div class="option" style="width: 150px; float: left;">
-			<select id="category" class="form-control">
+			<select id="type" name="type" class="form-control">
 				<option>공지사항</option>
 				<option>이벤트</option>
 			</select>
 		</div>
 
 		<!--제목 시작 -->
-		<div class="input-group" style="float: left; width: 680px;">
+		<div class="input-group" style="float: left; width: 640px;">
 			<span class="input-group-addon" id="basic-addon1">제목</span> 
-			<input type="text" id="title" class="form-control"
+			<input type="text" id="title" name="title" class="form-control"
 				placeholder="제목을 입력해 주세요" aria-describedby="basic-addon1">
 		</div>
 		<!--제목 끝-->
@@ -73,6 +86,7 @@
 		
 		<br>
 		<br>
+		
 		
 		<a class="btn btn-default pull-left" href="${cp}/admin/board/enter.do">목록으로</a>
 		<a class="btn btn-default pull-right" href="javascript: submitContents(this);">글 작성</a>

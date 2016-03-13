@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
+#qna { padding-top: 20px; }
 #qna .left-side-bar ul { list-style: none; margin: 0px; padding: 0px; width: 75%; }
 #qna .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #qna .left-side-bar ul li:last-child { border: 0px; }
@@ -22,7 +23,7 @@
 <c:choose>
 	<c:when test="${fromAdmin}">
 	
-		<div id="qna" style="padding-top: 20px;">
+		<div id="qna">
 	
 			<!-- qna content -->
 			<div class="right-article-content">
@@ -75,10 +76,14 @@
 						<textarea class="form-control" rows="5"name="answer">${qna.answer.replaceAll("<br>", "\\r\\n")}</textarea>
 					</div>
 					
-					<a class="btn btn-default pull-right" href="javascript: answerQna();">저장하기</a> 
-					
 				</div>
 				
+				<div class="line-horizontal"></div>
+				
+				<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록</a>
+				<a class="btn btn-default pull-right" href="javascript: answerQna();">저장</a>
+				<a class="btn btn-default pull-right" href="javascript: deleteQna();">삭제</a>
+			
 			</div>
 			
 		</div>
@@ -86,7 +91,7 @@
 	</c:when>
 	<c:otherwise>
 	
-		<div id="qna" class="container" style="padding-top: 60px;">
+		<div id="qna" class="container">
 
 			<div class="row">
 				
@@ -139,9 +144,14 @@
 							<div class="body">
 								${qna.answer}
 							</div>
-						
+							
 						</div>
 					</c:if>
+					
+					<div class="line-horizontal"></div>
+					
+					<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록</a>
+					<a class="btn btn-default pull-right" href="javascript: deleteQna();">삭제</a>
 					
 				</div>
 				
@@ -153,6 +163,23 @@
 </c:choose>
 
 <script type="text/javascript">
+function deleteQna() {
+	if (!confirm('이 게시글을 삭제하시겠습니까?')) {
+		return;
+	}
+	
+	$.ajax({
+		url: 'delete.ajax',
+		method: 'POST',
+		data: { 'id': $('input[name=id]').val() }
+	}).done(function(data) {
+		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');
+		location.href = 'enter.do';
+	}).fail(function(error) {
+		alert(error);
+	});
+}
+
 function answerQna() {
 	$.ajax({
 		url: 'answer.ajax',
@@ -162,7 +189,8 @@ function answerQna() {
 			'answer': $('textarea[name=answer]').val().replace('/\n/g', '<br>')
 		}
 	}).done(function(data) {
-		alert(data.status ? '성공적으로 저장되었습니다.' : '처리 중 오류가 발생했습니다.');
+		alert(data.status ? '성공적으로 처리되었습니다.' : '처리 중 오류가 발생했습니다.');
+		location.href = 'enter.do';
 	}).fail(function(error) {
 		alert(error);
 	});

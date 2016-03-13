@@ -29,31 +29,46 @@
 	font-size: 1.2em;
 	text-decoration: none;
 }
+#clinic .title h1{
+	font-weight: 600;
+}
+#clinic .title{
+	display: inline-block;
+}
+#clinic .title_detail{
+	display: inline-block;
+	color: #ABA7A7;
+	margin-left: 5px;
+}
+#clinic hr{
+	border-top: 3px solid #847373;
+}
+
+#clinic .content_detail{
+	margin-left: 25px;
+}
 </style>
 
 <div id="clinic" class="container">
 
 	<div class="row">
 
-		<!-- board left-side-bar -->
-		<div class="col-md-3 left-side-bar">
-			<ul class="pull-right">
-				<li><a href="${cp}/clinic1.do">자폐 스펙트럼 장애</a></li>
-				<li><a href="${cp}/clinic2.do">주의력 결핍/<br>과잉 행동 장애
-				</a></li>
-				<li><a href="${cp}/clinic3.do" style="font-weight: bold;">학습장애</a></li>
-				<li><a href="${cp}/clinic4.do">사회성 부족</a></li>
-			</ul>
-		</div>
-
-		<div class="col-md-8">
-			<p>
-			1.정의<br>
-			        학습장애란 읽기, 쓰기, 추론, 산수 계산 등에 심각한 곤란을 주 증상으로 하는 장애군이다. 학습
+		<div class="col-md-8 col-md-offset-2">
+			<div>
+				<br><br>
+				<div class="title"><h1>학습장애</h1></div>
+				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
+				<br><br>
+				<hr><br>
+				
+				<h4><img src="${cp }/image/icon4.png"> 학습장애란?</h4><br>
+				<p class="content_detail">학습장애란 읽기, 쓰기, 추론, 산수 계산 등에 심각한 곤란을 주 증상으로 하는 장애군이다. 학습
 				분야에 따라서 학습장애를 분류할 수 있는데, 글자를 읽고 이해하는 능력이 저하되었을 경우 읽기 장애(난독증), 자신의
 				생각을 표현하는 쓰기 능력이 저하된 경우 쓰기 장애, 수리 연산과 산수 문제 해결에 결함이 있을 경우 산수 장애라고 한다.
-				지능과 연령을 근거로 기대되는 능력의 50% 미만의 성취도를 보일 때 학습장애라 정의한다. <br><br>
-			2. 증상적 특성<br>
+				지능과 연령을 근거로 기대되는 능력의 50% 미만의 성취도를 보일 때 학습장애라 정의한다.<br><br></p>
+				
+				<h4><img src="${cp }/image/icon4.png"> 증상적 특성</h4><br>
+				<p class="content_detail">
 				-읽기 장애(난독증)<br>
 				단어를 소리 내어 발음하는 데에 어려움이 있고(틀린 발음, 혼란된 발음), 읽기 속도가 매우 느리며, 읽은
 				문장을 이해하는 것도 힘들어 한다. 난독증은 크게 시각적 난독증, 청각적 난독증, 운동 난독증으로 분류하기도 한다. 시각적
@@ -77,11 +92,19 @@
 				- 산수 장애<br>
 				더하기, 빼기, 곱하기 등의 기본 연산을 제대로 하지 못하는 경우와
 				문제에 대해 언어적인 이해를 못하는 경우가 많고, 자릿수 등 공간적 배열을 이해하지 못하는 경우도 많다. <br><br>
-				
-			3. 학습장애는 기본적으로 중추신경계, 특히 대뇌의 특정 영역의 발달적인 기능 장애로 인한 것으로 보고되고 있다. 물론 자기 조절적 행동,
+				</p>
+				<h4><img src="${cp }/image/icon4.png">원인과 해결방법</h4><br>
+				<p class="content_detail">
+				학습장애는 기본적으로 중추신경계, 특히 대뇌의 특정 영역의 발달적인 기능 장애로 인한 것으로 보고되고 있다. 물론 자기 조절적 행동,
 				사회 지각에서의 문제가 공존할 수 있으나, 이것이 단독으로 학습장애를 일으키는 것은 아니다. 유전적인 기반을 갖는 특정 뇌
 				영역과 뇌 영역 간의 연결망의 발달적 결함에 의해서 발병하는 질환이므로, 특정 정보 처리 과정의 결함을 유발하는 뇌 영역
-				및 연결망의 활성화를 위한 치료적인 도움이 필요하다.</p>
+				및 연결망의 활성화를 위한 치료적인 도움이 필요하다.
+				</p>
+				
+				<%-- <br>
+				<img src="${cp }/image/clinic_2_kang.png"> --%>
+				<br><br><br><br>
+			</div>		
 		</div>
 
 	</div>

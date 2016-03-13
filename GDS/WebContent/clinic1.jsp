@@ -30,11 +30,8 @@
 
 <div id="clinic" class="container">
 
-	<div class="row">
-		
+	<div class="row">		
 		<!-- board left-side-bar -->
-		
-		
 		<div class="col-md-8 col-md-offset-2 blog-main">
 			<div>
 				<br><br>
@@ -70,7 +67,7 @@
 				</p>
 				
 				<br>
-				<img src="${cp }/image/clinic_1_kang_2.png">
+				<img src="${cp }/image/clinic_1_kang.png">
 				<br><br><br><br>
 			</div>
 		</div>

@@ -48,7 +48,7 @@
 			     </div>
 		         <div style="width: 60%; height: 120px;">
 			          <br>
-				      <p style="font:bold; font-size: 10px; margin-top: 30px; line-height: 20%; color:gray;">발달 장애와 관련된 지로한들을</p>
+				      <p style="font:bold; font-size: 10px; margin-top: 30px; line-height: 20%; color:gray;">발달 장애와 관련된 질환들을</p>
 				      <p style="font:bold; font-size: 10px; color:gray;">과학적으로 원인을 분석 대처할 수 있습니다.</p>
 			     </div>
 		     </div>

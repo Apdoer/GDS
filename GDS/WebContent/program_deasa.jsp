@@ -34,7 +34,7 @@
 
       <div class="row">         
         <div class=" col-md-8 col-md-offset-3 blog-main">
-         <div class="blog-header" style="height: 150px;">
+         <div class="blog-header">
 	         <div style="float: left; width: 25%;">
 		      	  <h1 class="blog-title" style="font:bold; padding-bottom: 10px; margin-top: 40px;">대사 검사</h1>
 		     </div>

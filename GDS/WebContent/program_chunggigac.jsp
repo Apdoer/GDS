@@ -96,9 +96,6 @@
 			<img src="image/p_02.png" style="margin-top:30px; margin-bottom:50px; width: 32%;">
 			<img src="image/p_03.png" style="margin-top:30px; margin-bottom:50px; width: 32%;">
 			
-			<a href="${cp }/counsel.do"><img alt="" src="${cp}/image/counsel_img2.png" width="98%"></a>
-					<br><br><br>
-			
     </div><!-- /.container -->
      </div>
     </div>

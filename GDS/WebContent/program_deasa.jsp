@@ -102,8 +102,7 @@
 			      <br>
             </p>
          
-					<a href="${cp }/counsel.do"><img alt="" src="${cp}/image/counsel_img2.png" width="98%"></a>
-					<br><br><br>
+					
       			</div><!-- /.row -->
 
 	    	</div><!-- /.container -->

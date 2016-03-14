@@ -25,15 +25,11 @@ body{margin:0;font-family:NanumBarunGothic;}
 	color: #707070;
 	padding:15px;
 	/* margin-top:-8em; */
-	height:10em	
+	height:10em
 }
 
 .in_line{
 	display:inline-block;
-}
-.footer_logo{
-	margin-top: -3.5em;
-	margin-right: 80px;;
 }
 
 .navbar-brand img{

@@ -79,11 +79,13 @@
     
     <footer class="footer">
     	<div class="container">
-    		<div class="in_line"><img class="footer_logo" src="${cp }/image/logo_g.png"></div>
-    		<div class="in_line footer_info">
+    		<div class="row">
+    		<div class="in_line col-md-2 col-md-offset-1"><img class="footer_logo" src="${cp }/image/logo_g.png"></div>
+    		<div class="in_line footer_info col-md-8 col-md-offset-1">
     			<p><br>경기도 성남시 분당구 동막로 245번길 12 1층 지디에스 분당중앙센터<br>
 				       대표&nbsp;&nbsp;&nbsp;&nbsp;김학기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자등록번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;144-02-75431<br>
                    TEL&nbsp;&nbsp;&nbsp;031-711-3546&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAX&nbsp;&nbsp;&nbsp;&nbsp;031-5171-3546&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gdsdream@naver.com</p>
+    		</div>
     		</div>
     	</div>        
     </footer>

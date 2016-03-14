@@ -99,13 +99,14 @@
             <hr style="border: 1px solid #ccc;">
             <p style="margin-top: 50px;">이 외에도 음식 알러지검사, 글루텐/카제인 검사, 아미노산 검사 등도 진행 가능합니다.<br>
 			      New Beginnings사 등 발달장애 전문 영양보충제 회사와의 제휴를 통해 맞춤형 기능성 보충제 구매가 가능합니다.<br>
-			      (전화문의:031-711-3546)<br>
+			      <br>
             </p>
          
-		
-      </div><!-- /.row -->
+					<a href="${cp }/counsel.do"><img alt="" src="${cp}/image/counsel_img2.png" width="98%"></a>
+					<br><br><br>
+      			</div><!-- /.row -->
 
-    </div><!-- /.container -->
-</div>
-</div>
+	    	</div><!-- /.container -->
+		</div>
+	</div>
 </div>

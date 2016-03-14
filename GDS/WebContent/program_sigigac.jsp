@@ -113,6 +113,8 @@
             <img class="sagin" src="image/daesang_03.png">
             <img class="sagin" src="image/effect_03.png">
             <br><br>
+            <a href="${cp }/counsel.do"><img alt="" src="${cp}/image/counsel_img2.png" width="98%"></a>
+					<br><br><br>
 			</div> 
 		</div>
     </div><!-- /.container -->

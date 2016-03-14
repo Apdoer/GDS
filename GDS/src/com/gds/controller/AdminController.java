@@ -1,6 +1,7 @@
 package com.gds.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ import com.gds.service.CategoryService;
 import com.gds.service.CounselService;
 import com.gds.service.QnaService;
 import com.gds.util.AuthUtil;
+import com.gds.vo.BlogVO;
 import com.gds.vo.BoardVO;
 import com.gds.vo.CounselVO;
 import com.gds.vo.QnaVO;
@@ -279,7 +281,20 @@ public class AdminController {
 	// 여기서부터 관리자 별헤는밤 매서드
 	@RequestMapping("/blog/enter.do")
 	public String enterBlog(Model model) {
-		model.addAttribute("contentPage", "/blog_view.jsp");
+		model.addAttribute("contentPage", "/blog_view_admin.jsp");
+		return "admin_index";
+	}
+	
+	@RequestMapping("/blog/selectBlog.do")
+	public String selectBlog(HttpServletRequest request, Model model) {
+		 int id = Integer.parseInt(request.getParameter("id"));
+         BlogVO blogVO = new BlogVO();
+         blogVO.setId(id);
+         
+         List<BlogVO> blogList;
+         blogList = blogService.selectBlog(blogVO);
+         model.addAttribute("blogList", blogList);
+         model.addAttribute("contentPage", "/blog_view_single.jsp");
 		return "admin_index";
 	}
 	
@@ -290,5 +305,15 @@ public class AdminController {
 	public String editBlog(Model model) {
 		model.addAttribute("contentPage", "/blog_write.jsp");
 		return "admin_index";
+	}
+	
+	//페이징 ajax
+	@RequestMapping("/blog/list.ajax")
+	public ModelAndView listBoard(SearchVO searchVO) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("searchVO", blogService.pagingBlog(searchVO));
+		mav.setViewName("blog_list_ajax_page_admin");
+		return mav;
 	}
 }

@@ -66,6 +66,10 @@
 	margin-top: 0;
 }
 
+#home .table>tbody>tr>td{
+	border-top: 0;
+}
+
 </style>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -140,12 +144,11 @@
           <table class="table">
 	          <c:forEach items="${boardList}" var="board">
 		          <tr>
-			          <td><h4><a href="${cp}/board/get.do?id=${board.id}" style="color:black; text-decoration: none;">${board.title}</h4></td>
-			          <td><h5> <fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/></h5></td>
+			          <td><h4><a href="${cp}/board/get.do?id=${board.id}" style="color:black; text-decoration: none;">${board.title}</a></h4></td>
+			          <td><h5> <fmt:formatDate value="${board.regdate}" pattern="yy-MM-dd"/></h5></td>
 		          </tr>
 			  </c:forEach>
           </table>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2>별헤는밤</h2>
@@ -164,7 +167,6 @@
           </table>
           <p> 
           </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2><img src="${cp}/image/icon_2.png">&nbsp;찾아오시는 길</h2>

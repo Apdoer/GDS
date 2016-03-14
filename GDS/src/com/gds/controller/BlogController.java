@@ -111,6 +111,16 @@ public class BlogController {
  	 	return result ;
     }
 	
+	@RequestMapping ("/updateBlog.ajax" )
+	@ResponseBody
+	public Map<String, Object> updateBlog(BlogVO blogVO, Model model){
+		
+		blogService.updateBlog(blogVO);
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", "true");
+		return result ;
+	}
+	
 	//블로그 글 작성 페이지 이동
 	@RequestMapping ("/editBlog.do" )
 	public String editBlog(HttpServletRequest request, Model model){

@@ -11,9 +11,24 @@ function submitContents(elClickedObj) {
 
     // 에디터의 내용에 대한 값 검증은 이곳에서
     /* alert(document.getElementById( "ir1" ).value); */
-    var title = document.getElementById( "title" ).value;
-    var content = document.getElementById( "ir1" ).value;
-    window.location.href="updateBlog.do?id="+${blogList[0].id}+"&title="+title+"&content="+content;
+    
+    var id =  ${blogList[0].id};
+	var title = document.getElementById("title").value;
+	var content = document.getElementById("ir1").value;
+	
+	$.ajax({
+		url: '${cp}/blog/updateBlog.ajax',
+		method: 'POST',
+		data: {
+			id: id,
+			title: title,
+			content: content
+		}
+	}).done(function(data) {
+		location.href = '${cp}/admin/blog/enter.do';
+	}).fail(function(error) {
+		alert(error);
+	});
 }
 </script>
 
@@ -26,20 +41,7 @@ function submitContents(elClickedObj) {
 </style>
 
 <div id="#blog_view" style="margin-top: 70px; ">
-	<form action="admin.do">
-	<!--카테고리 시작
-	<div class="container" style="width: 150px; float:left; padding:0 10 0 0;">
-		<select id="category" class="form-control">
-			<option>카테고리</option>
-			<form:form name="form" commandName="Task"
-				action="/getCategoryTaskList">
-				<c:forEach items="${categoryList}" var="category">
-					<option>${category.name}</option>
-				</c:forEach>
-			</form:form>
-		</select>
-	</div>
-	카테고리 끝 -->
+	<form>
 	
 	<!--제목 시작 -->
 	<div class="input-group" style="float:left; width: 680px;">

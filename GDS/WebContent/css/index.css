@@ -1,5 +1,5 @@
 html,body{height:100%}
-body{margin:0;font-family:NanumBarunGothic;}
+body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 .contentPage {min-height:100%; margin-top:90px;}
 
 
@@ -36,7 +36,7 @@ body{margin:0;font-family:NanumBarunGothic;}
 	height:60px;
 	padding-top: 0;
 }
-
+/* 
 @font-face{
 font-family:'NanumBarunGothic';
 font-style:normal;
@@ -45,7 +45,7 @@ src:url(//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot);
 src:url(//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix) format('embedded-opentype'),
 	url(//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff) format('woff'),
 	url(cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf) format('truetype');
-}
+} */
 
 div.line-horizontal { border: 1px solid #eee; border-radius: 1px; margin: 16px 0px; }
 

@@ -8,6 +8,7 @@
 <title>지디에스분당중앙센터</title>
 <link rel="stylesheet" href="${cp}/css/bootstrap.css">
 <link rel="stylesheet" href="${cp}/css/bootstrap-theme.css">
+<link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
 <link rel="stylesheet" href="${cp}/css/index.css">
 <script type="text/javascript" src="${cp}/script/jquery.js"></script>
 <script type="text/javascript" src="${cp}/script/bootstrap.js"></script>

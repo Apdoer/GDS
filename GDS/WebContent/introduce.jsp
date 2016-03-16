@@ -28,6 +28,23 @@ $(document).ready(function () {
 		$(this).addClass('a_link_clicked');
 		
 	});
+	
+	$("#1").click(function(){
+		$("html, body").animate({scrollTop: 0}, 1000);
+	 });
+	
+	$("#2").click(function(){
+		$("html, body").animate({scrollTop: 380}, 1000);
+	 });
+	$("#3").click(function(){
+		$("html, body").animate({scrollTop: 790}, 1000);
+	 });
+	$("#4").click(function(){
+		$("html, body").animate({scrollTop: 1380}, 1000);
+	 });
+	$("#5").click(function(){
+		$("html, body").animate({scrollTop: 1820}, 1000);
+	 });
 });
 
 </script>
@@ -37,11 +54,11 @@ $(document).ready(function () {
 		<!-- board left-side-bar -->
 		<div class="col-md-3 col-lg-2 left-side-bar affix">
 			<ul class="pull-left">
-				<li><a class="a_link a_link_clicked" href="#">인사말</a></li>
-				<li><a class="a_link a_link_unClicked" href="#2">추천사</a></li>
-				<li><a class="a_link a_link_unClicked" href="#3">협력기관</a></li>
-				<li><a class="a_link a_link_unClicked" href="#4">운영방식 및 시간</a></li>
-				<li><a class="a_link a_link_unClicked" href="#5">오시는길</a></li>
+				<li><a id ="1" class="a_link a_link_clicked" href="#">인사말</a></li>
+				<li><a id ="2" class="a_link a_link_unClicked" href="#2">추천사</a></li>
+				<li><a id ="3" class="a_link a_link_unClicked" href="#3">협력기관</a></li>
+				<li><a id ="4" class="a_link a_link_unClicked" href="#4">운영방식 및 시간</a></li>
+				<li><a id ="5" class="a_link a_link_unClicked" href="#5">오시는길</a></li>
 			</ul>			
 		</div>
 	

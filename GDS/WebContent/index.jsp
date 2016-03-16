@@ -21,7 +21,7 @@
       <div class="container">
         <div class="navbar-header">
           
-          <a class="navbar-brand" href="${cp }/home.do">
+          <a class="navbar-brand" href="${cp }/index.jsp">
           	<span><img alt="Brand" src="${cp}/image/logo_c.png">
           	<img src="${cp}/image/tomatis.png"></span>
           </a>

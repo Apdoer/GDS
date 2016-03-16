@@ -114,7 +114,7 @@ $(document).ready(function () {
 			<img class="img-rounded" alt="" src="${cp}/image/map_2.png" style="width: 100%; height: 100%;">
 			<div style="margin-top: 20px;">
 				<h4><img src="${cp }/image/icon4.png">지하철+버스</h4>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;분당선 미금역 8번출구 하차 - 32번 버스(미금역, 2001아울렛)승차 - 아우중고정류장에서 하차 118m 이동</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;분당선 미금역 8번출구 하차 - 32번 버스(미금역, 2001아울렛)승차 - 아우중고정류장에서 하차 약 100m 이동</p>
 			</div>
 			<img class="img-rounded" alt="" src="${cp}/image/map_3.png" style="width: 100%; height: 100%; margin-bottom: 20px;">
 		  	</div>

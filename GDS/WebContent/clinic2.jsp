@@ -56,8 +56,8 @@
 				<br><br>
 				<div class="title"><h1>주의력 결핍/과잉행동 장애</h1></div>
 				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
-				<br><br>
-				<hr><br>
+				<br>
+				<hr>
 				
 				<h4><img src="${cp }/image/icon4.png"> 주의력 결핍/과잉행동 장애란?</h4><br>
 				<p class="content_detail">주의력 결핍/과잉행동 장애(Attention Deficit/Hyperactivity Disorder, ADHD)는 아동기에 많이 나타나는 장애로, 지속적으로 주의력이 부족하여 산만하고 과다활동, 충동성을 보이는 상태를 말합니다. 이러한 증상들을 치료하지 않고 방치할 경우 아동기 내내 여러 방면에서 어려움이 지속되고, 일부의 경우 청소년기와 성인기가 되어서도 증상이 남게 됩니다.<br><br></p>
@@ -81,7 +81,7 @@
 				</p>
 				
 				<br>
-				<img src="${cp }/image/clinic_2_kang.png">
+				<img src="${cp }/image/impact_3.png">
 				<br><br><br><br>
 			</div>		
 		</div>

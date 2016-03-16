@@ -73,8 +73,8 @@
 				<br><br>
 				<div class="title"><h1>사회성부족</h1></div>
 				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
-				<br><br>
-				<hr><br>
+				<br>
+				<hr>
 				
 				<h4><img src="${cp }/image/icon4.png"> 사회성부족이란?</h4><br>
 				<p class="content_detail">사회성은 누군가가 타인이나 기타 다른 주변 환경과 “관계”를 형성해 나가면서, 타인과 원만하게

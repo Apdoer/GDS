@@ -53,21 +53,21 @@
 		<div class="col-md-8 col-md-offset-3 blog-main">
 			<div>
 				<br><br>
-				<div class="title"><h1>자폐스펙트럼장애</h1></div>
+				<div class="title"><h1>자폐 스펙트럼 장애</h1></div>
 				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
-				<br><br>
-				<hr><br>
+				<br>
+				<hr>
 				
-				<h4><img src="${cp }/image/icon4.png"> 자폐스펙트럼장애란?</h4><br>
-				<p class="content_detail">자폐스펙트럼장애는 행동조절능력,  학습, 사회적 상호작용, 의사소통을 담당하는 뇌의 중요 기능의 발달에 영향을 주는 뇌신경 발달 장애입니다.<br><br></p>
+				<h4><img src="${cp }/image/icon4.png"> 자폐 스펙트럼 장애란?</h4><br>
+				<p class="content_detail">자폐 스펙트럼 장애는 행동조절능력,  학습, 사회적 상호작용, 의사소통을 담당하는 뇌의 중요 기능의 발달에 영향을 주는 뇌신경 발달 장애입니다.<br><br></p>
 				
-				<h4><img src="${cp }/image/icon4.png"> 자폐스펙트럼장애의 범주</h4><br>
+				<h4><img src="${cp }/image/icon4.png"> 자폐 스펙트럼 장애의 범주</h4><br>
 				<p class="content_detail">
 				A. 자폐성 장애 (Autistic Disorder)<br>
 				B. 레트 장애 (Rett’s Disorder)<br>
 				C. 소아기 붕괴성 장애 (Childhood Disintegrative Disorder)<br>
 				D. 아스퍼거 장애 (Asperger’s Disorder)<br>
-				E. 비전형적 자폐스펙트럼장애 (PDD, NOS)<br><br>
+				E. 비전형적 자폐 스펙트럼 장애 (PDD, NOS)<br><br>
 				</p>
 				<h4><img src="${cp }/image/icon4.png"> 증상적 특성</h4><br>
 				<p class="content_detail">
@@ -85,7 +85,7 @@
 				</p>
 				
 				<br>
-				<img src="${cp }/image/clinic_1_kang.png">
+				<img src="${cp }/image/impact_2.png">
 				<br><br><br><br>
 			</div>
 		</div>

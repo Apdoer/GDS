@@ -78,8 +78,8 @@
 				<br><br>
 				<div class="title"><h1>학습장애</h1></div>
 				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
-				<br><br>
-				<hr><br>
+				<br>
+				<hr>
 				
 				<h4><img src="${cp }/image/icon4.png"> 학습장애란?</h4>
 				<p class="content_detail">학습장애란 읽기, 쓰기, 추론, 산수 계산 등에 심각한 곤란을 주 증상으로 하는 장애군입니다. 학습

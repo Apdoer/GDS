@@ -1,18 +1,14 @@
 package com.gds.controller;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.gds.service.BlogService;
 import com.gds.service.BoardService;
-import com.gds.vo.BlogVO;
-import com.gds.vo.BoardVO;
 
 @Controller
 public class ContentController {
@@ -77,19 +73,14 @@ public class ContentController {
 		return "index";
 	}
 	
-	@RequestMapping("/home.do")
-	public String home(HttpServletRequest request, Model model){
-		
-		List<BlogVO> blogList;
-		blogList = blogService.selectMain();
-		model.addAttribute("blogList", blogList);
-		
-		List<BoardVO> boardList;
-		boardList = boardService.selectBoard5();
-		model.addAttribute("boardList", boardList);
-		
-		model.addAttribute("contentPage","/home.jsp");
-		return "index";
+	@RequestMapping("/getHomeContent.ajax")
+	@ResponseBody
+	public ModelAndView home(){
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("blogList", blogService.selectMain());
+		mav.addObject("boardList", boardService.selectBoard5());
+		mav.setViewName("home_content_ajax");
+		return mav;
 	}
 
 }

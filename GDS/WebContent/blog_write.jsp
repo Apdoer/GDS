@@ -36,9 +36,34 @@ function goBack() {
 #blog_view {margin-top: 120px;}
 
 </style>
+<style type="text/css">
+#board_form {
+	margin-top: 120px;
+}
+
+#board_form .left-side-bar ul {
+	list-style: none;
+	margin: 16px 0px 0px 0px;
+	padding: 0px;
+	width: 75%;
+}
+
+#board_form .left-side-bar ul li a {
+	display: inline-block;
+	padding: 8px 16px;
+	color: #aaa;
+	font-size: 1.2em;
+	text-decoration: none;
+}
+
+#board_form .option {
+	width: 150px;
+	float: left;
+}
+</style>
 
 
-<div id="#blog_view" class="container">
+<div id="#board_form" style="padding-top: 20px; padding-right: 8px; max-width: 690px;">
 	<div class="content" style="margin-top: 30px;">
 	<!--제목 시작 -->
 	<div class="input-group" style="float:left; width: 680px;">
@@ -49,15 +74,14 @@ function goBack() {
 	<br><br>
 	
 	<!--내용 시작 -->
-	 <textarea name= "ir1" id="ir1" rows= "20" cols= "90" >
+	 <textarea name= "ir1" id="ir1" rows= "20" cols= "93" >
 	</textarea>
 	<!--내용 끝-->
 	
 	<br><br>
 	
-	  <button type="button" class="btn btn-info pull-right" onclick="submitContents(this)" style="text-align: center;">등록</button>
-	  <button type="button" class="btn btn-info pull-right" onclick="goBack()" style="text-align: center;">취소</button>
-	
+	  <a class="btn btn-default pull-left" href="${cp}/admin/blog/enter.do">목록으로</a>
+	  <a class="btn btn-default pull-right" href="javascript: submitContents(this);">글 작성</a>
 	</div>
 	
 </div>

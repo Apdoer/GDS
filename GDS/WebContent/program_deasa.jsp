@@ -46,7 +46,7 @@
         <div class=" col-md-8 col-md-offset-3 blog-main">
          <div>
 	         <br><br>
-				<div class="title"><h1>대사검사</h1></div>
+				<div class="title"><h1>대사 검사</h1></div>
 				<div class="title_detail"><span>발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</span>	</div>
 				<br><br><br>
 				
@@ -97,8 +97,8 @@
 			
 			
             <hr style="border: 1px solid #ccc;">
-            <p style="margin-top: 50px;">이 외에도 음식 알러지검사, 글루텐/카제인 검사, 아미노산 검사 등도 진행 가능합니다.<br>
-			      New Beginnings사 등 발달장애 전문 영양보충제 회사와의 제휴를 통해 맞춤형 기능성 보충제 구매가 가능합니다.<br>
+            <p style="margin-top: 30px;"><strong>이 외에도 음식 알러지검사, 글루텐/카제인 검사, 아미노산 검사 등도 진행 가능합니다.<br>
+			      New Beginnings사 등 발달장애 전문 영양보충제 회사와의 제휴를 통해 맞춤형 기능성 보충제 구매가 가능합니다.</strong><br>
 			      <br>
             </p>
          

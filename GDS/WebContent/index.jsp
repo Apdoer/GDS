@@ -58,7 +58,7 @@
             </li>
             <li><a href="${cp}/counsel.do">상담신청</a>
             </li>
-            <li class="tel_no_top"><a href="#"><span class="phone"><img src="${cp }/image/icon_1.png"> <img src="${cp }/image/tel_no.png"></span></a>
+            <li class="tel_no_top"><a href="${cp}/counsel.do"><span class="phone"><img src="${cp }/image/icon_1.png"> <img src="${cp }/image/tel_no.png"></span></a>
             </li>
             
           </ul>

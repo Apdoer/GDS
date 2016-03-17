@@ -45,20 +45,13 @@ public class BlogController {
 	@RequestMapping("/multiplePhotoUpload.do")
 	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response){
 	    try {
-	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         String sFileInfo = "";
-	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣筌뤿슣�굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈솭占쎈뮉占쎈솇占쎌굲 - 占쎈쐻占쎈뼣獄�袁⑹굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣筌뤿슣�굲
 	         String filename = request.getHeader("file-name");
-	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎌넇占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         String filename_ext = filename.substring(filename.lastIndexOf(".")+1);
-	         //占쎌넇占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈솓筌뤿슣�굲占쎈쐻占쏙옙獄�袁⑹굲占쎈쐻占쎈솓筌뚭쑴�굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         filename_ext = filename_ext.toLowerCase();
-	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈쑆癰귣ŀ�쐻占쎈짗占쎌굲占쎈쐻�뜝占�
 	         String dftFilePath = request.getSession().getServletContext().getRealPath("/");
-	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈쑆癰귣ŀ�쐻占쎈짗占쎌굲占쎈쐻�뜝占� _ 占쎈쐻占쎈＋占쎄쉭�ⓦ끉�굲占쎈쐻�뜝占�
 //		         String filePath = dftFilePath + "resource" + File.separator + "photo_upload" + File.separator;
 	         String filePath = dftFilePath + "upload" + File.separator;
-	         //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲蒻멤뼹�쐻�뜝占� 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼢�뇡�빘�굲
 	        // String filePath = "C:/Users/kinot_000/git/GDS/GDS/WebContent/se2/img/";
 	         
 	         File file = new File(filePath);
@@ -89,7 +82,8 @@ public class BlogController {
 	         sFileInfo += "&bNewLine=true";
 	         // img 占쎈쐻占쎈뱟繹먮씮�굲占쎈쐻占쎈짗占쎌굲 title 占쎈쐻占쎈셽占쎈닰占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣筌뤿슣�굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈솂繹먮씮�굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         sFileInfo += "&sFileName="+ filename;;
-	         sFileInfo += "&sFileURL="+"/GDS/upload/"+realFileNm;
+//	         sFileInfo += "&sFileURL="+"/GDS/upload/"+realFileNm;
+	         sFileInfo += "&sFileURL="+"/upload/"+realFileNm;
 //		         sFileInfo += "&sFileURL="+realFileNm;
 	         PrintWriter print = response.getWriter();
 	         System.out.println(sFileInfo);

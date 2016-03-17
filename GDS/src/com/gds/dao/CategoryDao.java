@@ -25,6 +25,15 @@ public class CategoryDao {
 	}
 	
 	/**
+	 * Get max seq.
+	 * 
+	 * @return
+	 */
+	public int getMaxSeq() {
+		return sqlSessionTemplate.selectOne("Category.getMaxSeq");
+	}
+	
+	/**
 	 * Get total row count.
 	 * 
 	 * @return

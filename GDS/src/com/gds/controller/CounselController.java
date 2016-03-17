@@ -8,22 +8,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.gds.service.CategoryService;
 import com.gds.service.CounselService;
 import com.gds.vo.CounselVO;
 
 @Controller
 public class CounselController {
 	
-	private CounselService counselService;
+	@Autowired
+	private CategoryService categoryService;
 	
 	@Autowired
-	public void setCounselService(CounselService counselService){
-		this.counselService=counselService;
-	}
-	
+	private CounselService counselService;
 
 	@RequestMapping("/counsel.do")
-	public String monveCounsel(Model model){		
+	public String monveCounsel(Model model){
+		model.addAttribute("categoryList", categoryService.listCategory());
 		model.addAttribute("contentPage", "/counsel.jsp");
 		return "index";
 	}

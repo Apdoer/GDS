@@ -11,29 +11,27 @@
 		FROM category
 	</select>
 	
-	<select id="getTotalCount" resultType="int">
-		SELECT COUNT(*)
+	<select id="getMaxSeq" resultType="int">
+		SELECT IFNULL(MAX(seq), 0)
 		FROM category
+		WHERE delyn = 'n'
 	</select>
-
+	
 	<insert id="insert">
 		INSERT INTO category
 		VALUES (
 			#{id},
-			#{name}
+			#{name},
+			#{seq},
+			'n'
 		)
 	</insert>
 
 	<select id="select" resultType="Category">
 		SELECT *
 		FROM category
-	</select>
-	
-	<select id="paging" parameterType="SearchVO" resultType="Category">
-		SELECT *
-		FROM category
-		LIMIT #{maxPageSize}
-		OFFSET #{startRowIndex}
+		WHERE delyn = 'n'
+		ORDER BY seq DESC
 	</select>
 	
 	<update id="update" parameterType="Category">
@@ -42,10 +40,10 @@
 		WHERE id = #{id}
 	</update>
 	
-	<delete id="delete" parameterType="int">
-		DELETE 
-		FROM category
+	<update id="delete" parameterType="int">
+		UPDATE category
+		SET delyn = 'y'
 		WHERE id = #{id}
-	</delete>
+	</update>
 
 </mapper>

@@ -30,13 +30,9 @@ public class CategoryController {
 	
 	@RequestMapping("/select.do")
 	public ModelAndView selectCategory(SearchVO searchVO) {
-		LOGGER.debug("incoming searchVO: " + searchVO);
-		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("searchVO", categoryService.pagingCategory(searchVO));
 		mav.setViewName("httpTest");
-		
-		LOGGER.debug("outgoing searchVO: " + searchVO);
 		return mav;
 	}
 	

@@ -41,6 +41,14 @@
 		  AND id = #{id}
 	</select>
 	
+	<select id="selectX" parameterType="int" resultType="Board">
+		SELECT *
+		FROM board
+		WHERE delyn = 'n'
+		ORDER BY regdate DESC
+		LIMIT #{homeContentBoardSize}
+	</select>
+	
 	<select id="paging" parameterType="SearchVO" resultType="Board">
 		SELECT *
 		FROM board

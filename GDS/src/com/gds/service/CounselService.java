@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.gds.dao.CounselDao;
 import com.gds.util.PagingConstantUtil;
+import com.gds.util.StringUtil;
 import com.gds.vo.CounselVO;
 import com.gds.vo.SearchVO;
 
@@ -42,10 +43,7 @@ public class CounselService {
 		// mutate content in counsel to display handsomely
 		List<CounselVO> result = (ArrayList<CounselVO>) counselDao.paging(searchVO);
 		for (CounselVO counsel : result) {
-			String detail = counsel.getDetail();
-			if (detail != null && detail.length() > 64) {
-				counsel.setDetail(detail.substring(0, 64) + "..");
-			}
+			counsel.setDetail(StringUtil.reduceString(counsel.getDetail(), 64));
 		}
 				
 		searchVO.setResult(result);

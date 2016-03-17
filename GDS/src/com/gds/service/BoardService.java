@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.gds.dao.BoardDao;
 import com.gds.util.PagingConstantUtil;
+import com.gds.util.StringUtil;
 import com.gds.vo.BoardVO;
 import com.gds.vo.SearchVO;
 
@@ -15,6 +16,8 @@ public class BoardService {
 
 	private static final int MAX_PAGE_SIZE = PagingConstantUtil.COMMON_MAX_PAGE_SIZE;
 	private static final int MAX_LINK_COUNT = PagingConstantUtil.COMMON_MAX_LINK_COUNT;
+	
+	private static final int HOME_BOARD_SIZE = PagingConstantUtil.HOME_CONTENT_BOARD_SIZE;
 	
 	@Autowired
 	private BoardDao boardDao;
@@ -40,6 +43,24 @@ public class BoardService {
 	public BoardVO getBoard(BoardVO boardVO) {
 		boardDao.plusConut(boardVO);
 		return boardDao.get(boardVO);
+	}
+	
+	/**
+	 * Get boards for home content.
+	 * 
+	 * @param board
+	 * @return
+	 */
+	public List<BoardVO> getHomeBoard() {
+		List<BoardVO> boardList = boardDao.getHomeBoard(HOME_BOARD_SIZE);
+		for (BoardVO board : boardList) {
+			// reduce title length if it is too long to display.
+			board.setTitle(StringUtil.reduceString(board.getTitle(), 32));
+			
+			// pick thumbnail if there's image in content
+			board.setThumbnail(StringUtil.pickThumbnail(board.getContent()));
+		}
+		return boardList;
 	}
 	
 	/**

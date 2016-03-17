@@ -11,10 +11,11 @@ public class BoardVO {
 	private String title;
 	private String content;
 	private int cnt;
+	private String thumbnail;
 	
 	public BoardVO() {}
 
-	public BoardVO(int id, String type, String delyn, Date regdate, String title, String content, int cnt) {
+	public BoardVO(int id, String type, String delyn, Date regdate, String title, String content, int cnt, String thumbnail) {
 		this.id = id;
 		this.type = type;
 		this.delyn = delyn;
@@ -22,6 +23,7 @@ public class BoardVO {
 		this.title = title;
 		this.content = content;
 		this.cnt = cnt;
+		this.thumbnail = thumbnail;
 	}
 	
 	public BoardVO(String type, String title, String content) {
@@ -92,6 +94,14 @@ public class BoardVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
 
 	@Override
 	public String toString() {
@@ -110,8 +120,10 @@ public class BoardVO {
 		builder.append(content);
 		builder.append(", cnt=");
 		builder.append(cnt);
+		builder.append(", thumbnail=");
+		builder.append(thumbnail);
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }

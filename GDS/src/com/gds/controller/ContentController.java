@@ -78,7 +78,7 @@ public class ContentController {
 	public ModelAndView home(){
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("blogList", blogService.selectMain());
-		mav.addObject("boardList", boardService.selectBoard5());
+		mav.addObject("boardList", boardService.getHomeBoard());
 		mav.setViewName("home_content_ajax");
 		return mav;
 	}

@@ -54,6 +54,16 @@ public class BoardDao {
 	}
 	
 	/**
+	 * Get boards for home content.
+	 * 
+	 * @param board
+	 * @return
+	 */
+	public List<BoardVO> getHomeBoard(int homeContentBoardSize) {
+		return sqlSessionTemplate.selectList("Board.selectX", homeContentBoardSize);
+	}
+	
+	/**
 	 * Select paged boards.
 	 * 
 	 * @param searchVO

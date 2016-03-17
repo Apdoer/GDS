@@ -335,7 +335,9 @@
     		sUploadURL;
     	
 //    	sUploadURL= '${pageContext.request.contextPath}/blog/multiplePhotoUpload.do'; 	//upload URL
-    	sUploadURL= 'http://localhost:8080/GDS/blog/multiplePhotoUpload.do'; 	//upload URL
+//    	sUploadURL= 'http://localhost:8080/GDS/blog/multiplePhotoUpload.do'; 	//upload URL
+//    	sUploadURL= 'http://gdsdream.com/blog/multiplePhotoUpload.do'; 	//upload URL
+    	sUploadURL= '/blog/multiplePhotoUpload.do'; 	//upload URL
     	
     	//파일을 하나씩 보내고, 결과를 받음.
     	for(var j=0, k=0; j < nImageInfoCnt; j++) {

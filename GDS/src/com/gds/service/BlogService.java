@@ -81,7 +81,7 @@ public class BlogService {
 			
 			b = content.indexOf("title=");
 			content = content.substring(a, b-1);
-			content = content + " style='width: 60%'>";
+			content = content + " style='width: 90%'>";
 		}
 		blogList.get(0).setContent(content);
 		

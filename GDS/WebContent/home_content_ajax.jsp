@@ -25,10 +25,10 @@
 		<hr class="hr_margin_top_0">
 		<table>
 			<tr>
-				<td style="text-align: center">${blogList[0].content}</td>
+				<td style="text-align: center;">${blogList[0].content}</td>
 			</tr>
 			<tr>
-				<td style="text-align: center"><h4>${blogList[0].title}</h4></td>
+				<td style="text-align: left; padding-left: 5%"><h4>${blogList[0].title}</h4></td>
 			</tr>
 		</table>
 	</div>

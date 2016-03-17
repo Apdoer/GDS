@@ -149,11 +149,9 @@ function counselSubmit(){
 								<label for="sort" class="col-sm-2 control-label">상담과목</label>
 								<div class="col-sm-10">
 									<select class="form-control" id="counsel_category">
-										<option value="1">자폐 스펙트럼 장애</option>
-										<option value="2">주의력 결핍/과잉행동장애(ADD,ADHD)</option>
-										<option value="3">학습 장애</option>
-										<option value="4">사회성 부족</option>
-										<option value="5">기타</option>
+										<c:forEach items="${categoryList}" var="category">
+											<option value="${category.id}">${category.name}</option>
+										</c:forEach>
 									</select>
 								</div>
 							</div>

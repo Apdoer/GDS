@@ -34,13 +34,12 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li class="menu_list"><a href="${cp}/admin/counsel/enter.do">상담신청현황</a></li>
-					<!-- <li><a href="javascript: alert('작업중입니다.');">카테고리관리</a></li> -->
-					<%-- <li><a href="${cp}/admin/category/enter.do">카테고리관리</a></li> --%>
-				
+					<li class="menu_list"><a href="${cp}/admin/counsel/enter.do">상담신청 현황</a></li>
+					<li class="menu_list"><a href="${cp}/admin/category/enter.do">카테고리 관리</a></li>
 					<li class="menu_list"><a href="${cp}/admin/blog/enter.do">별 헤는 밤</a></li>
 					<li class="menu_list"><a href="${cp}/admin/board/enter.do">공지사항</a></li>
 					<li class="menu_list"><a href="${cp}/admin/qna/enter.do">온라인 문의</a></li>
+					<li class="menu_list"><a href="${cp}/admin/logout.do">관리자 로그아웃</a></li>
 				</ul>
 			</div>
 

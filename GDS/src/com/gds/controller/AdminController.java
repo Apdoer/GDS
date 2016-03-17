@@ -1,5 +1,6 @@
 package com.gds.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -121,6 +122,18 @@ public class AdminController {
 			mav.setViewName("admin_login");
 			return mav;
 		}
+	}
+	
+	/**
+	 * Invalidate user session and send user to home page.
+	 * 
+	 * @return
+	 * @throws IOException 
+	 */
+	@RequestMapping("/logout.do")
+	public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		request.getSession().removeAttribute("auth");
+		response.sendRedirect("http://gdsdream.com");
 	}
 	
 	// 여기서부터 상담신청 관련 관리자 메서드 ('/counsel'로 시작해줄 것!)

@@ -26,6 +26,7 @@ import com.gds.service.QnaService;
 import com.gds.util.AuthUtil;
 import com.gds.vo.BlogVO;
 import com.gds.vo.BoardVO;
+import com.gds.vo.CategoryVO;
 import com.gds.vo.CounselVO;
 import com.gds.vo.QnaVO;
 import com.gds.vo.SearchVO;
@@ -329,4 +330,35 @@ public class AdminController {
 		mav.setViewName("blog_list_ajax_page_admin");
 		return mav;
 	}
+	
+	// 여기서부터 상담과목(카테고리) 관련 관리자 메서드 ('/category'로 시작해줄 것!)
+	
+	@RequestMapping("/category/enter.do")
+	public String enterCategory(Model model) {
+		model.addAttribute("contentPage", "/admin_category.jsp");
+		return "admin_index";
+	}
+	
+	@RequestMapping("/category/list.ajax")
+	public String listCategory(Model model) {
+		model.addAttribute("categoryList", categoryService.listCategory());
+		return "admin_category_list_ajax";
+	}
+	
+	@RequestMapping("/category/create.ajax")
+	@ResponseBody
+	public Map<String, Object> createCategory(CategoryVO category) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", categoryService.createCategory(category));
+		return result;
+	}
+	
+	@RequestMapping("/category/delete.ajax")
+	@ResponseBody
+	public Map<String, Object> listCategory(CategoryVO category) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", categoryService.deleteCategory(category.getId()));
+		return result;
+	}
+	
 }

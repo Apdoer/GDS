@@ -90,7 +90,7 @@ public class CategoryDao {
 	 * @return
 	 */
 	public int delete(int id) {
-		return sqlSessionTemplate.delete("Category.delete", id);
+		return sqlSessionTemplate.update("Category.delete", id);
 	}
 
 }

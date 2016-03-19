@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style type="text/css">
-#program_deasa {margin-top: 70px;}
-
 #program_deasa .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 #program_deasa .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #program_deasa .left-side-bar ul li:last-child { border: 0px; }
@@ -11,16 +9,7 @@
 #program_deasa .title h1{
 	font-weight: 600;
 }
-#program_deasa .title{
-	display: inline-block;
-}
-#program_deasa .title_detail{
-	display: inline-block;
-	color: #ABA7A7;
-	margin-left: 5px;
-}
-#program_deasa hr {border: 2px solid #847373;}
-#program_deasa p {line-height: 200%; color: #808080;}
+
 #program_deasa .a_link_clicked{
 	font-weight: bold;
 	color:#2cabea;
@@ -29,7 +18,6 @@
 	color: #aaa;
 }
 </style>
-
 <div id="program_deasa" class="container">
 
 	<!-- board left-side-bar -->

@@ -1,45 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
-<style>
-
-#clinic .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
-#clinic .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#clinic .left-side-bar ul li:last-child { border: 0px; }
-#clinic .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
-
-/* 
-#clinic .title h1{
-	font-weight: 600;
-}
-#clinic .title{
-	display: inline-block;
-}
-#clinic .title_detail{
-	display: inline-block;
-	color: #ABA7A7;
-	margin-left: 5px;
-}
-#clinic hr{
-	border-top: 3px solid #847373;
-}
-
-#clinic .content_detail{
-	margin-left: 25px;
-	color: #808080;
-}
-
-#clinic .a_link_clicked{
-	font-weight: bold;
-	color:#2cabea;
-}
-#clinic .a_link_unClicked{
-	color: #aaa;
-}
- */
-</style>
-
 <div id="clinic" class="container">
 
 	<!-- board left-side-bar -->

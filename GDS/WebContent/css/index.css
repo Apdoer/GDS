@@ -2,6 +2,26 @@ html,body{height:100%}
 body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 .contentPage {min-height:100%; margin-top:90px;}
 
+.content {
+     padding-top: 20px;
+     padding-bottom: 20px;
+     font-size: 1.2em;
+     line-height: 200%;
+     word-break: keep-all;
+}
+
+.content .title {
+     margin-top: 20px;
+     margin-bottom: 20px;
+}
+
+.content .detail {
+     margin-bottom: 40px;
+}
+
+.content hr {
+     border-top: 3px solid #847373;
+}
 
 .navbar{
 	border-top: 8px solid #2cabea;

@@ -38,9 +38,6 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 #clinic .a_link_unClicked{
 	color: #aaa;
 }
-#clinic .title h1{
-	font-weight: 600;
-}
 .content {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -55,6 +52,7 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 }
 
 .content .title-horizontal { position: relative; }
+.content .title-horizontal h1{font-weight:600}
 .content .title-horizontal *:first-child { display: inline-block; margin-bottom: 0px; }
 .content .title-horizontal div.title-detail {
 	display: inline-block;

@@ -1,44 +1,80 @@
 html,body{height:100%}
 body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
-.contentPage {min-height:100%; margin-top:90px;}
+.contentPage { min-height: 100%; margin-top: 90px; }
+
+#clinic .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
+#clinic .left-side-bar ul li { border-bottom: 1px solid #eee; }
+#clinic .left-side-bar ul li:last-child { border: 0px; }
+#clinic .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
+#clinic .a_link_clicked{
+	font-weight: bold;
+	color:#2cabea;
+}
+#clinic .a_link_unClicked{
+	color: #aaa;
+}
+#clinic .title h1{
+	font-weight: 600;
+}
+
+/* .affix {
+	display: none;
+}
+
+@media ( min-width: 992px ) {
+	.affix {
+		display: inherit;
+	}
+} */
 
 .content {
-     padding-top: 20px;
-     padding-bottom: 20px;
-     font-size: 1.1em;
-     line-height: 200%;
-     word-break: keep-all;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 1.1em;
+	line-height: 200%;
+	word-break: keep-all;
 }
 
 .content .title {
-     margin-top: 20px;
-     margin-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.content .title-horizontal { position: relative; }
+.content .title-horizontal *:first-child { display: inline-block; margin-bottom: 0px; }
+.content .title-horizontal div.title-detail {
+	display: inline-block;
+	position: absolute;
+	bottom: 0px;
+	margin-left: 12px;
+	color: #888;
+	font-size: 0.9em;
+	line-height: normal;
 }
 
 .content .detail {
-     margin-bottom: 40px;
-     padding-left: 15px;
-     padding-right: 15px;
+	margin-bottom: 40px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
-.content ol,
-.content ul {
+.content ol, .content ul {
 	list-style-type: none;
 }
 
 .content hr {
-     border-top: 3px solid #847373;
+	border-top: 3px solid #847373;
 }
 
-.navbar{
+.navbar {
 	border-top: 8px solid #2cabea;
 	border-bottom: 2px solid #2cabea;
 	min-height: 90px;
 }
 
-.navbar-nav{
+.navbar-nav {
 	height: 70px;
-    padding-top: 20px;
+	padding-top: 20px;
 }
 
 .tel_no_top{

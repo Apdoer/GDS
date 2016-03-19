@@ -5,7 +5,7 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 .content {
      padding-top: 20px;
      padding-bottom: 20px;
-     font-size: 1.2em;
+     font-size: 1.1em;
      line-height: 200%;
      word-break: keep-all;
 }
@@ -17,6 +17,13 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 
 .content .detail {
      margin-bottom: 40px;
+     padding-left: 15px;
+     padding-right: 15px;
+}
+
+.content ol,
+.content ul {
+	list-style-type: none;
 }
 
 .content hr {

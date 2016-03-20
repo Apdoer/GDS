@@ -118,7 +118,7 @@
 			</div>
 			
 			<a href="${cp}/counsel.do">
-				<img src="image/banner_chunggigac.png" style="width: 100%; margin-top: 32px; margin-bottom: 16px;">
+				<img src="image/banner_3.png" style="width: 100%; margin-top: 32px; margin-bottom: 16px;">
 			</a>
 
 		</div>

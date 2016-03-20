@@ -42,7 +42,7 @@
 					<div class="col-md-6 col-lg-5">
 						미국 Great Plains Laboratory 연구소는 광범위한 정신적, 대사적 장애(자폐를 포함하여 인지발달장애, 다운증후군, ADHD, 우울증 등 정신질환 까지)를 갖고 있는 성인과 아동을 돕기 위한 생화학 연구소입니다. 
 					</div>
-					<div class="col-md-6 col-lg-7">
+					<div class="col-md-6 col-lg-7" style="text-align: center;">
 						<img src="image/deasa1.png" style="width: 80%;">
 					</div>
 				</div>

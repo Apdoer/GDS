@@ -78,7 +78,7 @@ function counselSubmit(){
  
 	<div id="counsel">
 	
-		<img class="dummy" alt="" src="${cp}/image/counsel_kids.png" style="width:100%">
+		<img class="dummy" alt="" src="${cp}/image/counsel_kids_small.png" style="width:100%">
 		
 		<div class="row">
 					

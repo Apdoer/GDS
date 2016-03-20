@@ -17,6 +17,9 @@
 #program_deasa .a_link_unClicked{
 	color: #aaa;
 }
+#program_deasa h2{
+	font-weight: bold;
+}
 </style>
 <div id="program_deasa" class="container">
 

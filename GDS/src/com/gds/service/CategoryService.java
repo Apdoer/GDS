@@ -27,7 +27,6 @@ public class CategoryService {
 	 */
 	public boolean createCategory(CategoryVO category) {
 		category.setId(categoryDao.getMaxId() + 1);
-		category.setSeq(categoryDao.getMaxSeq() + 1);
 		return categoryDao.insert(category) == 1;		
 	}
 	

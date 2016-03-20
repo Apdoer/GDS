@@ -11,18 +11,12 @@
 		FROM category
 	</select>
 	
-	<select id="getMaxSeq" resultType="int">
-		SELECT IFNULL(MAX(seq), 0)
-		FROM category
-		WHERE delyn = 'n'
-	</select>
-	
 	<insert id="insert">
 		INSERT INTO category
 		VALUES (
 			#{id},
 			#{name},
-			#{seq},
+			1,
 			'n'
 		)
 	</insert>
@@ -31,7 +25,7 @@
 		SELECT *
 		FROM category
 		WHERE delyn = 'n'
-		ORDER BY seq DESC
+		ORDER BY seq DESC, name ASC
 	</select>
 	
 	<update id="update" parameterType="Category">

@@ -4,9 +4,9 @@
 	<c:forEach items="${categoryList}" var="category">
 		<li id="${category.id}" class="list-group-item">
 			<div class="name">${category.name}</div>
-			<span class="glyphicon glyphicon-remove pull-right" onclick="javascript: deleteCategory(${category.id})"></span>
-			<span class="glyphicon glyphicon-chevron-down pull-right" onclick="javascript: alert('작업중입니다.')"></span>
-			<span class="glyphicon glyphicon-chevron-up pull-right" onclick="javascript: alert('작업중입니다.')"></span>		
+			<c:if test="${category.seq eq 1}">
+				<span class="glyphicon glyphicon-remove pull-right" onclick="javascript: deleteCategory(${category.id})"></span>
+			</c:if>
 		</li>
 	</c:forEach>
 </ul>

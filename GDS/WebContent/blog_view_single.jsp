@@ -25,10 +25,10 @@
 			별헤는 밤
 			<c:if test="${sessionScope.auth != null}">
 				<c:if test="${blogList.size() == 1}">
-					<a href="${cp}/blog/updateViewBlog.do?id=${blogList[0].id}" class="btn btn-info pull-right">글 수정</a>
+					<a href="${cp}/admin/blog/updateViewBlog.do?id=${blogList[0].id}" class="btn btn-info pull-right">글 수정</a>
 					<a href="${cp}/blog/deleteBlog.do?id=${blogList[0].id}" class="btn btn-info pull-right">글 삭제</a>
 				</c:if>
-				<a href="${cp}/blog/editBlog.do" class="btn btn-info pull-right">글 쓰기</a>
+				<a href="${cp}/admin/blog/edit.do" class="btn btn-info pull-right">글 쓰기</a>
 			</c:if>	
 		</h1>
 	</div>

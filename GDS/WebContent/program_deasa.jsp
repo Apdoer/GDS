@@ -25,8 +25,7 @@
 		<ul class="pull-left">
 			<li><a class="a_link_clicked" href="${cp}/program_deasa.do">대사검사</a></li>
 			<li><a class="a_link_unClicked" href="${cp}/program_goap.do">고압산소치료</a></li>
-			<li><a class="a_link_unClicked"
-				href="${cp}/program_chunggigac.do">청지각프로그램</a></li>
+			<li><a class="a_link_unClicked" href="${cp}/program_chunggigac.do">청지각프로그램</a></li>
 			<li><a class="a_link_unClicked" href="${cp}/program_sigigac.do">시지각프로그램</a></li>
 		</ul>
 	</div>
@@ -40,11 +39,11 @@
 			</div>
 			<div class="detail">
 				<div class="row">
-					<div class="col-md-7 col-lg-7">
+					<div class="col-md-6 col-lg-5">
 						미국 Great Plains Laboratory 연구소는 광범위한 정신적, 대사적 장애(자폐를 포함하여 인지발달장애, 다운증후군, ADHD, 우울증 등 정신질환 까지)를 갖고 있는 성인과 아동을 돕기 위한 생화학 연구소입니다. 
 					</div>
-					<div class="col-md-5 col-lg-5">
-						<img src="image/deasa1.png" style="width: 80%; margin-left: 9%;">
+					<div class="col-md-6 col-lg-7">
+						<img src="image/deasa1.png" style="width: 80%;">
 					</div>
 				</div>
 				<div style="margin-top: 10px;">
@@ -69,13 +68,15 @@
 					<img src="image/im_6.png">
 				</div>
 				<img src="image/daesang_02.png" style="width: 100%;">
+				
+				<img src="image/banner_daesa.png" style="width: 100%; margin-top: 16px;">
 			</div>
 
-			<hr>
+			<!-- <hr>
 			
 			<div>
 				<p><strong>이 외에도 음식 알러지검사, 글루텐/카제인 검사, 아미노산 검사 등도 진행 가능합니다.<br>New Beginnings사 등 발달장애 전문 영양보충제 회사와의 제휴를 통해 맞춤형 기능성 보충제 구매가 가능합니다.</strong></p>
-			</div>
+			</div> -->
 			<!-- /.row -->
 
 		</div>

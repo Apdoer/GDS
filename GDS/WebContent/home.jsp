@@ -35,14 +35,24 @@
 }
 
 #home .bar_container{
-	width:100%; height:121px; background-color: rgba(85, 85, 85, 1); font-size: 0; margin:0 auto;
+	width:100%; background-color: rgba(85, 85, 85, 1); font-size: 0; margin:0 auto;
 }
 #home .symtom_container{
-	width:1300px; margin:0 auto; cursor: pointer;
+	width:100%; margin:0 auto; cursor: pointer;
 }
+#home .symtom_container > img {
+	width: 25%;
+}
+/* 
 #home .symtom{
-	border:0; margin:0; padding:0; display: inline-block; width:325px; min-height:121px;
+	border:0; 
+	margin:0; 
+	padding:0; 
+	display: inline-block; 
+	width:321px; 
+	min-height:121px;
 }
+ */
 #home .symtom1{
 	background:URL('${cp}/image/m_b1.png');
 }
@@ -59,7 +69,8 @@
 	width:100%;
 }
 #home .info_container{
-	width:70%; margin:0 auto;
+	/* width:70%; */ 
+	margin:0 auto;
 }
 
 #home .hr_margin_top_0{
@@ -73,108 +84,104 @@
 </style>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div id="home"> 
-   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-  </ol>
+<div id="home">
+	<div id="carousel-example-generic" class="carousel slide"
+		data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0"
+				class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+		</ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="${cp }/image/ba_1.png" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <img src="${cp }/image/ba_2.png" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <img src="${cp }/image/ba_3.png" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <img src="${cp }/image/ba_4.png" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <img src="${cp }/image/ba_5.png" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-  </div>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="${cp }/image/ba_1.png" alt="...">
+				<div class="carousel-caption"></div>
+			</div>
+			<div class="item">
+				<img src="${cp }/image/ba_2.png" alt="...">
+				<div class="carousel-caption"></div>
+			</div>
+			<div class="item">
+				<img src="${cp }/image/ba_3.png" alt="...">
+				<div class="carousel-caption"></div>
+			</div>
+			<div class="item">
+				<img src="${cp }/image/ba_4.png" alt="...">
+				<div class="carousel-caption"></div>
+			</div>
+			<div class="item">
+				<img src="${cp }/image/ba_5.png" alt="...">
+				<div class="carousel-caption"></div>
+			</div>
+		</div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-  	<%-- <span><img class="" src="${cp }/image/m_e2.png" width="27px" height="76px" aria-hidden="true"></span> --%>
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-    <div class="bar_container container">
-    	<div>
-	    	<div class="symtom_container">
-	    		<div class="symtom symtom1"></div>
-	    		<div class="symtom symtom2"></div>
-	    		<div class="symtom symtom3"></div>
-	    		<div class="symtom symtom4"></div>
-	    	</div>
-    	</div>
-    </div>
-    <div class="info_container container">
-      <!-- Example row of columns -->
-      <div class="row">
-      	<div class="col-md-8" id="home-content">
-      		<!-- Loading home content via ajax -->
-      	</div>
-        <div class="col-md-4">
-          <h2><img src="${cp}/image/icon_2.png">&nbsp;찾아오시는 길</h2>
-          <hr class="hr_margin_top_0">
-          <div>&nbsp;&nbsp;&nbsp;<img src="${cp }/image/map_1.png"></div>
-        </div>
-      </div>
-      <hr>
-    </div>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<%-- <span><img class="" src="${cp }/image/m_e2.png" width="27px" height="76px" aria-hidden="true"></span> --%>
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<div class="bar_container">
+		<div class="container">
+			<div class="symtom_container">
+				<img src="${cp}/image/m_b1.png" alt="자폐스펙트럼 장애">
+				<img src="${cp}/image/m_b2.png" alt="주의력 결핍/과잉행동장애">
+				<img src="${cp}/image/m_b3.png" alt="학습장애">
+				<img src="${cp}/image/m_b4.png" alt="사회성 부족">
+				<!-- 
+				<div class="symtom symtom1"></div>
+				<div class="symtom symtom2"></div>
+				<div class="symtom symtom3"></div>
+				<div class="symtom symtom4"></div>
+				 -->
+			</div>
+		</div>
+	</div>
+	<div class="info_container">
+		<div class="container">
+			<!-- Example row of columns -->
+			<div class="row" id="home-content">
+				<!-- Loading home content via ajax -->
+			</div>
+			<hr>
+		</div>
+	</div>
 </div>
 
 
 <script type="text/javascript">
+	$(document).ready(function() {
 
+		$(".symtom1").click(function() {
+			location.href = "${cp}/clinic1.do";
+		});
+		$(".symtom2").click(function() {
+			location.href = "${cp}/clinic2.do";
+		});
+		$(".symtom3").click(function() {
+			location.href = "${cp}/clinic3.do";
+		});
+		$(".symtom4").click(function() {
+			location.href = "${cp}/clinic4.do";
+		});
 
-$(document).ready(function() {
-	
-	$(".symtom1").click(function() {
-		location.href="${cp}/clinic1.do";
+		$.ajax({
+			url : '${cp}/getHomeContent.ajax'
+		}).done(function(data) {
+			$('#home-content').html(data);
+		}).error(function(error) {
+			alert(error);
+		});
 	});
-	$(".symtom2").click(function() {
-		location.href="${cp}/clinic2.do";
-	});
-	$(".symtom3").click(function() {
-		location.href="${cp}/clinic3.do";
-	});
-	$(".symtom4").click(function() {
-		location.href="${cp}/clinic4.do";
-	});
-	
-	$.ajax({
-		url: '${cp}/getHomeContent.ajax'
-	}).done(function(data) {
-		$('#home-content').html(data);
-	}).error(function(error) {
-		alert(error);
-	});
-});
 </script>

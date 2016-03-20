@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GDS관리자</title>
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="${cp}/css/bootstrap.css">
 <link rel="stylesheet" href="${cp}/css/bootstrap-theme.css">
 <link rel="stylesheet" href="${cp}/css/admin_index.css">

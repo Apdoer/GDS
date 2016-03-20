@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, height=device-height">
 <title>지디에스분당중앙센터</title>
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="${cp}/css/bootstrap.css">
 <link rel="stylesheet" href="${cp}/css/bootstrap-theme.css">
 <link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">

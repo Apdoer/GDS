@@ -56,7 +56,7 @@
 				</ul>
 			</div>
 			
-			<img src="${cp }/image/impact_2.png">
+			<img src="${cp }/image/impact_1.png">
 			
 		</div>
 

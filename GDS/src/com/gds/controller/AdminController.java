@@ -321,6 +321,22 @@ public class AdminController {
 		return "admin_index";
 	}
 	
+	/*
+	 * 업데이트 페이지 이동 
+	 */
+	@RequestMapping("/blog/updateViewBlog.do")
+	public String updateViewBlog(HttpServletRequest request, Model model) {
+		int id = Integer.parseInt(request.getParameter("id"));
+		BlogVO blogVO = new BlogVO();
+		blogVO.setId(id);
+		
+		List<BlogVO> blogList;
+		blogList = blogService.selectBlog(blogVO);
+		model.addAttribute("blogList", blogList);
+		model.addAttribute("contentPage", "/blog_write_update.jsp");
+		return "admin_index";
+	}
+	
 	//페이징 ajax
 	@RequestMapping("/blog/list.ajax")
 	public ModelAndView listBoard(SearchVO searchVO) {

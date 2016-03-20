@@ -39,15 +39,15 @@
 				<div class="title-detail">발달장애와 관련된 질환들을<br>과학적으로 분석 대처할 수 있습니다.</div>	
 			</div>
 			<div class="detail">
-				<div class="detail row">
-					<div class="col-md-7 col-lg-6">
+				<div class="row">
+					<div class="col-md-7 col-lg-7">
 						미국 Great Plains Laboratory 연구소는 광범위한 정신적, 대사적 장애(자폐를 포함하여 인지발달장애, 다운증후군, ADHD, 우울증 등 정신질환 까지)를 갖고 있는 성인과 아동을 돕기 위한 생화학 연구소입니다. 
 					</div>
-					<div class="col-md-5 col-lg-6">
-						<img src="image/deasa1.png" style="width: 100%;">
+					<div class="col-md-5 col-lg-5">
+						<img src="image/deasa1.png" style="width: 80%; margin-left: 9%;">
 					</div>
 				</div>
-				<div style="margin-bottom: 8px;">
+				<div style="margin-top: 10px;">
 					건강대사이상과 생의학연구 분야에서 상당한 권위를 가진 윌리엄 쇼 박사가 설립했고, 운영하고 있습니다. Great Plains Laboratory는 발달 장애와 관련된 질환들을  과학적으로 원인을 분석 대처하고, 테스트 할 수 있는 기반을 마련해 놓고 있습니다. 미국에서는 공식적으로 의사의 도움을 받아 테스트가 진행되고 있으며, 전 세계적으로 몇개의 지사가 있어 많은 국가의 사람들에게 도움을 주고 있습니다. 특히 유기산 검사는 타 연구소에서  따라올 수 없는 독보적 기술과 특허를 갖고 대사건강의 가장 정확한 지표를 제공합니다.
 				</div>
 			</div>

@@ -2,21 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style type="text/css">
-#introduce {margin-top: 70px;}
-#introduce .left-side-bar{}
-#introduce .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
-#introduce .left-side-bar ul li { border-bottom: 1px solid #eee; }
-#introduce .left-side-bar ul li:last-child { border: 0px; }
-#introduce .left-side-bar ul li a { display: inline-block; padding: 8px 16px; font-size: 1.2em; text-decoration: none; }
-#introduce .big_blue {color: #2cabea; font-size: large; font-weight: bold;}
 
-#introduce .a_link_clicked{
-	font-weight: bold;
-	color:#2cabea;
+
+#introduce hr {
+	border-top: 3px solid #2CABEA;
 }
-#introduce .a_link_unClicked{
-	color: #aaa;
-}
+
+#introduce .insa {float: left; width: 50%; height: 400px;}
+#introduce .insa_picture {float: left; width: 50%; height: 460px; padding-left:5%; margin-top:-8%;}
+#introduce .strong {color:#2CABEA; font-weight: bold; font-size: 18px;}
 
 </style>
 <script type="text/javascript">
@@ -67,50 +61,51 @@ $(document).ready(function () {
           
           <div class="blog-post">
 			
-            <h1 class="blog-post-title">인사말</h1>
+            <h1 class="blog-post-title">인사말</h1> 
             
-            <div style="float: left; width: 60%; height: 300px;">
+            <div class="insa">
 				<p>안녕하십니까?</p>
-	            <p style="color:#2CABEA; font-weight: bold; font-size: 18px;">지디에스 분당중앙센터는 발달장애/학습장애로 어려움을 겪고 있는 “조금은 특별한” 우리 아이들을 위한 공간입니다.</p>
+	            <p class="strong">지디에스 분당중앙센터는 발달장애/학습장애로 어려움을 겪고 있는 “조금은 특별한” 우리 아이들을 위한 공간입니다.</p>
 	  			<p>뇌를 활성화 하는 적절한 훈련, 감각 해소, 그리고 통합의학적  (Bio-med) 접근을 통해 우리 아이들의 문제는 충분히 개선될 수 있습니다.</p>
-	  			<p style="color:#2CABEA; font-weight: bold; font-size: 18px;">부모의 마음으로 우리 아이들이 밝고 행복한 미래를 맞이할 수 있도록 최선을 다하겠습니다.</p>
-				<p align="right" style="font-weight: bold; font-size: 18px;">지디에스 분당중앙센터장 <strong>김학기</strong></p>
+	  			<p class="strong">부모의 마음으로 우리 아이들이 밝고 행복한 미래를 맞이할 수 있도록 최선을 다하겠습니다.</p>
+				<p align="right" style="font-weight: bold; font-size: 18px;">지디에스 분당중앙센터장 <strong style="font-size: 22px;">김학기</strong></p>
   			</div>
-			<div style="float: left; width: 40%; height: 300px; padding-left:10%; padding-top:5%;">
-  				<img src="image/funky-pink-heart.png">
+			<div class="insa_picture">
+  				<img src="image/children.jpg" style="width: 120%;">
 			</div>
 			
-			<br><div id="2"></div>
-			
-			<p> - 서강대 경제학과 졸업<br>
-				- 지디에스 분당중앙센터 센터장<br>
-    			- 시지각/청지각 전문가 (토마티스 전문 자격 취득, 셀필드 국내 최다 이수자 배출)<br>
-    			- 발달장애/학습장애 컨설턴트 
+			<div id="2" style="width: 100%;">
+			<p style="font-weight: bold; font-size: 18px;"><strong style="font-size: 22px;">김학기</strong>센터장 </p>
+			<p> <img src="image/point2.png" style="width: 2.5%;"> 서강대 경제학과 졸업<br>
+				<img src="image/point2.png" style="width: 2.5%;"> 지디에스 분당중앙센터 센터장<br>
+    			<img src="image/point2.png" style="width: 2.5%;"> 시지각/청지각 전문가 (토마티스 전문 자격 취득, 셀필드 국내 최다 이수자 배출)<br>
+    			<img src="image/point2.png" style="width: 2.5%;"> 발달장애/학습장애 컨설턴트 
 			</p>
+			</div>
 			<br>
 			
-            <hr>
+            <hr style="border-top: 3px solid #2CABEA;">
             <h1 class="blog-post-title">추천사</h1>
-            <div style="float: left; width: 60%; height: 350px;">
+			<div style="float: left; width: 100%; height: 500px; padding-left:10%;">
+  				<img src="image/children2.jpg" style="width: 100%;">
+			</div>
+            <div style="float: left; width: 100%; height: 280px;">
 	            <p style="color:#2CABEA; font-weight: bold; font-size: 18px;">우리 아이들의 감각적 문제를 정확히 진단하고, 가장 효율적 치료법을 제시할 수 있는 국내 유일의 공간이라 생각합니다.</p>
 	            <p>더욱이 분당중앙센터내에 우리세상발달학교, 우리세상특수대안학교 개교를 통해 감각 해소를 위한 국내 최대 규모의 감각 통합실과 대형 트렘폴린 장을 완비하였습니다.</p>
 	            <p>같은 아픔을 겪는 부모들과 대화하는 곳인 만큼 조금도 망설이지 말고 문을 두드려 주세요.</p> 
       	        <p style="color:#2CABEA; font-weight: bold; font-size: 18px;">발달장애/학습장애 아동을 위한 해답, 분명이 있습니다.</p>  
-				<p align="right" style=" font-weight: bold; font-size: 18px;">태균맘 <strong>황순재 대표</strong></p>
-			</div>
-			<div style="float: left; width: 40%; height: 350px; padding-left:10%; padding-top:5%">
-  				<img src="image/funky-pink-heart.png">
+				<p align="right" style=" font-weight: bold; font-size: 18px;">태균맘 <strong style="font-size: 22px;">황순재 대표</strong></p>
 			</div>
 			
-			<br><div id="3"></div>
-			
-			<p> - 고려대 사회학과 졸업<br>
-				- 대구대 일반대학원 특수교육 석사<br>
-    			- 우리세상 발달학교 , 우리세상 특수 대안학교 설립자<br>
-    			- 다음까페 “행복한 자폐아” 운영자    			
+			<div id="3"></div>
+			<p style="font-weight: bold; font-size: 18px;"><strong style="font-size: 22px;">황순재</strong>대표</p>
+			<p> <img src="image/point2.png" style="width: 2.5%;"> 고려대 사회학과 졸업<br>
+				<img src="image/point2.png" style="width: 2.5%;"> 대구대 일반대학원 특수교육 석사<br>
+    			<img src="image/point2.png" style="width: 2.5%;"> 우리세상 발달학교 , 우리세상 특수 대안학교 설립자<br>
+    			<img src="image/point2.png" style="width: 2.5%;"> 다음까페 “행복한 자폐아” 운영자    			
 			</p>
 			<br>
-			<hr>
+			<hr >
             <h2 class="blog-post-title">협력기관</h2><div id="4"></div>
 			<div style="">
 			<img class="img-rounded" alt="" src="${cp }/image/pa_i.png" style="width: 100%; height: 100%;">

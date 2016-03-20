@@ -77,7 +77,7 @@
 				<h2>고압 산소 치료는 선택이 아닌 필수입니다.</h2>
 				<div class="detail">
 					<div>
-						<img src="image/kids.png" style="width: 100%; margin-top:-13%; ">
+						<img src="image/kids.png" style="width: 100%; margin-bottom: 24px;">
 					</div>
 					<div>
 						<div style="margin-bottom: 8px;">

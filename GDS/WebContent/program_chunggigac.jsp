@@ -110,12 +110,16 @@
 					언어훈련까지 총망라 되어 있습니다. </p>
 				</div>
 			</div>
-			<img src="image/p_01.png"
-				style="margin-top: 30px; margin-bottom: 50px; width: 32%;"> <img
-				src="image/p_02.png"
-				style="margin-top: 30px; margin-bottom: 50px; width: 32%;"> <img
-				src="image/p_03.png"
-				style="margin-top: 30px; margin-bottom: 50px; width: 32%;">
+			
+			<div class="row">
+				<img src="image/p_01.png" class="col-md-4 col-lg-4">
+				<img src="image/p_02.png" class="col-md-4 col-lg-4">
+				<img src="image/p_03.png" class="col-md-4 col-lg-4">
+			</div>
+			
+			<a href="${cp}/counsel.do">
+				<img src="image/banner_chunggigac.png" style="width: 100%; margin-top: 32px; margin-bottom: 16px;">
+			</a>
 
 		</div>
 		<!-- /.container -->

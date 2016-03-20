@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style type="text/css">
+#program_deasa h2{
+	font-weight: bold;
+}
 /* #program_deasa {
 	margin-top: 70px;
 }

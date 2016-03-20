@@ -75,11 +75,11 @@
 				<hr>
 				
 				<h2>고압 산소 치료는 선택이 아닌 필수입니다.</h2>
-				<div class="detail row">
-					<div class="col-md-3 col-lg-4">
-						<img src="img/dummy.jpg" style="width: 100%;">
+				<div class="detail">
+					<div>
+						<img src="image/kids.png" style="width: 100%; margin-top:-13%; ">
 					</div>
-					<div class="col-md-9 col-lg-8">
+					<div>
 						<div style="margin-bottom: 8px;">
 							우리가 바깥 세상의 정보를 받아들이는 감각을 담당하고 정보처리를 하는 뇌 부위는 각기 다르며, 이를 연결하는 것은 뇌 속에 얽혀 있는 신경세포 들입니다. 그렇다 보니 뇌손상 때문에 특정 감각기관을 담당하는 부위 혹은 그 부위를 연결하는 신경에 손상을 갖고 있는 발달장애의 경우 특정 감각이 둔하거나 예민해지는 문제를 동반합니다.
 						</div>

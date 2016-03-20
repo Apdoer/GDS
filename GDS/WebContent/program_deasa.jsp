@@ -71,7 +71,9 @@
 					<img src="image/im_6.png">
 				</div>
 				<img src="image/daesang_02.png" style="width: 100%;">
-				<img src="image/banner_daesa.png" style="width: 100%; margin-top: 16px;">
+				<a href="${cp}/counsel.do">
+					<img src="image/banner_daesa.png" style="width: 100%; margin-top: 16px;">
+				</a>
 			</div>
 
 			<!-- <hr>

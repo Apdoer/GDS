@@ -89,6 +89,7 @@
 						<div style="margin-bottom: 8px; font-weight: bold;">
 							고압산소치료는 손상된 신경의 재생을 통해서 이러한 감각통합의 문제를 근본적으로 도와주는 역할을 합니다. 물론 뇌손상 정도와 손상된 부위가 모두 다르기 때문에 우리 아이들의 상태 개선 정도와 속도에 차이가 있을 수 있지만, 반복적인 고압산소치료는 지속적으로 손상된 뇌조직의 기능 회복을 도와 언어 개선, 눈맞춤, 사회성 등에 큰 도움을 줍니다.
 						</div>
+						<img src="image/banner_goap.png" style="width: 100%; margin-top: 16px;">
 					</div>
 				</div>
 

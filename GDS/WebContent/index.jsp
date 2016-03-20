@@ -23,7 +23,7 @@
       <div class="container">
         <div class="navbar-header">
           
-          <a class="navbar-brand" href="${cp}">
+          <a class="navbar-brand" href="http://gdsdream.com/">
           	<span><img alt="Brand" src="${cp}/image/logo_c.png">
           	<img src="${cp}/image/tomatis.png"></span>
           </a>

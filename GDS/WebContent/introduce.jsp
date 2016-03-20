@@ -31,6 +31,7 @@ $(document).ready(function () {
 	 });
 	$("#4").click(function(){
 		$("html, body").animate({scrollTop: 1380}, 1000);
+		return;
 	 });
 	$("#5").click(function(){
 		$("html, body").animate({scrollTop: 1820}, 1000);
@@ -45,10 +46,10 @@ $(document).ready(function () {
 		<div class="col-md-3 col-lg-2 left-side-bar affix">
 			<ul class="pull-left">
 				<li><a id ="1" class="a_link a_link_clicked" href="#">인사말</a></li>
-				<li><a id ="2" class="a_link a_link_unClicked" href="">추천사</a></li>
-				<li><a id ="3" class="a_link a_link_unClicked" href="">협력기관</a></li>
-				<li><a id ="4" class="a_link a_link_unClicked" href="">운영방식 및 시간</a></li>
-				<li><a id ="5" class="a_link a_link_unClicked" href="">오시는길</a></li>
+				<li><a id ="2" class="a_link a_link_unClicked" href="#">추천사</a></li>
+				<li><a id ="3" class="a_link a_link_unClicked" href="#">협력기관</a></li>
+				<li><a id ="4" class="a_link a_link_unClicked" href="#">운dp영방식 및 시간</a></li>
+				<li><a id ="5" class="a_link a_link_unClicked" href="#">오시는길</a></li>
 			</ul>			
 		</div>
 	

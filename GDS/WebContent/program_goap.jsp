@@ -74,7 +74,7 @@
 				
 				<hr>
 				
-				<h2>왜 "고압" 산소이어야 하나?</h2>
+				<h2>고압 산소 치료는 선택이 아닌 필수입니다.</h2>
 				<div class="detail row">
 					<div class="col-md-3 col-lg-4">
 						<img src="img/dummy.jpg" style="width: 100%;">

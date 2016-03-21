@@ -127,7 +127,7 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 /* .nav .tel_no_top_collapsed { display: inherit; padding-left: 15px; } */
 
 @media ( min-width: 992px ) {
-	.contentPage { margin-top: 60px; }
+	.contentPage { margin-top: 90px; }
 	.contentPage .carousel-indicators { display: block; }
 	
 	.affix { display: inherit; }

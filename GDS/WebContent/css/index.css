@@ -17,7 +17,7 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 	font-weight: 600;
 }
 
-/* .affix {
+.affix {
 	display: none;
 }
 
@@ -25,7 +25,7 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 	.affix {
 		display: inherit;
 	}
-} */
+}
 
 #clinic .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 #clinic .left-side-bar ul li { border-bottom: 1px solid #eee; }
@@ -82,39 +82,73 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 	border-top: 3px solid #847373;
 }
 
-.navbar {
-	border-top: 8px solid #2cabea;
-	border-bottom: 2px solid #2cabea;
-	min-height: 90px;
-}
-
-.navbar-nav {
-	height: 70px;
-	padding-top: 20px;
+.content img {
+	max-width: 100%;
 }
 
 .tel_no_top{
 	margin-top: -1.0em;
 }
 
-.footer{
+.footer {
 	bottom:0;
 	width:100%;
 	background-color: #2b2b2b;/* rgba(85, 85, 85, 1); */
 	color: #707070;
 	padding:15px;
 	/* margin-top:-8em; */
-	height:10em
+	/* height:10em */
+}
+
+.footer dl.dl-horizontal {
+	margin-bottom: 6px;
+}
+
+.footer-logo {
+	margin-bottom: 16px;
 }
 
 .in_line{
 	display:inline-block;
 }
 
+.navbar {
+	border-top: 8px solid #2cabea;
+	border-bottom: 2px solid #2cabea;
+}
+
+.navbar-brand {
+	padding: 8px;
+}
+
 .navbar-brand img{
-	height:60px;
+	height: 34px;
 	padding-top: 0;
 }
+
+.nav .tel_no_top { display: none; }
+.nav .phone-number-collapsed { display: inline; font-weight: bolder; }
+/* .nav .tel_no_top_collapsed { display: inherit; padding-left: 15px; } */
+
+@media ( min-width: 992px ) {
+	.navbar {
+		min-height: 90px;
+	}
+	
+	.navbar-brand img{
+		height:60px;
+	}
+	
+	.navbar-nav {
+		/* height: 70px; */
+		padding-top: 20px;
+	}
+	
+	.nav .tel_no_top { display: inherit; }
+	.nav .phone-number-collapsed { display: none; }
+	/* .nav .tel_no_top_collapsed { display: none; } */
+}
+
 /* 
 @font-face{
 font-family:'NanumBarunGothic';

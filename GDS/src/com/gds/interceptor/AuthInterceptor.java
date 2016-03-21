@@ -20,8 +20,8 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		HttpSession session = request.getSession();
 		if (AuthUtil.isAuthorized(session)) {
 			// System.out.println("You cannot pass through without auth value!");
-			response.sendRedirect("/GDS/admin/login.do");
-//			response.sendRedirect("/admin/login.do");
+//			response.sendRedirect("/GDS/admin/login.do");
+			response.sendRedirect("admin/login.do");
 			return false;
 		}
 		

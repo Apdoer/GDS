@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="${cp}/css/index.css">
 <script type="text/javascript" src="${cp}/script/jquery.js"></script>
 <script type="text/javascript" src="${cp}/script/bootstrap.js"></script>
-
 </head>
 <body>
 
@@ -85,10 +84,6 @@
 							<img src="${cp }/image/tel_no.png">
 						</span></a>
 					</li>
-					<%-- <li class="tel_no_top_collapsed">
-						<img src="${cp }/image/icon_1.png">
-						<span class="h4">031-711-3546 / 010-3247-3535</span>
-					</li> --%>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -96,16 +91,15 @@
 	</nav>
 
 	<div class="contentPage">
-    <c:choose>
-	<c:when test="${not empty contentPage}">
-		<jsp:include page="${requestScope.contentPage }" />
-	</c:when>
-	<c:otherwise>
-		<jsp:include page="/home.jsp"/>		
-	</c:otherwise>
-	</c:choose>
+		<c:choose>
+			<c:when test="${not empty contentPage}">
+				<jsp:include page="${requestScope.contentPage }" />
+			</c:when>
+			<c:otherwise>
+				<jsp:include page="/home.jsp" />
+			</c:otherwise>
+		</c:choose>
 	</div>
-
 
 	<footer class="footer">
 		<div class="container">

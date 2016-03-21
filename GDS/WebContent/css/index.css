@@ -1,6 +1,8 @@
 html,body{height:100%}
 body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
-.contentPage { min-height: 100%; margin-top: 90px; }
+
+.contentPage { min-height: 100%; margin-top: 60px; }
+.contentPage .carousel-indicators { display: none; }
 
 .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 .left-side-bar ul li { border-bottom: 1px solid #eee; }
@@ -19,12 +21,6 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 
 .affix {
 	display: none;
-}
-
-@media ( min-width: 992px ) {
-	.affix {
-		display: inherit;
-	}
 }
 
 #clinic .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
@@ -131,18 +127,16 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 /* .nav .tel_no_top_collapsed { display: inherit; padding-left: 15px; } */
 
 @media ( min-width: 992px ) {
-	.navbar {
-		min-height: 90px;
-	}
+	.contentPage { margin-top: 60px; }
+	.contentPage .carousel-indicators { display: block; }
 	
-	.navbar-brand img{
-		height:60px;
-	}
+	.affix { display: inherit; }
 	
-	.navbar-nav {
-		/* height: 70px; */
-		padding-top: 20px;
-	}
+	.navbar { min-height: 90px; }
+	
+	.navbar-brand img{ height:60px; }
+	
+	.navbar-nav { /* height: 70px; */ padding-top: 20px; }
 	
 	.nav .tel_no_top { display: inherit; }
 	.nav .phone-number-collapsed { display: none; }

@@ -52,7 +52,9 @@
 	width:321px; 
 	min-height:121px;
 }
- */
+*/
+
+/* 
 #home .symtom1{
 	background:URL('${cp}/image/m_b1.png');
 }
@@ -65,6 +67,8 @@
 #home .symtom4{
 	background:URL('${cp}/image/m_b4.png');
 }
+ */
+
 #home .carousel-inner img{
 	width:100%;
 }
@@ -163,6 +167,12 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
+		$('.symtom_container img:eq(0)').click(function() { location.href = "${cp}/clinic1.do"; });
+		$('.symtom_container img:eq(1)').click(function() { location.href = "${cp}/clinic2.do"; });
+		$('.symtom_container img:eq(2)').click(function() { location.href = "${cp}/clinic3.do"; });
+		$('.symtom_container img:eq(3)').click(function() { location.href = "${cp}/clinic4.do"; });
+		
+		/* 
 		$(".symtom1").click(function() {
 			location.href = "${cp}/clinic1.do";
 		});
@@ -175,7 +185,8 @@
 		$(".symtom4").click(function() {
 			location.href = "${cp}/clinic4.do";
 		});
-
+		 */
+		 
 		$.ajax({
 			url : '${cp}/getHomeContent.ajax'
 		}).done(function(data) {

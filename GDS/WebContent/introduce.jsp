@@ -24,17 +24,17 @@ $(document).ready(function () {
 	 });
 	
 	$("#2").click(function(){
-		$("html, body").animate({scrollTop: 380}, 1000);
+		$("html, body").animate({scrollTop: 700}, 1000);
 	 });
 	$("#3").click(function(){
-		$("html, body").animate({scrollTop: 790}, 1000);
+		$("html, body").animate({scrollTop: 1780}, 1000);
 	 });
 	$("#4").click(function(){
-		$("html, body").animate({scrollTop: 1380}, 1000);
+		$("html, body").animate({scrollTop: 2360}, 1000);
 		return;
 	 });
 	$("#5").click(function(){
-		$("html, body").animate({scrollTop: 1820}, 1000);
+		$("html, body").animate({scrollTop: 2900}, 1000);
 	 });
 });
 
@@ -48,7 +48,7 @@ $(document).ready(function () {
 				<li><a id ="1" class="a_link a_link_clicked" href="#">인사말</a></li>
 				<li><a id ="2" class="a_link a_link_unClicked" href="#">추천사</a></li>
 				<li><a id ="3" class="a_link a_link_unClicked" href="#">협력기관</a></li>
-				<li><a id ="4" class="a_link a_link_unClicked" href="#">운dp영방식 및 시간</a></li>
+				<li><a id ="4" class="a_link a_link_unClicked" href="#">운영방식 및 시간</a></li>
 				<li><a id ="5" class="a_link a_link_unClicked" href="#">오시는길</a></li>
 			</ul>			
 		</div>
@@ -111,7 +111,7 @@ $(document).ready(function () {
             <h2 class="title">운영방식 및 시간</h2>
 	            <p>본 센터는 예약제로 운영됨이 원칙이나, 언제든 개방되어 있습니다.<br>
 				      미리 전화로 시간을 예약해 주시면 좀 더 편안하게 상담 및 치료가 가능합니다.<br>
-				      센터장 및 태균맘 상담은 100% 무료 상담이니 부담 없이 연락바랍니다.
+			    <strong style="font-weight: bold; font-size: 20px; color: #2CABEA;">센터장 및 태균맘 상담은 100% 무료 상담이니 부담 없이 연락바랍니다.</strong>
 	            </p>
             <div style="float: left; width: 60%; height: 370px;">
 	            <h3>상담예약전화</h3>

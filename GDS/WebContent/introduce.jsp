@@ -24,17 +24,17 @@ $(document).ready(function () {
 	 });
 	
 	$("#2").click(function(){
-		$("html, body").animate({scrollTop: 700}, 1000);
+		$("html, body").animate({scrollTop: 570}, 1000);
 	 });
 	$("#3").click(function(){
-		$("html, body").animate({scrollTop: 1780}, 1000);
+		$("html, body").animate({scrollTop: 1450}, 1000);
 	 });
 	$("#4").click(function(){
-		$("html, body").animate({scrollTop: 2360}, 1000);
+		$("html, body").animate({scrollTop: 2010}, 1000);
 		return;
 	 });
 	$("#5").click(function(){
-		$("html, body").animate({scrollTop: 2900}, 1000);
+		$("html, body").animate({scrollTop: 2540}, 1000);
 	 });
 });
 
@@ -46,10 +46,10 @@ $(document).ready(function () {
 		<div class="col-md-3 col-lg-2 left-side-bar affix">
 			<ul class="pull-left">
 				<li><a id ="1" class="a_link a_link_clicked" href="#">인사말</a></li>
-				<li><a id ="2" class="a_link a_link_unClicked" href="#">추천사</a></li>
-				<li><a id ="3" class="a_link a_link_unClicked" href="#">협력기관</a></li>
-				<li><a id ="4" class="a_link a_link_unClicked" href="#">운영방식 및 시간</a></li>
-				<li><a id ="5" class="a_link a_link_unClicked" href="#">오시는길</a></li>
+				<li><a id ="2" class="a_link a_link_unClicked" href="#2">추천사</a></li>
+				<li><a id ="3" class="a_link a_link_unClicked" href="#3">협력기관</a></li>
+				<li><a id ="4" class="a_link a_link_unClicked" href="#4">운영방식 및 시간</a></li>
+				<li><a id ="5" class="a_link a_link_unClicked" href="#5">오시는길</a></li>
 			</ul>			
 		</div>
 	
@@ -68,7 +68,7 @@ $(document).ready(function () {
 				<div align="right" style="font-weight: bold; font-size: 18px;">지디에스 분당중앙센터장 <strong style="font-size: 22px;">김학기</strong></div>
   				</div>
 				<div class="col-md-6 col-lg-6" style="text-align: center;">
-	  				<img src="image/children.jpg" style="width: 120%;">
+	  				<img src="image/insamal.png" style="width: 120%;">
 				</div>
 				</div>
 				<div>
@@ -84,8 +84,8 @@ $(document).ready(function () {
             <hr>
             <h1 class="title">추천사</h1>
             <div class="detail">
-				<div style="float: left; width: 100%; padding-left:10%;">
-	  				<img src="image/children2.jpg" style="width: 100%;">
+				<div style="float: left; width: 100%;">
+	  				<img src="image/chuchunsa.jpg" style="width: 100%;">
 				</div>
 	            <div style="float: left; width: 100%;">
 		            <div style="color:#2CABEA; font-weight: bold; font-size: 18px;">우리 아이들의 감각적 문제를 정확히 진단하고, 가장 효율적 치료법을 제시할 수 있는 국내 유일의 공간이라 생각합니다.</div>
@@ -125,7 +125,7 @@ $(document).ready(function () {
 						<span class="big_blue">토 : 오전 10시 ~ 오후 3시</span><br>
 						<br>
 						사전에 예약된 경우는 야간이나 주말에도 센터 이용 및 상담 가능합니다.<br>
-						고압 산소 치료의 경우 365일 24시간 개방 체제로 언제든지 자유롭게 이용가능합니다.
+						고압 산소 치료의 경우 365일 24시간 개방 체제로 언제든지 자유롭게 이용가능합니다.<br><br>
 				</div>
 				<div style="float: left; width: 40%; padding-left:10%; margin-top: 10px;">
 	 				<img src="image/im_10.png">

@@ -19,6 +19,78 @@
 
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- <button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar-main-header" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button> -->
+				<a class="navbar-brand" href="http://gdsdream.com/"><span>
+					<img alt="Brand" src="${cp}/image/logo_c.png">
+					<img src="${cp}/image/tomatis.png">
+				</span></a>
+			</div>
+			
+			<!-- collapsable navbar -->
+			<div class="navbar-right collapse navbar-collapse" id="navbar-main-header">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="${cp}/introduce.do">센터소개</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							뇌신경/감각 클리닉
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-left" role="menu">
+							<li><a href="${cp}/clinic1.do">자폐 스펙트럼 장애</a></li>
+							<li><a href="${cp}/clinic2.do">주의력 결핍/과잉행동장애</a></li>
+							<li><a href="${cp}/clinic3.do">학습장애</a></li>
+							<li><a href="${cp}/clinic4.do">사회성 부족</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							프로그램<span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-left" role="menu">
+							<li><a href="${cp}/program_deasa.do">대사검사</a></li>
+							<li><a href="${cp}/program_goap.do">고압산소치료</a></li>
+							<li><a href="${cp}/program_chunggigac.do">청지각프로그램</a></li>
+							<li><a href="${cp}/program_sigigac.do">시지각프로그램</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							커뮤니티 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-left" role="menu">
+							<li><a href="${cp}/blog/selectBlogAll.do">별 헤는 밤</a></li>
+							<li><a href="${cp}/board/enter.do">공지사항</a></li>
+							<li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="${cp}/counsel.do">
+							상담신청
+							<span class="phone-number-collapsed">&nbsp;(031-711-3546 / 010-3247-3535)</span>
+						</a>
+					</li>
+					<li class="tel_no_top">
+						<a href="${cp}/counsel.do"><span class="phone">
+							<img src="${cp }/image/icon_1.png">
+							<img src="${cp }/image/tel_no.png">
+						</span></a>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+	
+	<%-- <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
@@ -88,7 +160,7 @@
 			</div>
 			<!--/.nav-collapse -->
 		</div>
-	</nav>
+	</nav> --%>
 
 	<div class="contentPage">
 		<c:choose>

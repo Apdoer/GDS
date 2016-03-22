@@ -165,6 +165,19 @@
 
 
 <script type="text/javascript">
+	window.onload=function(){
+		
+		var rv = -1;
+		var agent = navigator.userAgent.toLowerCase(); 
+		var re = new RegExp("trident/([0-9]{1,}[\.0-9]{0,})");
+		if(re.exec(agent) != null)
+			rv = parseFloat(RegExp.$1);
+		
+	    if(rv == "4" || rv == "3"){
+	    	location.href = "${cp}/error.jsp"
+	    }
+	}
+	
 	$(document).ready(function() {
 
 		$('.symtom_container img:eq(0)').click(function() { location.href = "${cp}/clinic1.do"; });

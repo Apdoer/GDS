@@ -126,6 +126,11 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 .nav .phone-number-collapsed { display: inline; font-weight: bolder; }
 /* .nav .tel_no_top_collapsed { display: inherit; padding-left: 15px; } */
 
+/* disabling navbar-collapse */
+.container { min-width: 750px !important; }
+.navbar-header { float: left !important; }
+.navbar-nav > li { float: left !important; }
+
 @media ( min-width: 992px ) {
 	.contentPage { margin-top: 90px; }
 	.contentPage .carousel-indicators { display: block; }

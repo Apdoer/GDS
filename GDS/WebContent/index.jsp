@@ -208,6 +208,19 @@
 			</div>
 		</div>
 	</footer>
-
+<script type="text/javascript">
+	window.onload=function(){
+		
+		var rv = -1;
+		var agent = navigator.userAgent.toLowerCase(); 
+		var re = new RegExp("trident/([0-9]{1,}[\.0-9]{0,})");
+		if(re.exec(agent) != null)
+			rv = parseFloat(RegExp.$1);
+		
+	    if(rv == "4" || rv == "3"){
+	    	location.href = "${cp}/error.jsp"
+	    }
+	}
+</script>
 </body>
 </html>

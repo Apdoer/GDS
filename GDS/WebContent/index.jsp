@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, height=device-height">
 <title>지디에스분당중앙센터</title>
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="${cp}/css/bootstrap.css">
@@ -18,7 +17,7 @@
 <body>
 
 	<!-- Fixed navbar -->
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="http://gdsdream.com/"><span>
@@ -33,7 +32,7 @@
 						<a href="${cp}/introduce.do">센터소개</a>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
 							뇌신경/감각 클리닉
 							<span class="caret"></span>
 						</a>
@@ -45,7 +44,7 @@
 						</ul>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
 							프로그램<span class="caret"></span></a>
 						<ul class="dropdown-menu dropdown-menu-left" role="menu">
 							<li><a href="${cp}/program_deasa.do">대사검사</a></li>
@@ -55,7 +54,7 @@
 						</ul>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
 							커뮤니티 <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-left" role="menu">
@@ -94,10 +93,10 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="in_line col-md-2 col-md-offset-1">
+				<div class="in_line col-xs-2 col-xs-offset-1">
 					<img class="footer-logo" src="${cp }/image/logo_g.png">
 				</div>
-				<div class="in_line footer_info col-md-8">
+				<div class="in_line footer_info col-xs-8">
 					<dl class="dl-horizontal">
 						<dt>사업장 소재지</dt>
 						<dd>경기도 성남시 분당구 동막로 245번길 12 1층 지디에스 분당중앙센터</dd>
@@ -126,7 +125,6 @@
 			</div>
 		</div>
 	</footer>
-<<<<<<< HEAD
 
 	<script type="text/javascript">
 		window.onload=function(){
@@ -143,21 +141,5 @@
 		}
 	</script>
 	
-=======
-<script type="text/javascript">
-	window.onload=function(){
-		
-		var rv = -1;
-		var agent = navigator.userAgent.toLowerCase(); 
-		var re = new RegExp("trident/([0-9]{1,}[\.0-9]{0,})");
-		if(re.exec(agent) != null)
-			rv = parseFloat(RegExp.$1);
-		
-	    if(rv == "4" || rv == "3"){
-	    	location.href = "${cp}/error.jsp"
-	    }
-	}
-</script>
->>>>>>> branch 'master' of https://github.com/Apdoer/GDS.git
 </body>
 </html>

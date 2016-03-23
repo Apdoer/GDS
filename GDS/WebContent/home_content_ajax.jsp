@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-xs-4">
 		<h2>공지사항</h2>
 		<hr class="hr_margin_top_0">
 		<table class="table">
@@ -40,7 +40,7 @@
 			</c:forEach>
 		</table>
 	</div>
-	<div class="col-md-4">
+	<div class="col-xs-4">
 		<h2>별헤는밤</h2>
 		<hr class="hr_margin_top_0">
 		<table>
@@ -52,7 +52,7 @@
 			</tr>
 		</table>
 	</div>
-	<div class="col-md-4">
+	<div class="col-xs-4">
 		<h2>
 			<img src="${cp}/image/icon_2.png">&nbsp;찾아오시는 길
 		</h2>

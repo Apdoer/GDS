@@ -1,8 +1,8 @@
 html,body{height:100%}
 body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 
-.contentPage { min-height: 100%; margin-top: 60px; }
-.contentPage .carousel-indicators { display: none; }
+/* .contentPage { min-height: 100%; margin-top: 90px; } */
+.contentPage .carousel-indicators { display: block; }
 
 .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
 .left-side-bar ul li { border-bottom: 1px solid #eee; }
@@ -17,10 +17,6 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 }
 .title h1{
 	font-weight: 600;
-}
-
-.affix {
-	display: none;
 }
 
 #clinic .left-side-bar ul { list-style: none; margin: 16px 0px 0px 0px; padding: 0px; width: 75%; }
@@ -50,14 +46,13 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 	margin-bottom: 10px;
 }
 
-.content .title-horizontal { position: inherit; }
-.content .title-horizontal *:first-child { display: block; margin-bottom: 16px; }
+.content .title-horizontal { position: relative; margin-bottom: 20px; }
+.content .title-horizontal *:first-child { display: inline-block; margin-bottom: 0px; font-weight: 600; }
 .content .title-horizontal div.title-detail { 
-	display: block; 
-	position: inherit;
+	display: inline-block;
+	position: absolute;
 	bottom: 0px;
 	margin-left: 12px;
-	margin-bottom: 12px;
 	color: #888;
 	font-size: 0.9em;
 	line-height: normal;
@@ -111,6 +106,7 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 .navbar {
 	border-top: 8px solid #2cabea;
 	border-bottom: 2px solid #2cabea;
+	min-height: 90px;
 }
 
 .navbar-brand {
@@ -118,42 +114,27 @@ body{margin:0;font-family:'Nanum Square', 'NanumBarunGothic';}
 }
 
 .navbar-brand img{
-	height: 34px;
+	height: 60px;
 	padding-top: 0;
 }
 
-.nav .tel_no_top { display: none; }
-.nav .phone-number-collapsed { display: inline; font-weight: bolder; }
-/* .nav .tel_no_top_collapsed { display: inherit; padding-left: 15px; } */
+.navbar-default {
+	margin-bottom: 0;	
+}
+
+.navbar-nav { 
+	/* height: 70px; */
+	padding-top: 20px; 
+}
 
 /* disabling navbar-collapse */
-.container { min-width: 750px !important; }
-.navbar-header { float: left !important; }
-.navbar-nav > li { float: left !important; }
+.navbar-nav { float: left; margin: 0 }
+.navbar-nav>li { float: left } .navbar-nav>li>a { padding-top: 15px; padding-bottom: 15px }
 
-@media ( min-width: 992px ) {
-	.contentPage { margin-top: 90px; }
-	.contentPage .carousel-indicators { display: block; }
-	
-	.content .title-horizontal { position: relative; margin-bottom: 20px; }
-	.content .title-horizontal *:first-child { display: inline-block; margin-bottom: 0px; font-weight:600; }
-	.content .title-horizontal div.title-detail {
-		display: inline-block;
-		position: absolute;
-	}
-	
-	.affix { display: inherit; }
-	
-	.navbar { min-height: 90px; }
-	
-	.navbar-brand img{ height:60px; }
-	
-	.navbar-nav { /* height: 70px; */ padding-top: 20px; }
-	
-	.nav .tel_no_top { display: inherit; }
-	.nav .phone-number-collapsed { display: none; }
-	/* .nav .tel_no_top_collapsed { display: none; } */
-}
+.container { width: 970px !important; }
+@media ( min-width :768px) { .container { width: 970px !important; } }
+@media ( min-width: 992px ) { .container { width: 970px !important; } }
+@media ( min-width :1200px) { .container { width: 970px !important; } }
 
 /* 
 @font-face{

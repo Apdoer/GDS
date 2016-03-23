@@ -2,13 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
-#board { padding-top: 20px; }
-#board .left-side-bar ul { list-style: none; margin: 0px; padding: 0px; width: 75%; }
+#board .left-side-bar ul { list-style: none; width: 75%; }
 #board .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #board .left-side-bar ul li:last-child { border: 0px; }
 #board .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
-#board .right-article-list { border-left: 1px solid #eee; padding-bottom: 16px; }
+#board .right-article-list { padding-top: 16px; padding-bottom: 16px; }
 #board .right-article-list .articles { font-size: 0.9em; }
 #board .right-article-list .articles table { margin-bottom: 0px; }
 #board .right-article-list .articles table th { text-align: center; }
@@ -30,57 +29,25 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<c:choose>
-	<c:when test="${fromAdmin}">
-	
-		<div id="board">
-	
-			<!-- board content -->
-			<div class="right-article-list">
-			
-				<div class="articles">
-					<!-- load board list by ajax -->
-				</div>
-				
-				<a class="btn btn-default pull-right" href="${cp}/admin/board/form.do">글쓰기</a>
-			
-			</div>
-		
-		</div>
-	
-	</c:when>
-	<c:otherwise>
-	
-		<div id="board" class="container">
-	
-			<div class="row">
-			
-				<!-- board left-side-bar -->
-				<div class="col-md-2 left-side-bar">
-				
-					<ul class="pull-right">
-						<li><a href="${cp}/board/enter.do" style="font-weight: bold;">공지사항</a></li>
-						<li><a href="${cp}/qna/enter.do">온라인 문의</a></li>
-					</ul>
-				
-				</div>
-				
-				<!-- board content -->
-				<div class="col-md-9 right-article-list">
-				
-					<div class="articles">
-						<!-- load board list by ajax -->
-					</div>
-					
-				</div>
-				
-			</div>
-			
-		</div>
-	
-	</c:otherwise>
-</c:choose>
+<div id="board" class="container">
 
+	<!-- board content -->
+	<h2 class="h2">공지사항</h2>
+	
+	<div class="right-article-list">
+	
+		<div class="articles">
+			<!-- load board list by ajax -->
+		</div>
+		
+		<c:if test="${fromAdmin}">
+			<a class="btn btn-default pull-right" href="${cp}/admin/board/form.do">글쓰기</a>
+		</c:if>
+	
+	</div>
+
+</div>
+	
 <script type="text/javascript">
 function getBoard(id) {
 	location.href = "get.do?id=" + id; 	

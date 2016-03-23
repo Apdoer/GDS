@@ -58,7 +58,7 @@
 
 <div id="program_deasa" class="container">
 
-	<div class="col-md-3 col-lg-2 left-side-bar affix">
+	<div class="col-xs-3 col-xs-2 left-side-bar affix">
 		<ul class="pull-left">
 			<li><a class="a_link_unClicked" href="${cp}/program_deasa.do">대사검사</a></li>
 			<li><a class="a_link_unClicked" href="${cp}/program_goap.do">고압산소치료</a></li>
@@ -69,7 +69,7 @@
 	</div>
 
 	<div class="row">
-		<div class=" col-md-8 col-md-offset-3 content">
+		<div class=" col-xs-8 col-xs-offset-3 content">
 			<div>
 
 				<div class="title-horizontal">
@@ -112,9 +112,9 @@
 			</div>
 			
 			<div class="row">
-				<img src="image/p_01.png" class="col-md-4 col-lg-4">
-				<img src="image/p_02.png" class="col-md-4 col-lg-4">
-				<img src="image/p_03.png" class="col-md-4 col-lg-4">
+				<img src="image/p_01.png" class="col-xs-4 col-xs-4">
+				<img src="image/p_02.png" class="col-xs-4 col-xs-4">
+				<img src="image/p_03.png" class="col-xs-4 col-xs-4">
 			</div>
 			
 			<a href="${cp}/counsel.do">

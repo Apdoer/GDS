@@ -33,7 +33,7 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
+			<div class="col-xs-3 sidebar">
 				<ul class="nav nav-sidebar">
 					<li class="menu_list"><a href="${cp}/admin/counsel/enter.do">상담신청현황</a></li>
 					<li class="menu_list"><a href="${cp}/admin/category/enter.do">상담과목관리</a></li>
@@ -44,7 +44,7 @@
 				</ul>
 			</div>
 
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+			<div class="col-xs-9 col-xs-offset-3">
 				<c:choose>
 					<c:when test="${not empty contentPage}">
 						<jsp:include page="${requestScope.contentPage }" />

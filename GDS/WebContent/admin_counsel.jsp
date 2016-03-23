@@ -35,11 +35,11 @@
 	
 	<div class="row">
 	
-		<div class="col-md-6 left-counsel-list">
+		<div class="col-xs-6 left-counsel-list">
 			<!-- load counsel list by ajax -->
 		</div>
 
-		<div class="col-md-6 right-counsel-content">
+		<div class="col-xs-6 right-counsel-content">
 			<!-- load individual counsel content by ajax -->
 		</div>
 		

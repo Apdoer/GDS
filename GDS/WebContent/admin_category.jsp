@@ -18,11 +18,11 @@
 	
 	<div class="row">
 	
-		<div class="col-md-6 ">
+		<div class="col-xs-6 ">
 		
 			<form onsubmit="javascript: createCategory(); return false;">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-xs-6">
 						<div class="input-group">
 							<input type="text" name="name" class="form-control" placeholder="상담과목명">
 							<span class="input-group-btn">

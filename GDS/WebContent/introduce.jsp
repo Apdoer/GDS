@@ -43,7 +43,7 @@ $(document).ready(function () {
 <div id="introduce" class="container">
 		
 		<!-- board left-side-bar -->
-		<div class="col-xs-3 col-xs-2 left-side-bar affix">
+		<div class="col-xs-2 left-side-bar affix">
 			<ul class="pull-left">
 				<li><a id ="1" class="a_link a_link_clicked" href="#">인사말</a></li>
 				<li><a id ="2" class="a_link a_link_unClicked" href="#2">추천사</a></li>

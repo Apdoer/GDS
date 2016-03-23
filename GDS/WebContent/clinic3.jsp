@@ -11,7 +11,7 @@
 </style>
 
 <div id="clinic" class="container">
-	<div class="col-md-3 col-lg-2 left-side-bar affix">
+	<div class="col-xs-3 col-xs-2 left-side-bar affix">
 		<ul class="pull-left">
 			<li><a class="a_link_unClicked" href="${cp }/clinic1.do">자폐스펙트럼장애</a></li>
 			<li><a class="a_link_unClicked" href="${cp }/clinic2.do">주의력결핍/<br>과잉행동
@@ -24,7 +24,7 @@
 
 	<div class="row">
 
-		<div class="col-md-8 col-md-offset-3 content">
+		<div class="col-xs-8 col-xs-offset-3 content">
 
 			<div class="title-horizontal">
 				<h1>학습장애</h1>
@@ -56,7 +56,7 @@
 				취미를 잃기가 쉽습니다. 그러나 사물이나 그림, 도표의 의미를 받아들이는 능력에는 지장이 없어 지능 저하로 인한 학습
 				장애와는 감별됩니다.</p>
 			<img src="${cp }/image/clinic3_check.png"
-				style="margin-left: 10%; margin-top: 3%; margin-bottom: 5%;">
+				style="margin-bottom: 5%;">
 			<h5>2. 쓰기 장애</h5>
 			<p class="detail">철자의 오류가 매우 많고, 반복적인 학습에도 불구하고 철자의 혼란이 교정되지 않으며,
 				일기 쓰기 등에서 내용이 매우 미숙하고 문법적인 오류를 많이 보입니다.</p>

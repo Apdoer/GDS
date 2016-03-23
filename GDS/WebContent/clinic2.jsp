@@ -20,7 +20,7 @@
 <div id="clinic" class="container">
 
 	<!-- board left-side-bar -->
-	<div class="col-md-3 col-lg-2 left-side-bar affix">
+	<div class="col-xs-3 col-xs-2 left-side-bar affix">
 		<ul class="pull-left">
 			<li><a class="a_link_unClicked" href="${cp }/clinic1.do">자폐스펙트럼장애</a></li>
 			<li><a class="a_link_clicked" href="${cp }/clinic2.do">주의력
@@ -32,7 +32,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-8 col-md-offset-3 content">
+		<div class="col-xs-8 col-xs-offset-3 content">
 			<div>
 				<div class="title-horizontal">
 					<h1>주의력 결핍/과잉행동 장애</h1>
@@ -79,8 +79,7 @@
 						</ul>
 
 					</div>
-
-					<br> <img src="${cp }/image/impact_3.png">
+						 <img src="${cp }/image/impact_3.png">
 				</div>
 			</div>
 

@@ -11,7 +11,7 @@
 </style>
 
 <div id="clinic" class="container">
-	<div class="col-xs-3 col-xs-2 left-side-bar affix">
+	<div class="col-xs-2 left-side-bar affix">
 		<ul class="pull-left">
 			<li><a class="a_link_unClicked" href="${cp }/clinic1.do">자폐스펙트럼장애</a></li>
 			<li><a class="a_link_unClicked" href="${cp }/clinic2.do">주의력결핍/<br>과잉행동

@@ -66,7 +66,6 @@ function counselSubmit(){
 
 <style type="text/css">
 #counsel{
-	margin-top:30px;
 	margin-bottom:30px;
 }
 #counsel .intro{

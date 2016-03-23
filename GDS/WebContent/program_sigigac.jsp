@@ -40,7 +40,7 @@
 
 <div id="program_deasa" class="container">
 
-	<div class="col-xs-3 col-xs-2 left-side-bar affix">
+	<div class="col-xs-2 left-side-bar affix">
 		<ul class="pull-left">
 			<li><a class="a_link_unClicked" href="${cp}/program_deasa.do">대사검사</a></li>
 			<li><a class="a_link_unClicked" href="${cp}/program_goap.do">고압산소치료</a></li>
@@ -52,7 +52,7 @@
 	</div>
 
 	<div class="row">
-		<div class=" col-xs-8 col-xs-offset-3 content">
+		<div class="col-xs-8 col-xs-offset-3 content">
 			<div>
 				<div class="title-horizontal">
 					<h1>시지각 프로그램</h1>

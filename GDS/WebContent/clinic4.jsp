@@ -7,7 +7,7 @@
 
 <div id="clinic" class="container">
 	<!-- board left-side-bar -->
-	<div class="col-md-3 col-lg-2 left-side-bar affix">
+	<div class="col-xs-3 col-xs-2 left-side-bar affix">
 		<ul class="pull-left">
 			<li><a class="a_link_unClicked" href="${cp }/clinic1.do">자폐스펙트럼장애</a></li>
 			<li><a class="a_link_unClicked" href="${cp }/clinic2.do">주의력
@@ -19,7 +19,7 @@
 	</div>
 	<div class="row">
 
-		<div class="col-md-8 col-md-offset-3 content">
+		<div class="col-xs-8 col-xs-offset-3 content">
 			
 				<div class="title-horizontal">
 					<h1>사회성부족</h1>
@@ -37,7 +37,7 @@
 					등으로 인해 왕따나, 자존감 추락 등으로 이어질 수도 있으므로 관리가 필요합니다.</p>
 
 				<img src="${cp }/image/clinic4_check.png"
-					style="margin-left: 10%; margin-bottom: 5%;">
+					style=" margin-bottom: 5%;">
 
 				<h4>
 					<img src="${cp }/image/icon4.png"> 사회성을 회복하려면?

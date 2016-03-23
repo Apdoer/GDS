@@ -20,7 +20,7 @@
 </style>
 <div id="program_deasa" class="container">
 
-	<div class="col-md-3 col-lg-2 left-side-bar affix">
+	<div class="col-xs-3 col-xs-2 left-side-bar affix">
 		<ul class="pull-left">
 			<li><a class="a_link_unClicked" href="${cp}/program_deasa.do">대사검사</a></li>
 			<li><a class="a_link_clicked" href="${cp}/program_goap.do">고압산소치료</a></li>
@@ -32,7 +32,7 @@
 
 	<div class="row">
 		
-		<div class=" col-md-8 col-md-offset-3 content">
+		<div class=" col-xs-8 col-xs-offset-3 content">
 		
 			<div>
 				
@@ -42,10 +42,10 @@
 				</div>
 
 				<div class="detail row">
-					<div class="col-md-6 col-lg-6">
+					<div class="col-xs-6 col-xs-6">
 						사람은 음식을 먹지 않고 몇 주 동안 지낼 수 있고 물 없이도 몇 일을 견딜 수 있지만, 산소 없이는 단 몇 분도 살 수가 없습니다. 특히 뇌의 일부에서 산소를 제거하면 심각한 뇌손상에 따른 감각의 이상으로 인하여 자폐/ADHD/아스퍼거 등 두뇌 관련 장애가 발생하게 됩니다. 반면에 주요 신체 기관(뇌, 심장 및 폐)에서 산소를 적절하게 사용하는 경우 이러한 질환에서의 개선 효과를 통해 각성 상태, 운동 능력 면에서 긍정적인 상태로 회복될 수 있습니다.
 					</div>
-					<div class="col-md-6 col-lg-6">
+					<div class="col-xs-6 col-xs-6">
 						<img src="image/im_2.png" style="width: 100%;">
 					</div>
 				</div>
@@ -61,7 +61,7 @@
 						헨리의 기체 법칙(Henry's gas law)에 의하면 압력 하의 산소는 사용한 압력에 비례하여 신체 조직이나 체액으로 녹아 들어간다고 합니다.
 					</div>
 					<div class="row">
-						<div class="col-md-7 col-lg-6">
+						<div class="col-xs-7 col-xs-6">
 							<div style="margin-bottom: 8px;">
 								체내에 유입된 산소는 혈장, 세포, 뼈, 소변, 혈액, 근육 및 뇌척수액(Cerebral spinal fluid)으로 용해되고 이 과정에서 뇌의 일부 세포, 특히 다양한 외상으로 손상된 뉴런이 휴면상태에서 깨어날 수 있다는 것입니다.
 							</div>
@@ -69,7 +69,7 @@
 								즉, 압력이 가해지지 않는 산소치료는 효과적이지 못하며, 가압 챔버 내의 “고압 환경” 에서 100% 산소를 흡입할 수 있는 환경이 조성될 수 있습니다.
 							</div>
 						</div>
-						<div class="col-md-5 col-lg-6">
+						<div class="col-xs-5 col-xs-6">
 							<img src="image/im_3.png" style="width: 100%;">
 						</div>
 					</div>

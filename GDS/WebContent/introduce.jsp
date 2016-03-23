@@ -24,17 +24,17 @@ $(document).ready(function () {
 	 });
 	
 	$("#2").click(function(){
-		$("html, body").animate({scrollTop: 570}, 1000);
+		$("html, body").animate({scrollTop: 790}, 1000);
 	 });
 	$("#3").click(function(){
-		$("html, body").animate({scrollTop: 1450}, 1000);
+		$("html, body").animate({scrollTop: 1720}, 1000);
 	 });
 	$("#4").click(function(){
-		$("html, body").animate({scrollTop: 2010}, 1000);
+		$("html, body").animate({scrollTop: 2200}, 1000);
 		return;
 	 });
 	$("#5").click(function(){
-		$("html, body").animate({scrollTop: 2540}, 1000);
+		$("html, body").animate({scrollTop: 2730}, 1000);
 	 });
 });
 
@@ -65,13 +65,13 @@ $(document).ready(function () {
 	            <div class="strong">지디에스 분당중앙센터는 발달장애/학습장애로 어려움을 겪고 있는 “조금은 특별한” 우리 아이들을 위한 공간입니다.</div>
 	  			뇌를 활성화 하는 적절한 훈련, 감각 해소, 그리고 통합의학적  (Bio-med) 접근을 통해 우리 아이들의 문제는 충분히 개선될 수 있습니다.
 	  			<div class="strong">부모의 마음으로 우리 아이들이 밝고 행복한 미래를 맞이할 수 있도록 최선을 다하겠습니다.</div>
-				<div align="right" style="font-weight: bold; font-size: 18px;">지디에스 분당중앙센터장 <strong style="font-size: 22px;">김학기</strong></div>
+				<div align="right" style="font-weight: bold; font-size: 18px; margin-top: 3%;">지디에스 분당중앙센터장 <strong style="font-size: 22px;">김학기</strong></div>
   				</div>
 				<div class="col-xs-6" style="text-align: center;">
 	  				<img src="image/insamal.png" style="width: 120%;">
 				</div>
 				</div>
-				<div>
+				<div style="margin-top: 5%;">
 					<div style="font-weight: bold; font-size: 18px;"><strong style="font-size: 22px;">김학기</strong>센터장 </div>
 				 	<img src="image/point2.png" style="width: 2.5%;"> 서강대 경제학과 졸업<br>
 					<img src="image/point2.png" style="width: 2.5%;"> 지디에스 분당중앙센터 센터장<br>
@@ -84,17 +84,19 @@ $(document).ready(function () {
             <hr>
             <h1 class="title">추천사</h1>
             <div class="detail">
-				<div style="float: left; width: 100%;">
-	  				<img src="image/chuchunsa.jpg" style="width: 100%;">
+            <div class="row">
+				<div class="col-xs-12" style="float: left; width: 100%; margin-top: 5%;">
+	  				<img src="image/chuchunsa.jpg" style="width: 100%; ">
 				</div>
-	            <div style="float: left; width: 100%;">
+	            <div class="col-xs-12" style="float: left; width: 100%; margin-top: 8%;" >
 		            <div style="color:#2CABEA; font-weight: bold; font-size: 18px;">우리 아이들의 감각적 문제를 정확히 진단하고, 가장 효율적 치료법을 제시할 수 있는 국내 유일의 공간이라 생각합니다.</div>
 		            	더욱이 분당중앙센터내에 우리세상발달학교, 우리세상특수대안학교 개교를 통해 감각 해소를 위한 국내 최대 규모의 감각 통합실과 대형 트렘폴린 장을 완비하였습니다.
 		            	같은 아픔을 겪는 부모들과 대화하는 곳인 만큼 조금도 망설이지 말고 문을 두드려 주세요.
 	      	        <div style="color:#2CABEA; font-weight: bold; font-size: 18px;">발달장애/학습장애 아동을 위한 해답, 분명이 있습니다.</div>  
-					<div align="right" style=" font-weight: bold; font-size: 18px;">태균맘 <strong style="font-size: 22px;">황순재 대표</strong></div>
+					<div align="right" style=" font-weight: bold; font-size: 18px; margin-top: 3%;">태균맘 <strong style="font-size: 22px;">황순재 대표</strong></div>
 				</div>
-				<div style="margin-top: 10px;">
+				</div>
+				<div style="margin-top: 5%;">
 					<div style="font-weight: bold; font-size: 18px;"><strong style="font-size: 22px;">황순재</strong>대표</div>
 				 	<img src="image/point2.png" style="width: 2.5%;"> 고려대 사회학과 졸업<br>
 					<img src="image/point2.png" style="width: 2.5%;"> 대구대 일반대학원 특수교육 석사<br>

@@ -8,8 +8,6 @@
 #qna_form .left-side-bar ul li:last-child { border: 0px; }
 #qna_form .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
-#qna_form .form-horizontal a.btn { margin-left: 16px; }
-
 /* 공통 */
 .paginator { text-align: center; }
 .paginator ul.pagination li a,
@@ -50,9 +48,8 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-2">
-				<a href="${cp}/qna/enter.do" class="btn btn-default pull-right">목록</a>
+				<a href="${cp}/qna/enter.do" class="btn btn-default">목록으로</a>
 				<a href="javascript: submitQna();" class="btn btn-default pull-right">글쓰기</a>
-				<!-- <button class="btn btn-default pull-right" type="submit">글쓰기</button> -->
 			</div>
 		</div>
 	</form>

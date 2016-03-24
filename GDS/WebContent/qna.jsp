@@ -2,14 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
-#qna { padding-top: 20px; }
 #qna .left-side-bar ul { list-style: none; margin: 0px; padding: 0px; width: 75%; }
 #qna .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #qna .left-side-bar ul li:last-child { border: 0px; }
 #qna .left-side-bar ul li a { display: inline-block; padding: 8px 16px; color: #aaa; font-size: 1.2em; text-decoration: none; }
 
-#qna .right-article-list { border-left: 1px solid #eee; }
-#qna .right-article-list .articles { font-size: 0.9em; margin-bottom: 32px; }
+#qna .right-article-list { padding-top: 16px; }
+#qna .right-article-list .articles { font-size: 0.9em; }
 #qna .right-article-list .articles table { margin-bottom: 0px; }
 #qna .right-article-list .articles table th { text-align: center; }
 #qna .right-article-list .articles table th,
@@ -31,58 +30,26 @@
 .buttons { margin-bottom: 32px; text-align: right; }
 </style>
 
-<c:choose>
-	<c:when test="${fromAdmin}">
+<div id="qna" class="container">
+
+	<!-- board content -->
+	<h2 class="h2">온라인 문의</h2>
 	
-		<div id="qna">
+	<div class="right-article-list">
 	
-			<!-- board content -->
-			<div class="right-article-list">
-			
-				<div class="articles">
-					<!-- load qna list by ajax -->
-				</div>
-				
-			</div>
-		
+		<div class="articles">
+			<!-- load qna list by ajax -->
 		</div>
 		
-	</c:when>
-	<c:otherwise>
-	
-		<div id="qna" class="container">
-	
-			<div class="row">
-		
-				<!-- board left-side-bar -->
-				<div class="col-md-2 left-side-bar">
-				
-					<ul class="pull-right">
-						<li><a href="${cp}/board/enter.do">공지사항</a></li>
-						<li><a href="${cp}/qna/enter.do" style="font-weight: bold;">온라인 문의</a></li>
-					</ul>
-				
-				</div>
-				
-				<!-- board content -->
-				<div class="col-md-9 right-article-list">
-				
-					<div class="articles">
-						<!-- load qna list by ajax -->
-					</div>
-					
-					<div class="buttons">
-						<a href="${cp}/qna/form.do" class="btn btn-default">글쓰기</a>
-					</div>
-				
-				</div>
-				
+		<c:if test="${not fromAdmin}">
+			<div class="buttons">
+				<a href="${cp}/qna/form.do" class="btn btn-default">글쓰기</a>
 			</div>
+		</c:if>
 		
-		</div>
-	
-	</c:otherwise>
-</c:choose>
+	</div>
+
+</div>
 
 <script type="text/javascript">
 function getQna(id) {

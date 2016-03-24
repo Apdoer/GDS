@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <style>
-#qna { padding-top: 20px; }
+#qna { padding-top: 20px; padding-bottom: 20px; }
 #qna .left-side-bar ul { list-style: none; margin: 0px; padding: 0px; width: 75%; }
 #qna .left-side-bar ul li { border-bottom: 1px solid #eee; }
 #qna .left-side-bar ul li:last-child { border: 0px; }
@@ -20,112 +20,64 @@
 .line-horizontal { border: 1px solid #222; border-radius: 1px; }
 </style>
 
-<c:choose>
-	<c:when test="${fromAdmin}">
+<div id="qna" class="container">
+
+	<!-- qna content -->
+	<div class="right-article-content">
 	
-		<div id="qna">
-	
-			<!-- qna content -->
-			<div class="right-article-content">
+		<div class="title">
+			<h1>${qna.title}</h1>
+		</div>
+		
+		<div class="line-horizontal"></div>
+		
+		<div class="content question">
+		
+			<div class="header">
+				<span>
+					<span class="glyphicon glyphicon-calendar"></span>
+					<fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
+				</span>
+			</div>
 			
-				<div class="title">
-					<h1>${qna.title}</h1>
-				</div>
-				
-				<div class="line-horizontal"></div>
-				
-				<div class="content question">
-				
-					<div class="header">
-						<span>
-							<span class="glyphicon glyphicon-calendar"></span>
-							<fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
-						</span>
-					</div>
-					
-					<div class="body">
-						${qna.question}
-					</div>
-					
-				</div>
-				
-				<div class="line-horizontal"></div>
-				
-				<div class="content answer">
+			<div class="body">
+				${qna.question}
+			</div>
+			
+		</div>
+		
+		<div class="line-horizontal"></div>
+		
+		<div class="content answer">
+		
+			<c:choose>
+				<c:when test="${fromAdmin}">
 				
 					<div class="header">
+					
 						<c:choose>
 							<c:when test="${qna.answer != null}">
-							
 								<span>
 									<span class="glyphicon glyphicon-calendar"></span>
 									<fmt:formatDate value="${qna.regdateAnswer}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
 								</span>
-							
 							</c:when>
+							
 							<c:otherwise>
-							
 								<span>아직 답변이 등록되지 않았습니다.</span>
-							
 							</c:otherwise>
 						</c:choose>
+						
 					</div>
 					
 					<div class="body">
 						<textarea class="form-control" rows="5"name="answer">${qna.answer.replaceAll("<br>", "&#13;&#10;")}</textarea>
 					</div>
 					
-				</div>
+				</c:when>
 				
-				<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록으로</a>
-				<a class="btn btn-default pull-right" href="javascript: answerQna(${qna.id});">답변 저장</a>
-				<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">글 삭제</a>
-			
-			</div>
-			
-		</div>
-	
-	</c:when>
-	<c:otherwise>
-	
-		<div id="qna" class="container">
-
-			<div class="row">
+				<c:otherwise>
 				
-				<!-- qna left-side-bar -->
-				<div class="col-md-2 left-side-bar">
-				
-					<ul class="pull-right">
-						<li><a href="${cp}/board/enter.do">공지사항</a></li>
-						<li><a href="${cp}/qna/enter.do" style="font-weight: bold;">온라인 문의</a></li>
-					</ul>
-				
-				</div>
-				
-				<!-- qna content -->
-				<div class="col-md-9 right-article-content">
-				
-					<div class="title">
-						<h1>${qna.title}</h1>
-					</div>
-					
-					<div class="line-horizontal"></div>
-					
-					<div class="content question">
-					
-						<div class="header">
-							<span>
-								<span class="glyphicon glyphicon-calendar"></span>
-								<fmt:formatDate value="${qna.regdate}" pattern="yyyy년 MM월 dd일 HH시 mm분"/> &nbsp;
-							</span>
-						</div>
-						
-						<div class="body">
-							${qna.question}
-						</div>
-						
-					</div>
-					
 					<c:if test="${qna.answer != null}">
 						<div class="line-horizontal"></div>
 						
@@ -144,18 +96,21 @@
 							
 						</div>
 					</c:if>
-					
-					<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록으로</a>
-					<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">글 삭제</a>
-					
-				</div>
 				
-			</div>
-			
+				</c:otherwise>
+			</c:choose>
+		
 		</div>
+		
+		<a class="btn btn-default pull-left" href="javascript: location.href='enter.do';">목록으로</a>
+		<c:if test="${fromAdmin}">
+			<a class="btn btn-default pull-right" href="javascript: answerQna(${qna.id});">답변 저장</a>
+			<a class="btn btn-default pull-right" href="javascript: deleteQna(${qna.id});">글 삭제</a>
+		</c:if>
 	
-	</c:otherwise>	
-</c:choose>
+	</div>
+	
+</div>
 
 <script type="text/javascript">
 function deleteQna(id) {

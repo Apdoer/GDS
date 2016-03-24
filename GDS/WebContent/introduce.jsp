@@ -60,15 +60,15 @@ $(document).ready(function () {
             
             <div class="detail">
             	<div class="row">
-            	<div class="col-xs-6">
+            	<div class="col-xs-7">
 				안녕하십니까?
 	            <div class="strong">지디에스 분당중앙센터는 발달장애/학습장애로 어려움을 겪고 있는 “조금은 특별한” 우리 아이들을 위한 공간입니다.</div>
 	  			뇌를 활성화 하는 적절한 훈련, 감각 해소, 그리고 통합의학적  (Bio-med) 접근을 통해 우리 아이들의 문제는 충분히 개선될 수 있습니다.
 	  			<div class="strong">부모의 마음으로 우리 아이들이 밝고 행복한 미래를 맞이할 수 있도록 최선을 다하겠습니다.</div>
 				<div align="right" style="font-weight: bold; font-size: 18px; margin-top: 3%;">지디에스 분당중앙센터장 <strong style="font-size: 22px;">김학기</strong></div>
   				</div>
-				<div class="col-xs-6" style="text-align: center;">
-	  				<img src="image/insamal.png" style="width: 120%;">
+				<div class="col-xs-5" style="text-align: center;">
+	  				<img src="image/insamal.png">
 				</div>
 				</div>
 				<div style="margin-top: 5%;">

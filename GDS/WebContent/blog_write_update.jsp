@@ -55,7 +55,7 @@ function submitContents(elClickedObj) {
 	<br> <br>
 	<div class="btn-group" role="group" aria-label="..." >
 	  <button type="button" class="btn btn-default" onclick="submitContents(this)" style="text-align: center;">등록</button>
-	  <button type="button" class="btn btn-default" style="text-align: center;">취소</button>
+	  <a class="btn btn-default pull-left" href="${cp}/admin/blog/enter.do">취소</a>
 	</div>
 	</form>
 </div>

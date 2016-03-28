@@ -1,6 +1,7 @@
 <%@ page language ="java" contentType ="text/html; charset=UTF-8" pageEncoding= "UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <script type= "text/javascript" src= "se2/js/HuskyEZCreator.js" charset= "utf-8"></script>
 <!-- Optional theme -->
@@ -38,7 +39,7 @@
 				<h2 class="blog-post-title">
 					<a href="${cp}/blog/selectBlog.do?id=${blogList.id}" style="color: black; text-decoration: none;">${blogList.title}</a>
 				</h2>
-				<p class="blog-post-meta">${blogList.regdate}</p>
+				<p class="blog-post-meta"><fmt:formatDate value="${blogList.regdate}" pattern="yyyy년 MM월 dd일"/></p>
 				<p class="blog-post-content">${blogList.content}</p>
 			</div>
 		</div>

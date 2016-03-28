@@ -50,10 +50,23 @@
 	</select>
 	
 	<select id="paging" parameterType="SearchVO" resultType="Board">
-		SELECT *
-		FROM board
-		WHERE delyn = 'n'
-		ORDER BY regdate DESC
+		SELECT result.*
+		FROM (
+			SELECT reversed.*
+			FROM (
+				SELECT @RNUM := @RNUM + 1 AS seq, b.*
+				FROM (
+					SELECT *
+					FROM board
+					WHERE delyn = 'n'
+					ORDER BY regdate ASC	
+				) b,
+				(
+					SELECT @RNUM := 0
+				) R
+			) reversed
+			ORDER BY reversed.regdate DESC
+		) result
 		LIMIT #{maxPageSize}
 		OFFSET #{startRowIndex}
 	</select>

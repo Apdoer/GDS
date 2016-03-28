@@ -9,6 +9,7 @@ public class QnaVO {
 	private String openyn;
 	private Date regdate;
 	private Date regdateAnswer;
+	private int seq;
 	private String name;
 	private String password;
 	private String title;
@@ -18,13 +19,15 @@ public class QnaVO {
 	
 	public QnaVO() {}
 	
-	public QnaVO(int id, String delyn, String openyn, Date regdate, Date regdateAnswer, String name, String password,
+	public QnaVO(int id, String delyn, String openyn, Date regdate, Date regdateAnswer, 
+			int seq, String name, String password,
 			String title, String question, String answer, int cnt) {
 		this.id = id;
 		this.delyn = delyn;
 		this.openyn = openyn;
 		this.regdate = regdate;
 		this.regdateAnswer = regdateAnswer;
+		this.seq = seq;
 		this.name = name;
 		this.password = password;
 		this.title = title;
@@ -71,6 +74,14 @@ public class QnaVO {
 
 	public void setRegdateAnswer(Date regdateAnswer) {
 		this.regdateAnswer = regdateAnswer;
+	}
+
+	public int getSeq() {
+		return seq;
+	}
+
+	public void setSeq(int seq) {
+		this.seq = seq;
 	}
 
 	public String getName() {
@@ -124,7 +135,7 @@ public class QnaVO {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Qna [id=");
+		builder.append("QnaVO [id=");
 		builder.append(id);
 		builder.append(", delyn=");
 		builder.append(delyn);
@@ -134,6 +145,8 @@ public class QnaVO {
 		builder.append(regdate);
 		builder.append(", regdateAnswer=");
 		builder.append(regdateAnswer);
+		builder.append(", seq=");
+		builder.append(seq);
 		builder.append(", name=");
 		builder.append(name);
 		builder.append(", password=");
@@ -149,5 +162,5 @@ public class QnaVO {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }

@@ -14,7 +14,7 @@
 		<c:when test="${searchVO.result != null && searchVO.result.size() > 0}">
 			<c:forEach items="${searchVO.result}" var="board">
 				<tr onclick="javascript: getBoard(${board.id})">
-					<td>${board.id + 1}</td>
+					<td>${board.seq}</td>
 					<td>${board.type}</td>
 					<td>${board.title}</td>
 					<td><fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/>

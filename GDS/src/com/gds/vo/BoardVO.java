@@ -8,6 +8,7 @@ public class BoardVO {
 	private String type;
 	private String delyn;
 	private Date regdate;
+	private int seq;
 	private String title;
 	private String content;
 	private int cnt;
@@ -15,11 +16,12 @@ public class BoardVO {
 	
 	public BoardVO() {}
 
-	public BoardVO(int id, String type, String delyn, Date regdate, String title, String content, int cnt, String thumbnail) {
+	public BoardVO(int id, String type, String delyn, Date regdate, int seq, String title, String content, int cnt, String thumbnail) {
 		this.id = id;
 		this.type = type;
 		this.delyn = delyn;
 		this.regdate = regdate;
+		this.seq = seq;
 		this.title = title;
 		this.content = content;
 		this.cnt = cnt;
@@ -71,6 +73,14 @@ public class BoardVO {
 		this.regdate = regdate;
 	}
 
+	public int getSeq() {
+		return seq;
+	}
+
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -114,6 +124,8 @@ public class BoardVO {
 		builder.append(delyn);
 		builder.append(", regdate=");
 		builder.append(regdate);
+		builder.append(", seq=");
+		builder.append(seq);
 		builder.append(", title=");
 		builder.append(title);
 		builder.append(", content=");

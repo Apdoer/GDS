@@ -82,8 +82,8 @@ public class BlogController {
 	         sFileInfo += "&bNewLine=true";
 	         // img 占쎈쐻占쎈뱟繹먮씮�굲占쎈쐻占쎈짗占쎌굲 title 占쎈쐻占쎈셽占쎈닰占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼣筌뤿슣�굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈솂繹먮씮�굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	         sFileInfo += "&sFileName="+ filename;;
-//	         sFileInfo += "&sFileURL="+"/GDS/upload/"+realFileNm;
-	         sFileInfo += "&sFileURL="+"/upload/"+realFileNm;
+//	         sFileInfo += "&sFileURL="+"/GDS/upload/"+realFileNm;    //local
+	         sFileInfo += "&sFileURL="+"/upload/"+realFileNm;        //server
 //		         sFileInfo += "&sFileURL="+realFileNm;
 	         PrintWriter print = response.getWriter();
 	         System.out.println(sFileInfo);
@@ -187,7 +187,7 @@ public class BlogController {
 		List<BlogVO> blogList;
 		blogList = blogService.selectBlogAll();
 		model.addAttribute("blogList", blogList);
-		model.addAttribute("contentPage", "/blog_view.jsp");
+		model.addAttribute("contentPage", "/blog.jsp");
 		return "index" ;
 	}
 	

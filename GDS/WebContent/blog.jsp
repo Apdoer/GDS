@@ -1,9 +1,6 @@
-<%@ page language ="java" contentType ="text/html; charset=UTF-8" pageEncoding= "UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
-<script type= "text/javascript" src= "se2/js/HuskyEZCreator.js" charset= "utf-8"></script>
-<!-- Optional theme -->
 <style>
 #board .left-side-bar ul { list-style: none; width: 75%; }
 #board .left-side-bar ul li { border-bottom: 1px solid #eee; }
@@ -43,7 +40,7 @@
 		</div>
 		
 		<c:if test="${fromAdmin}">
-			<a class="btn btn-default pull-right" href="${cp}/admin/blog/edit.do">글쓰기</a>
+			<a class="btn btn-default pull-right" href="${cp}/admin/board/form.do">글쓰기</a>
 		</c:if>
 	
 	</div>

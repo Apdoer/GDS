@@ -3,34 +3,37 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <input type="text" name="currentPage" value="${searchVO.currentPage}" hidden="true">
-<div class="blog-header">
-     <h1 class="blog-title">별헤는 밤</h1>
-     <!--  <p class="lead blog-description">아름다운 우리들의 동행에 참여하세요..</p> -->
-   </div>
-   <div class="buttons center">
-   <c:if test="${sessionScope.auth != null}">
-	<a href="${cp}/admin/blog/edit.do" class="btn btn-info">글 쓰기</a>
-	
+<table class="table">
+	<tr>
+		<th>글번호</th>
+		<th>제목</th>
+		<th>작성일시</th>
+		<th>조회수</th>
+	</tr>
 	<c:choose>
-	<c:when test="${not empty searchVO.result[1]}">
-	</c:when>
-	<c:otherwise>
-		<a href="${cp}/blog/deleteBlog.do?id=${blogList[0].id}" class="btn btn-info">글 삭제</a>
-		<a href="${cp}/blog/updateViewBlog.do?id=${blogList[0].id}" class="btn btn-info">글 수정</a>
-	</c:otherwise>
+		<c:when test="${searchVO.result != null && searchVO.result.size() > 0}">
+			<c:forEach items="${searchVO.result}" var="blog" varStatus="status">
+				<tr onclick="javascript: getBlog(${blog.id})" style="cursor: pointer;">
+					<td>${searchVO.totalCount-status.index}</td>
+					<td>${blog.title}</td>
+					<td><fmt:formatDate value="${blog.regdate}" pattern="yyyy년 MM월 dd일"/>
+					</td>
+					<td>${blog.cnt}</td>
+				</tr>
+			</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<tr>
+				<td colspan="5" style="padding: 32px;">
+					작성된 글이 없습니다.
+				</td>
+			</tr>
+		</c:otherwise>
 	</c:choose>
-  </c:if>
-</div>
-   <c:forEach items="${searchVO.result}" var="blogList">
-    <div class="col-md-9 blog-main">
-       <div class="blog-post">
-         <h2 class="blog-post-title"><a href="${cp}/blog/selectBlog.do?id=${blogList.id}" style="color:black; text-decoration: none;">${blogList.title}</a></h2>
-         <p class="blog-post-meta"><fmt:formatDate value="${blogList.regdate}" pattern="yyyy년 MM월 dd일"/></p>
-         <p class="blog-post-content">${blogList.content}</p>
-   		</div>
-    </div>
-</c:forEach>
-
+</table>
+<div class="articles">
+			<!-- load board list by ajax -->
+		</div>
 <div class="paginator">
 	<ul class="pagination">
 		<c:if test="${searchVO.startPageIndex > 1}">
@@ -53,3 +56,28 @@
 		</c:if>
 	</ul>
 </div>
+
+<script type="text/javascript">
+function getBlog(id) {
+	location.href = "selectBlog.do?id=" + id; 	
+}
+
+function listBoard(pageIdx) {
+	$.ajax({
+		url: '${cp}/blog/list.ajax',
+		data: { 'currentPage': pageIdx }
+	}).done(function(data) {
+		$('div.articles').html(data);
+	}).fail(function(error) {
+		alert(error);
+	});
+}
+
+$(function() {
+	listBoard(1);
+});
+</script>	
+
+
+
+

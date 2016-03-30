@@ -11,6 +11,7 @@ public class BlogVO {
 	private String title;
 	private String content;
 	private int cnt;
+	private int totalSize;
 	
 	public BlogVO() {
 		// TODO Auto-generated constructor stub
@@ -71,6 +72,14 @@ public class BlogVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	
+	public int getTotalSize() {
+		return totalSize;
+	}
+	
+	public void setTotalSize(int totalSize) {
+		this.totalSize = totalSize;
+	}
 
 	public BlogVO(int id, String type, String delyn, Date regdate, String title, String content, int cnt) {
 		super();
@@ -95,11 +104,20 @@ public class BlogVO {
 		this.content = content;
 	}
 
-	@Override
-	public String toString() {
-		return "BlogVO [id=" + id + ", type=" + type + ", delyn=" + delyn + ", regdate=" + regdate + ", title=" + title
-				+ ", content=" + content + ", cnt=" + cnt + "]";
+	public BlogVO(int id, String type, String delyn, Date regdate, String title, String content, int cnt,
+			int totalSize) {
+		super();
+		this.id = id;
+		this.type = type;
+		this.delyn = delyn;
+		this.regdate = regdate;
+		this.title = title;
+		this.content = content;
+		this.cnt = cnt;
+		this.totalSize = totalSize;
 	}
+
+	
 	
 	
 }

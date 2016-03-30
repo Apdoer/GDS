@@ -4,7 +4,7 @@
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <div class="row">
 	<div class="col-xs-4">
-		<h2>공지사항</h2>
+		<h2><a href="${cp}/board/enter.do" style="color: black; text-decoration: none;">공지사항</a></h2>
 		<hr class="hr_margin_top_0">
 		<table class="table">
 			<c:forEach items="${boardList}" var="board">
@@ -41,15 +41,38 @@
 		</table>
 	</div>
 	<div class="col-xs-4">
-		<h2>별헤는밤</h2>
+		<h2><a href="${cp}/blog/selectBlogAll.do" style="color: black; text-decoration: none;">별헤는밤</a></h2>
 		<hr class="hr_margin_top_0">
 		<table>
+		<c:forEach items="${blogList}" var="blog">
 			<tr>
-				<td style="text-align: center;">${blogList[0].content}</td>
+				<c:choose>
+				<c:when test="${not empty blog.content}">
+				<td style="padding-top: 0px; padding-bottom: 0px; vertical-align: middle;">
+					<a href="${cp}/blog/selectBlog.do?id=${blog.id}" class="thumbnail" style="margin-bottom: 0px;">
+						${blog.content}
+					</a>
+				</td>
+				<td style=" vertical-align: middle;">
+					<h4><a href="${cp}/blog/selectBlog.do?id=${blog.id}"
+							style="color: black; text-decoration: none;">
+						    ${blog.title}
+					</a></h4>
+					<p><fmt:formatDate value="${blog.regdate}" pattern="yyyy년 MM월 dd일" /></p>
+				</td>
+				</c:when>
+				<c:otherwise>
+					<td colspan="2" style=" vertical-align: middle;">
+						<h4><a href="${cp}/blog/selectBlog.do?id=${blog.id}"
+								style="color: black; text-decoration: none;">
+								${blog.title}
+						</a></h4>
+						<p><fmt:formatDate value="${blog.regdate}" pattern="yyyy년 MM월 dd일" /></p>
+					</td>						
+				</c:otherwise>
+				</c:choose>
 			</tr>
-			<tr>
-				<td style="text-align: left; padding-left: 5%"><h4>${blogList[0].title}</h4></td>
-			</tr>
+		</c:forEach>
 		</table>
 	</div>
 	<div class="col-xs-4">

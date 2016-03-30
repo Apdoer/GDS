@@ -52,15 +52,22 @@ public class BlogService {
 		return blogDao.plusConut(blogVO);
 	}
 
-	public Object pagingBlog(SearchVO searchVO) {
+	public SearchVO pagingBlog(SearchVO searchVO) {
 		//블로그 페이지에 표현되는 게시글의 숫자
-		searchVO.setMaxPageSize(5);
+		searchVO.setMaxPageSize(10);
 		
 		//화면 아래에 표현되는 페이징 숫자
 		searchVO.setMaxLinkCount(MAX_LINK_COUNT);
 		
 		searchVO.initPagination(blogDao.getTotalCount());
 		searchVO.setResult(blogDao.paging(searchVO));
+		
+		int a = blogDao.getTotalCount();
+		
+		a = a - (searchVO.getCurrentPage()-1)*10;
+		
+		searchVO.setTotalCount(a);
+		
 		return searchVO;
 	}
 
@@ -70,20 +77,26 @@ public class BlogService {
 		List<BlogVO> blogList;
 		blogList = blogDao.selectMain();
 		
-		String content = blogList.get(0).getContent();
-		
-		int a;
-		int b;
-		
-		if (content.indexOf("<img") != -1) {
+		for (int i = 0; i < blogList.size(); i++) {
 			
-			a = content.indexOf("<img");
+			String content = blogList.get(i).getContent();
 			
-			b = content.indexOf("title=");
-			content = content.substring(a, b-1);
-			content = content + " style='width: 90%'>";
+			int a;
+			int b;
+			
+			if (content.indexOf("<img") != -1) {
+				
+				a = content.indexOf("<img");
+				
+				b = content.indexOf("title=");
+				content = content.substring(a, b-1);
+				content = content + " style='width: 80px; height: 80px;'>";
+				
+				blogList.get(i).setContent(content);
+			}else{
+				blogList.get(i).setContent(null);
+			}
 		}
-		blogList.get(0).setContent(content);
 		
 		return blogList;
 	}

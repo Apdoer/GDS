@@ -24,20 +24,18 @@
 	<div class="blog-header">
 		<h1 class="blog-title">
 			별헤는 밤
-			<c:if test="${sessionScope.auth != null}">
-				<c:if test="${blogList.size() == 1}">
-					<a href="${cp}/admin/blog/updateViewBlog.do?id=${blogList[0].id}" class="btn btn-info pull-right">글 수정</a>
-					<a href="${cp}/blog/deleteBlog.do?id=${blogList[0].id}" class="btn btn-info pull-right">글 삭제</a>
-				</c:if>
+			<c:if test="${fromAdmin}">
+				<a href="${cp}/admin/blog/updateViewBlog.do?id=${blogList[0].id}" class="btn btn-info pull-right">글 수정</a>
+				<a href="${cp}/blog/deleteBlog.do?id=${blogList[0].id}" class="btn btn-info pull-right">글 삭제</a>
 				<a href="${cp}/admin/blog/edit.do" class="btn btn-info pull-right">글 쓰기</a>
-			</c:if>	
+			</c:if>
 		</h1>
 	</div>
 	<c:forEach items="${blogList}" var="blogList">
 		<div class="col-md-9 blog-main">
 			<div class="blog-post">
 				<h2 class="blog-post-title">
-					<a href="${cp}/blog/selectBlog.do?id=${blogList.id}" style="color: black; text-decoration: none;">${blogList.title}</a>
+					${blogList.title}
 				</h2>
 				<p class="blog-post-meta"><fmt:formatDate value="${blogList.regdate}" pattern="yyyy년 MM월 dd일"/></p>
 				<p class="blog-post-content">${blogList.content}</p>

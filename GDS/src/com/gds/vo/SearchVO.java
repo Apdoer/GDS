@@ -14,6 +14,7 @@ public class SearchVO {
 	private int endRowIndex;
 	private int startPageIndex;
 	private int endPageIndex;
+	private int totalCount;
 	
 	private List<?> result;
 	
@@ -61,6 +62,14 @@ public class SearchVO {
 	
 	public int getEndPageIndex() {
 		return endPageIndex;
+	}
+	
+	public int getTotalCount() {
+		return totalCount;
+	}
+	
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public void setMaxPageSize(int maxPageSize) {

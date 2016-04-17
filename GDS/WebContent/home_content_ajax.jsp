@@ -4,7 +4,10 @@
 <c:set var="cp" value="${pageContext.request.contextPath}" />
 <div class="row">
 	<div class="col-xs-4">
-		<h2><a href="${cp}/board/enter.do" style="color: black; text-decoration: none;">공지사항</a></h2>
+		<h2><a href="${cp}/board/enter.do" style="color: black; text-decoration: none;">공지사항</a>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<a href="${cp}/board/enter.do" style="color: black; text-decoration: none; font-size: 14px;">더보기></a></h2>
+		</h2>
 		<hr class="hr_margin_top_0">
 		<table class="table">
 			<c:forEach items="${boardList}" var="board">
@@ -41,7 +44,9 @@
 		</table>
 	</div>
 	<div class="col-xs-4">
-		<h2><a href="${cp}/blog/selectBlogAll.do" style="color: black; text-decoration: none;">별헤는밤</a></h2>
+		<h2><a href="${cp}/blog/selectBlogAll.do" style="color: black; text-decoration: none;">별헤는밤</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<a href="${cp}/blog/selectBlogAll.do" style="color: black; text-decoration: none; font-size: 14px;">더보기></a></h2>
+		
 		<hr class="hr_margin_top_0">
 		<table>
 		<c:forEach items="${blogList}" var="blog">

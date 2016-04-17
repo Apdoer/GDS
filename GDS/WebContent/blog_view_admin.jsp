@@ -51,8 +51,8 @@
 </div>
 	
 <script type="text/javascript">
-function getBoard(id) {
-	location.href = "get.do?id=" + id; 	
+function getBlog(id) {
+	location.href = "selectBlog.do?id=" + id; 	
 }
 
 function listBoard(pageIdx) {

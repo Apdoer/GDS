@@ -293,7 +293,7 @@ public class AdminController {
 	}
 
 	// 여기서부터 관리자 별헤는밤 매서드
-	@RequestMapping("/blog/enter.do")
+	@RequestMapping("/blog/selectBlogAll.do")
 	public String enterBlog(Model model) {
 		model.addAttribute("contentPage", "/blog_view_admin.jsp");
 		return "admin_index";

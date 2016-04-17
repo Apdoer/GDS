@@ -194,7 +194,6 @@ public class BlogController {
 	//페이징 ajax
 	@RequestMapping("/list.ajax")
 	public ModelAndView listBoard(SearchVO searchVO) {
-
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("searchVO", blogService.pagingBlog(searchVO));
 		mav.setViewName("blog_list_ajax_page");

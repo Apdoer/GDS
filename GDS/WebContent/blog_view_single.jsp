@@ -39,6 +39,7 @@
 				</h2>
 				<p class="blog-post-meta"><fmt:formatDate value="${blogList.regdate}" pattern="yyyy년 MM월 dd일"/></p>
 				<p class="blog-post-content">${blogList.content}</p>
+				<a class="btn btn-default" href="javascript: location.href='selectBlogAll.do';">목록으로</a>
 			</div>
 		</div>
 	</c:forEach>

@@ -31,9 +31,6 @@
 		</c:otherwise>
 	</c:choose>
 </table>
-<div class="articles">
-			<!-- load board list by ajax -->
-		</div>
 <div class="paginator">
 	<ul class="pagination">
 		<c:if test="${searchVO.startPageIndex > 1}">
@@ -50,33 +47,12 @@
 			</c:if>
 		</c:forEach>
 		<c:if test="${searchVO.endPageIndex < searchVO.lastPageIndex}">
-			<li><a href="javascript: listBoard(${searchVO.startPageIndex + 1});">
+			<li><a href="javascript: listBoard(${searchVO.endPageIndex + 1});">
 				<span aria-hidden="true">&raquo;</span>
 			</a></li>	
 		</c:if>
 	</ul>
 </div>
-
-<script type="text/javascript">
-function getBlog(id) {
-	location.href = "selectBlog.do?id=" + id; 	
-}
-
-function listBoard(pageIdx) {
-	$.ajax({
-		url: '${cp}/blog/list.ajax',
-		data: { 'currentPage': pageIdx }
-	}).done(function(data) {
-		$('div.articles').html(data);
-	}).fail(function(error) {
-		alert(error);
-	});
-}
-
-$(function() {
-	listBoard(1);
-});
-</script>	
 
 
 
